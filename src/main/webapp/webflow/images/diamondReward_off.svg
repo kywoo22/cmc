@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" viewBox="0 0 12 12">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_645" data-name="사각형 645" width="12" height="12" transform="translate(275 236)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="diamondReward_off" transform="translate(-275 -236)" clip-path="url(#clip-path)">
+    <path id="gift-fill" d="M8.184,1.092a2.182,2.182,0,0,1,1.89,3.273h2.474V5.456H11.457v5.455a.545.545,0,0,1-.545.545H2.184a.545.545,0,0,1-.545-.545V5.456H.548V4.365H3.022A2.182,2.182,0,0,1,6.549,1.832,2.173,2.173,0,0,1,8.184,1.092ZM7.094,5.456H6v5.455H7.094ZM4.912,2.183A1.091,1.091,0,0,0,4.83,4.362l.081,0H6V3.274A1.091,1.091,0,0,0,5.077,2.2l-.084-.009Zm3.273,0A1.091,1.091,0,0,0,7.1,3.193l0,.081V4.365H8.184A1.091,1.091,0,0,0,9.272,3.356l0-.081A1.091,1.091,0,0,0,8.184,2.183Z" transform="translate(274.452 235.726)"/>
+  </g>
+</svg>

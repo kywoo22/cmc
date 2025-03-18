@@ -1,0 +1,28 @@
+.indicator-wrapper {
+	scrollbar-width: none;
+}
+/*width*/
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+/*track*/
+::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0);
+}
+/*thumb*/
+::-webkit-scrollbar-thumb {
+	background: #cfd6e4;
+	border-radius: 4px;
+}
+
+.txt-space {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+
+.dexscan-menu-body {
+	scrollbar-width: none;
+}

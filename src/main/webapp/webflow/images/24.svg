@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_995" data-name="사각형 995" width="18" height="18" transform="translate(1167 215)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="사각형_792" data-name="사각형 792" width="18" height="18" transform="translate(1023.75 277.875)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="_24" data-name="24" transform="translate(-1167 -215)" clip-path="url(#clip-path)">
+    <g id="trophy_on" transform="translate(143.25 -62.875)" clip-path="url(#clip-path-2)">
+      <path id="trophy-line" d="M10.64,13.861v1.688h4.09v1.637H4.913V15.547H9V13.86A6.546,6.546,0,0,1,3.277,7.365V2.457h13.09V7.365a6.547,6.547,0,0,1-5.728,6.5ZM4.913,4.093V7.365a4.909,4.909,0,1,0,9.818,0V4.093Zm-4.09,0H2.458V7.365H.822Zm16.363,0h1.637V7.365H17.185Z" transform="translate(1022.928 277.055)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

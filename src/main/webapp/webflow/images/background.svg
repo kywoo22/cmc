@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="908" height="412" viewBox="0 0 908 412">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_936" data-name="사각형 936" width="908" height="412" transform="translate(1012 114)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <filter id="사각형_967" x="464.253" y="-96" width="606.629" height="492.245" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#eaedf0"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="사각형_971" x="37.292" y="89.091" width="354.14" height="145.543" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-2"/>
+      <feFlood flood-color="#eaedf0"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="사각형_974" x="23.23" y="36.611" width="353.881" height="144.578" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-3"/>
+      <feFlood flood-color="#eaedf0"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="사각형_977" x="8.909" y="-16.835" width="354.14" height="145.543" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-4"/>
+      <feFlood flood-color="#eaedf0"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="사각형_962" x="52.664" y="198.305" width="190.662" height="205.692" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-5"/>
+      <feFlood flood-color="#eaedf0"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="사각형_962-2" x="190.639" y="161.115" width="191.483" height="205.913" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-6"/>
+      <feFlood flood-color="#eaedf0"/>
+      <feComposite operator="in" in2="blur-6"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="사각형_962-3" x="328.615" y="124.144" width="191.483" height="205.913" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-7"/>
+      <feFlood flood-color="#eaedf0"/>
+      <feComposite operator="in" in2="blur-7"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="background" transform="translate(-1012 -114)" clip-path="url(#clip-path)">
+    <g id="그룹_346" data-name="그룹 346" transform="matrix(0.966, -0.259, 0.259, 0.966, 1491.631, 163.602)">
+      <g transform="matrix(0.97, 0.26, -0.26, 0.97, -450.45, -172.05)" filter="url(#사각형_967)">
+        <g id="사각형_967-2" data-name="사각형 967" transform="matrix(0.97, -0.26, 0.26, 0.97, 479.25, 49.7)" fill="#fff" stroke="#f3f5f7" stroke-width="1">
+          <rect width="505" height="343.236" rx="10" stroke="none"/>
+          <rect x="0.5" y="0.5" width="504" height="342.236" rx="9.5" fill="none"/>
+        </g>
+      </g>
+      <rect id="사각형_968" data-name="사각형 968" width="450" height="194" transform="translate(18.608 19)" fill="#eff2f5"/>
+      <rect id="사각형_969" data-name="사각형 969" width="450" height="15" transform="translate(18.608 271.897)" fill="#eff2f5"/>
+      <rect id="사각형_970" data-name="사각형 970" width="231" height="15" transform="translate(18.608 306.237)" fill="#eff2f5"/>
+    </g>
+    <g id="그룹_344" data-name="그룹 344" transform="matrix(0.966, -0.259, 0.259, 0.966, 1036.019, 197.209)">
+      <g transform="matrix(0.97, 0.26, -0.26, 0.97, -1.66, -86.59)" filter="url(#사각형_971)">
+        <g id="사각형_971-2" data-name="사각형 971" transform="matrix(0.97, -0.26, 0.26, 0.97, 52.29, 188.73)" fill="#fff" stroke="#f3f5f7" stroke-width="1">
+          <rect width="327" height="32" rx="16" stroke="none"/>
+          <rect x="0.5" y="0.5" width="326" height="31" rx="15.5" fill="none"/>
+        </g>
+      </g>
+      <g transform="matrix(0.97, 0.26, -0.26, 0.97, -1.66, -86.59)" filter="url(#사각형_974)">
+        <g id="사각형_974-2" data-name="사각형 974" transform="matrix(0.97, -0.26, 0.26, 0.97, 38.23, 136.25)" fill="#fff" stroke="#f3f5f7" stroke-width="1">
+          <rect width="327" height="31" rx="15.5" stroke="none"/>
+          <rect x="0.5" y="0.5" width="326" height="30" rx="15" fill="none"/>
+        </g>
+      </g>
+      <g transform="matrix(0.97, 0.26, -0.26, 0.97, -1.66, -86.59)" filter="url(#사각형_977)">
+        <g id="사각형_977-2" data-name="사각형 977" transform="matrix(0.97, -0.26, 0.26, 0.97, 23.91, 82.8)" fill="#fff" stroke="#f3f5f7" stroke-width="1">
+          <rect width="327" height="32" rx="16" stroke="none"/>
+          <rect x="0.5" y="0.5" width="326" height="31" rx="15.5" fill="none"/>
+        </g>
+      </g>
+      <rect id="사각형_972" data-name="사각형 972" width="16" height="15" rx="7.5" transform="translate(12 117.239)" fill="#eff2f5"/>
+      <rect id="사각형_975" data-name="사각형 975" width="16" height="16" rx="8" transform="translate(12 61.831)" fill="#eff2f5"/>
+      <rect id="사각형_978" data-name="사각형 978" width="16" height="16" rx="8" transform="translate(12 7.576)" fill="#eff2f5"/>
+      <rect id="사각형_976" data-name="사각형 976" width="265" height="16" transform="translate(35 61.831)" fill="#eff2f5"/>
+    </g>
+    <g id="그룹_345" data-name="그룹 345" transform="matrix(0.966, -0.259, 0.259, 0.966, 1079.766, 360.475)">
+      <g id="그룹_342" data-name="그룹 342" transform="translate(0 -0.394)">
+        <g transform="matrix(0.97, 0.26, -0.26, 0.97, -1.66, -255.22)" filter="url(#사각형_962)">
+          <g id="사각형_962-4" data-name="사각형 962" transform="matrix(0.97, -0.26, 0.26, 0.97, 67.66, 246.09)" fill="#fff" stroke="#f3f5f7" stroke-width="1">
+            <rect width="126.688" height="147.944" rx="10" stroke="none"/>
+            <rect x="0.5" y="0.5" width="125.688" height="146.944" rx="9.5" fill="none"/>
+          </g>
+        </g>
+        <rect id="사각형_963" data-name="사각형 963" width="95.228" height="60.368" transform="translate(16.155 15.305)" fill="#eff2f5"/>
+        <rect id="사각형_965" data-name="사각형 965" width="95.228" height="18.706" transform="translate(16.155 83.325)" fill="#eff2f5"/>
+        <rect id="사각형_966" data-name="사각형 966" width="95.228" height="19.556" transform="translate(16.155 109.683)" fill="#eff2f5"/>
+      </g>
+      <g id="그룹_343" data-name="그룹 343" transform="translate(142.842 -0.394)">
+        <g transform="matrix(0.97, 0.26, -0.26, 0.97, -144.51, -255.22)" filter="url(#사각형_962-2)">
+          <g id="사각형_962-5" data-name="사각형 962" transform="matrix(0.97, -0.26, 0.26, 0.97, 205.64, 209.12)" fill="#fff" stroke="#f3f5f7" stroke-width="1">
+            <rect width="127.538" height="147.944" rx="10" stroke="none"/>
+            <rect x="0.5" y="0.5" width="126.538" height="146.944" rx="9.5" fill="none"/>
+          </g>
+        </g>
+        <rect id="사각형_963-2" data-name="사각형 963" width="95.228" height="60.368" transform="translate(16.155 15.305)" fill="#eff2f5"/>
+        <rect id="사각형_965-2" data-name="사각형 965" width="95.228" height="18.706" transform="translate(16.155 83.325)" fill="#eff2f5"/>
+        <rect id="사각형_966-2" data-name="사각형 966" width="95.228" height="19.556" transform="translate(16.155 109.683)" fill="#eff2f5"/>
+      </g>
+      <g transform="matrix(0.97, 0.26, -0.26, 0.97, -1.66, -255.62)" filter="url(#사각형_962-3)">
+        <g id="사각형_962-6" data-name="사각형 962" transform="matrix(0.97, -0.26, 0.26, 0.97, 343.62, 172.15)" fill="#fff" stroke="#f3f5f7" stroke-width="1">
+          <rect width="127.538" height="147.944" rx="10" stroke="none"/>
+          <rect x="0.5" y="0.5" width="126.538" height="146.944" rx="9.5" fill="none"/>
+        </g>
+      </g>
+      <rect id="사각형_963-3" data-name="사각형 963" width="95.228" height="60.368" transform="translate(301.84 14.911)" fill="#eff2f5"/>
+      <rect id="사각형_965-3" data-name="사각형 965" width="95.228" height="18.706" transform="translate(301.84 82.931)" fill="#eff2f5"/>
+      <rect id="사각형_966-3" data-name="사각형 966" width="95.228" height="19.556" transform="translate(301.84 109.289)" fill="#eff2f5"/>
+    </g>
+  </g>
+</svg>

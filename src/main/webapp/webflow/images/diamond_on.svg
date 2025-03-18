@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" viewBox="0 0 12 12">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_644" data-name="사각형 644" width="12" height="12" transform="translate(275 184)" fill="#3861fb" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="diamond_on" transform="translate(-275 -184)" clip-path="url(#clip-path)">
+    <path id="diamond_24dp_FFFFFF_FILL1_wght400_GRAD0_opsz24" d="M5.735-9.818l1.652-3.273h.187L9.226-9.818ZM7.013-2.431,1.636-8.883H7.013Zm.935,0V-8.883h5.377Zm2.306-7.387L8.634-13.091h3.21l1.636,3.273Zm-8.774,0,1.636-3.273h3.21L4.706-9.818Z" transform="translate(273.52 197.761)" fill="#3861fb"/>
+  </g>
+</svg>

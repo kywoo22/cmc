@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_793" data-name="사각형 793" width="16" height="16" transform="translate(532 247)"/>
+    </clipPath>
+  </defs>
+  <g id="clock_on" transform="translate(-532 -247)" clip-path="url(#clip-path)">
+    <path id="timer-2-line" d="M9.6,1.6a8,8,0,1,1-8,8A8,8,0,0,1,9.6,1.6ZM9.6,16A6.4,6.4,0,1,0,3.2,9.6,6.4,6.4,0,0,0,9.6,16ZM12.428,5.64,13.56,6.772,9.6,10.731,8.469,9.6Z" transform="translate(530.4 245.4)"/>
+  </g>
+</svg>

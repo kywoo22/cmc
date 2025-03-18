@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_1006" data-name="사각형 1006" width="18" height="18" transform="translate(0 0)" fill="#fff" stroke="#fff" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="_16" data-name="16" transform="translate(18) rotate(90)" clip-path="url(#clip-path)">
+    <path id="sync_24dp_434343_FILL0_wght300_GRAD0_opsz24" d="M.09,0V1.742H3.484L2.64,2.55A7.615,7.615,0,0,0,.6,5.515,9.528,9.528,0,0,0,0,8.83a9.043,9.043,0,0,0,6.387,8.678V15.673A7.13,7.13,0,0,1,3.014,12.98,7.218,7.218,0,0,1,1.742,8.83,6.962,6.962,0,0,1,3.864,3.81L4.6,3.073v3.18H6.342V0H.09ZM11.613.313V2.148A7.13,7.13,0,0,1,14.986,4.84a7.218,7.218,0,0,1,1.272,4.15,6.962,6.962,0,0,1-2.122,5.02l-.737.737v-3.18H11.658v6.253h6.253V16.079H14.516l.844-.808a8.727,8.727,0,0,0,2.009-2.991A8.961,8.961,0,0,0,18,8.991,9.043,9.043,0,0,0,11.613.313Z" transform="translate(0 0.089)" fill="#fff"/>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="11.413" viewBox="0 0 12 11.413">
+  <g id="star2" transform="translate(-370 -545.723)">
+    <g id="star" transform="translate(36 458.405)">
+      <path id="star-fill_4_" data-name="star-fill (4)" d="M6.335,9.622,2.627,11.7l.828-4.168L.335,4.644l4.22-.5L6.335.285Z" transform="translate(333.665 87.033)" fill="#f5b97f"/>
+    </g>
+    <g id="star-2" data-name="star" transform="translate(376 545.723)">
+      <path id="star-fill_4_2" data-name="star-fill (4)" d="M.335,9.622,4.043,11.7,3.215,7.529l3.12-2.885-4.22-.5L.335.285Z" transform="translate(-0.335 -0.285)" fill="#cfd6e4"/>
+    </g>
+  </g>
+</svg>

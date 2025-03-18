@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="17" viewBox="0 0 17 17">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_16" data-name="사각형 16" width="17" height="17" transform="translate(1726 22)" fill="#4f73fa"/>
+    </clipPath>
+  </defs>
+  <g id="phone" transform="translate(-1726 -22)" clip-path="url(#clip-path)">
+    <path id="smartphone-line" d="M6.725,3.725v13.8H15.35V3.725ZM5.863,2h10.35a.862.862,0,0,1,.862.863V18.388a.862.862,0,0,1-.862.862H5.863A.862.862,0,0,1,5,18.388V2.863A.863.863,0,0,1,5.863,2Zm5.175,12.938a.863.863,0,1,1-.863.863A.862.862,0,0,1,11.038,14.938Z" transform="translate(1723.588 20)" fill="#4f73fa"/>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" viewBox="0 0 15 15">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_24" data-name="사각형 24" width="15" height="15" transform="translate(1371 26)" fill="#a6b0c3"/>
+    </clipPath>
+  </defs>
+  <g id="star" transform="translate(-1371 -26)" clip-path="url(#clip-path)">
+    <path id="star-fill_1_" data-name="star-fill (1)" d="M7.886,12,3.251,14.594l1.035-5.21L.386,5.778l5.275-.625L7.886.329l2.225,4.824,5.275.625-3.9,3.607,1.035,5.21Z" transform="translate(1370.614 26.038)" fill="#a6b0c3"/>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8" height="14" viewBox="0 0 8 14">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_880" data-name="사각형 880" width="14" height="8" transform="translate(306 102)" fill="#3861fb" stroke="#3861fb" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="arrow" transform="translate(-102 320) rotate(-90)" clip-path="url(#clip-path)">
+    <path id="chevron-down_1_" data-name="chevron-down (1)" d="M5.665,8.5l5.665,5.665L16.994,8.5" transform="translate(301.67 94.866)" fill="none" stroke="#3861fb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.888"/>
+  </g>
+</svg>

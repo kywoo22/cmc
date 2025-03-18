@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="17" viewBox="0 0 16 17">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_797" data-name="사각형 797" width="16" height="17" transform="translate(287 600)" fill="none" stroke="#6a778c" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="chart_gray" transform="translate(-287 -600)" clip-path="url(#clip-path)">
+    <g id="bar-chart-2-svgrepo-com" transform="translate(284.333 598.333)">
+      <line id="선_58" data-name="선 58" y1="6.611" transform="translate(16 11.167)" fill="none" stroke="#6a778c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.778"/>
+      <line id="선_59" data-name="선 59" y1="10.611" transform="translate(10.667 7.167)" fill="none" stroke="#6a778c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.778"/>
+      <line id="선_60" data-name="선 60" y1="5.333" transform="translate(5.333 12.444)" fill="none" stroke="#6a778c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.778"/>
+    </g>
+  </g>
+</svg>

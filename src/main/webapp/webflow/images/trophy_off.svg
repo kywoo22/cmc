@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_69" data-name="사각형 69" width="16" height="16" transform="translate(910 247)" fill="#616e85"/>
+    </clipPath>
+  </defs>
+  <g id="trophy_off" transform="translate(-910 -247)" clip-path="url(#clip-path)">
+    <path id="trophy-line" d="M9.458,12.321v1.5h3.636v1.455H4.367V13.82H8v-1.5A5.819,5.819,0,0,1,2.913,6.547V2.184H14.549V6.547A5.819,5.819,0,0,1,9.458,12.321ZM4.367,3.638V6.547a4.364,4.364,0,0,0,8.727,0V3.638Zm-3.636,0H2.185V6.547H.731Zm14.545,0h1.455V6.547H15.276Z" transform="translate(909.269 246.271)" fill="#616e85"/>
+  </g>
+</svg>

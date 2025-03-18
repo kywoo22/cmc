@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_996" data-name="사각형 996" width="18" height="18" transform="translate(1167 263)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="_25" data-name="25" transform="translate(-1167 -263)" clip-path="url(#clip-path)">
+    <path id="military_tech_24dp_434343_FILL0_wght300_GRAD0_opsz24" d="M6.848-20.674H16v7.108a1.854,1.854,0,0,1-.256.962,2.016,2.016,0,0,1-.7.7L11.756-9.936l.685,2.227H15.62l-2.6,1.838,1.014,3.2-2.6-1.981-2.6,1.981,1.014-3.2-2.6-1.838h3.179L11.1-9.936,7.79-11.88a1.851,1.851,0,0,1-.694-.7,1.975,1.975,0,0,1-.247-.981v-7.108Zm1.428,1.428v5.68a.48.48,0,0,0,.069.252.552.552,0,0,0,.188.188l2.179,1.289v-7.409Zm6.3,0H12.14v7.409l2.179-1.289a.552.552,0,0,0,.188-.188.48.48,0,0,0,.069-.252ZM11.426-15.328ZM10.712-15.541ZM12.14-15.541Z" transform="translate(1164.574 283.674)" fill="#fff"/>
+  </g>
+</svg>

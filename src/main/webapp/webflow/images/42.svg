@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_1025" data-name="사각형 1025" width="18" height="18" transform="translate(711 613)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="_42" data-name="42" transform="translate(-711 -613)" clip-path="url(#clip-path)">
+    <path id="gift-fill_1_" data-name="gift-fill (1)" d="M12.277,1.639a3.274,3.274,0,0,1,2.834,4.91h3.711V8.184H17.186v8.182a.818.818,0,0,1-.818.818H3.277a.818.818,0,0,1-.818-.818V8.184H.822V6.548H4.533a3.273,3.273,0,0,1,5.29-3.8A3.259,3.259,0,0,1,12.277,1.639ZM10.64,8.184H9v8.182H10.64ZM7.368,3.275a1.636,1.636,0,0,0-.122,3.268l.122,0H9V4.911A1.637,1.637,0,0,0,7.615,3.294L7.49,3.28Zm4.909,0a1.636,1.636,0,0,0-1.632,1.514l0,.122V6.548h1.636a1.637,1.637,0,0,0,1.632-1.514l0-.122A1.636,1.636,0,0,0,12.277,3.275Z" transform="translate(710.178 612.589)" fill="#fff"/>
+  </g>
+</svg>
