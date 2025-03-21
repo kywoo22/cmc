@@ -26,17 +26,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="w-layout-vflex indicator-box">
-						<div class="scroll-bar-arrow scroll-left">
-							<img src="/cmc/webflow/images/arrow_left_off.svg" loading="lazy" alt="">
-						</div>
-						<div class="indicator-wrapper scroll-container">
-							<a href="#" class="tap-btn w-button">모든 암호화폐</a> <a href="#" class="tap-btn w-button">NFTs</a> <a href="#" class="tap-btn on w-button">카테고리</a> <a href="#" class="tap-btn w-button">Token Unlocks</a> <a href="#" class="tap-btn rehypo w-button">Rehypo</a> <a href="#" class="tap-btn fire-icon w-button">Memes</a> <a href="#" class="tap-btn fire-icon w-button">SOL</a> <a href="#" class="tap-btn fire-icon w-button">DOT</a> <a href="#" class="tap-btn fire-icon w-button">Made in USA</a> <a href="#" class="tap-btn fire-icon w-button">AI</a> <a href="#" class="tap-btn fire-icon w-button">AI Agents</a> <a href="#" class="tap-btn fire-icon w-button">DeFAI</a> <a href="#" class="tap-btn fire-icon w-button">Gaming</a> <a href="#" class="tap-btn fire-icon w-button">DePIN</a> <a href="#" class="tap-btn fire-icon w-button">DeFAI</a>
-						</div>
-						<div class="scroll-right">
-							<img src="/cmc/webflow/images/arrow_right.svg" loading="lazy" alt="">
-						</div>
-					</div>
+					<jsp:include page="../frame/indicator-tap.jsp"></jsp:include>
 					<div class="table-control">
 						<div class="table-btn-box">
 							<a href="#" class="table-btn on w-inline-block">

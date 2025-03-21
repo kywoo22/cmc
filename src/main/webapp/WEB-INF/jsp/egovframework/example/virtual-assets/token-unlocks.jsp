@@ -19,24 +19,14 @@
 			<div class="body-wrap">
 				<div class="frame">
 					<div class="main-txt-box">
-						<div class="main-title">24시간 가격 변동에 의한 암호 화폐 섹터</div>
+						<div class="main-title">토큰 잠금 해제 및 베스팅 일정</div>
 						<div class="main-txt-flex">
 							<div>
-								각 암호화폐 카테고리에 대한 지수를 만들었습니다. 카테고리 순위는 24시간 가격 변화에 따라 정해집니다. 암호화폐 카테고리 이름을 클릭하여 지수의 구성 부분과 최근 가격 실적을 확인하세요.<br>
+								주요 가상자산 프로젝트의 토큰 잠금 해제 및 베스팅 세부내용은 아래와 같습니다. 더 자세한 토크노믹스 정보를 보려면 토큰 이름을 클릭하여 관련 페이지로 이동합니다.<br>
 							</div>
 						</div>
 					</div>
-					<div class="w-layout-vflex indicator-box custom-mg">
-						<div class="scroll-bar-arrow scroll-left">
-							<img src="/cmc/webflow/images/arrow_left_off.svg" loading="lazy" alt="">
-						</div>
-						<div class="indicator-wrapper scroll-container">
-							<a href="#" class="tap-btn w-button">모든 암호화폐</a> <a href="#" class="tap-btn w-button">NFTs</a> <a href="#" class="tap-btn w-button">카테고리</a> <a href="#" class="tap-btn on w-button">Token Unlocks</a> <a href="#" class="tap-btn rehypo w-button">Rehypo</a> <a href="#" class="tap-btn fire-icon w-button">Memes</a> <a href="#" class="tap-btn fire-icon w-button">SOL</a> <a href="#" class="tap-btn fire-icon w-button">DOT</a> <a href="#" class="tap-btn fire-icon w-button">Made in USA</a> <a href="#" class="tap-btn fire-icon w-button">AI</a> <a href="#" class="tap-btn fire-icon w-button">AI Agents</a> <a href="#" class="tap-btn fire-icon w-button">DeFAI</a> <a href="#" class="tap-btn fire-icon w-button">Gaming</a> <a href="#" class="tap-btn fire-icon w-button">DePIN</a> <a href="#" class="tap-btn fire-icon w-button">DeFAI</a>
-						</div>
-						<div class="scroll-right">
-							<img src="/cmc/webflow/images/arrow_right.svg" loading="lazy" alt="">
-						</div>
-					</div>
+					<jsp:include page="../frame/indicator-tap.jsp"></jsp:include>
 					<div class="coin-table">
 						<div class="coin-table-top sticky">
 							<div class="interest-box"></div>

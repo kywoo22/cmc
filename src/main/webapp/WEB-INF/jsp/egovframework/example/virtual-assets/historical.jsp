@@ -262,5 +262,6 @@
 	</div>
 	<jsp:include page="../frame/list-footer.jsp"></jsp:include>
 	<jsp:include page="../frame/footer.jsp"></jsp:include>
+	<script src="/cmc/js/faq.js" type="text/javascript"></script>
 </body>
 </html>

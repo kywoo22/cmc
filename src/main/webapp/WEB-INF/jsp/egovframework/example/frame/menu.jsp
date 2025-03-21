@@ -45,37 +45,37 @@
 					<div class="menu-sub-wrap">
 						<div class="inter _14s semibold a6co">리더보드</div>
 						<div class="menu-link-box">
-							<a href="leader-board/trending-cryptocurrencies.html" class="menu-sub-link w-inline-block">
+							<a href="/cmc/leader-board/trending-cryptocurrencies.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-o">
 									<img src="/cmc/webflow/images/6.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">추세</div>
-							</a> <a href="leader-board/upcoming.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/leader-board/upComing.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/7.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">예정</div>
-							</a> <a href="leader-board/new.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/leader-board/new.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/8.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">최근 상장된 종목</div>
-							</a> <a href="leader-board/gainer-losers.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/leader-board/gainer-losers.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-g">
 									<img src="/cmc/webflow/images/9.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">상승 및 하락 종목</div>
-							</a> <a href="leader-board/most-view.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/leader-board/most-view.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-sky">
 									<img src="/cmc/webflow/images/10.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">가장 많이 방문한 종목</div>
-							</a> <a href="leader-board/sentiment.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/leader-board/sentiment.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b">
 									<img src="/cmc/webflow/images/11.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">커뮤니티 정서</div>
-							</a> <a href="leader-board/chain-ranking.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/leader-board/chain-ranking.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-y">
 									<img src="/cmc/webflow/images/12.svg" loading="lazy" alt="">
 								</div>
@@ -86,32 +86,32 @@
 					<div class="menu-sub-wrap">
 						<div class="inter _14s semibold a6co">시장 개요</div>
 						<div class="menu-link-box">
-							<a href="market-overview/market-overview.html" class="menu-sub-link w-inline-block">
+							<a href="/cmc/market-overview/market-overview.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/13.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">시장 개요</div>
-							</a> <a href="market-overview/100-index.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/market-overview/100index.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/14.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">CoinMarketCap 100 지수</div>
-							</a> <a href="market-overview/fear-greed.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/market-overview/fear&greed.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-o">
 									<img src="/cmc/webflow/images/15.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">공포 및 탐욕 지수.</div>
-							</a> <a href="market-overview/altcoin-season-index.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/market-overview/altCoin-season-index.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-sky">
 									<img src="/cmc/webflow/images/16.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">알트코인 시즌 지수</div>
-							</a> <a href="market-overview/coin-dominance.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/market-overview/coin-dominance.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-y">
 									<img src="/cmc/webflow/images/17.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">비트코인 도미넌스</div>
-							</a> <a href="market-overview/virtual-asset-etf/all-etf.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/market-overview/all-etf.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/18.svg" loading="lazy" alt="">
 								</div>
@@ -122,12 +122,12 @@
 					<div class="menu-sub-wrap">
 						<div class="inter _14s semibold a6co">NFT</div>
 						<div class="menu-link-box">
-							<a href="market-overview/market-overview.html" class="menu-sub-link w-inline-block">
+							<a href="/cmc/nft/nft.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/19.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">전체 NFT 통계</div>
-							</a> <a href="market-overview/100-index.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/nft/upComing.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-g">
 									<img src="/cmc/webflow/images/20.svg" loading="lazy" alt="">
 								</div>
@@ -154,17 +154,17 @@
 									<img src="/cmc/webflow/images/22.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">Trending Pairs</div>
-							</a> <a href="dexscan/rise-and-fall/top-gainers.html" class="menu-sub-link _w-auto w-inline-block">
+							</a> <a href="/cmc/dexscan/top-gainers.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-g">
 									<img src="/cmc/webflow/images/23.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">상승 및 하락한 가상자산</div>
-							</a> <a href="dexscan/voting-leader-board/ranking.html" class="menu-sub-link _w-auto w-inline-block">
+							</a> <a href="/cmc/dexscan/ranking.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-sky">
 									<img src="/cmc/webflow/images/24.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">Community Votes</div>
-							</a> <a href="dexscan/top-traders.html" class="menu-sub-link _w-auto w-inline-block">
+							</a> <a href="/cmc/dexscan/top-traders.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-b">
 									<img src="/cmc/webflow/images/25.svg" loading="lazy" alt="">
 								</div>
@@ -175,19 +175,19 @@
 				</div>
 			</div>
 			<div class="w-layout-vflex menu-box">
-				<a href="#" class="menu-link w-inline-block">
+				<a href="/cmc/exchange/spot.do" class="menu-link w-inline-block">
 					<div>거래소</div>
 				</a>
 				<div class="menu-wrap-box flex-down">
 					<div class="menu-sub-wrap">
 						<div class="inter _14s semibold a6co">중앙화 거래소</div>
 						<div class="menu-link-box">
-							<a href="dexscan/new-pairs.html" class="menu-sub-link _w-auto w-inline-block">
+							<a href="/cmc/exchange/spot.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-b">
 									<img src="/cmc/webflow/images/26.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">스팟</div>
-							</a> <a href="dexscan/trending-pairs.html" class="menu-sub-link _w-auto w-inline-block">
+							</a> <a href="/cmc/exchange/derivatives.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/27.svg" loading="lazy" alt="">
 								</div>
@@ -198,12 +198,12 @@
 					<div class="menu-sub-wrap">
 						<div class="inter _14s semibold a6co">탈중앙화 거래소</div>
 						<div class="menu-link-box">
-							<a href="dexscan/new-pairs.html" class="menu-sub-link _w-auto w-inline-block">
+							<a href="/cmc/exchange/dex-spot.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-b">
 									<img src="/cmc/webflow/images/28.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">스팟</div>
-							</a> <a href="dexscan/trending-pairs.html" class="menu-sub-link _w-auto w-inline-block">
+							</a> <a href="/cmc/exchange/dex-derivatives.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/29.svg" loading="lazy" alt="">
 								</div>
@@ -214,28 +214,28 @@
 				</div>
 			</div>
 			<div class="w-layout-vflex menu-box">
-				<a href="#" class="menu-link w-inline-block">
+				<a href="/cmc/community/feed.do" class="menu-link w-inline-block">
 					<div>커뮤니티</div>
 				</a>
 				<div class="menu-wrap-box">
 					<div class="menu-sub-wrap">
 						<div class="menu-link-box">
-							<a href="dexscan/new-pairs.html" class="menu-sub-link _w-auto w-inline-block">
+							<a href="/cmc/community/feed.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-b">
 									<img src="/cmc/webflow/images/30.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">피드</div>
-							</a> <a href="dexscan/trending-pairs.html" class="menu-sub-link _w-auto w-inline-block">
+							</a> <a href="/cmc/community/topic.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-g">
 									<img src="/cmc/webflow/images/31.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">Topics</div>
-							</a> <a href="dexscan/trending-pairs.html" class="menu-sub-link _w-auto w-inline-block">
+							</a> <a href="/cmc/community/lives.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-o">
 									<img src="/cmc/webflow/images/32.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">Lives</div>
-							</a> <a href="dexscan/trending-pairs.html" class="menu-sub-link _w-auto w-inline-block">
+							</a> <a href="/cmc/community/articles.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/33.svg" loading="lazy" alt="">
 								</div>
@@ -253,27 +253,27 @@
 					<div class="menu-sub-wrap">
 						<div class="inter _14s semibold a6co">서비스</div>
 						<div class="menu-link-box line">
-							<a href="index.html" aria-current="page" class="menu-sub-link w-inline-block w--current">
+							<a href="/cmc/service/converter.do" aria-current="page" class="menu-sub-link w-inline-block w--current">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/34.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">계산기</div>
-							</a> <a href="virtual-assets/category.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/service/news-letter.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/35.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">뉴스레터</div>
-							</a> <a href="virtual-assets/historical.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/service/cmc-labs.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-g">
 									<img src="/cmc/webflow/images/36.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">CMC Labs</div>
-							</a> <a href="virtual-assets/token-unlocks.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/service/telegram-bot.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-tele">
 									<img src="/cmc/webflow/images/37.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">Telegram Bot</div>
-							</a> <a href="virtual-assets/yield.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/service/advertise.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b">
 									<img src="/cmc/webflow/images/38.svg" loading="lazy" alt="">
 								</div>
@@ -281,12 +281,12 @@
 							</a>
 						</div>
 						<div class="menu-link-box">
-							<a href="index.html" aria-current="page" class="menu-sub-link w-inline-block w--current">
+							<a href="/cmc/service/api.do" aria-current="page" class="menu-sub-link w-inline-block w--current">
 								<div class="menu-circle color-gray">
 									<img src="/cmc/webflow/images/39.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">가상자산 API</div>
-							</a> <a href="virtual-assets/category.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/service/ticker.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-gray">
 									<img src="/cmc/webflow/images/40.svg" loading="lazy" alt="">
 								</div>
@@ -297,17 +297,17 @@
 					<div class="menu-sub-wrap">
 						<div class="inter _14s semibold a6co">리더보드</div>
 						<div class="menu-link-box">
-							<a href="leader-board/trending-cryptocurrencies.html" class="menu-sub-link w-inline-block">
+							<a href="/cmc/service/air-drop.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-g">
 									<img src="/cmc/webflow/images/41.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">Airdrops</div>
-							</a> <a href="leader-board/upcoming.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/service/rewards.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-o">
 									<img src="/cmc/webflow/images/42.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">다이아몬드 리워드</div>
-							</a> <a href="leader-board/new.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/service/learn-and-earn.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-bsky">
 									<img src="/cmc/webflow/images/43.svg" loading="lazy" alt="">
 								</div>
@@ -316,12 +316,12 @@
 						</div>
 						<div class="inter _14s semibold a6co">Calendars</div>
 						<div class="menu-link-box">
-							<a href="leader-board/trending-cryptocurrencies.html" class="menu-sub-link w-inline-block">
+							<a href="/cmc/service/calendar.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-bsky">
 									<img src="/cmc/webflow/images/44.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">ICO 캘린더</div>
-							</a> <a href="leader-board/upcoming.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/service/event-calendar.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/45.svg" loading="lazy" alt="">
 								</div>
@@ -332,27 +332,27 @@
 					<div class="menu-sub-wrap">
 						<div class="inter _14s semibold a6co">가상자산 배우기</div>
 						<div class="menu-link-box">
-							<a href="market-overview/market-overview.html" class="menu-sub-link w-inline-block">
+							<a href="/cmc/service/service-news.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/46.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">뉴스</div>
-							</a> <a href="market-overview/100-index.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/service/academy.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b">
 									<img src="/cmc/webflow/images/47.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">Academy</div> <img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
-							</a> <a href="market-overview/fear-greed.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/service/cmc-research.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/48.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">조사</div> <img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
-							</a> <a href="market-overview/altcoin-season-index.html" class="menu-sub-link _w-auto w-inline-block">
+							</a> <a href="/cmc/market-overview/altcoin-season-index.html" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-r">
 									<img src="/cmc/webflow/images/49.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold">비디오</div> <img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
-							</a> <a href="market-overview/coin-dominance.html" class="menu-sub-link w-inline-block">
+							</a> <a href="/cmc/market-overview/coin-dominance.html" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/50.svg" loading="lazy" alt="">
 								</div>
@@ -366,7 +366,7 @@
 				<div>포트폴리오</div> </a> <a href="#" class="menu-right-btn mobile w-inline-block"><img src="/cmc/webflow/images/star.svg" loading="lazy" alt="">
 				<div>관심 목록</div> </a>
 			<div class="w-layout-vflex mo-menu-wrap">
-				<a href="#" class="login-btn mobile w-button">계정 생성</a> <a href="#" class="login-btn mobile w-button">Log in</a>
+				<a href="#" class="login-btn mobile w-button">계정 생성</a> <a href="#" onclick="openLogin()" class="login-btn mobile w-button">Log in</a>
 			</div>
 			<div class="menu-wrap-boxmo">
 				<div class="mo-gray-bg">
@@ -386,8 +386,8 @@
 	</div>
 	<div class="header-right">
 		<div class="btn-box">
-			<a href="#" class="menu-right-btn w-inline-block"><img src="/cmc/webflow/images/chart.svg" loading="lazy" alt="">
-				<div>포트폴리오</div> </a> <a href="#" class="menu-right-btn w-inline-block"><img src="/cmc/webflow/images/star.svg" loading="lazy" alt="">
+			<a href="/cmc/portfolio-tracker.do" class="menu-right-btn w-inline-block"><img src="/cmc/webflow/images/chart.svg" loading="lazy" alt="">
+				<div>포트폴리오</div> </a> <a href="/cmc/watchlist.do" class="menu-right-btn w-inline-block"><img src="/cmc/webflow/images/star.svg" loading="lazy" alt="">
 				<div>관심 목록</div> </a>
 		</div>
 		<form action="/search" class="search w-form">
@@ -395,7 +395,7 @@
 			<input class="search-input w-input" maxlength="256" name="query" placeholder="검색" type="search" id="search" required="">
 			<input type="submit" class="slash-btn w-button" value="">
 		</form>
-		<a href="#" class="scan-btn w-button"></a> <a href="#" class="login-btn w-button">로그인</a>
+		<a href="#" class="scan-btn w-button"></a> <a href="#" onclick="openLogin()" class="login-btn w-button">로그인</a>
 		<div class="popover-base">
 			<img src="/cmc/webflow/images/menu.svg" loading="lazy" alt="" class="menu-img"><img src="/cmc/webflow/images/close_1.svg" loading="lazy" alt="" class="menu-img close">
 			<div class="avatar"></div>
@@ -410,16 +410,43 @@
 	function showSubmenu(box) {
 	  const subMenu = box.querySelector('.menu-wrap-box');
 	  if (subMenu) {
-	    subMenu.style.display = 'flex'; // 보이기
+	    // 이전에 hide 타이머가 설정되어 있다면 취소
+	    if (subMenu.hideTimeout) {
+	      clearTimeout(subMenu.hideTimeout);
+	      subMenu.hideTimeout = null;
+	    }
+	    
+	    // 메뉴가 이미 보이는 상태가 아니라면 초기 상태 설정
+	    if (subMenu.style.display !== 'flex') {
+	      subMenu.style.transition = 'opacity 0.3s ease, max-height 0.3s ease';
+	      subMenu.style.overflow = 'hidden';
+	      subMenu.style.display = 'flex';
+	      subMenu.style.opacity = 0;
+	      subMenu.style.maxHeight = '0px';
+	      // 강제 reflow 발생
+	      void subMenu.offsetWidth;
+	    }
+	    // 보이도록 애니메이션 적용
+	    subMenu.style.opacity = 1;
+	    subMenu.style.maxHeight = '500px'; // 콘텐츠 높이에 맞게 조절
 	  }
 	}
-	
+
 	function hideSubmenu(box) {
-	  const subMenu = box.querySelector('.menu-wrap-box');
-	  if (subMenu) {
-	    subMenu.style.display = 'none'; // 숨기기
+		const subMenu = box.querySelector('.menu-wrap-box');
+	    if (subMenu) {
+	      subMenu.style.transition = 'opacity 0.3s ease, max-height 0.3s ease';
+	      subMenu.style.opacity = 0;
+	      subMenu.style.maxHeight = '0px';
+	      // 기존 타이머가 있다면 취소하고 새로 설정
+	      if (subMenu.hideTimeout) {
+	        clearTimeout(subMenu.hideTimeout);
+	      }
+	      subMenu.hideTimeout = setTimeout(() => {
+	        subMenu.style.display = 'none';
+	      }, 300); // transition 시간과 동일하게 설정
+	    }
 	  }
-	}
 	
 	// “호버 이벤트” 등록
 	function addHoverEvents() {
@@ -547,10 +574,24 @@
 	
 	// DOMContentLoaded 후 init
 	document.addEventListener('DOMContentLoaded', initAll);
+	
+	// 창 크기가 변경될 때 서비스 메뉴의 hover 효과(인라인 스타일)를 초기화
+	window.addEventListener('resize', function() {
+	    if (window.innerWidth < 992) {
+	      // .service 클래스를 가진 메뉴의 inline 스타일을 초기화합니다.
+	      const serviceMenus = document.querySelectorAll('.menu-wrap-box');
+	      serviceMenus.forEach(function(menu) {
+	        // hover 효과가 남아 있다면 초기 상태로 돌림
+	        menu.style.display = '';
+	        menu.style.opacity = '';
+	        menu.style.maxHeight = '';
+	      });
+	    }
+	  });
 </script>
 
 
 
 
-	
+
 

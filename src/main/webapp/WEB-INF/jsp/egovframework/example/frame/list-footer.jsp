@@ -15,25 +15,25 @@
 					<strong>서비스</strong>
 				</div>
 				<div class="w-layout-vflex footer-menu-list">
-					<a href="#" class="w-inline-block">
+					<a href="/cmc/service/academy.do" class="w-inline-block">
 						<div class="inter _14s medium _61co">아카데미</div>
-					</a> <a href="#" class="w-inline-block">
+					</a> <a href="/cmc/service/advertise.do" class="w-inline-block">
 						<div class="inter _14s medium _61co">광고</div>
-					</a> <a href="#" class="w-inline-block">
+					</a> <a href="/cmc/service/cmc-labs.do" class="w-inline-block">
 						<div class="inter _14s medium _61co">CMC 랩스</div>
-					</a> <a href="#" class="w-inline-block">
+					</a> <a href="/cmc/market-overview/coin-dominance.do" class="w-inline-block">
 						<div class="inter _14s medium _61co">비트코인 ETF</div>
-					</a> <a href="#" class="w-inline-block">
+					</a> <a href="/cmc/service/api.do" class="w-inline-block">
 						<div class="inter _14s medium _61co">가상자산 API</div>
-					</a> <a href="#" class="w-inline-block">
+					</a> <a href="/cmc/dexscan/new-pairs.do" class="w-inline-block">
 						<div class="inter _14s medium _61co">DexScan</div>
-					</a> <a href="#" class="w-inline-block">
+					</a> <a href="/cmc/market-overview/market-overview.do" class="w-inline-block">
 						<div class="inter _14s medium _61co">글로벌 차트</div>
-					</a> <a href="#" class="w-inline-block">
+					</a> <a href="/cmc/nft/nft.do" class="w-inline-block">
 						<div class="inter _14s medium _61co">NFT</div>
-					</a> <a href="#" class="w-inline-block">
+					</a> <a href="/cmc/portfolio-tracker.do" class="w-inline-block">
 						<div class="inter _14s medium _61co">포트폴리오</div>
-					</a> <a href="#" class="w-inline-block">
+					</a> <a href="/cmc/watchlist.do" class="w-inline-block">
 						<div class="inter _14s medium _61co">관심 목록</div>
 					</a> <a href="#" class="w-inline-block">
 						<div class="inter _14s medium _61co">Doodles</div>
