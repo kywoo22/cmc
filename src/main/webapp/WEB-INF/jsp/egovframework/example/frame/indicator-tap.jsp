@@ -12,17 +12,16 @@
 <c:url value="/nft/nft.do" var="nftUrl"/>
 <c:url value="/virtual-assets/category.do" var="categoryUrl"/>
 <c:url value="/virtual-assets/token-unlocks.do" var="tokenUnlocksUrl"/>
-<c:url value="/cryptocurrency/rehypo.do" var="rehypoUrl"/>
-<c:url value="/cryptocurrency/memes.do" var="memesUrl"/>
-<c:url value="/cryptocurrency/sol.do" var="solUrl"/>
-<c:url value="/cryptocurrency/dot.do" var="dotUrl"/>
-<c:url value="/cryptocurrency/madeInUSA.do" var="madeInUSAUrl"/>
-<c:url value="/cryptocurrency/ai.do" var="aiUrl"/>
-<c:url value="/cryptocurrency/aiAgents.do" var="aiAgentsUrl"/>
-<c:url value="/cryptocurrency/defai.do" var="defaiUrl"/>
-<c:url value="/cryptocurrency/gaming.do" var="gamingUrl"/>
-<c:url value="/cryptocurrency/depin.do" var="depinUrl"/>
-<c:url value="/cryptocurrency/defai2.do" var="defai2Url"/>
+<c:url value="/view/rehypothecated-crypto.do" var="rehypoUrl"/>
+<c:url value="/view/memes.do" var="memesUrl"/>
+<c:url value="/view/solana-ecosystem.do" var="solUrl"/>
+<c:url value="/view/polkadot-ecosystem.do" var="dotUrl"/>
+<c:url value="/view/made-in-americao.do" var="madeInUSAUrl"/>
+<c:url value="/view/ai-big-data.do" var="aiUrl"/>
+<c:url value="/view/ai-agents.do" var="aiAgentsUrl"/>
+<c:url value="/view/gaming.do" var="gamingUrl"/>
+<c:url value="/view/depin.do" var="depinUrl"/>
+<c:url value="/view/defai.do" var="defaiUrl"/>
 
 <!-- class on -->
 <div class="w-layout-vflex indicator-box">
@@ -41,10 +40,9 @@
         <a href="${madeInUSAUrl}" class="tap-btn fire-icon ${activeIndicator eq 'madeInUSA' ? 'on' : ''} w-button">Made in USA</a>
         <a href="${aiUrl}" class="tap-btn fire-icon ${activeIndicator eq 'ai' ? 'on' : ''} w-button">AI</a>
         <a href="${aiAgentsUrl}" class="tap-btn fire-icon ${activeIndicator eq 'aiAgents' ? 'on' : ''} w-button">AI Agents</a>
-        <a href="${defaiUrl}" class="tap-btn fire-icon ${activeIndicator eq 'defai' ? 'on' : ''} w-button">DeFAI</a>
         <a href="${gamingUrl}" class="tap-btn fire-icon ${activeIndicator eq 'gaming' ? 'on' : ''} w-button">Gaming</a>
         <a href="${depinUrl}" class="tap-btn fire-icon ${activeIndicator eq 'depin' ? 'on' : ''} w-button">DePIN</a>
-        <a href="${defai2Url}" class="tap-btn fire-icon ${activeIndicator eq 'defai2' ? 'on' : ''} w-button">DeFAI</a>
+        <a href="${defaiUrl}" class="tap-btn fire-icon ${activeIndicator eq 'defai' ? 'on' : ''} w-button">DeFAI</a>
     </div>
     <div class="scroll-right">
         <img src="/cmc/webflow/images/arrow_right.svg" loading="lazy" alt="">

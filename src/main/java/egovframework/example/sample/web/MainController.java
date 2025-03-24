@@ -24,6 +24,58 @@ public class MainController {
 		return "watchlist";
 	}
 	
+	//view
+	@RequestMapping("/view/rehypothecated-crypto.do")
+	public String rehypo(HttpServletRequest request){
+		request.setAttribute("activeIndicator", "rehypo");
+		return "view/rehypothecated-crypto";
+	}
+	@RequestMapping("/view/memes.do")
+	public String memes(HttpServletRequest request){
+		request.setAttribute("activeIndicator", "memes");
+		return "view/memes";
+	}
+	@RequestMapping("/view/solana-ecosystem.do")
+	public String sol(HttpServletRequest request){
+		request.setAttribute("activeIndicator", "sol");
+		return "view/solana-ecosystem";
+	}
+	@RequestMapping("/view/polkadot-ecosystem.do")
+	public String dot(HttpServletRequest request){
+		request.setAttribute("activeIndicator", "dot");
+		return "view/polkadot-ecosystem";
+	}
+	@RequestMapping("/view/made-in-americao.do")
+	public String usa(HttpServletRequest request){
+		request.setAttribute("activeIndicator", "madeInUSA");
+		return "view/made-in-america";
+	}
+	@RequestMapping("/view/ai-big-data.do")
+	public String ai(HttpServletRequest request){
+		request.setAttribute("activeIndicator", "ai");
+		return "view/ai-big-data";
+	}
+	@RequestMapping("/view/ai-agents.do")
+	public String aiAgents(HttpServletRequest request){
+		request.setAttribute("activeIndicator", "aiAgents");
+		return "view/ai-agents";
+	}
+	@RequestMapping("/view/gaming.do")
+	public String gaming(HttpServletRequest request){
+		request.setAttribute("activeIndicator", "gaming");
+		return "view/gaming";
+	}
+	@RequestMapping("/view/depin.do")
+	public String depin(HttpServletRequest request){
+		request.setAttribute("activeIndicator", "depin");
+		return "view/depin";
+	}
+	@RequestMapping("/view/defai.do")
+	public String defai(HttpServletRequest request){
+		request.setAttribute("activeIndicator", "defai");
+		return "view/defai";
+	}
+	
 	
 	//virtual-assets
 	@RequestMapping("/virtual-assets/category.do")
