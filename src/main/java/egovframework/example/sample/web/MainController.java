@@ -1,13 +1,41 @@
 package egovframework.example.sample.web;
+import java.util.Locale;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+
+import egovframework.example.sample.web.utils.Utils;
 
 @Controller
 public class MainController {
 
+	@ResponseBody
+	@RequestMapping(value="/changeLanguage.do")
+	public String changeLanguage(HttpServletRequest request){
+		HttpSession session = request.getSession();
+		String lang = request.getParameter("lang");
+		Locale locales = new Locale(lang);
+		if(Utils.isNull(lang)) lang = "en";
+		session.setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, locales);
+		session.setAttribute("lang", lang.toLowerCase());
+		return "ok";
+	}
+	
 	@RequestMapping("/main.do")
 	public String main(HttpServletRequest request){
+		HttpSession session = request.getSession();
+		if(session.getAttribute("lang") == null) {
+			String lang = ""+session.getAttribute("lang");
+			lang = "en";
+			Locale locales = new Locale(lang);
+			session.setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, locales);
+			session.setAttribute("lang", lang.toLowerCase());
+		}
 		request.setAttribute("activeIndicator", "main");
 		return "main";
 	}

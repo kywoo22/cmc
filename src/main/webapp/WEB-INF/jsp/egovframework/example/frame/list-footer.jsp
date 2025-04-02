@@ -6,7 +6,7 @@
 				<div class="logo">로고</div>
 			</div>
 			<div class="footer-btn-box">
-				<a href="#" class="footer-btn w-button" onclick="triggerFooterBtnClick()">한국어</a> 
+				<a href="#" class="footer-btn w-button" onclick="triggerFooterBtnClick()">${lang == 'en' ? 'English' : '한국어' }</a> 
 				<a href="#" class="footer-btn money w-button"  onclick="triggerFooterMoneyClick(); event.stopPropagation();">KRW</a>
 			</div>
 		</div>
@@ -137,12 +137,14 @@
 				<div class="inter _12s medium _61co">
 					Popular languages<br>
 				</div>
+				
 				<div class="footer-grid">
-					<div class="f-grid-wrap">
+					<div class="f-grid-wrap ${lang == 'en' ? 'on' : '' }" onclick="javascript:changeLang('en')">
 						<div class="f-grid-txt-box">
 							<div class="inter _14s bold">English</div>
 							<div class="inter _14s medium _61co">US</div>
 						</div>
+						${lang == 'en' ? '<div class="checking"></div>' : '' }
 					</div>
 					<div class="f-grid-wrap">
 						<div class="f-grid-txt-box">
@@ -263,12 +265,12 @@
 							<div class="inter _14s medium _61co">JA</div>
 						</div>
 					</div>
-					<div class="f-grid-wrap on">
+					<div class="f-grid-wrap ${lang == 'ko' ? 'on' : '' }" onclick="javascript:changeLang('ko')">
 						<div class="f-grid-txt-box">
 							<div class="inter _14s bold">한국어</div>
 							<div class="inter _14s medium _61co">KR</div>
 						</div>
-						<div class="checking"></div>
+						${lang == 'ko' ? '<div class="checking"></div>' : '' }
 					</div>
 					<div class="f-grid-wrap">
 						<div class="f-grid-txt-box">
@@ -885,6 +887,16 @@
 </div>
 
 <script>
+function changeLang(self){
+	$.ajax({
+		data : {'lang' :self},
+		type : 'post',
+		url : '/cmc/changeLanguage.do',
+		success:function(data){
+			location.reload();
+		}
+	})
+}
 //일반 버튼 클릭 시 실행되는 함수
 function triggerFooterBtnClick() {
   var footerPopup = document.querySelector('.footer-popup');
