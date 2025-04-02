@@ -173,7 +173,7 @@
 										<div class="inter _14s medium">$10.07K</div>
 									</div>
 									<div class="dx-security">
-										<div class="scan-block green">
+										<div class="scan-block off">
 											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
 											<div class="inter _12s medium">HPC</div>
 										</div>

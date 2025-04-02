@@ -22,9 +22,19 @@
 						<div class="main-title">최고의 암호화폐 현물 교환</div>
 						<div class="main-txt-flex">
 							<div>CoinMarketCap은 트래픽, 유동성, 거래량 및 보고된 거래량의 정당성에 대한 신뢰도를 기준으로 거래소의 순위를 매기고 거래량을 파악합니다.</div>
-							<a href="#" class="link-read-more w-inline-block">
+							<a href="#" class="link-read-hide w-inline-block" onclick="showLeadMore(this)">
 								<div>더 읽기</div>
 							</a>
+						</div>
+						<div class="w-layout-vflex lead-more-txt">
+							<div class="main-txt-flex">
+								<div>
+									We now track <strong>257</strong> spot exchanges with a total 24h volume of <strong>₩1.6P</strong>. For more info on exchange ranking, click <a href="#" target="_blank" class="link">here </a>.
+								</div>
+								<a href="#" class="link-read-hide w-inline-block" onclick="hideLeadMore()">
+									<div>감추기</div>
+								</a>
+							</div>
 						</div>
 					</div>
 					<jsp:include page="../frame/exchange-tap.jsp"></jsp:include>
@@ -469,12 +479,6 @@
 								<input class="text-field w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="이메일 주소 입력" type="text" id="name-2">
 								<input type="submit" data-wait="Please wait..." class="submit-button w-button" value="제출">
 							</form>
-							<div class="w-form-done">
-								<div>Thank you! Your submission has been received!</div>
-							</div>
-							<div class="w-form-fail">
-								<div>Oops! Something went wrong while submitting the form.</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -483,5 +487,6 @@
 	</div>
 	<jsp:include page="../frame/list-footer.jsp"></jsp:include>
 	<jsp:include page="../frame/footer.jsp"></jsp:include>
+	<script src="/cmc/js/readmore.js" type="text/javascript"></script>
 </body>
 </html>

@@ -102,7 +102,14 @@
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width150">
 								<div class="coin-txt-table">거래량 (24시간)</div>
-								<div class="hover-info-pop"></div>
+								<div class="hover-info-pop">
+									<div class="hover-info">
+										<div>지난 24시간 동안 거래된 가상자산의 양을 측정한 수치입니다.</div>
+										<a href="#" class="link w-inline-block">
+											<div>더 읽기</div>
+										</a>
+									</div>
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width150">
 								<div class="coin-txt-table price">Est. Market Cap</div>
@@ -475,5 +482,6 @@
 	<jsp:include page="../frame/list-footer.jsp"></jsp:include>
 	<jsp:include page="../frame/footer.jsp"></jsp:include>
 	<script src="/cmc/js/scroll.js" type="text/javascript"></script>
+	<script src="/cmc/js/pop-hover.js" type="text/javascript"></script>
 </body>
 </html>

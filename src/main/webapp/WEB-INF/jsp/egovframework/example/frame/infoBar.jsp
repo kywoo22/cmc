@@ -20,7 +20,6 @@
 				<div class="base-txt">
 					<strong>₩1.1P</strong>
 				</div>
-				<div class="fluctuation-rate-img up"></div>
 				<div class="base-txt up">
 					<strong>8.16%</strong>
 				</div>
@@ -32,7 +31,6 @@
 				<div class="base-txt">
 					<strong>₩123,456</strong>
 				</div>
-				<div class="fluctuation-rate-img up"></div>
 				<div class="base-txt up">
 					<strong>8.16%</strong>
 				</div>

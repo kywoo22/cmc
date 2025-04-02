@@ -36,7 +36,6 @@
 									<strong>₩183,703,400,327,467</strong>
 								</div>
 								<div class="w-layout-vflex rate-flex-box">
-									<div class="fluctuation-rate-img up"></div>
 									<div class="base-txt up">
 										<strong>8.16%</strong>
 									</div>
@@ -51,7 +50,6 @@
 									<strong>₩183,703,400,327,467</strong>
 								</div>
 								<div class="w-layout-vflex rate-flex-box">
-									<div class="fluctuation-rate-img up"></div>
 									<div class="base-txt up">
 										<strong>8.16%</strong>
 									</div>
@@ -84,17 +82,40 @@
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width180">
 								<div class="coin-txt-table">시가 총액</div>
-								<div class="hover-info-pop"></div>
+								<div class="hover-info-pop">
+									<div class="hover-info">
+										<div>
+											암호화폐 유통량의 전체 시장 가치 이는 주식 시장에서의 유동주식 시가총액과 유사합니다.<br> <br>시가 총액 = 현재 가격 x 써큘레이팅 공급.
+										</div>
+										<a href="#" class="link w-inline-block">
+											<div>더 읽기</div>
+										</a>
+									</div>
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width180">
 								<div class="coin-txt-table">거래량 (24시간)</div>
-								<div class="hover-info-pop"></div>
+								<div class="hover-info-pop">
+									<div class="hover-info">
+										<div>지난 24시간 동안 거래된 가상자산의 양을 측정한 수치입니다.</div>
+										<a href="#" class="link w-inline-block">
+											<div>더 읽기</div>
+										</a>
+									</div>
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width150">
 								<div class="coin-txt-table">
 									<strong>유통 공급량</strong>
 								</div>
-								<div class="hover-info-pop"></div>
+								<div class="hover-info-pop">
+									<div class="hover-info">
+										<div>시장 및 일반 대중들 사이에서 유통되는 코인의 양. 이는 주식시장에서 유통되는 주식과 유사합니다.</div>
+										<a href="#" class="link w-inline-block">
+											<div>더 읽기</div>
+										</a>
+									</div>
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width180">
 								<div class="coin-txt-table">
@@ -104,7 +125,7 @@
 						</div>
 						<div class="coin-list">
 							<div class="list">
-								<div class="interest-box star"></div>
+								<div class="interest-box star-err"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -143,7 +164,7 @@
 								<div class="w-layout-vflex coin-table-top-wrap width180 graph"></div>
 							</div>
 							<div class="list">
-								<div class="interest-box star on"></div>
+								<div class="interest-box star-err on"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -182,7 +203,7 @@
 								<div class="w-layout-vflex coin-table-top-wrap width180 graph"></div>
 							</div>
 							<div class="list">
-								<div class="interest-box star on"></div>
+								<div class="interest-box star-err on"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -221,7 +242,7 @@
 								<div class="w-layout-vflex coin-table-top-wrap width180 graph"></div>
 							</div>
 							<div class="list">
-								<div class="interest-box star on"></div>
+								<div class="interest-box star-err on"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -260,7 +281,7 @@
 								<div class="w-layout-vflex coin-table-top-wrap width180 graph"></div>
 							</div>
 							<div class="list">
-								<div class="interest-box star on"></div>
+								<div class="interest-box star-err on"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -299,7 +320,7 @@
 								<div class="w-layout-vflex coin-table-top-wrap width180 graph"></div>
 							</div>
 							<div class="list">
-								<div class="interest-box star on"></div>
+								<div class="interest-box star-err on"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -338,7 +359,7 @@
 								<div class="w-layout-vflex coin-table-top-wrap width180 graph"></div>
 							</div>
 							<div class="list">
-								<div class="interest-box star on"></div>
+								<div class="interest-box star-err on"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -377,7 +398,7 @@
 								<div class="w-layout-vflex coin-table-top-wrap width180 graph"></div>
 							</div>
 							<div class="list">
-								<div class="interest-box star on"></div>
+								<div class="interest-box star-err on"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -416,7 +437,7 @@
 								<div class="w-layout-vflex coin-table-top-wrap width180 graph"></div>
 							</div>
 							<div class="list">
-								<div class="interest-box star on"></div>
+								<div class="interest-box star-err on"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -455,7 +476,7 @@
 								<div class="w-layout-vflex coin-table-top-wrap width180 graph"></div>
 							</div>
 							<div class="list">
-								<div class="interest-box star on"></div>
+								<div class="interest-box star-err on"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -536,5 +557,6 @@
 	<jsp:include page="../frame/list-footer.jsp"></jsp:include>
 	<jsp:include page="../frame/footer.jsp"></jsp:include>
 	<script src="/cmc/js/scroll.js" type="text/javascript"></script>
+	<script src="/cmc/js/pop-hover.js" type="text/javascript"></script>
 </body>
 </html>

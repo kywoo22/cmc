@@ -87,6 +87,10 @@ public class MainController {
 	public String historical(HttpServletRequest request){
 		return "virtual-assets/historical";
 	}
+	@RequestMapping("/virtual-assets/historical-date.do")
+	public String historicaldate(HttpServletRequest request){
+		return "virtual-assets/historical-date";
+	}
 	@RequestMapping("/virtual-assets/token-unlocks.do")
 	public String tokenUnlocks(HttpServletRequest request){
 		request.setAttribute("activeIndicator", "tokenUnlocks");

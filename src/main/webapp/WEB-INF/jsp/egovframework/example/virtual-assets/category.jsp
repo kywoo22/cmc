@@ -82,14 +82,30 @@
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width200">
 								<div class="coin-txt-table">시가 총액</div>
-								<div class="hover-info-pop"></div>
+								<div class="hover-info-pop">
+									<div class="hover-info">
+										<div>
+											암호화폐 유통량의 전체 시장 가치 이는 주식 시장에서의 유동주식 시가총액과 유사합니다.<br> <br>시가 총액 = 현재 가격 x 써큘레이팅 공급.
+										</div>
+										<a href="#" class="link w-inline-block">
+											<div>더 읽기</div>
+										</a>
+									</div>
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width85 center">
 								<div class="coin-txt-table">도미넌스</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width200">
 								<div class="coin-txt-table">거래량 (24시간)</div>
-								<div class="hover-info-pop"></div>
+								<div class="hover-info-pop">
+									<div class="hover-info">
+										<div>지난 24시간 동안 거래된 가상자산의 양을 측정한 수치입니다.</div>
+										<a href="#" class="link w-inline-block">
+											<div>더 읽기</div>
+										</a>
+									</div>
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width200 center">
 								<div class="coin-txt-table">
@@ -99,7 +115,7 @@
 						</div>
 						<div class="coin-list">
 							<div class="list">
-								<div class="interest-box star"></div>
+								<div class="interest-box star-err"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -145,7 +161,7 @@
 								</div>
 							</div>
 							<div class="list">
-								<div class="interest-box star"></div>
+								<div class="interest-box star-err"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -191,7 +207,7 @@
 								</div>
 							</div>
 							<div class="list">
-								<div class="interest-box star"></div>
+								<div class="interest-box star-err"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -237,7 +253,7 @@
 								</div>
 							</div>
 							<div class="list">
-								<div class="interest-box star"></div>
+								<div class="interest-box star-err"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -283,7 +299,7 @@
 								</div>
 							</div>
 							<div class="list">
-								<div class="interest-box star"></div>
+								<div class="interest-box star-err"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -329,7 +345,7 @@
 								</div>
 							</div>
 							<div class="list">
-								<div class="interest-box star"></div>
+								<div class="interest-box star-err"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -375,7 +391,7 @@
 								</div>
 							</div>
 							<div class="list">
-								<div class="interest-box star"></div>
+								<div class="interest-box star-err"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -421,7 +437,7 @@
 								</div>
 							</div>
 							<div class="list">
-								<div class="interest-box star"></div>
+								<div class="interest-box star-err"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -467,7 +483,7 @@
 								</div>
 							</div>
 							<div class="list">
-								<div class="interest-box star"></div>
+								<div class="interest-box star-err"></div>
 								<div class="w-layout-vflex coin-table-top-wrap num">
 									<div class="coin-txt-table">1</div>
 								</div>
@@ -555,5 +571,6 @@
 	<jsp:include page="../frame/list-footer.jsp"></jsp:include>
 	<jsp:include page="../frame/footer.jsp"></jsp:include>
 	<script src="/cmc/js/virtual-assets-scroll.js" type="text/javascript"></script>
+	<script src="/cmc/js/pop-hover.js" type="text/javascript"></script>
 </body>
 </html>
