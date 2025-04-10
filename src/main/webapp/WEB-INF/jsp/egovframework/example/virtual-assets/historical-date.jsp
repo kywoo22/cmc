@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Tue Apr 01 2025 07:33:11 GMT+0000 (Coordinated Universal Time)  -->
@@ -19,7 +20,8 @@
 				<div class="frame history-detail">
 					<div class="main-txt-box">
 						<div class="historical-title">
-							과거 스냅샷 - 28 April 2013<br>
+							<spring:message code="historical-date.snapshot" />
+							- 28 April 2013<br>
 						</div>
 					</div>
 					<div class="w-form">
@@ -27,7 +29,8 @@
 							<div class="historical-select-box">
 								<div class="select-wrap">
 									<div class="inter _15s">
-										시가 총액:<br>
+										<spring:message code="historical-date.market.capitalization" />
+										<br>
 									</div>
 									<div class="w-layout-vflex select-drop-box">
 										<div class="select-box">
@@ -57,7 +60,8 @@
 								</div>
 								<div class="select-wrap">
 									<div class="inter _15s">
-										가격:<br>
+										<spring:message code="historical-date.price" />
+										<br>
 									</div>
 									<div class="w-layout-vflex select-drop-box">
 										<div class="select-box">
@@ -87,7 +91,8 @@
 								</div>
 								<div class="select-wrap">
 									<div class="inter _15s">
-										거래량 (24시간):<br>
+										<spring:message code="historical-date.trading.volume" />
+										<br>
 									</div>
 									<div class="w-layout-vflex select-drop-box">
 										<div class="select-box">
@@ -117,12 +122,6 @@
 								</div>
 							</div>
 						</form>
-						<div class="w-form-done">
-							<div>Thank you! Your submission has been received!</div>
-						</div>
-						<div class="w-form-fail">
-							<div>Oops! Something went wrong while submitting the form.</div>
-						</div>
 					</div>
 					<div class="snapshot-container">
 						<div class="snapshot-wrap">
@@ -133,7 +132,7 @@
 							</div>
 							<div class="snapshot-top-wrap-box">
 								<div class="see-btn-box">
-									<a href="#" class="see-snapshop-btn w-button">← 이전 주</a> <a href="#" class="see-snapshop-btn w-button">다음 주 →</a> <a href="#" class="see-snapshop-btn seeall w-button">모두 보기</a>
+									<a href="#" class="see-snapshop-btn w-button"><spring:message code="historical-date.previous.week" /></a> <a href="#" class="see-snapshop-btn w-button"><spring:message code="historical-date.next.week" /></a> <a href="#" class="see-snapshop-btn seeall w-button"><spring:message code="historical-date.see.all" /></a>
 								</div>
 							</div>
 						</div>
@@ -143,67 +142,71 @@
 									<tr class="fs-table_row-top">
 										<td class="fs-table_cell">
 											<div class="table-block">
-												<div class="inter _15s bold">Rank</div>
+												<div class="inter _15s bold">
+													<spring:message code="historical-date.rank" />
+												</div>
 											</div>
 										</td>
 										<td class="fs-table_cell">
 											<div class="table-block">
-												<div class="inter _15s bold">이름</div>
+												<div class="inter _15s bold">
+													<spring:message code="historical-date.name" />
+												</div>
 											</div>
 										</td>
 										<td class="fs-table_cell">
 											<div class="table-block">
 												<div class="inter _15s">
-													<strong>종목</strong>
+													<strong><spring:message code="historical-date.symbol" /></strong>
 												</div>
 											</div>
 										</td>
 										<td class="fs-table_cell">
 											<div class="table-block right">
 												<div class="inter _15s">
-													<strong>시가 총액</strong>
+													<strong><spring:message code="historical-date.market.capitalization" /></strong>
 												</div>
 											</div>
 										</td>
 										<td class="fs-table_cell">
 											<div class="table-block right">
 												<div class="inter _15s">
-													<strong>가격</strong>
+													<strong><spring:message code="historical-date.price" /></strong>
 												</div>
 											</div>
 										</td>
 										<td class="fs-table_cell">
 											<div class="table-block right">
 												<div class="inter _15s">
-													<strong>유통 공급량</strong>
+													<strong><spring:message code="historical-date.circulating.supply" /></strong>
 												</div>
 											</div>
 										</td>
 										<td class="fs-table_cell">
 											<div class="table-block right">
 												<div class="inter _15s">
-													<strong>volume (24h)</strong>
+													<strong><spring:message code="historical-date.trading.volume" /></strong>
 												</div>
 											</div>
 										</td>
 										<td class="fs-table_cell">
 											<div class="table-block right">
 												<div class="inter _15s">
-													<strong>% 1시간</strong>
+													<strong><spring:message code="historical-date.one.hour.percent" /></strong>
 												</div>
 											</div>
 										</td>
 										<td class="fs-table_cell">
 											<div class="table-block right">
 												<div class="inter _15s">
-													<strong>% 24시간</strong>
+													<strong><spring:message code="historical-date.twenty.four.hours.percent" /></strong>
 												</div>
 											</div>
 										</td>
 										<td class="fs-table_cell">
 											<div class="table-block right">
 												<div class="inter _15s">
-													<strong>%7일</strong>
+													<strong><spring:message code="historical-date.seven.days.percent" /></strong>
 												</div>
 											</div>
 										</td>
@@ -680,18 +683,20 @@
 						</div>
 						<div class="snapshot-wrap center">
 							<a href="#" class="snapshot-more w-inline-block">
-								<div>더 로드하기</div>
+								<div>
+									<spring:message code="historical-date.load.more" />
+								</div>
 							</a>
 						</div>
 						<div class="snapshot-wrap">
 							<div class="snapshot-top-wrap-box">
 								<div>
-									<em>*채굴 불가</em>
+									<em><spring:message code="historical-date.mining.not.allowed" /></em>
 								</div>
 							</div>
 							<div class="snapshot-top-wrap-box">
 								<div class="see-btn-box">
-									<a href="#" class="see-snapshop-btn w-button">← 이전 주</a> <a href="#" class="see-snapshop-btn w-button">다음 주 →</a> <a href="#" class="see-snapshop-btn seeall w-button">모두 보기</a>
+									<a href="#" class="see-snapshop-btn w-button"><spring:message code="historical-date.previous.week" /></a> <a href="#" class="see-snapshop-btn w-button"><spring:message code="historical-date.next.week" /></a> <a href="#" class="see-snapshop-btn seeall w-button"><spring:message code="historical-date.see.all" /></a>
 								</div>
 							</div>
 						</div>

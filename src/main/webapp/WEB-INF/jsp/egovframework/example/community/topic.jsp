@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -20,7 +21,8 @@
 					</div>
 					<div class="community-right-w">
 						<div class="inter _25s bold">
-							주제<br>
+							<spring:message code="topic.title" />
+							<br>
 						</div>
 						<div class="topic-flex">
 							<div data-delay="4000" data-animation="slide" class="topic-box w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="250" data-infinite="true">
@@ -29,12 +31,17 @@
 										<a href="#" class="flex-gap-8 w-inline-block">
 											<div class="flex-between-box">
 												<div class="inter _16s bold">#CMC Yearbook#</div>
-												<div class="inter _12s semibold link">더 보기</div>
+												<div class="inter _12s semibold link">
+													<spring:message code="topic.viewMore" />
+												</div>
 											</div>
 											<div class="flex-left-gap4">
 												<img src="/cmc/webflow/images/test_user.png" loading="lazy" alt="" class="user-profile">
 												<div class="inter _14s semibold">Username</div>
-												<div class="inter _12s medium _61co">· 19시간</div>
+												<div class="inter _12s medium _61co">
+													· 19
+													<spring:message code="topic.time" />
+												</div>
 											</div>
 											<div class="topci-detail">
 												<img src="/cmc/webflow/images/image_83.png" loading="lazy" alt="" class="topic-img">

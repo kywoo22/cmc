@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -14,20 +15,27 @@
 		<div class="main-cotent">
 			<div class="w-layout-vflex main-top">
 				<jsp:include page="frame/menu.jsp"></jsp:include>
-				<jsp:include page="frame/infoBar.jsp"></jsp:include>
 			</div>
 			<div class="body-wrap login-first">
 				<div class="frame">
 					<div class="watchlist-first-section">
 						<div class="w-layout-vflex wp-txt-box">
-							<div class="wp-subtitle">Sign up today and get</div>
-							<div class="wp-title">your own crypto Watchlist</div>
+							<div class="wp-subtitle">
+								<spring:message code="watchlist.joinToday" />
+							</div>
+							<div class="wp-title">
+								<spring:message code="watchlist.title" />
+							</div>
 							<div class="inter _16s normal _61co">
-								Track your profits and losses. View your portfolio valuation. Do it all with our easy-to-use platform.<br>
+								<spring:message code="watchlist.description" />
+								<br>
 							</div>
 							<div class="watchlist-btn-box custom-mg">
-								<a href="#" class="blue-btn w-button">Create my own Watchlist</a> <a href="#" class="w-inline-block">
-									<div class="inter _14s bold">로그인</div>
+								<a href="#" class="blue-btn w-button"> <spring:message code="watchlist.create" />
+								</a> <a href="#" class="w-inline-block">
+									<div class="inter _14s bold">
+										<spring:message code="watchlist.login" />
+									</div>
 								</a>
 							</div>
 						</div>
@@ -39,13 +47,12 @@
 						<div class="wp-card">
 							<div class="w-layout-vflex wp-txt-wrap">
 								<div class="whachlist-txt">
-									We&#x27;re also on<br> <strong>iOS and Android</strong><br>
+									<spring:message code="watchlist.available" />
+									<br> <strong><spring:message code="watchlist.platforms" /></strong><br>
 								</div>
 								<div class="inter _14s normal _61co">
-									Sync between your desktop and the app to access your crypto assets on the go<br>
-								</div>
-								<div class="app-btn-box">
-									<a href="#" class="app-btn small w-button"></a> <a href="#" class="app-btn google small w-button"></a>
+									<spring:message code="watchlist.syncDesc" />
+									<br>
 								</div>
 							</div>
 						</div>
@@ -56,10 +63,11 @@
 								</div>
 								<div class="wp-txt-wrap-mg">
 									<div class="inter _18s bold">
-										<strong>Instant price alerts</strong>
+										<strong><spring:message code="watchlist.alertTitle" /></strong>
 									</div>
 									<div class="inter _14s medium _61co">
-										Receive timely notifications on major crypto movements<br>
+										<spring:message code="watchlist.alertDesc" />
+										<br>
 									</div>
 								</div>
 							</div>
@@ -69,10 +77,11 @@
 								</div>
 								<div class="wp-txt-wrap-mg">
 									<div class="inter _18s bold">
-										<strong>무료 사용</strong>
+										<strong><spring:message code="watchlist.card.freeTitle" /></strong>
 									</div>
 									<div class="inter _14s medium _61co">
-										Top-notch crypto portfolio tracking at no costs<br>
+										<spring:message code="watchlist.card.freeDesc" />
+										<br>
 									</div>
 								</div>
 							</div>
@@ -82,10 +91,11 @@
 								</div>
 								<div class="wp-txt-wrap-mg">
 									<div class="inter _18s bold">
-										<strong>원하는 방식으로 목록 정리하기</strong>
+										<strong><spring:message code="watchlist.card.organizeTitle" /></strong>
 									</div>
 									<div class="inter _14s medium _61co">
-										Create separate lists to track various crypto fields<br>
+										<spring:message code="watchlist.card.organizeDesc" />
+										<br>
 									</div>
 								</div>
 							</div>
@@ -95,10 +105,11 @@
 								</div>
 								<div class="wp-txt-wrap-mg">
 									<div class="inter _18s bold">
-										<strong>Sharing is caring</strong>
+										<strong><spring:message code="watchlist.card.shareTitle" /></strong>
 									</div>
 									<div class="inter _14s medium _61co">
-										Share your Watchlists in just one tap<br>
+										<spring:message code="watchlist.card.shareDesc" />
+										<br>
 									</div>
 								</div>
 							</div>
@@ -110,27 +121,40 @@
 				<div class="frame no-max">
 					<div class="w-layout-vflex wachlist-top">
 						<div class="main-txt-box width50">
-							<div class="main-title">가상자산 관심 목록을 오늘 만들어 보세요.</div>
+							<div class="main-title">
+								<spring:message code="watchlist.mainTitle" />
+							</div>
 							<div class="main-txt-flex">
-								<div>추적하려는 가상자산을 선택하여 나만의 관심 목록을 만들어 목표가에 도달했는지 쉽게 확인할 수 있어요. 주요 코인 목록과 저희가 추적하는 2백만 개 이상의 DEX 페어 모두에서 자산을 추가할 수 있습니다.</div>
+								<div>
+									<spring:message code="watchlist.mainDesc" />
+								</div>
 							</div>
 						</div>
 						<div class="watchlist-btn-box">
-							<a href="#" class="blue-btn w-inline-block"><img src="/cmc/webflow/images/add2.svg" loading="lazy" alt="">
-								<div class="inter _12s semibold">New asset</div> </a> <a href="#" class="table-btn height w-inline-block">
+							<a href="#" class="blue-btn w-inline-block"> <img src="/cmc/webflow/images/add2.svg" loading="lazy" alt="">
+								<div class="inter _12s semibold">
+									<spring:message code="watchlist.newAsset" />
+								</div>
+							</a> <a href="#" class="table-btn height w-inline-block">
 								<div class="btn-wrap h-auto">
-									<div>맞춤 설정</div>
+									<spring:message code="watchlist.customize" />
 								</div>
 							</a>
 						</div>
 					</div>
 					<div class="watchlist-regist">
 						<div class="watchlist-wrap">
-							<div class="inter _18s bold">관심 목록을 유지할 수 있지만, 그전에 먼저...</div>
-							<div class="inter _14s normal _61co">몇 번의 클릭만으로 CoinMarketCap 계정에 가입하여 세계적 수준의 가격 추적 플랫폼에서 빠르게 성장하는 가상자산 세계를 발견해 보세요!</div>
+							<div class="inter _18s bold">
+								<spring:message code="watchlist.noticeTitle" />
+							</div>
+							<div class="inter _14s normal _61co">
+								<spring:message code="watchlist.noticeDesc" />
+							</div>
 						</div>
 						<a href="#" class="blue-btn w-inline-block">
-							<div class="inter _14s semibold">계정 생성</div>
+							<div class="inter _14s semibold">
+								<spring:message code="watchlist.createAccount" />
+							</div>
 						</a>
 					</div>
 					<div class="coin-table">
@@ -140,37 +164,51 @@
 								<div class="coin-txt-table">#</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap name">
-								<div class="coin-txt-table name">이름</div>
+								<div class="coin-txt-table name">
+									<spring:message code="table.name" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap price">
-								<div class="coin-txt-table price">가격</div>
+								<div class="coin-txt-table price">
+									<spring:message code="table.price" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width85">
-								<div class="coin-txt-table">1h %</div>
-							</div>
-							<div class="w-layout-vflex coin-table-top-wrap width85">
-								<div class="coin-txt-table">24시간%</div>
-							</div>
-							<div class="w-layout-vflex coin-table-top-wrap width85">
-								<div class="coin-txt-table">7일 %</div>
-							</div>
-							<div class="w-layout-vflex coin-table-top-wrap width180">
-								<div class="coin-txt-table">시가 총액</div>
-								<div class="hover-info-pop"></div>
-							</div>
-							<div class="w-layout-vflex coin-table-top-wrap width180">
-								<div class="coin-txt-table">거래량 (24시간)</div>
-								<div class="hover-info-pop"></div>
-							</div>
-							<div class="w-layout-vflex coin-table-top-wrap width150">
 								<div class="coin-txt-table">
-									<strong>유통 공급량</strong>
+									<spring:message code="table.time1-houre" />
+								</div>
+							</div>
+							<div class="w-layout-vflex coin-table-top-wrap width85">
+								<div class="coin-txt-table">
+									<spring:message code="table.time24-houre" />
+								</div>
+							</div>
+							<div class="w-layout-vflex coin-table-top-wrap width85">
+								<div class="coin-txt-table">
+									<spring:message code="table.time7-days" />
+								</div>
+							</div>
+							<div class="w-layout-vflex coin-table-top-wrap width180">
+								<div class="coin-txt-table">
+									<spring:message code="table.market.capitalization" />
 								</div>
 								<div class="hover-info-pop"></div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width180">
 								<div class="coin-txt-table">
-									<strong>최근 7일</strong>
+									<spring:message code="table.trading.volume" />
+								</div>
+								<div class="hover-info-pop"></div>
+							</div>
+							<div class="w-layout-vflex coin-table-top-wrap width150">
+								<div class="coin-txt-table">
+									<strong><spring:message code="table.circulating.supply" /></strong>
+								</div>
+								<div class="hover-info-pop"></div>
+							</div>
+							<div class="w-layout-vflex coin-table-top-wrap width180">
+								<div class="coin-txt-table">
+									<strong><spring:message code="table.Last7days" /></strong>
 								</div>
 							</div>
 						</div>
@@ -568,12 +606,20 @@
 						</div>
 					</div>
 					<div class="table-bottom">
-						<div class="coin-table-bottom-txt">1 보이기 - 10868 의 100</div>
+						<div class="coin-table-bottom-txt">
+							1
+							<spring:message code="table.showtxt" />
+							- 10868
+							<spring:message code="table.showtxt2" />
+							100
+						</div>
 						<div class="pagin-box">
 							<a href="#" class="paging-btn left w-button"></a> <a href="#" class="paging-btn on w-button">1</a> <a href="#" class="paging-btn w-button">2</a> <a href="#" class="paging-btn w-button">3</a> <a href="#" class="paging-btn w-button">4</a> <a href="#" class="paging-btn w-button">5</a> <a href="#" class="paging-btn right w-button"></a>
 						</div>
 						<div class="row-box">
-							<div>행 표시하기</div>
+							<div>
+								<spring:message code="table.rowShow" />
+							</div>
 							<div data-hover="false" data-delay="0" class="dropdown w-dropdown">
 								<div class="dropdown-toggle w-dropdown-toggle">
 									<div>100</div>
@@ -589,31 +635,34 @@
 			</div>
 			<section class="section3 right line">
 				<div class="inter _32s bold">
-					자주 묻는 질문<br>
+					<spring:message code="watchlist.faq" />
 				</div>
 				<div class="faq-list-box width100">
 					<div class="faq-list">
 						<div class="w-layout-vflex faq-top">
 							<div class="inter _16s semibold">
-								<strong>암호화폐 관찰 목록이란 무엇인가요?<br></strong>
+								<strong><spring:message code="watchlist.faq01.q" /></strong>
 							</div>
 							<div class="fqa-arrow light"></div>
 						</div>
 						<div class="faq-detail">
 							<div class="inter _14s medium _61co">
-								암호화폐 관찰 목록은 특정 암호화폐에 대한 정보를 모니터링하고 추적하기 위한 도구입니다. 이를 통해 사용자는 가격 변동, 거래량, 시가 총액 등 다양한 지표를 쉽게 확인할 수 있습니다. 이러한 목록은 암호화폐 투자자들이 시장 동향을 빠르게 파악하고, 투자 결정을 내리는 데 도움이 됩니다.<br>
+								<spring:message code="watchlist.faq01.a" />
+								<br>
 							</div>
 						</div>
 					</div>
 					<div class="faq-list">
 						<div class="w-layout-vflex faq-top">
 							<div class="inter _16s semibold">
-								<strong>코인 관찰 목록을 어떻게 만들 수 있나요?<br></strong>
+								<strong><spring:message code="watchlist.faq02.q" /></strong>
 							</div>
 							<div class="fqa-arrow light"></div>
 						</div>
 						<div class="faq-detail">
-							<div class="inter _14s medium _61co">코인 관찰 목록을 만드는 방법은 다양합니다. 일반적으로는 사용자가 관심 있는 코인을 선택하고, 이를 목록에 추가하는 방식으로 만들어집니다. 이후 사용자는 선택한 코인의 가격 변동, 거래량, 시가 총액 등의 정보를 실시간으로 확인할 수 있습니다. 이러한 목록은 암호화폐 투자자들이 시장 동향을 빠르게 파악하고, 투자 결정을 내리는 데 도움이 됩니다.</div>
+							<div class="inter _14s medium _61co">
+								<spring:message code="watchlist.faq02.a" />
+							</div>
 						</div>
 					</div>
 				</div>

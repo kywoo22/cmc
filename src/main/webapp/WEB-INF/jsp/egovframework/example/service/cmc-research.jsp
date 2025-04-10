@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -15,110 +16,166 @@
 			<div class="w-layout-vflex main-top">
 				<div class="academy-header">
 					<div class="w-layout-vflex academy-left">
-						<img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="logo-academy">
+						<img src="/cmc/webflow/images/coin_express_logoS2.svg" loading="lazy" alt="" class="logo-academy">
 						<div class="academy-dropdwon">
 							<div class="w-layout-vflex academy-drop-wrp">
-								<div>Learn</div>
+								<div>
+									<spring:message code="cmc-research.dropdown.learn" />
+								</div>
 								<img src="/cmc/webflow/images/down_arrow.svg" loading="lazy" alt="">
 							</div>
 							<div class="academy-drop-list">
 								<div class="academy-drop-box">
 									<a href="#" class="academy-link w-inline-block">
-										<div>Alpha Rader</div>
+										<div>
+											<spring:message code="cmc-research.dropdown.alpha" />
+										</div>
 									</a> <a href="#" class="academy-link w-inline-block">
-										<div>CMC Research</div>
+										<div>
+											<spring:message code="cmc-research.dropdown.research" />
+										</div>
 									</a> <a href="#" class="academy-link w-inline-block">
-										<div>How-to Guides</div>
+										<div>
+											<spring:message code="cmc-research.dropdown.howto" />
+										</div>
 									</a> <a href="#" class="academy-link w-inline-block">
-										<div>Tech Deep Dives</div>
+										<div>
+											<spring:message code="cmc-research.dropdown.tech" />
+										</div>
 									</a>
 								</div>
 								<div class="academy-drop-box">
 									<a href="#" class="academy-link w-inline-block">
-										<div>Blog</div>
+										<div>
+											<spring:message code="cmc-research.dropdown.blog" />
+										</div>
 									</a> <a href="#" class="academy-link w-inline-block">
-										<div>Crypto Basics</div>
+										<div>
+											<spring:message code="cmc-research.dropdown.basics" />
+										</div>
 									</a> <a href="#" class="academy-link w-inline-block">
-										<div>Crypto News</div>
+										<div>
+											<spring:message code="cmc-research.dropdown.news" />
+										</div>
 									</a> <a href="#" class="academy-link w-inline-block">
-										<div>Trading Analysis</div>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="academy-dropdwon">
-							<div class="w-layout-vflex academy-drop-wrp">
-								<div>Topics</div>
-								<img src="/cmc/webflow/images/down_arrow.svg" loading="lazy" alt="">
-							</div>
-							<div class="academy-drop-list">
-								<div class="academy-drop-box">
-									<a href="#" class="academy-link w-inline-block">
-										<div>Altcoins</div>
-									</a> <a href="#" class="academy-link w-inline-block">
-										<div>BlockChain</div>
-									</a> <a href="#" class="academy-link w-inline-block">
-										<div>Ethereum</div>
-									</a> <a href="#" class="academy-link w-inline-block">
-										<div>Metaverse</div>
-									</a> <a href="#" class="academy-link w-inline-block">
-										<div>Trading</div>
-									</a>
-								</div>
-								<div class="academy-drop-box">
-									<a href="#" class="academy-link w-inline-block">
-										<div>Bitcoin</div>
-									</a> <a href="#" class="academy-link w-inline-block">
-										<div>DeFi</div>
-									</a> <a href="#" class="academy-link w-inline-block">
-										<div>GameFi</div>
-									</a> <a href="#" class="academy-link w-inline-block">
-										<div>NFTs</div>
+										<div>
+											<spring:message code="cmc-research.dropdown.analysis" />
+										</div>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="academy-dropdwon">
 							<div class="w-layout-vflex academy-drop-wrp">
-								<div>CMC Updates</div>
+								<div>
+									<spring:message code="cmc-research.dropdown.topics" />
+								</div>
 								<img src="/cmc/webflow/images/down_arrow.svg" loading="lazy" alt="">
 							</div>
 							<div class="academy-drop-list">
 								<div class="academy-drop-box">
 									<a href="#" class="academy-link w-inline-block">
-										<div>Announcements</div>
+										<div>
+											<spring:message code="cmc-research.topic.altcoins" />
+										</div>
 									</a> <a href="#" class="academy-link w-inline-block">
-										<div>Marketing</div>
+										<div>
+											<spring:message code="cmc-research.topic.blockchain" />
+										</div>
+									</a> <a href="#" class="academy-link w-inline-block">
+										<div>
+											<spring:message code="cmc-research.topic.ethereum" />
+										</div>
+									</a> <a href="#" class="academy-link w-inline-block">
+										<div>
+											<spring:message code="cmc-research.topic.metaverse" />
+										</div>
+									</a> <a href="#" class="academy-link w-inline-block">
+										<div>
+											<spring:message code="cmc-research.topic.trading" />
+										</div>
 									</a>
 								</div>
 								<div class="academy-drop-box">
 									<a href="#" class="academy-link w-inline-block">
-										<div>Feature Explorer</div>
+										<div>
+											<spring:message code="cmc-research.topic.bitcoin" />
+										</div>
+									</a> <a href="#" class="academy-link w-inline-block">
+										<div>
+											<spring:message code="cmc-research.topic.defi" />
+										</div>
+									</a> <a href="#" class="academy-link w-inline-block">
+										<div>
+											<spring:message code="cmc-research.topic.gamefi" />
+										</div>
+									</a> <a href="#" class="academy-link w-inline-block">
+										<div>
+											<spring:message code="cmc-research.topic.nfts" />
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="academy-dropdwon">
+							<div class="w-layout-vflex academy-drop-wrp">
+								<div>
+									<spring:message code="cmc-research.dropdown.updates" />
+								</div>
+								<img src="/cmc/webflow/images/down_arrow.svg" loading="lazy" alt="">
+							</div>
+							<div class="academy-drop-list">
+								<div class="academy-drop-box">
+									<a href="#" class="academy-link w-inline-block">
+										<div>
+											<spring:message code="cmc-research.update.announcements" />
+										</div>
+									</a> <a href="#" class="academy-link w-inline-block">
+										<div>
+											<spring:message code="cmc-research.update.marketing" />
+										</div>
+									</a>
+								</div>
+								<div class="academy-drop-box">
+									<a href="#" class="academy-link w-inline-block">
+										<div>
+											<spring:message code="cmc-research.update.features" />
+										</div>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="academy-dropdwon">
-							<div>Clossary</div>
+							<div>
+								<spring:message code="cmc-research.dropdown.glossary" />
+							</div>
 						</div>
 						<div class="academy-dropdwon">
-							<div>Authors</div>
+							<div>
+								<spring:message code="cmc-research.dropdown.authors" />
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="academy-banner">
 				<div class="frame academy-frame">
-					<div class="academy-bannertxt">CMC Research</div>
+					<div class="academy-bannertxt">
+						<spring:message code="cmc-research.banner.title" />
+					</div>
 					<div class="inter _18s">
-						Institutional-grade research on cryptocurrency and digital<br> assets like Bitcoin, Ethereum, DeFi, GameFi and more.<br>
+						<spring:message code="cmc-research.banner.desc" />
 					</div>
 				</div>
 			</div>
 			<div class="body-wrap">
 				<div class="frame service-news">
 					<div class="service-top noline">
-						<div class="inter _24s semibold">Articles (143)</div>
+						<div class="inter _24s semibold">
+							<spring:message code="cmc-research.article.title" />
+							(143)
+						</div>
 					</div>
 					<div class="academy-list-area gap">
 						<div class="academy-list-box">
@@ -195,20 +252,24 @@
 						</div>
 					</div>
 					<div class="academy-our-mission cmcr">
-						<div class="inter _16s normal link">Join the thousands already learning crypto!</div>
-						<div class="inter _32s semibold">
-							Join our free newsletter for daily crypto updates!<br>
+						<div class="inter _16s normal link">
+							<spring:message code="cmc-research.subscribe.top" />
 						</div>
-						<a href="#" class="subscribe-btn w-button">Subscribe</a>
+						<div class="inter _32s semibold">
+							<spring:message code="cmc-research.subscribe.title" />
+							<br>
+						</div>
+						<a href="#" class="subscribe-btn w-button"> <spring:message code="cmc-research.subscribe.button" />
+						</a>
 					</div>
 				</div>
 			</div>
 			<div class="academy-bottom">
-				<img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="logo-academy">
+				<img src="/cmc/webflow/images/coin_express_logoS.svg" loading="lazy" alt="" class="logo-academy">
 				<div class="academy-btn-box">
 					<a href="#" class="w-inline-block"><img src="/cmc/webflow/images/twitter_x.svg" loading="lazy" alt=""></a> <a href="#" class="w-inline-block"><img src="/cmc/webflow/images/instagram.svg" loading="lazy" alt=""></a> <a href="#" class="w-inline-block"><img src="/cmc/webflow/images/facebook.svg" loading="lazy" alt=""></a> <a href="#" class="w-inline-block"><img src="/cmc/webflow/images/linkedin.svg" loading="lazy" alt=""></a> <a href="#" class="w-inline-block"><img src="/cmc/webflow/images/tiktok.svg" loading="lazy" alt=""></a>
 				</div>
-				<div class="inter _14s medium">ⓒ2025 LOGO NAME</div>
+				<div class="inter _14s medium">ⓒ2025 CoinExpress</div>
 			</div>
 		</div>
 	</div>

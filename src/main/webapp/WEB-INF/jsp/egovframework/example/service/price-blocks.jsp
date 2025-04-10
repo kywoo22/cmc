@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -21,23 +22,32 @@
 					<div class="widget-header">
 						<div class="widget-header-content">
 							<div class="widget-title">
-								완벽한 웹사이트용<br> <strong>라이브 암호화폐 티커 위젯</strong><br>만들기
+								<spring:message code="price-blocks.title" />
 							</div>
-							<div class="inter _14s normal _61co">다양한 CoinMarketCap 위젯을 사용하여 고객에게 실시간 데이터를 제공할 수 있는 이상적인 방법을 선택할 수 있습니다!</div>
+							<div class="inter _14s normal _61co">
+								<spring:message code="price-blocks.description" />
+							</div>
 						</div>
 					</div>
 					<div class="widget-main">
 						<div class="widget-side-tap">
 							<div class="inter _12s medium _61co">
-								위젯 선택<a href="https://coinmarketcap.com/ko/widget/ticker/"><strong>‍</strong></a><br>
+								<spring:message code="price-blocks.widgetSelection" />
+								<a href="https://coinmarketcap.com/ko/widget/ticker/"><strong>‍</strong></a><br>
 							</div>
 							<div class="widget-link-list">
 								<a href="/cmc/service/ticker.do" aria-current="page" class="widget-link w-inline-block w--current">
-									<div>코인 티커</div>
+									<div>
+										<spring:message code="price-blocks.coinTicker" />
+									</div>
 								</a> <a href="/cmc/service/price-marquee.do" class="widget-link w-inline-block">
-									<div>코인 가격 Marquee</div>
+									<div>
+										<spring:message code="price-blocks.coinPriceMarquee" />
+									</div>
 								</a> <a href="/cmc/service/price-blocks.do" class="widget-link on w-inline-block">
-									<div>코인 가격 블록들</div>
+									<div>
+										<spring:message code="price-blocks.coinPriceBlocks" />
+									</div>
 								</a>
 							</div>
 						</div>
@@ -45,19 +55,21 @@
 							<div class="contents-wrapper">
 								<div class="half gap24">
 									<div class="inter _24s bold">
-										코인 가격 Marquee 위젯<br>
+										<spring:message code="price-blocks.coinPriceMarqueeWidget" />
 									</div>
 									<div class="widget-drop-list">
 										<div class="w-layout-vflex widget-drop-wrap">
 											<div class="inter _14s normal">
-												화폐<br>
+												<spring:message code="price-blocks.currency" />
+												<br>
 											</div>
 											<div class="widget-drop-box">
 												<div class="w-layout-vflex drop-head">
 													<div class="w-layout-vflex drop-left">
 														<img src="/cmc/webflow/images/search_1.svg" loading="lazy" alt="">
 														<div class="inter _14s normal _61co">
-															추가할 화폐 검색<br>
+															<spring:message code="price-blocks.searchCurrency" />
+															<br>
 														</div>
 													</div>
 												</div>
@@ -91,7 +103,8 @@
 										</div>
 										<div class="w-layout-vflex widget-drop-wrap">
 											<div class="inter _14s normal">
-												명목 화폐<br>
+												<spring:message code="price-blocks.fiatCurrency" />
+												<br>
 											</div>
 											<div class="widget-drop-box">
 												<div class="w-layout-vflex drop-head">
@@ -130,7 +143,8 @@
 										</div>
 										<div class="w-layout-vflex widget-drop-wrap">
 											<div class="inter _14s normal">
-												두번째 통화<br>
+												<spring:message code="price-blocks.secondCurrency" />
+												<br>
 											</div>
 											<div class="widget-drop-box">
 												<div class="w-layout-vflex drop-head">
@@ -165,13 +179,15 @@
 										</div>
 										<div class="w-layout-vflex widget-drop-wrap">
 											<div class="inter _14s normal">
-												테마<br>
+												<spring:message code="price-blocks.theme" />
+												<br>
 											</div>
 											<div class="widget-drop-box">
 												<div class="w-layout-vflex drop-head">
 													<div class="w-layout-vflex drop-left">
 														<div class="inter _14s bold">
-															라이트 모드<br>
+															<spring:message code="price-blocks.lightMode" />
+															<br>
 														</div>
 													</div>
 													<img src="/cmc/webflow/images/arrow_drop_black.svg" loading="lazy" alt="">
@@ -205,23 +221,19 @@
 												<form id="email-form" name="email-form" data-name="Email Form" method="get" class="setting-form" data-wf-page-id="67d13603009ace6c7d197156" data-wf-element-id="f7f7a5f3-8ff5-ca29-a0c0-78ef78c9bd30">
 													<div class="w-layout-vflex setting-list">
 														<div class="inter _14s bold">
-															<strong>투명 배경</strong><br>
+															<strong><spring:message code="price-blocks.transparentBg" /></strong><br>
 														</div>
-														<label class="w-checkbox checkbox-field-2"><input type="checkbox" id="checkbox" name="checkbox" data-name="Checkbox" class="w-checkbox-input stting-check"><span class="stting-label w-form-label" for="checkbox">Checkbox</span></label>
+														<label class="w-checkbox checkbox-field-2"> <input type="checkbox" id="checkbox" name="checkbox" data-name="Checkbox" class="w-checkbox-input stting-check"> <span class="stting-label w-form-label" for="checkbox">Checkbox</span>
+														</label>
 													</div>
 													<div class="w-layout-vflex setting-list">
 														<div class="inter _14s bold">
-															<strong>아이콘 표시</strong><br>
+															<strong><spring:message code="price-blocks.showIcon" /></strong><br>
 														</div>
-														<label class="w-checkbox checkbox-field-2"><input type="checkbox" id="checkbox-2" name="checkbox-2" data-name="Checkbox 2" class="w-checkbox-input stting-check"><span class="stting-label w-form-label" for="checkbox-2">Checkbox</span></label>
+														<label class="w-checkbox checkbox-field-2"> <input type="checkbox" id="checkbox-2" name="checkbox-2" data-name="Checkbox 2" class="w-checkbox-input stting-check"> <span class="stting-label w-form-label" for="checkbox-2">Checkbox</span>
+														</label>
 													</div>
 												</form>
-												<div class="w-form-done">
-													<div>Thank you! Your submission has been received!</div>
-												</div>
-												<div class="w-form-fail">
-													<div>Oops! Something went wrong while submitting the form.</div>
-												</div>
 											</div>
 										</div>
 									</div>
@@ -229,17 +241,21 @@
 								<div class="half gap24 padding-c">
 									<div class="widget-show">
 										<div class="inter _12s medium _61co">
-											위젯 미리보기<br>
+											<spring:message code="price-blocks.preview" />
+											<br>
 										</div>
 									</div>
 									<div class="w-layout-vflex website-widget">
 										<div class="inter _14s normal">
-											웹사이트 위젯<br>
+											<spring:message code="price-blocks.websiteWidget" />
+											<br>
 										</div>
 										<div class="widget-code">
 											<div class="inter _12s medium">&lt;script type=&quot;text/javascript&quot; src=&quot;https://files.coinmarketcap.com/static/widget/currency.js&quot;&gt;&lt;/script&gt;&lt;div class=&quot;coinmarketcap-currency-widget&quot; data-currencyid=&quot;1&quot; data-base=&quot;USD&quot; data-secondary=&quot;&quot; data-ticker=&quot;true&quot; data-rank=&quot;true&quot; data-marketcap=&quot;true&quot; data-volume=&quot;true&quot; data-statsticker=&quot;true&quot; data-stats=&quot;USD&quot;&gt;&lt;/div&gt;</div>
 										</div>
-										<div class="inter _12s normal _61co">위젯을 위치시키려는 곳에 이를 복사하고 붙여넣기 하세요. 이 유형의 위젯은 원하는 만큼 로드할 수 있지만 스크립트는 한 번만 로드할 수 있습니다.</div>
+										<div class="inter _12s normal _61co">
+											<spring:message code="price-blocks.embedGuide" />
+										</div>
 									</div>
 								</div>
 							</div>

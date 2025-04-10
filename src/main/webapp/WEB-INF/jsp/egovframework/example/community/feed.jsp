@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -42,8 +43,10 @@
 										</div>
 									</div>
 									<div class="w-layout-vflex search-box">
-										<input class="input-post txt16s w-input" maxlength="256" name="field-3" data-name="Field 3" placeholder="게시물 또는 사용자 검색..." type="text" id="field-3" required="">
-										<a href="#" class="post-search-btn w-button">검색</a>
+										<input class="input-post txt16s w-input" maxlength="256" name="field-3" data-name="Field 3" placeholder="<spring:message code='feed.searchPlaceholder'/>" type="text" id="field-3" required="">
+										<a href="#" class="post-search-btn w-button"> <spring:message code="feed.search" />
+										</a>
+
 									</div>
 									<div class="w-layout-vflex post-list">
 										<div class="post-tap">
@@ -55,7 +58,7 @@
 											</div>
 											<div class="post-middle">
 												<div class="inter _16s bold">
-													Username <span class="post-span">@Username · 19시간</span>
+													Username <span class="post-span">@Username · 19<spring:message code="feed.time" /></span>
 												</div>
 												<div class="inter _16s medium">
 													Bitcoin&#x27;s Bull Cycle 🫳<br> <br>According to Ki Young Ju, CEO of CryptoQuant, a 30% correction during a Bitcoin bull cycle isn’t anything out of the ordinary. In fact, <a href="https://coinmarketcap.com/community/ko/coins/bitcoin/top/">$BTC</a> saw a massive 53% drop in 2021 and still managed to recover to an all-time high.
@@ -132,12 +135,6 @@
 										</div>
 									</div>
 								</form>
-								<div class="w-form-done">
-									<div>Thank you! Your submission has been received!</div>
-								</div>
-								<div class="w-form-fail">
-									<div>Oops! Something went wrong while submitting the form.</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -145,9 +142,13 @@
 						<div class="w-layout-vflex community-flex-box">
 							<div class="commnunity-wrap">
 								<div class="flex-between-box">
-									<div class="inter _16s bold">라이브 예정</div>
+									<div class="inter _16s bold">
+										<spring:message code="feed.upcomingLive" />
+									</div>
 									<a href="#" class="link w-inline-block">
-										<div class="inter _12s semibold">더 보기</div>
+										<div class="inter _12s semibold">
+											<spring:message code="feed.viewMore" />
+										</div>
 									</a>
 								</div>
 								<a href="#" class="community-live-wrap w-inline-block">
@@ -165,7 +166,9 @@
 							<a href="#" class="commnunity-wrap padding w-inline-block">
 								<div class="flex-box-left">
 									<img src="/cmc/webflow/images/fire_icon.svg" loading="lazy" alt="">
-									<div class="inter _16s bold">인기있는 주제</div>
+									<div class="inter _16s bold">
+										<spring:message code="feed.popularTopics" />
+									</div>
 									<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
 								</div>
 								<div class="community-list">
@@ -269,7 +272,8 @@
 								</div>
 							</a>
 							<div class="inter _12s medium _80co">
-								유의 사항: 여기에 포함된 데이터와 정보는 제3자에 의해 제공된 것으로, CoinMarketCap은 그러한 데이터를 생성하지 않습니다. 전체 내용은 <a href="#" class="link">여기</a>에서 확인하세요.
+								<spring:message code="feed.disclaimer" />
+								<a href="#" class="link"><spring:message code="feed.viewFull" /></a>
 							</div>
 						</div>
 					</div>

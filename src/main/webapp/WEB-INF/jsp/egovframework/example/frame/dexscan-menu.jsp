@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 	String activeMenu = (String) request.getAttribute("activeMenu");
@@ -23,27 +24,27 @@
 				<a href="${newPairsUrl}" class="dx-link-block ${activeMenu eq 'newPairs' ? 'on' : ''} w-inline-block">
 					<div class="dx-link-wrap">
 						<img src="/cmc/webflow/images/plant_gray.svg" loading="lazy" alt="" class="dx-menu-icon">
-						<div class="inter _14s semibold">신규 페어</div>
+						<div class="inter _14s semibold"><spring:message code="dexscanmenu.title"/></div>
 					</div>
 				</a> <a href="${trendingPairsUrl}" class="dx-link-block ${activeMenu eq 'trendingPairs' ? 'on' : ''} w-inline-block">
 					<div class="dx-link-wrap">
 						<img src="/cmc/webflow/images/fire_gray.svg" loading="lazy" alt="" class="dx-menu-icon">
-						<div class="inter _14s semibold">Trending Pairs</div>
+						<div class="inter _14s semibold"><spring:message code="dexscanmenu.title2"/></div>
 					</div>
 				</a> <a href="${topGainersUrl}" class="dx-link-block ${activeMenu eq 'topGainers' or activeMenu eq 'topLosers' ? 'on' : ''} w-inline-block">
 					<div class="dx-link-wrap">
 						<img src="/cmc/webflow/images/chart2_gray.svg" loading="lazy" alt="" class="dx-menu-icon">
-						<div class="inter _14s semibold txt-space">상승 및 하락한 가상자산</div>
+						<div class="inter _14s semibold txt-space"><spring:message code="dexscanmenu.title3"/></div>
 					</div>
 				</a> <a href="${rankingUrl}" class="dx-link-block ${activeMenu eq 'ranking' or activeMenu eq 'pastWinners' ? 'on' : ''} w-inline-block">
 					<div class="dx-link-wrap">
 						<img src="/cmc/webflow/images/trophy_off.svg" loading="lazy" alt="" class="dx-menu-icon">
-						<div class="inter _14s semibold">커뮤니티 투표</div>
+						<div class="inter _14s semibold"><spring:message code="dexscanmenu.title4"/></div>
 					</div>
 				</a> <a href="${topTradersUrl}" class="dx-link-block ${activeMenu eq 'topTraders' ? 'on' : ''} w-inline-block">
 					<div class="dx-link-wrap">
 						<img src="/cmc/webflow/images/Reward.svg" loading="lazy" alt="" class="dx-menu-icon">
-						<div class="inter _14s semibold">상위 트레이더</div>
+						<div class="inter _14s semibold"><spring:message code="dexscanmenu.title5"/></div>
 					</div>
 				</a>
 			</div>
@@ -182,18 +183,18 @@
 		<div class="dx-menu-bottom-wrap">
 			<div class="inter _12s medium">DEX APIs</div>
 			<div class="w-layout-vflex dx-hover-wrap">
-				<div class="inter _12s medium">Try our DEX data APIs for free?</div>
+				<div class="inter _12s medium"><spring:message code="dexscanmenu.api"/></div>
 				<div class="inter _12s medium">
-					<a href="#" class="link">Click here to get started</a>
+					<a href="#" class="link"><spring:message code="dexscanmenu.api-start"/></a>
 				</div>
 			</div>
 		</div>
 		<div class="dx-menu-bottom-wrap">
-			<div class="inter _12s medium">Listing New Netwrok or DEX</div>
+			<div class="inter _12s medium"><spring:message code="dexscanmenu.listing"/></div>
 			<div class="w-layout-vflex dx-hover-wrap">
-				<div class="inter _12s medium">신규 네트워크나 DEX를 등록하고 싶으세요?</div>
+				<div class="inter _12s medium"><spring:message code="dexscanmenu.newNetwork"/></div>
 				<div class="inter _12s medium">
-					<a href="#" class="link bold">지금 요청하기</a>
+					<a href="#" class="link bold"><spring:message code="dexscanmenu.request"/></a>
 				</div>
 			</div>
 		</div>

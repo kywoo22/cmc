@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -25,10 +26,12 @@
 						<div class="market-overview-wrap">
 							<div class="market-overview-top">
 								<div class="w-layout-vflex market-overview-top-wrap">
-									<div class="inter _25s bold">CMC 알트코인 시즌 지수</div>
+									<div class="inter _25s bold">
+										<spring:message code="altCoinSeason.cmcAltCoinSeasonIndex" />
+									</div>
 								</div>
 								<div class="inter _14s normal _61co">
-									CMC 알트코인 시즌 지수 페이지는 지난 90일 동안 비트코인 대비 상위 100개 알트코인의 성과를 기반으로 가상자산 시장이 현재 알트코인 시즌에 있는지 여부에 대한 실시간 인사이트를 제공하며, 시장 동향과 알트코인 도미넌스를 추적할 수 있는 상세 차트와 지표를 제공합니다.<br>
+									<spring:message code="altCoinSeason.description" />
 								</div>
 							</div>
 							<div class="market-overview-middle">
@@ -36,7 +39,9 @@
 									<div class="m-o-info-area">
 										<div class="m-o-card">
 											<div class="card-header">
-												<div class="card-header-title">CMC 알트코인 시즌 지수</div>
+												<div class="card-header-title">
+													<spring:message code="altCoinSeason.cmcAltCoinSeasonIndex" />
+												</div>
 											</div>
 											<div class="m-o-card-alt">
 												<div class="inter _25s bold">
@@ -44,8 +49,12 @@
 												</div>
 												<div class="season-box">
 													<div class="txt-space-between">
-														<div class="inter _12s medium _61co">비트코인 시즌</div>
-														<div class="inter _12s medium _61co">알트코인 시즌</div>
+														<div class="inter _12s medium _61co">
+															<spring:message code="altCoinSeason.bitcoinSeason" />
+														</div>
+														<div class="inter _12s medium _61co">
+															<spring:message code="altCoinSeason.altcoinSeason" />
+														</div>
 													</div>
 													<div class="w-layout-vflex season-wrap">
 														<div class="season-stick-box">
@@ -63,23 +72,31 @@
 										</div>
 										<div class="m-o-card gap24">
 											<div class="card-header">
-												<div class="card-header-title">과거 수치</div>
+												<div class="card-header-title">
+													<spring:message code="altCoinSeason.pastFigures" />
+												</div>
 											</div>
 											<div class="m-o-txt-list">
 												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">어제</div>
+													<div class="inter _12s medium _61co">
+														<spring:message code="altCoinSeason.yesterday" />
+													</div>
 													<div class="value-txt neutrality">
 														37<br>
 													</div>
 												</div>
 												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">지난 주</div>
+													<div class="inter _12s medium _61co">
+														<spring:message code="altCoinSeason.lastWeek" />
+													</div>
 													<div class="value-txt horror">
 														35<br>
 													</div>
 												</div>
 												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">지난 달</div>
+													<div class="inter _12s medium _61co">
+														<spring:message code="altCoinSeason.lastMonth" />
+													</div>
 													<div class="value-txt neutrality">
 														43<br>
 													</div>
@@ -89,24 +106,25 @@
 										<div class="m-o-card gap24">
 											<div class="card-header">
 												<div class="card-header-title">
-													연간 최고 및 최저<br>
+													<spring:message code="altCoinSeason.annualHighLow" />
+													<br>
 												</div>
 											</div>
 											<div class="m-o-txt-list">
 												<div class="m-o-txt-box">
 													<div class="inter _12s medium _61co">
-														<strong>연간 최고 </strong>(Mar 12, 2024)
+														<strong><spring:message code="altCoinSeason.annualHigh" /></strong> (Mar 12, 2024)
 													</div>
 													<div class="value-txt alt">
-														<strong>알트코인 시즌 - 87</strong><br>
+														<strong><spring:message code="altCoinSeason.altcoinSeason" /> - 87</strong><br>
 													</div>
 												</div>
 												<div class="m-o-txt-box">
 													<div class="inter _12s medium _61co">
-														<strong>연간 최저 </strong>(Sep 07, 2024)
+														<strong><spring:message code="altCoinSeason.annualLow" /></strong> (Sep 07, 2024)
 													</div>
 													<div class="value-txt bitcoin">
-														<strong>비트코인 시즌 - 13</strong><br>
+														<strong><spring:message code="altCoinSeason.bitcoinSeason" /> - 13</strong><br>
 													</div>
 												</div>
 											</div>
@@ -115,11 +133,15 @@
 									<div class="m-o-chart-box">
 										<div class="card-header between space">
 											<div class="card-header-title">
-												알트코인 시즌 지수 차트<br>
+												<spring:message code="altCoinSeason.altcoinSeasonIndexChart" />
+												<br>
 											</div>
 											<div class="m-o-chart-btn-box">
 												<div class="m-o-chart-btn-wrap">
-													<a href="#" class="tabselect-chart-btn w-button">7일</a> <a href="#" class="tabselect-chart-btn w-button">30일</a> <a href="#" class="tabselect-chart-btn on w-button">90일</a>
+													<a href="#" class="tabselect-chart-btn w-button"> <spring:message code="altCoinSeason.time7d" />
+													</a> <a href="#" class="tabselect-chart-btn w-button"> <spring:message code="altCoinSeason.time30d" />
+													</a> <a href="#" class="tabselect-chart-btn on w-button"> <spring:message code="altCoinSeason.time90d" />
+													</a>
 												</div>
 												<div class="m-o-chart-btn-wrap"></div>
 											</div>
@@ -128,13 +150,15 @@
 											<div class="chart-wrap-box">
 												<div class="circle-color alt"></div>
 												<div class="inter _12s medium _61co">
-													알트코인 시즌 지수<br>
+													<spring:message code="altCoinSeason.altcoinSeasonIndex" />
+													<br>
 												</div>
 											</div>
 											<div class="chart-wrap-box">
 												<div class="circle-color coin-price"></div>
 												<div class="inter _12s medium _61co">
-													알트코인 시가총액<br>
+													<spring:message code="altCoinSeason.altcoinMarketCap" />
+													<br>
 												</div>
 											</div>
 										</div>
@@ -143,7 +167,10 @@
 								</div>
 								<div class="market-overview-difference100">
 									<div class="w-layout-vflex market-overview-top-wrap">
-										<div class="inter _25s bold">CMC 알트코인 시즌 지수</div>
+										<div class="inter _25s bold">
+											<spring:message code="altCoinSeason.cmcAltCoinSeasonIndex" />
+										</div>
+
 									</div>
 									<div class="performance-table">
 										<a href="#" class="performance-list w-inline-block">
@@ -1123,7 +1150,8 @@
 							</div>
 							<div class="market-overview-bottom">
 								<div class="inter _25s bold">
-									CMC 가상자산 공포 및 탐욕 지수 기사<br>
+									<spring:message code="altCoinSeason.fearGreedIndexArticle" />
+									<br>
 								</div>
 								<div class="research-box">
 									<a href="#" class="research-link w-inline-block"><img src="/cmc/webflow/images/image_472_288.png" loading="lazy" alt="">

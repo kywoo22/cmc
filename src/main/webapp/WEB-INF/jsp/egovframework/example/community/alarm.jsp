@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -22,21 +23,27 @@
 						<div class="community-middle-wrapper">
 							<div class="w-layout-vflex community-header">
 								<div class="inter _25s bold">
-									알림<br>
+									<spring:message code="alarm.notifications" />
+									<br>
 								</div>
 								<img src="/cmc/webflow/images/setting.svg" loading="lazy" alt="">
 							</div>
 							<div class="alarm-filter">
 								<a href="#" class="link w-inline-block">
-									<div class="inter">전체</div> <img src="/cmc/webflow/images/arrow_down_1.svg" loading="lazy" alt="">
+									<div class="inter">
+										<spring:message code="alarm.all" />
+									</div> <img src="/cmc/webflow/images/arrow_down_1.svg" loading="lazy" alt="">
 								</a>
 							</div>
 							<div class="alarm-detail">
 								<img src="/cmc/webflow/images/alarm_img.svg" loading="lazy" alt="" class="alarm-img">
 								<div class="inter _25s bold">
-									No notifications<br>
+									<spring:message code="alarm.noNotifications" />
+									<br>
 								</div>
-								<div class="inter _14s normal _61co">New notificaions will be added here when they become available.</div>
+								<div class="inter _14s normal _61co">
+									<spring:message code="alarm.newNotifications" />
+								</div>
 							</div>
 						</div>
 					</div>
@@ -44,9 +51,13 @@
 						<div class="w-layout-vflex community-flex-box">
 							<div class="commnunity-wrap">
 								<div class="flex-between-box">
-									<div class="inter _16s bold">라이브 예정</div>
+									<div class="inter _16s bold">
+										<spring:message code="alarm.upcomingLive" />
+									</div>
 									<a href="#" class="link w-inline-block">
-										<div class="inter _12s semibold">더 보기</div>
+										<div class="inter _12s semibold">
+											<spring:message code="alarm.viewMore" />
+										</div>
 									</a>
 								</div>
 								<a href="#" class="community-live-wrap w-inline-block">
@@ -64,7 +75,9 @@
 							<a href="#" class="commnunity-wrap padding w-inline-block">
 								<div class="flex-box-left">
 									<img src="/cmc/webflow/images/fire_icon.svg" loading="lazy" alt="">
-									<div class="inter _16s bold">인기있는 주제</div>
+									<div class="inter _16s bold">
+										<spring:message code="alarm.popularTopics" />
+									</div>
 									<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
 								</div>
 								<div class="community-list">
@@ -111,7 +124,9 @@
 								</div>
 							</a> <a href="#" class="commnunity-wrap padding w-inline-block">
 								<div class="flex-box-left">
-									<div class="inter _16s bold">인기 급상승 토큰</div>
+									<div class="inter _16s bold">
+										<spring:message code="alarm.popularTokens" />
+									</div>
 									<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
 								</div>
 								<div class="community-list">

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -106,10 +107,11 @@
 				<div class="frame service-news">
 					<div class="service-top noline">
 						<div class="main-title">
-							뉴스<br>
+							<spring:message code="service-news.title" />
+							<br>
 						</div>
 						<div class="main-txt-flex">
-							<div>Insights into the biggest events shaping the crypto industry.</div>
+							<spring:message code="service-news.subtitle" />
 						</div>
 					</div>
 					<div class="service-news-box">

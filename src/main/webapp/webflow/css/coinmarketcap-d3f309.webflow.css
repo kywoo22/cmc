@@ -104,6 +104,8 @@ a {
 }
 
 .header-left {
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
   justify-content: flex-start;
   align-items: center;
   height: 100%;
@@ -114,7 +116,8 @@ a {
   color: var(--black);
   justify-content: center;
   align-items: center;
-  height: 60px;
+  width: 139px;
+  height: 29px;
   text-decoration: none;
   display: flex;
 }
@@ -1490,6 +1493,7 @@ a {
   font-size: 12px;
   font-weight: 600;
   top: 40px;
+  right: 0;
   box-shadow: 0 2px 12px #0003;
 }
 
@@ -2037,9 +2041,11 @@ a {
 }
 
 .coin-list {
+  flex-flow: column;
   font-family: Inter Variablefont Opsz Wght, Arial, sans-serif;
   font-weight: 400;
   text-decoration: none;
+  display: flex;
 }
 
 .list {
@@ -2063,6 +2069,7 @@ a {
 }
 
 .list.height40 {
+  height: auto;
   min-height: 40px;
 }
 
@@ -2301,7 +2308,7 @@ a {
 }
 
 .footr-logo {
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 240px;
   height: 32px;
@@ -2421,7 +2428,7 @@ a {
   align-items: center;
   width: 100%;
   min-width: 1400px;
-  padding: 32px 5% 48px;
+  padding: 32px 2% 48px;
   display: flex;
 }
 
@@ -6029,7 +6036,7 @@ a {
   border-radius: 4px;
   flex-flow: column;
   width: 100%;
-  display: flex;
+  display: none;
   position: absolute;
   top: 42px;
 }
@@ -7701,7 +7708,12 @@ a {
   display: flex;
 }
 
-.popupframe.login-register, .popupframe.filter, .popupframe.row {
+.popupframe.login-register, .popupframe.filter {
+  display: none;
+}
+
+.popupframe.row {
+  z-index: 1001;
   display: none;
 }
 
@@ -9257,6 +9269,10 @@ a {
   grid-row-gap: 12px;
   flex-flow: column;
   display: flex;
+}
+
+.apy-list-box {
+  align-items: stretch;
 }
 
 .coin-analyze {
@@ -10982,7 +10998,7 @@ a {
 }
 
 .footer-popup {
-  z-index: 999;
+  z-index: 1002;
   background-color: #00000059;
   justify-content: center;
   align-items: center;
@@ -11588,7 +11604,7 @@ a {
   }
 
   .menu-wrap {
-    z-index: 10001;
+    z-index: 1001;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     background-color: #fff;
@@ -12105,6 +12121,10 @@ a {
   .menu-box {
     border-bottom: 1px solid var(--eff-color);
     cursor: pointer;
+    background-image: url('../images/arrow_up.svg');
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: auto;
     padding-top: 12px;
     padding-bottom: 12px;
   }
@@ -12768,6 +12788,10 @@ a {
 }
 
 @media screen and (max-width: 479px) {
+  .menu-wrap {
+    display: none;
+  }
+
   .frame.api {
     padding-left: 0;
     padding-right: 0;
@@ -13641,8 +13665,17 @@ a {
     background-color: var(--white);
   }
 
-  .footer-lang, .footer-currency {
+  .footer-popup {
+    display: none;
+  }
+
+  .footer-lang {
     padding: 24px 12px;
+  }
+
+  .footer-currency {
+    padding: 24px 12px;
+    display: none;
   }
 
   .historical-select-box {

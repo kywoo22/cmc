@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -10,7 +11,7 @@
 </head>
 <body>
 	<div class="root">
-	<jsp:include page="../frame/login-register.jsp"></jsp:include>
+		<jsp:include page="../frame/login-register.jsp"></jsp:include>
 		<div class="dexscan-contents">
 			<jsp:include page="../frame/menu.jsp"></jsp:include>
 			<div class="dexscan-body">
@@ -18,37 +19,51 @@
 				<div class="dexscan-detail">
 					<div class="container-header-info">
 						<div class="inter _25s bold">
-							팔로우할 최고의 크립토 트레이더는 누구일까요?<br>
+							<spring:message code="top-trader.title" />
+							<br>
 						</div>
 						<div class="inter _14s normal _61co">
-							지갑에서 수익과 결과를 확인하여 지금 당장 팔로우할 최고의 크립토 트레이더를 알아보세요. 다수의 체인 추적. 실현 및 미실현 수익. 지난 7일 ROI. <a href="#" class="link">더 읽기</a> 최근 업데이트 2025-02-25 09:00:00<br>
+							<spring:message code="top-trader.desc" />
+							<a href="#" class="link"><spring:message code="table.readMore" /></a>
+							<spring:message code="top-trader.lastUpdated" />
+							<br>
 						</div>
 					</div>
 					<div class="dx-table-wrap">
 						<div class="new-pairs-filter">
 							<div class="dx-filter-btn-box">
 								<a href="#" class="dx-filter-btn on w-inline-block"><img src="/cmc/webflow/images/allnetwork.svg" loading="lazy" alt="" class="dx-filter-img all">
-									<div class="inter _14s medium nowrap">모든 네트워크</div> </a> <a href="#" class="dx-filter-btn w-inline-block"><img src="/cmc/webflow/images/eth.svg" loading="lazy" alt="" class="dx-filter-img">
+									<div class="inter _14s medium nowrap">
+										<spring:message code="top-trader.allNetwork" />
+									</div> </a> <a href="#" class="dx-filter-btn w-inline-block"><img src="/cmc/webflow/images/eth.svg" loading="lazy" alt="" class="dx-filter-img">
 									<div class="inter _14s medium">Ethereum</div> </a> <a href="#" class="dx-filter-btn w-inline-block"><img src="/cmc/webflow/images/1839.png" loading="lazy" alt="" class="dx-filter-img">
 									<div class="inter _14s medium">BSC</div> </a>
 							</div>
 							<div class="dx-filter-dropdown-box">
 								<div data-hover="false" data-delay="0" class="dx-filter-dropdown w-dropdown">
 									<div class="dx-toggle check w-dropdown-toggle">
-										<div class="inter _12s bold">LogoName 등록 토큰</div>
+										<div class="inter _12s bold">
+											<spring:message code="top-trader.coinexpressFilterTitle" />
+										</div>
 										<div class="dx-arrow-icon w-icon-dropdown-toggle"></div>
 									</div>
 									<nav class="drop-down w-dropdown-list">
-										<a href="#" class="drop-list-link w-dropdown-link">LogoName 등록 토큰</a> <a href="#" class="drop-list-link w-dropdown-link">상위 1000종 토큰</a>
+										<a href="#" class="drop-list-link w-dropdown-link"> <spring:message code="top-trader.coinexpressOption" />
+										</a> <a href="#" class="drop-list-link w-dropdown-link"> <spring:message code="top-trader.top1000Option" />
+										</a>
 									</nav>
 								</div>
 								<div data-hover="false" data-delay="0" class="dx-filter-dropdown w-dropdown">
 									<div class="dx-toggle w-dropdown-toggle">
-										<div class="inter _12s medium">7일</div>
+										<div class="inter _12s medium">
+											<spring:message code="top-trader.range7d" />
+										</div>
 										<div class="dx-arrow-icon w-icon-dropdown-toggle"></div>
 									</div>
 									<nav class="drop-down w-dropdown-list">
-										<a href="#" class="drop-list-link w-dropdown-link">7일</a> <a href="#" class="drop-list-link w-dropdown-link">30일</a>
+										<a href="#" class="drop-list-link w-dropdown-link"> <spring:message code="top-trader.range7d" />
+										</a> <a href="#" class="drop-list-link w-dropdown-link"> <spring:message code="top-trader.range30d" />
+										</a>
 									</nav>
 								</div>
 							</div>
@@ -59,28 +74,44 @@
 									<div class="inter _12s medium _61co">#</div>
 								</div>
 								<div class="dx-adress">
-									<div class="inter _12s semibold">지갑 주소</div>
+									<div class="inter _12s semibold">
+										<spring:message code="top-trader.walletAddress" />
+									</div>
 								</div>
 								<div class="dx-pair-box">
-									<div class="inter _12s semibold">거래 토큰</div>
+									<div class="inter _12s semibold">
+										<spring:message code="top-trader.tradedToken" />
+									</div>
 								</div>
 								<div class="dx-width130">
-									<div class="inter _12s semibold">지난 7일 실현 수익</div>
+									<div class="inter _12s semibold">
+										<spring:message code="top-trader.realizedProfit7d" />
+									</div>
 								</div>
 								<div class="dx-width130">
-									<div class="inter _12s semibold">지난 7일 미실현 수익</div>
+									<div class="inter _12s semibold">
+										<spring:message code="top-trader.unrealizedProfit7d" />
+									</div>
 								</div>
 								<div class="dx-width130">
-									<div class="inter _12s semibold">Total profit</div>
+									<div class="inter _12s semibold">
+										<spring:message code="top-trader.totalProfit" />
+									</div>
 								</div>
 								<div class="dx-width130">
-									<div class="inter _12s semibold">실현된 ROI</div>
+									<div class="inter _12s semibold">
+										<spring:message code="top-trader.realizedROI" />
+									</div>
 								</div>
 								<div class="dx-width130">
-									<div class="inter _12s semibold">총 거래</div>
+									<div class="inter _12s semibold">
+										<spring:message code="top-trader.totalTrades" />
+									</div>
 								</div>
 								<div class="dx-width130">
-									<div class="inter _12s semibold">마지막 거래</div>
+									<div class="inter _12s semibold">
+										<spring:message code="top-trader.lastTrade" />
+									</div>
 								</div>
 							</div>
 							<div class="dx-table-list-box">
@@ -567,10 +598,18 @@
 								</div>
 							</div>
 						</div>
-						<div class="table-bottom">
-							<div class="coin-table-bottom-txt">1 보이기 - 33 의 33</div>
+						<div class="table-bottom mg-auto">
+							<div class="coin-table-bottom-txt">
+								1
+								<spring:message code="table.showtxt" />
+								- 33
+								<spring:message code="table.showtxt2" />
+								33
+							</div>
 							<div class="row-box">
-								<div>행 표시하기</div>
+								<div>
+									<spring:message code="table.rowShow" />
+								</div>
 								<div data-hover="false" data-delay="0" class="dropdown w-dropdown">
 									<div class="dropdown-toggle w-dropdown-toggle">
 										<div>50</div>
@@ -586,6 +625,7 @@
 				</div>
 			</div>
 		</div>
+		<jsp:include page="../frame/popupLangCurrency.jsp"></jsp:include>
 	</div>
 	<jsp:include page="../frame/footer.jsp"></jsp:include>
 </body>

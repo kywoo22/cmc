@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -18,9 +19,11 @@
 			</div>
 			<div class="service-banner">
 				<div class="service-middle-wrap">
-					<div class="service-banner-title">COINMARKETCAP NEWSLETTER</div>
+					<div class="service-banner-title">
+						<spring:message code="newsletter.title" />
+					</div>
 					<div class="inter _20s bold center">
-						Data. Insights. Community.<br>
+						<spring:message code="newsletter.subtitle" />
 					</div>
 					<div class="service-icon-box">
 						<a href="#" class="service-btn w-inline-block"><img src="/cmc/webflow/images/facebook.svg" loading="lazy" alt=""></a> <a href="#" class="service-btn w-inline-block"><img src="/cmc/webflow/images/instagram.svg" loading="lazy" alt=""></a> <a href="#" class="service-btn w-inline-block"><img src="/cmc/webflow/images/twitter_x.svg" loading="lazy" alt=""></a> <a href="#" class="service-btn w-inline-block"><img src="/cmc/webflow/images/youtube.svg" loading="lazy" alt=""></a> <a href="#" class="service-btn w-inline-block"><img src="/cmc/webflow/images/telegram.svg" loading="lazy" alt=""></a>
@@ -36,11 +39,15 @@
 									<section class="section">
 										<div class="half newsletter">
 											<div class="w-layout-vflex letter-wrap">
-												<div class="inter _32s bold">Stay on top of crypto. All the time, any time.</div>
-												<div class="inter _16s medium _61co">Please keep me updated by email with the latest crypto news, research findings, reward programs, event updates, coin listings and more information from CoinMarketCap.</div>
+												<div class="inter _32s bold">
+													<spring:message code="newsletter.heading" />
+												</div>
+												<div class="inter _16s medium _61co">
+													<spring:message code="newsletter.description" />
+												</div>
 												<div class="letter-input-box">
-													<input class="letter-input w-input" maxlength="256" name="field" data-name="Field" placeholder="Example Text" type="text" id="field" required="">
-													<a href="#" class="letter-btn w-button">Subscribe</a>
+													<input class="letter-input w-input" maxlength="256" name="field" data-name="Field" placeholder="<spring:message code='newsletter.placeholder' />" type="text" id="field" required="">
+													<a href="#" class="letter-btn w-button"><spring:message code="newsletter.subscribe" /></a>
 												</div>
 											</div>
 										</div>
@@ -50,113 +57,169 @@
 									</section>
 									<section class="section2">
 										<div class="subscribe-txt">
-											WHY SUBSCRIBE?<br>
+											<spring:message code="newsletter.why" />
+											<br>
 										</div>
 										<div class="inter _25s bold center">
-											Unlock exclusive access to the most comprehensive crypto insights and updates directly to your inbox. By subscribing to CoinMarketCap&#x27;s newsletter, you get:<br>
+											<spring:message code="newsletter.intro" />
+											<br>
 										</div>
 										<div class="letter-box">
 											<div class="letter-txt-box">
-												<div class="inter _25s bold">Trusted Data:</div>
+												<div class="inter _25s bold">
+													<spring:message code="newsletter.trustedData" />
+												</div>
 												<div class="list-letter">
-													<div class="inter _14s medium">⦁ New Listings: Be the first to discover newly listed cryptocurrencies.</div>
-													<div class="inter _14s medium">⦁ Market Data: Daily updates on gainers, losers, and overall market trends.</div>
-													<div class="inter _14s medium">⦁ Milestones Alerts: Notifications about crucial market milestones.</div>
-													<div class="inter _14s medium">⦁ Airdrops: Information on current and upcoming airdrops.</div>
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.newListings" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.marketData" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.milestonesAlerts" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.airdrops" />
+													</div>
 												</div>
 											</div>
 											<div class="letter-txt-box news-insights">
 												<div class="inter _25s bold">
-													News &amp; Insights:<br>
+													<spring:message code="newsletter.newsInsights" />
 												</div>
 												<div class="list-letter right">
-													<div class="inter _14s medium">Educational Content: Articles and guides to boost your crypto knowledge. ⦁</div>
-													<div class="inter _14s medium">Glossary: A comprehensive list of crypto terms and definitions. ⦁</div>
-													<div class="inter _14s medium">Market News: Breaking news and essential updates from the crypto world. ⦁</div>
-													<div class="inter _14s medium">Videos: Weekly engaging and informative videos from our YouTube channel. ⦁</div>
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.educationalContent" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.glossary" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.marketNews" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.videos" />
+													</div>
 												</div>
 											</div>
 											<div class="letter-txt-box reserch">
-												<div class="inter _25s bold">Research:</div>
+												<div class="inter _25s bold">
+													<spring:message code="newsletter.research" />
+												</div>
 												<div class="list-letter">
-													<div class="inter _14s medium">⦁ Market Outlook: Expert insights into the future of the cryptocurrency market.</div>
-													<div class="inter _14s medium">⦁ Analysis: In-depth analysis of market trends and movements.</div>
-													<div class="inter _14s medium">⦁ Tech Deep Dives: Detailed exploration of blockchain technology and innovations.</div>
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.marketOutlook" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.analysis" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.techDeepDives" />
+													</div>
 												</div>
 											</div>
 											<div class="letter-txt-box cmc">
 												<div class="inter _25s bold">
-													CMC Community:<br>
+													<spring:message code="newsletter.cmcCommunity" />
 												</div>
 												<div class="list-letter right">
-													<div class="inter _14s medium">Live Podcasts: Engage with crypto experts and community figures through live sessions. ⦁</div>
-													<div class="inter _14s medium">Feed: Connect with the crypto community for real-time discussions and updates. ⦁</div>
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.livePodcasts" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.feed" />
+													</div>
 												</div>
 											</div>
 											<div class="letter-txt-box features">
 												<div class="inter _25s bold">
-													New Features:<br>
+													<spring:message code="newsletter.newFeatures" />
 												</div>
 												<div class="list-letter">
-													<div class="inter _14s medium">⦁ App Updates: Latest enhancements to the CoinMarketCap mobile app.</div>
-													<div class="inter _14s medium">⦁ Web Updates: Recent improvements and new functionalities on the CoinMarketCap website.</div>
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.appUpdates" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.webUpdates" />
+													</div>
 												</div>
 											</div>
 										</div>
 									</section>
 									<section class="section3">
 										<div class="faq-txt">
-											FAQ (FREQUENTLY ASKED QUESTIONS)<br>
+											<spring:message code="newsletter.faqTitle" />
+											<br>
 										</div>
 										<div class="inter _25s bold">
-											Your newsletter questions answered for you<br>
+											<spring:message code="newsletter.faqIntro" />
+											<br>
 										</div>
 										<div class="faq-list-box">
 											<div class="faq-list">
 												<div class="w-layout-vflex faq-top">
-													<div class="inter _16s semibold">How do I subscribe to the CoinMarketCap Newsletter?</div>
+													<div class="inter _16s semibold">
+														<spring:message code="newsletter.faq1.q" />
+													</div>
 													<div class="fqa-arrow light"></div>
 												</div>
 												<div class="faq-detail">
-													<div class="inter _14s medium">To subscribe, go to the CoinMarketCap website, find the Newsletter signup section, and enter your email address. Click on &quot;Subscribe&quot; to confirm, and you will receive an email to confirm your subscription.</div>
-												</div>
-											</div>
-											<div class="faq-list">
-												<div class="w-layout-vflex faq-top">
-													<div class="inter _16s semibold">How often will I receive the CoinMarketCap Newsletter?</div>
-													<div class="fqa-arrow light"></div>
-												</div>
-												<div class="faq-detail">
-													<div class="inter _14s medium">The CoinMarketCap Newsletter is sent out on a daily basis, providing you with a curated digest of the most important news and analysis in the crypto markets.</div>
-												</div>
-											</div>
-											<div class="faq-list">
-												<div class="w-layout-vflex faq-top">
-													<div class="inter _16s semibold">Is there a cost to subscribing to the CoinMarketCap Newsletter?</div>
-													<div class="fqa-arrow light"></div>
-												</div>
-												<div class="faq-detail">
-													<div class="inter _14s medium">No, the CoinMarketCap Newsletter is a free subscription service, and there are no associated costs or obligations involved.</div>
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.faq1.a" />
+													</div>
 												</div>
 											</div>
 											<div class="faq-list">
 												<div class="w-layout-vflex faq-top">
 													<div class="inter _16s semibold">
-														<strong>Can I share the CoinMarketCap Newsletter with friends or colleagues?</strong>
+														<spring:message code="newsletter.faq2.q" />
 													</div>
 													<div class="fqa-arrow light"></div>
 												</div>
 												<div class="faq-detail">
-													<div class="inter _14s medium">Yes, feel free to share the newsletter with anyone you think might be interested in staying updated on the crypto market, news, project developments, and more.</div>
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.faq2.a" />
+													</div>
 												</div>
 											</div>
 											<div class="faq-list">
 												<div class="w-layout-vflex faq-top">
-													<div class="inter _16s semibold">How do I unsubscribe from the CoinMarketCap Newsletter?</div>
+													<div class="inter _16s semibold">
+														<spring:message code="newsletter.faq3.q" />
+													</div>
 													<div class="fqa-arrow light"></div>
 												</div>
 												<div class="faq-detail">
-													<div class="inter _14s medium">If you no longer wish to receive the newsletter, you can find the &quot;Unsubscribe&quot; link located at the bottom of each newsletter email. Simply click the link, and you will be removed from the mailing list.</div>
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.faq3.a" />
+													</div>
+												</div>
+											</div>
+											<div class="faq-list">
+												<div class="w-layout-vflex faq-top">
+													<div class="inter _16s semibold">
+														<spring:message code="newsletter.faq4.q" />
+													</div>
+													<div class="fqa-arrow light"></div>
+												</div>
+												<div class="faq-detail">
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.faq4.a" />
+													</div>
+												</div>
+											</div>
+											<div class="faq-list">
+												<div class="w-layout-vflex faq-top">
+													<div class="inter _16s semibold">
+														<spring:message code="newsletter.faq5.q" />
+													</div>
+													<div class="fqa-arrow light"></div>
+												</div>
+												<div class="faq-detail">
+													<div class="inter _14s medium">
+														<spring:message code="newsletter.faq5.a" />
+													</div>
 												</div>
 											</div>
 										</div>

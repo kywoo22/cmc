@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Thu Mar 13 2025 05:17:25 GMT+0000 (Coordinated Universal Time)  -->
@@ -26,18 +27,31 @@
 							<div class="market-overview-top">
 								<div class="w-layout-vflex market-overview-top-wrap gap12">
 									<div class="inter _25s bold">
-										CoinMarketCap 100 지수<br>
+										<spring:message code="coin100Index.title" />
+										<br>
 									</div>
-									<a href="#" class="m-o-top-btn w-inline-block"><img src="/cmc/webflow/images/icon1.svg" loading="lazy" alt="">
-										<div>팩트 시트</div> </a> <a href="#" class="m-o-top-btn w-inline-block"><img src="/cmc/webflow/images/icon2.svg" loading="lazy" alt="">
-										<div>방법론</div> </a> <a href="#" class="m-o-top-btn w-inline-block"><img src="/cmc/webflow/images/icon4.svg" loading="lazy" alt="">
+									<a href="#" class="m-o-top-btn w-inline-block"> <img src="/cmc/webflow/images/icon1.svg" loading="lazy" alt="">
 										<div>
-											<strong>API</strong> 세부 정보
-										</div> </a> <a href="#" class="m-o-top-btn bold w-inline-block"><img src="/cmc/webflow/images/icon3.svg" loading="lazy" alt="">
-										<div>More Details</div> </a>
+											<spring:message code="coin100Index.factSheet" />
+										</div>
+									</a> <a href="#" class="m-o-top-btn w-inline-block"> <img src="/cmc/webflow/images/icon2.svg" loading="lazy" alt="">
+										<div>
+											<spring:message code="coin100Index.methodology" />
+										</div>
+									</a> <a href="#" class="m-o-top-btn w-inline-block"> <img src="/cmc/webflow/images/icon4.svg" loading="lazy" alt="">
+										<div>
+											<strong>API</strong>
+											<spring:message code="coin100Index.apiDetails" />
+										</div>
+									</a> <a href="#" class="m-o-top-btn bold w-inline-block"> <img src="/cmc/webflow/images/icon3.svg" loading="lazy" alt="">
+										<div>
+											<spring:message code="coin100Index.moreDetails" />
+										</div>
+									</a>
 								</div>
 								<div class="inter _14s normal _61co">
-									세계에서 가장 신뢰할 수 있는 가상자산 데이터 기관이 구축한 CoinMarketCap 100 지수는 가상자산 시장의 성과를 추적하는, 가장 편향되지 않고 투명한 데이터 기반 방법을 제공합니다.<br>
+									<spring:message code="coin100Index.description" />
+									<br>
 								</div>
 							</div>
 							<div class="market-overview-middle">
@@ -51,29 +65,40 @@
 												<div class="inter _32s bold">$196.62</div>
 												<div class="m-o-coin-rate-wrap">
 													<div class="fluctuation-rate-img up"></div>
-													<div class="inter _14s bold up">1.89%(24시간)</div>
+													<div class="inter _14s bold up">
+														1.89%
+														<spring:message code="coin100Index.time24h" />
+													</div>
 												</div>
 											</div>
 										</div>
 										<div class="m-o-card gap24">
 											<div class="card-header">
-												<div class="card-header-title">과거 수치</div>
+												<div class="card-header-title">
+													<spring:message code="coin100Index.pastFigures" />
+												</div>
 											</div>
 											<div class="m-o-txt-list">
 												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">어제</div>
+													<div class="inter _12s medium _61co">
+														<spring:message code="coin100Index.yesterday" />
+													</div>
 													<div class="inter _12s bold">
 														<strong>$192.83</strong>
 													</div>
 												</div>
 												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">지난 주</div>
+													<div class="inter _12s medium _61co">
+														<spring:message code="coin100Index.lastWeek" />
+													</div>
 													<div class="inter _12s bold">
 														$197.34<br>
 													</div>
 												</div>
 												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">지난 달</div>
+													<div class="inter _12s medium _61co">
+														<spring:message code="coin100Index.lastMonth" />
+													</div>
 													<div class="inter _12s bold">
 														$215.25<br>
 													</div>
@@ -82,17 +107,25 @@
 										</div>
 										<div class="m-o-coin-rate gap24">
 											<div class="card-header">
-												<div class="card-header-title">연간 성과</div>
+												<div class="card-header-title">
+													<spring:message code="coin100Index.annualPerformance" />
+												</div>
 											</div>
 											<div class="m-o-txt-list">
 												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">연간 최고 (Dec 18, 2024)</div>
+													<div class="inter _12s medium _61co">
+														<spring:message code="coin100Index.annualHigh" />
+														(Dec 18, 2024)
+													</div>
 													<div class="inter _12s bold">
 														<strong>$192.83</strong>
 													</div>
 												</div>
 												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">연간 최저 (Aug 05, 2024)</div>
+													<div class="inter _12s medium _61co">
+														<spring:message code="coin100Index.annualLow" />
+														(Aug 05, 2024)
+													</div>
 													<div class="inter _12s bold">
 														$197.34<br>
 													</div>
@@ -103,14 +136,21 @@
 									<div class="m-o-chart-box">
 										<div class="card-header between space">
 											<div class="card-header-title">
-												<strong>Crypto Market Cap 100 지수 차트</strong>
+												<strong><spring:message code="coin100Index.cryptoMarketCap100Chart" /></strong>
 											</div>
 											<div class="m-o-chart-btn-box">
 												<div class="m-o-chart-btn-wrap">
-													<a href="#" class="tabselect-chart-btn on w-button">CMC100</a> <a href="#" class="tabselect-chart-btn w-button">구성 가중치</a>
+													<a href="#" class="tabselect-chart-btn on w-button"> <spring:message code="coin100Index.cmc100" />
+													</a> <a href="#" class="tabselect-chart-btn w-button"> <spring:message code="coin100Index.compositionWeight" />
+													</a>
 												</div>
 												<div class="m-o-chart-btn-wrap">
-													<a href="#" class="tabselect-chart-btn on w-button">24시간</a> <a href="#" class="tabselect-chart-btn w-button">7일</a> <a href="#" class="tabselect-chart-btn w-button">30일</a> <a href="#" class="tabselect-chart-btn w-button">1년</a> <a href="#" class="tabselect-chart-btn w-button">전체</a>
+													<a href="#" class="tabselect-chart-btn on w-button"> <spring:message code="coin100Index.time24h" />
+													</a> <a href="#" class="tabselect-chart-btn w-button"> <spring:message code="coin100Index.time7d" />
+													</a> <a href="#" class="tabselect-chart-btn w-button"> <spring:message code="coin100Index.time30d" />
+													</a> <a href="#" class="tabselect-chart-btn w-button"> <spring:message code="coin100Index.time1y" />
+													</a> <a href="#" class="tabselect-chart-btn w-button"> <spring:message code="coin100Index.allTime" />
+													</a>
 												</div>
 												<div class="m-o-chart-btn-wrap">
 													<a href="#" class="tabselect-chart-btn download w-button"></a>
@@ -123,12 +163,17 @@
 								<div class="market-overview-100-index">
 									<div class="w-layout-vflex market-overview-top-wrap between space">
 										<div class="inter _25s bold">
-											CoinMarketCap 100 Index Constituents<br>
+											<spring:message code="coin100Index.cmc100IndexConstituents" />
+											<br>
 										</div>
 										<div class="m-o-top-txt-wrap">
-											<div class="inter _12s medium _61co">마지막 업데이트</div>
+											<div class="inter _12s medium _61co">
+												<spring:message code="coin100Index.lastUpdated" />
+											</div>
 											<div class="inter _12s bold">
-												2025. 2. 20. 오후 3:05:00<br>
+												2025. 2. 20.
+												<spring:message code="coin100Index.pm" />
+												3:05:00<br>
 											</div>
 										</div>
 									</div>
@@ -140,21 +185,29 @@
 														<div class="coin-txt-table">#</div>
 													</div>
 													<div class="w-layout-vflex coin-table-top-wrap percent-width">
-														<div class="coin-txt-table name">코인이름</div>
+														<div class="coin-txt-table name">
+															<spring:message code="table.name" />
+														</div>
 													</div>
 													<div class="w-layout-vflex coin-table-top-wrap percent-width right">
-														<div class="coin-txt-table price">가격</div>
+														<div class="coin-txt-table price">
+															<spring:message code="table.price" />
+														</div>
 														<div class="hover-info-pop"></div>
 													</div>
 													<div class="w-layout-vflex coin-table-top-wrap percent-width right">
-														<div class="coin-txt-table">24시간%</div>
-													</div>
-													<div class="w-layout-vflex coin-table-top-wrap percent-width right">
-														<div class="coin-txt-table">시가 총액</div>
+														<div class="coin-txt-table">
+															<spring:message code="table.time24-houre" />
+														</div>
 													</div>
 													<div class="w-layout-vflex coin-table-top-wrap percent-width right">
 														<div class="coin-txt-table">
-															<strong>비중</strong>
+															<spring:message code="table.market.capitalization" />
+														</div>
+													</div>
+													<div class="w-layout-vflex coin-table-top-wrap percent-width right">
+														<div class="coin-txt-table">
+															<strong><spring:message code="table.weight" /></strong>
 														</div>
 													</div>
 												</div>
@@ -421,13 +474,14 @@
 													</div>
 												</div>
 											</div>
-											<a href="#" class="list-more-btn w-button">더보기</a>
+											<a href="#" class="list-more-btn w-button"> <spring:message code="coin100Index.readMore" />
+											</a>
 										</div>
 										<div class="market-overview-graph">
 											<div class="w-layout-vflex m-o-graph-box">
 												<div class="card-header between">
 													<div class="card-header-title">
-														<strong>주요 구성 요소<br></strong>
+														<strong><spring:message code="coin100Index.keyComponents" /><br></strong>
 													</div>
 													<div class="m-o-chart-btn-box">
 														<div class="m-o-chart-btn-wrap">
@@ -443,59 +497,73 @@
 								<div class="market-overview-faq-txt">
 									<div class="w-layout-vflex market-overview-top-wrap between">
 										<div class="inter _25s bold">
-											CoinMarketCap 100 지수<br>
+											<spring:message code="coin100Index.title" />
+											<br>
 										</div>
 									</div>
 									<div class="faq-list-box">
 										<div class="faq-list">
 											<div class="w-layout-vflex index-list-title">
 												<div class="inter _16s medium">
-													<strong>CoinMarketCap 100 지수는 뭔가요?</strong>
+													<strong><spring:message code="coin100Index.faq1" /></strong>
 												</div>
 												<div class="fqa-arrow light"></div>
 											</div>
 											<div class="w-layout-vflex faq-detail">
-												<div class="inter _14s normal _61co">CoinMarketCap 100 지수(CMC100 지수)는 CoinMarketCap이 선정한 시가총액 기준 상위 100개 가상자산 프로젝트의 성과를 측정하기 위해 고안된 벤치마크입니다. 스테이블 코인 (예: USDT) 및 다른 가상자산에 페깅된 토큰 (예: WBTC 또는 stETH)은 포함하지 않습니다. 이 지수는 광범위한 가상자산 시장을 나타내는 동시에 다양한 디지털 자산의 성과에 대한 인사이트를 제공합니다.</div>
+												<div class="inter _14s normal _61co">
+													<spring:message code="coin100Index.faq1Answer" />
+												</div>
 											</div>
 										</div>
+
 										<div class="faq-list">
 											<div class="w-layout-vflex index-list-title">
 												<div class="inter _16s medium">
-													<strong>CoinMarketCap 100 지수의 방법론은 무엇인가요?</strong>
+													<strong><spring:message code="coin100Index.faq2" /></strong>
 												</div>
 												<div class="fqa-arrow light"></div>
 											</div>
 											<div class="w-layout-vflex faq-detail">
-												<div class="inter _14s normal _61co">CoinMarketCap 100 지수(CMC100 지수)는 CoinMarketCap이 선정한 시가총액 기준 상위 100개 가상자산 프로젝트의 성과를 측정하기 위해 고안된 벤치마크입니다. 스테이블 코인 (예: USDT) 및 다른 가상자산에 페깅된 토큰 (예: WBTC 또는 stETH)은 포함하지 않습니다. 이 지수는 광범위한 가상자산 시장을 나타내는 동시에 다양한 디지털 자산의 성과에 대한 인사이트를 제공합니다.</div>
+												<div class="inter _14s normal _61co">
+													<spring:message code="coin100Index.faq2Answer" />
+												</div>
 											</div>
 										</div>
+
 										<div class="faq-list">
 											<div class="w-layout-vflex index-list-title">
 												<div class="inter _16s medium">
-													<strong>CoinMarketCap 100 지수가 중요한 이유는 무엇인가요?</strong>
+													<strong><spring:message code="coin100Index.faq3" /></strong>
 												</div>
 												<div class="fqa-arrow light"></div>
 											</div>
 											<div class="w-layout-vflex faq-detail">
-												<div class="inter _14s normal _61co">CoinMarketCap 100 지수(CMC100 지수)는 CoinMarketCap이 선정한 시가총액 기준 상위 100개 가상자산 프로젝트의 성과를 측정하기 위해 고안된 벤치마크입니다. 스테이블 코인 (예: USDT) 및 다른 가상자산에 페깅된 토큰 (예: WBTC 또는 stETH)은 포함하지 않습니다. 이 지수는 광범위한 가상자산 시장을 나타내는 동시에 다양한 디지털 자산의 성과에 대한 인사이트를 제공합니다.</div>
+												<div class="inter _14s normal _61co">
+													<spring:message code="coin100Index.faq3Answer" />
+												</div>
 											</div>
 										</div>
+
 										<div class="faq-list">
 											<div class="w-layout-vflex index-list-title">
 												<div class="inter _16s medium">
-													<strong>CoinMarketCap 지수에 직접 투자할 수 있나요?</strong>
+													<strong><spring:message code="coin100Index.faq4" /></strong>
 												</div>
 												<div class="fqa-arrow light"></div>
 											</div>
 											<div class="w-layout-vflex faq-detail">
-												<div class="inter _14s normal _61co">CoinMarketCap 100 지수(CMC100 지수)는 CoinMarketCap이 선정한 시가총액 기준 상위 100개 가상자산 프로젝트의 성과를 측정하기 위해 고안된 벤치마크입니다. 스테이블 코인 (예: USDT) 및 다른 가상자산에 페깅된 토큰 (예: WBTC 또는 stETH)은 포함하지 않습니다. 이 지수는 광범위한 가상자산 시장을 나타내는 동시에 다양한 디지털 자산의 성과에 대한 인사이트를 제공합니다.</div>
+												<div class="inter _14s normal _61co">
+													<spring:message code="coin100Index.faq4Answer" />
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="market-overview-bottom">
-								<div class="inter _25s bold">LOGONAME 리서치 기사</div>
+								<div class="inter _25s bold">
+									<spring:message code="coin100Index.researchArticle" />
+								</div>
 								<div class="cmc-box">
 									<div class="cmc-learn">
 										<img src="/cmc/webflow/images/image_472_288.png" loading="lazy" alt="">

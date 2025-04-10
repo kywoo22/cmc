@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Thu Mar 13 2025 05:17:25 GMT+0000 (Coordinated Universal Time)  -->
@@ -19,10 +20,12 @@
 			<div class="body-wrap">
 				<div class="frame">
 					<div class="main-txt-box">
-						<div class="main-title">토큰 잠금 해제 및 베스팅 일정</div>
+						<div class="main-title">
+							<spring:message code="token-unlocks.title" />
+						</div>
 						<div class="main-txt-flex">
 							<div>
-								주요 가상자산 프로젝트의 토큰 잠금 해제 및 베스팅 세부내용은 아래와 같습니다. 더 자세한 토크노믹스 정보를 보려면 토큰 이름을 클릭하여 관련 페이지로 이동합니다.<br>
+								<spring:message code="token-unlocks.description" />
 							</div>
 						</div>
 					</div>
@@ -34,51 +37,63 @@
 								<div class="coin-txt-table">#</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap name">
-								<div class="coin-txt-table name">이름</div>
+								<div class="coin-txt-table name">
+									<spring:message code="table.name" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width85">
-								<div class="coin-txt-table price">가격</div>
+								<div class="coin-txt-table price">
+									<spring:message code="table.price" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width85">
-								<div class="coin-txt-table">24시간%</div>
+								<div class="coin-txt-table">
+									<spring:message code="table.time24-houre" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width200">
-								<div class="coin-txt-table">시가 총액</div>
+								<div class="coin-txt-table">
+									<spring:message code="table.market.capitalization" />
+								</div>
 								<div class="hover-info-pop">
 									<div class="hover-info">
 										<div>
-											암호화폐 유통량의 전체 시장 가치 이는 주식 시장에서의 유동주식 시가총액과 유사합니다.<br> <br>시가 총액 = 현재 가격 x 써큘레이팅 공급.
+											<spring:message code="table.market.capitalization-info" />
 										</div>
-										<a href="#" class="link w-inline-block">
-											<div>더 읽기</div>
-										</a>
+										<a href="#" class="link w-inline-block"><div>
+												<spring:message code="table.readMore" />
+											</div> </a>
 									</div>
 								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width150">
 								<div class="coin-txt-table">
-									<strong>유통 공급량</strong>
+									<strong><spring:message code="table.circulating.supply" /></strong>
 								</div>
 								<div class="hover-info-pop">
 									<div class="hover-info">
-										<div>시장 및 일반 대중들 사이에서 유통되는 코인의 양. 이는 주식시장에서 유통되는 주식과 유사합니다.</div>
-										<a href="#" class="link w-inline-block">
-											<div>더 읽기</div>
-										</a>
+										<div>
+											<spring:message code="table.circulating.supply-info" />
+										</div>
+										<a href="#" class="link w-inline-block"><div>
+												<spring:message code="table.readMore" />
+											</div></a>
 									</div>
 								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width150">
-								<div class="coin-txt-table">잠금 해제 진행 상황</div>
-							</div>
-							<div class="w-layout-vflex coin-table-top-wrap width200">
 								<div class="coin-txt-table">
-									<strong>다음 잠금 해제</strong>
+									<spring:message code="tokenUnlocks.progress" />
 								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width200">
 								<div class="coin-txt-table">
-									<strong>다음 잠금 해제일</strong>
+									<strong><spring:message code="tokenUnlocks.nextUnlock" /></strong>
+								</div>
+							</div>
+							<div class="w-layout-vflex coin-table-top-wrap width200">
+								<div class="coin-txt-table">
+									<strong><spring:message code="tokenUnlocks.nextUnlockDate" /></strong>
 								</div>
 							</div>
 						</div>
@@ -118,7 +133,7 @@
 								</div>
 								<div class="w-layout-vflex coin-table-top-wrap width200 flex-down">
 									<div class="coin-txt-table semibold">240M RED</div>
-									<div class="inter _12s normal _61co">₩305.31B (총 잠금량의 24.00%)</div>
+									<div class="inter _12s normal _61co">₩305.31B (<spring:message code="tokenUnlocks.totalLockedOf" /> 24.00%)</div>
 								</div>
 								<div class="w-layout-vflex coin-table-top-wrap width200">
 									<div class="w-layout-vflex coin-unlocks-box">
@@ -724,12 +739,16 @@
 						</div>
 					</div>
 					<div class="table-bottom">
-						<div class="coin-table-bottom-txt">1 보이기 - 10868 의 100</div>
+						<div class="coin-table-bottom-txt">
+					     	0 <spring:message code="table.showtxt" /> - 1 <spring:message code="table.showtxt2" /> 2
+						</div>
 						<div class="pagin-box">
 							<a href="#" class="paging-btn left w-button"></a> <a href="#" class="paging-btn on w-button">1</a> <a href="#" class="paging-btn w-button">2</a> <a href="#" class="paging-btn w-button">3</a> <a href="#" class="paging-btn w-button">4</a> <a href="#" class="paging-btn w-button">5</a> <a href="#" class="paging-btn right w-button"></a>
 						</div>
 						<div class="row-box">
-							<div>행 표시하기</div>
+							<div>
+								<spring:message code="table.rowShow" />
+							</div>
 							<div data-hover="false" data-delay="0" class="dropdown w-dropdown">
 								<div class="dropdown-toggle w-dropdown-toggle">
 									<div>100</div>
@@ -749,11 +768,13 @@
 						<div class="inter _32s bold">
 							<strong>Stay on top of crypto. All the time, any time.</strong>
 						</div>
-						<div class="stay-sub-tt">받은 편지함에서 뉴스, 보상, 상장 등에 대한 Logoname 업데이트를 받아보세요.</div>
+						<div class="stay-sub-tt">
+							<spring:message code="tokenUnlocks.logonameUpdates" />
+						</div>
 						<div class="form-block w-form">
 							<form id="email-form" name="email-form" data-name="Email Form" method="get" class="form" data-wf-page-id="67c93feadc62665476e2493a" data-wf-element-id="02664582-08ea-48ec-891f-b2412dca20b8">
-								<input class="text-field w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="이메일 주소 입력" type="text" id="name-2">
-								<input type="submit" data-wait="Please wait..." class="submit-button w-button" value="제출">
+								<input class="text-field w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="<spring:message code="tokenUnlocks.emailPlaceholder" />" type="text" id="name-2">
+								<input type="submit" data-wait="Please wait..." class="submit-button w-button" value="<spring:message code="tokenUnlocks.submit" />">
 							</form>
 						</div>
 					</div>

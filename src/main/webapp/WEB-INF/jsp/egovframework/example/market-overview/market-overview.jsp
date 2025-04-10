@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Thu Mar 13 2025 05:17:25 GMT+0000 (Coordinated Universal Time)  -->
@@ -25,11 +26,14 @@
 						<div class="market-overview-wrap">
 							<div class="market-overview-top">
 								<div class="w-layout-vflex market-overview-top-wrap">
-									<div class="inter _25s bold">가상자산 시장 개요</div>
-									<a href="#" class="api-detail-btn w-button">API 세부 정보 보기</a>
+									<div class="inter _25s bold">
+										<spring:message code="marketOverview.title" />
+									</div>
+									<a href="#" class="api-detail-btn w-button"> <spring:message code="marketOverview.apiDetails" />
+									</a>
 								</div>
 								<div class="inter _14s normal _61co">
-									CoinMarketCap에서 비트코인 도미넌스, 알트코인 시즌, ETF 순유입, 실시간 시장 심리를 포함한 최신 가상자산 시장 동향을 한 곳에서 편리하게 확인할 수 있습니다.<br>
+									<spring:message code="marketOverview.description" />
 								</div>
 							</div>
 							<div class="market-overview-middle">
@@ -133,7 +137,9 @@
 									<div class="m-o-info-area">
 										<a href="#" class="m-o-card w-inline-block">
 											<div class="card-header">
-												<div class="card-header-title">Fear and Greed Index</div>
+												<div class="card-header-title">
+													<spring:message code="marketOverview.fearAndGreedIndex" />
+												</div>
 												<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
 											</div>
 											<div class="w-layout-vflex m-o-wrap">
@@ -141,13 +147,17 @@
 													<div class="circle"></div>
 													<div class="progress-txt-box">
 														<div class="inter _32s bold">35</div>
-														<div class="inter _11s normal _61co">Neutral</div>
+														<div class="inter _11s normal _61co">
+															<spring:message code="marketOverview.neutral" />
+														</div>
 													</div>
 												</div>
 											</div>
 										</a> <a href="#" class="m-o-card w-inline-block">
 											<div class="card-header">
-												<div class="card-header-title">알트코인 시즌 지수</div>
+												<div class="card-header-title">
+													<spring:message code="marketOverview.altcoinSeasonIndex" />
+												</div>
 												<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
 											</div>
 											<div class="m-o-card-alt">
@@ -156,8 +166,12 @@
 												</div>
 												<div class="season-box">
 													<div class="txt-space-between">
-														<div class="inter _12s medium _61co">비트코인 시즌</div>
-														<div class="inter _12s medium _61co">알트코인 시즌</div>
+														<div class="inter _12s medium _61co">
+															<spring:message code="marketOverview.bitcoinSeason" />
+														</div>
+														<div class="inter _12s medium _61co">
+															<spring:message code="marketOverview.altcoinSeason" />
+														</div>
 													</div>
 													<div class="w-layout-vflex season-wrap">
 														<div class="season-stick-box">
@@ -174,7 +188,9 @@
 											</div>
 										</a> <a href="#" class="m-o-coin-rate w-inline-block">
 											<div class="card-header">
-												<div class="card-header-title">LOGONAME 100 지수</div>
+												<div class="card-header-title">
+													<spring:message code="marketOverview.coinExpress100Index" />
+												</div>
 												<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
 											</div>
 											<div class="m-o-coin-rate-body">
@@ -194,232 +210,284 @@
 									<div class="m-o-chart-box">
 										<div class="card-header between">
 											<div class="card-header-title">
-												<strong>Crypto Market Cap</strong>
+												<strong> <spring:message code="marketOverview.cryptoMarketCap" />
+												</strong>
 											</div>
 											<div class="m-o-chart-btn-box">
 												<div class="m-o-chart-btn-wrap">
-													<a href="#" class="tabselect-chart-btn on w-button">개요</a> <a href="#" class="tabselect-chart-btn w-button">세부 내역</a>
+													<a href="#" class="tabselect-chart-btn on w-button"> <spring:message code="marketOverview.overview" />
+													</a> <a href="#" class="tabselect-chart-btn w-button"> <spring:message code="marketOverview.details" />
+													</a>
 												</div>
 												<div class="m-o-chart-btn-wrap">
-													<a href="#" class="tabselect-chart-btn on w-button">30일</a> <a href="#" class="tabselect-chart-btn w-button">1년</a> <a href="#" class="tabselect-chart-btn w-button">전체</a>
+													<a href="#" class="tabselect-chart-btn on w-button"> <spring:message code="marketOverview.last30Days" />
+													</a> <a href="#" class="tabselect-chart-btn w-button"> <spring:message code="marketOverview.last1Year" />
+													</a> <a href="#" class="tabselect-chart-btn w-button"> <spring:message code="marketOverview.allTime" />
+													</a>
 												</div>
 											</div>
 										</div>
 										<div class="m-o-chart-txt-box">
 											<div class="txt-flex-box">
-												<div class="inter _12s medium _61co">시가총액</div>
+												<div class="inter _12s medium _61co">
+													<spring:message code="marketOverview.marketCap" />
+												</div>
 												<div class="inter _25s bold">
 													₩4.6P<br>
 												</div>
 											</div>
 											<div class="txt-flex-box">
 												<div class="inter _12s medium _61co">
-													<strong>거래량</strong>
+													<strong><spring:message code="marketOverview.volume" /></strong>
 												</div>
 												<div class="inter _25s bold">
 													₩120.6T<br>
 												</div>
 											</div>
 										</div>
-										<div class="m-o-chart-big"></div>
 									</div>
+									<div class="m-o-chart-big"></div>
 								</div>
-								<div class="market-overview-info">
-									<div class="m-o-chart-box">
-										<div class="card-header between">
+							</div>
+							<div class="market-overview-info">
+								<div class="m-o-chart-box">
+									<div class="card-header between">
+										<div class="card-header-title">
+											<strong><spring:message code="marketOverview.cryptoMarketCap" /></strong>
+										</div>
+										<div class="m-o-chart-btn-box">
+											<div class="m-o-chart-btn-wrap">
+												<a href="#" class="tabselect-chart-btn on w-button"> <spring:message code="marketOverview.last30Days" />
+												</a> <a href="#" class="tabselect-chart-btn w-button"> <spring:message code="marketOverview.last1Year" />
+												</a> <a href="#" class="tabselect-chart-btn w-button"> <spring:message code="marketOverview.allTime" />
+												</a>
+											</div>
+											<a href="#" class="more-btn w-button"> <spring:message code="marketOverview.readMore" />
+											</a>
+										</div>
+									</div>
+									<div class="m-o-chart-txt-box">
+										<div class="txt-flex-box">
+											<div class="inter _12s medium _61co">
+												<spring:message code="marketOverview.marketCap" />
+											</div>
+											<div class="inter _25s bold">
+												₩4.6P<br>
+											</div>
+										</div>
+										<div class="txt-flex-box">
+											<div class="inter _12s medium _61co">
+												<spring:message code="marketOverview.volume" />
+											</div>
+											<div class="inter _25s bold">
+												₩120.6T<br>
+											</div>
+										</div>
+									</div>
+									<div class="m-o-chart-big"></div>
+								</div>
+								<div class="m-o-info-area">
+									<a href="#" class="m-o-card gap24 w-inline-block">
+										<div class="card-header">
 											<div class="card-header-title">
-												<strong>Crypto Market Cap</strong>
+												<spring:message code="marketOverview.bitcoinDominance" />
 											</div>
-											<div class="m-o-chart-btn-box">
-												<div class="m-o-chart-btn-wrap">
-													<a href="#" class="tabselect-chart-btn on w-button">30일</a> <a href="#" class="tabselect-chart-btn w-button">1년</a> <a href="#" class="tabselect-chart-btn w-button">전체</a>
+											<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
+										</div>
+										<div class="w-layout-vflex coin-block-box">
+											<div class="coin-txt-box">
+												<div class="w-layout-vflex dominace-txt-box">
+													<div class="dominance-txt-wrap">
+														<div class="circle-color bitcoin"></div>
+														<div class="inter _12s medium _61co">
+															<spring:message code="bitcoin" />
+														</div>
+													</div>
+													<div class="inter _25s bold">
+														60.1%<br>
+													</div>
 												</div>
-												<a href="#" class="more-btn w-button">더 보기</a>
+												<div class="w-layout-vflex dominace-txt-box">
+													<div class="dominance-txt-wrap">
+														<div class="circle-color ethereum"></div>
+														<div class="inter _12s medium _61co">
+															<spring:message code="ethereum" />
+														</div>
+													</div>
+													<div class="inter _25s bold">
+														10.3%<br>
+													</div>
+												</div>
+												<div class="w-layout-vflex dominace-txt-box">
+													<div class="dominance-txt-wrap">
+														<div class="circle-color etc"></div>
+														<div class="inter _12s medium _61co">
+															<spring:message code="etc" />
+														</div>
+													</div>
+													<div class="inter _25s bold">
+														29.6%<br>
+													</div>
+												</div>
 											</div>
+											<div class="status-box">
+												<div class="w-layout-vflex season-wrap">
+													<div class="season-stick-box">
+														<div class="dominuns-stick bitcoin"></div>
+														<div class="dominuns-stick ethereum"></div>
+														<div class="dominuns-stick etc"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</a> <a href="#" class="m-o-card gap24 w-inline-block">
+										<div class="card-header">
+											<div class="card-header-title">
+												<spring:message code="marketOverview.openInterest" />
+											</div>
+											<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
 										</div>
 										<div class="m-o-chart-txt-box">
 											<div class="txt-flex-box">
-												<div class="inter _12s medium _61co">시가총액</div>
+												<div class="inter _12s medium _61co">
+													<spring:message code="marketOverview.perpetualFutures" />
+												</div>
+												<div class="inter _25s bold">
+													₩432.6T<br>
+												</div>
+											</div>
+											<div class="txt-flex-box">
+												<div class="inter _12s medium _61co">
+													<strong><spring:message code="marketOverview.futures" /></strong>
+												</div>
+												<div class="inter _25s bold">
+													₩120.6T<br>
+												</div>
+											</div>
+										</div>
+									</a> <a href="#" class="m-o-card gap24 w-inline-block">
+										<div class="card-header">
+											<div class="card-header-title">
+												<spring:message code="marketOverview.volmexImpliedVolatility" />
+											</div>
+											<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
+										</div>
+										<div class="m-o-chart-txt-box">
+											<div class="txt-flex-box">
+												<div class="inter _12s medium _61co">
+													<spring:message code="marketOverview.marketCap" />
+												</div>
 												<div class="inter _25s bold">
 													₩4.6P<br>
 												</div>
 											</div>
 											<div class="txt-flex-box">
-												<div class="inter _12s medium _61co">거래량</div>
+												<div class="inter _12s medium _61co">
+													<strong><spring:message code="marketOverview.volume" /></strong>
+												</div>
 												<div class="inter _25s bold">
 													₩120.6T<br>
 												</div>
 											</div>
 										</div>
-										<div class="m-o-chart-big"></div>
-									</div>
-									<div class="m-o-info-area">
-										<a href="#" class="m-o-card gap24 w-inline-block">
-											<div class="card-header">
-												<div class="card-header-title">비트코인 도미넌스</div>
-												<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
-											</div>
-											<div class="w-layout-vflex coin-block-box">
-												<div class="coin-txt-box">
-													<div class="w-layout-vflex dominace-txt-box">
-														<div class="dominance-txt-wrap">
-															<div class="circle-color bitcoin"></div>
-															<div class="inter _12s medium _61co">비트코인</div>
-														</div>
-														<div class="inter _25s bold">
-															60.1%<br>
-														</div>
-													</div>
-													<div class="w-layout-vflex dominace-txt-box">
-														<div class="dominance-txt-wrap">
-															<div class="circle-color ethereum"></div>
-															<div class="inter _12s medium _61co">이더리움</div>
-														</div>
-														<div class="inter _25s bold">
-															10.3%<br>
-														</div>
-													</div>
-													<div class="w-layout-vflex dominace-txt-box">
-														<div class="dominance-txt-wrap">
-															<div class="circle-color etc"></div>
-															<div class="inter _12s medium _61co">기타</div>
-														</div>
-														<div class="inter _25s bold">
-															29.6%<br>
-														</div>
-													</div>
-												</div>
-												<div class="status-box">
-													<div class="w-layout-vflex season-wrap">
-														<div class="season-stick-box">
-															<div class="dominuns-stick bitcoin"></div>
-															<div class="dominuns-stick ethereum"></div>
-															<div class="dominuns-stick etc"></div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</a> <a href="#" class="m-o-card gap24 w-inline-block">
-											<div class="card-header">
-												<div class="card-header-title">미결제 약정</div>
-												<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
-											</div>
-											<div class="m-o-chart-txt-box">
-												<div class="txt-flex-box">
-													<div class="inter _12s medium _61co">무기한 선물</div>
-													<div class="inter _25s bold">
-														₩432.6T<br>
-													</div>
-												</div>
-												<div class="txt-flex-box">
-													<div class="inter _12s medium _61co">
-														<strong>선물</strong>
-													</div>
-													<div class="inter _25s bold">
-														₩120.6T<br>
-													</div>
-												</div>
-											</div>
-										</a> <a href="#" class="m-o-card gap24 w-inline-block">
-											<div class="card-header">
-												<div class="card-header-title">Volmex 내재 변동성</div>
-												<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
-											</div>
-											<div class="m-o-chart-txt-box">
-												<div class="txt-flex-box">
-													<div class="inter _12s medium _61co">시가총액</div>
-													<div class="inter _25s bold">
-														₩4.6P<br>
-													</div>
-												</div>
-												<div class="txt-flex-box">
-													<div class="inter _12s medium _61co">
-														<strong>거래량</strong>
-													</div>
-													<div class="inter _25s bold">
-														₩120.6T<br>
-													</div>
-												</div>
-											</div>
-										</a>
-									</div>
-								</div>
-								<div class="m-o-info-area">
-									<a href="#" class="m-o-card gap24 h-auto w-inline-block">
-										<div class="card-header">
-											<div class="card-header-title">ETH 가스</div>
-											<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
-										</div>
-										<div class="m-o-chart-txt-box">
-											<div class="txt-flex-box">
-												<div class="inter _12s medium _61co">느린</div>
-												<div class="inter _25s bold">
-													0.70 Gwei<br>
-												</div>
-												<div class="inter _12s medium _61co">~45초</div>
-											</div>
-											<div class="txt-flex-box">
-												<div class="inter _12s medium _61co">표준</div>
-												<div class="inter _25s bold">
-													0.70 Gwei<br>
-												</div>
-												<div class="inter _12s medium _61co">~45초</div>
-											</div>
-											<div class="txt-flex-box">
-												<div class="inter _12s medium _61co">빠른</div>
-												<div class="inter _25s bold">
-													0.70 Gwei<br>
-												</div>
-												<div class="inter _12s medium _61co">~45초</div>
-											</div>
-										</div>
 									</a>
 								</div>
 							</div>
-							<div class="market-overview-bottom">
-								<div class="inter _25s bold">LOGONAME 리서치 기사</div>
-								<div class="research-box">
-									<a href="#" class="research-link w-inline-block"><img src="/cmc/webflow/images/image_472_288.png" loading="lazy" alt="">
-										<div class="inter _16s medium _38co">News</div>
-										<div class="inter _16s medium">News Title</div>
-										<div class="inter _14s medium _61co">Dive into a comprehensive Q3 2024 report covering crypto market analysis, key narratives and users trends, informed by world-class crypto data and CMC users insights.</div>
-										<div class="inter _12s medium _61co">by CMC Research</div>
-										<div class="time-info-box">
-											<div class="inter _12s medium _61co">1w ago</div>
-											<div class="research-txt-wrap">
-												<img src="/cmc/webflow/images/clock_off.svg" loading="lazy" alt="">
-												<div class="inter _12s medium _61co">12m</div>
+							<div class="m-o-info-area">
+								<a href="#" class="m-o-card gap24 h-auto w-inline-block">
+									<div class="card-header">
+										<div class="card-header-title">
+											<spring:message code="marketOverview.ethGas" />
+										</div>
+										<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
+									</div>
+									<div class="m-o-chart-txt-box">
+										<div class="txt-flex-box">
+											<div class="inter _12s medium _61co">
+												<spring:message code="marketOverview.slow" />
 											</div>
-										</div> </a> <a href="#" class="research-link w-inline-block"><img src="/cmc/webflow/images/image_472_288.png" loading="lazy" alt="">
-										<div class="inter _16s medium _38co">News</div>
-										<div class="inter _16s medium">News Title</div>
-										<div class="inter _14s medium _61co">Dive into a comprehensive Q3 2024 report covering crypto market analysis, key narratives and users trends, informed by world-class crypto data and CMC users insights.</div>
-										<div class="inter _12s medium _61co">by CMC Research</div>
-										<div class="time-info-box">
-											<div class="inter _12s medium _61co">1w ago</div>
-											<div class="research-txt-wrap">
-												<img src="/cmc/webflow/images/clock_off.svg" loading="lazy" alt="">
-												<div class="inter _12s medium _61co">12m</div>
+											<div class="inter _25s bold">
+												0.70 Gwei<br>
 											</div>
-										</div> </a> <a href="#" class="research-link w-inline-block"><img src="/cmc/webflow/images/image_472_288.png" loading="lazy" alt="">
-										<div class="inter _16s medium _38co">News</div>
-										<div class="inter _16s medium">News Title</div>
-										<div class="inter _14s medium _61co">Dive into a comprehensive Q3 2024 report covering crypto market analysis, key narratives and users trends, informed by world-class crypto data and CMC users insights.</div>
-										<div class="inter _12s medium _61co">by CMC Research</div>
-										<div class="time-info-box">
-											<div class="inter _12s medium _61co">1w ago</div>
-											<div class="research-txt-wrap">
-												<img src="/cmc/webflow/images/clock_off.svg" loading="lazy" alt="">
-												<div class="inter _12s medium _61co">12m</div>
+											<div class="inter _12s medium _61co">
+												~45
+												<spring:message code="marketOverview.second" />
 											</div>
-										</div> </a>
-								</div>
+										</div>
+										<div class="txt-flex-box">
+											<div class="inter _12s medium _61co">
+												<spring:message code="marketOverview.standard" />
+											</div>
+											<div class="inter _25s bold">
+												0.70 Gwei<br>
+											</div>
+											<div class="inter _12s medium _61co">
+												~45
+												<spring:message code="marketOverview.second" />
+											</div>
+										</div>
+										<div class="txt-flex-box">
+											<div class="inter _12s medium _61co">
+												<spring:message code="marketOverview.fast" />
+											</div>
+											<div class="inter _25s bold">
+												0.70 Gwei<br>
+											</div>
+											<div class="inter _12s medium _61co">
+												~45
+												<spring:message code="marketOverview.second" />
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="market-overview-bottom">
+							<div class="inter _25s bold">
+								<spring:message code="marketOverview.researchArticle" />
+							</div>
+							<div class="research-box">
+								<a href="#" class="research-link w-inline-block"><img src="/cmc/webflow/images/image_472_288.png" loading="lazy" alt="">
+									<div class="inter _16s medium _38co">News</div>
+									<div class="inter _16s medium">News Title</div>
+									<div class="inter _14s medium _61co">Dive into a comprehensive Q3 2024 report covering crypto market analysis, key narratives and users trends, informed by world-class crypto data and CMC users insights.</div>
+									<div class="inter _12s medium _61co">by CMC Research</div>
+									<div class="time-info-box">
+										<div class="inter _12s medium _61co">1w ago</div>
+										<div class="research-txt-wrap">
+											<img src="/cmc/webflow/images/clock_off.svg" loading="lazy" alt="">
+											<div class="inter _12s medium _61co">12m</div>
+										</div>
+									</div> </a> <a href="#" class="research-link w-inline-block"><img src="/cmc/webflow/images/image_472_288.png" loading="lazy" alt="">
+									<div class="inter _16s medium _38co">News</div>
+									<div class="inter _16s medium">News Title</div>
+									<div class="inter _14s medium _61co">Dive into a comprehensive Q3 2024 report covering crypto market analysis, key narratives and users trends, informed by world-class crypto data and CMC users insights.</div>
+									<div class="inter _12s medium _61co">by CMC Research</div>
+									<div class="time-info-box">
+										<div class="inter _12s medium _61co">1w ago</div>
+										<div class="research-txt-wrap">
+											<img src="/cmc/webflow/images/clock_off.svg" loading="lazy" alt="">
+											<div class="inter _12s medium _61co">12m</div>
+										</div>
+									</div> </a> <a href="#" class="research-link w-inline-block"><img src="/cmc/webflow/images/image_472_288.png" loading="lazy" alt="">
+									<div class="inter _16s medium _38co">News</div>
+									<div class="inter _16s medium">News Title</div>
+									<div class="inter _14s medium _61co">Dive into a comprehensive Q3 2024 report covering crypto market analysis, key narratives and users trends, informed by world-class crypto data and CMC users insights.</div>
+									<div class="inter _12s medium _61co">by CMC Research</div>
+									<div class="time-info-box">
+										<div class="inter _12s medium _61co">1w ago</div>
+										<div class="research-txt-wrap">
+											<img src="/cmc/webflow/images/clock_off.svg" loading="lazy" alt="">
+											<div class="inter _12s medium _61co">12m</div>
+										</div>
+									</div> </a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<jsp:include page="../frame/list-footer.jsp"></jsp:include>
 	<jsp:include page="../frame/footer.jsp"></jsp:include>

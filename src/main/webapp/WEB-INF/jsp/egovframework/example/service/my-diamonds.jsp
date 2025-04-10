@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -22,20 +23,28 @@
 				<div class="diamonds-left-area">
 					<a href="/cmc/service/my-diamonds.do" aria-current="page" class="my-side-menu on w-inline-block w--current">
 						<div class="my-side-img diamonds on"></div>
-						<div class="inter _14s normal">내 다이아몬드</div>
+						<div class="inter _14s normal">
+							<spring:message code="my-diamonds.title" />
+						</div>
 					</a> <a href="/cmc/service/rewards.do" class="my-side-menu w-inline-block">
 						<div class="my-side-img gift"></div>
-						<div class="inter _14s normal">다이아몬드 리워드</div>
+						<div class="inter _14s normal">
+							<spring:message code="my-diamonds.rewards" />
+						</div>
 					</a>
 				</div>
 				<div class="diamonds-right-area">
-					<div class="inter _30s bold">My CoinMarketCap Diamonds</div>
+					<div class="inter _30s bold">
+						<spring:message code="my-diamonds.title2" />
+					</div>
 					<div class="inter _14s medium _61co">
-						Collect CoinMarketCap Diamonds and redeem them for exclusive rewards and special offers.<br>
+						<spring:message code="my-diamonds.description" />
+						<br>
 					</div>
 					<div class="my-diamonds-card">
 						<div class="inter _14s medium">
-							내 다이아몬드<br>
+							<spring:message code="my-diamonds.myDiamonds" />
+							<br>
 						</div>
 						<div class="inter _24s bold">
 							--<br>
@@ -49,105 +58,147 @@
 						</a>
 						<div class="w-layout-vflex service-flex-between">
 							<div class="w-layout-vflex service-flex-box-stretch">
-								<div class="inter _18s bold">매일 다이아몬드를 수집하세요</div>
+								<div class="inter _18s bold">
+									<spring:message code="my-diamonds.collect.title" />
+								</div>
 								<div class="inter _14s medium _61co">
-									Collect CoinMarketCap Diamonds and redeem them for exclusive rewards and special offers.<br>
+									<spring:message code="my-diamonds.collect.description" />
+									<br>
 								</div>
 							</div>
-							<a href="#" class="service-blue-btn semibold w-button" onclick="openLogin()">Log In to Collect</a>
+							<a href="#" class="service-blue-btn semibold w-button" onclick="openLogin()"><spring:message code="my-diamonds.collect.button" /></a>
 						</div>
 						<div class="diamonds-reward-box">
 							<div class="diamonds-reward-card on">
-								<div class="inter _12s bold">Day 1</div>
+								<div class="inter _12s bold">
+									<spring:message code="my-diamonds.reward.day1" />
+								</div>
 								<img src="/cmc/webflow/images/diamond_70.png" loading="lazy" alt="" class="diamonds-img">
 								<div class="inter _20s bold">+ 10</div>
 							</div>
 							<div class="diamonds-reward-card">
-								<div class="inter _12s bold">Day 4</div>
+								<div class="inter _12s bold">
+									<spring:message code="my-diamonds.reward.day2" />
+								</div>
 								<img src="/cmc/webflow/images/diamond2_70.png" loading="lazy" alt="" class="diamonds-img">
 								<div class="inter _20s bold">+ 10</div>
 							</div>
 							<div class="diamonds-reward-card">
-								<div class="inter _12s bold">Day 3</div>
+								<div class="inter _12s bold">
+									<spring:message code="my-diamonds.reward.day3" />
+								</div>
 								<img src="/cmc/webflow/images/diamond3_70.png" loading="lazy" alt="" class="diamonds-img">
 								<div class="inter _20s bold">+ 10</div>
 							</div>
 							<div class="diamonds-reward-card">
-								<div class="inter _12s bold">Day 5</div>
+								<div class="inter _12s bold">
+									<spring:message code="my-diamonds.reward.day4" />
+								</div>
+								<img src="/cmc/webflow/images/diamond2_70.png" loading="lazy" alt="" class="diamonds-img">
+								<div class="inter _20s bold">+ 10</div>
+							</div>
+							<div class="diamonds-reward-card">
+								<div class="inter _12s bold">
+									<spring:message code="my-diamonds.reward.day5" />
+								</div>
 								<img src="/cmc/webflow/images/diamond4_70.png" loading="lazy" alt="" class="diamonds-img">
 								<div class="inter _20s bold">+ 10</div>
 							</div>
 							<div class="diamonds-reward-card">
-								<div class="inter _12s bold">Day 6</div>
+								<div class="inter _12s bold">
+									<spring:message code="my-diamonds.reward.day6" />
+								</div>
 								<img src="/cmc/webflow/images/diamond5_70.png" loading="lazy" alt="" class="diamonds-img size">
 								<div class="inter _20s bold">+ 10</div>
 							</div>
 							<div class="diamonds-reward-card">
-								<div class="inter _12s bold">Day 7</div>
+								<div class="inter _12s bold">
+									<spring:message code="my-diamonds.reward.day7" />
+								</div>
 								<img src="/cmc/webflow/images/diamond6_70.png" loading="lazy" alt="" class="diamonds-img resize">
 								<div class="inter _20s bold">+ 10</div>
 							</div>
 						</div>
 						<div class="w-layout-vflex service-flex-between">
 							<div class="w-layout-vflex service-flex-box-stretch">
-								<div class="inter _18s bold">Additional Diamonds on App</div>
+								<div class="inter _18s bold">
+									<spring:message code="my-diamonds.additionalDiamonds.title" />
+								</div>
 								<div class="inter _14s medium _61co">
-									Log in our App and collect diamond for at least 3 times within a 7 day period.<br>
+									<spring:message code="my-diamonds.additionalDiamonds.desc" />
 								</div>
 							</div>
 						</div>
 						<div class="diamonds-reward-box">
 							<div class="diamonds-reward-card on">
-								<div class="inter _12s bold">Day 1</div>
+								<div class="inter _12s bold">
+									<spring:message code="my-diamonds.day1" />
+								</div>
 								<img src="/cmc/webflow/images/diamond_70.png" loading="lazy" alt="" class="diamonds-img">
 								<div class="inter _20s bold">+ 10</div>
 							</div>
 							<div class="diamonds-reward-card">
-								<div class="inter _12s bold">Day 4</div>
+								<div class="inter _12s bold">
+									<spring:message code="my-diamonds.day2" />
+								</div>
 								<img src="/cmc/webflow/images/diamond2_70.png" loading="lazy" alt="" class="diamonds-img">
 								<div class="inter _20s bold">+ 10</div>
 							</div>
 							<div class="diamonds-reward-card">
-								<div class="inter _12s bold">Day 3</div>
+								<div class="inter _12s bold">
+									<spring:message code="my-diamonds.day3" />
+								</div>
 								<img src="/cmc/webflow/images/diamond3_70.png" loading="lazy" alt="" class="diamonds-img">
 								<div class="inter _20s bold">+ 10</div>
 							</div>
 						</div>
 						<div class="inter _14s medium _61co">
-							CoinMarketCap 다이아몬드는 무엇인가요?? <strong> </strong> <a href="#" target="_blank" class="link">여기를 읽어 보세요</a><br>
+							<spring:message code="my-diamonds.description" />
+							<strong></strong> <a href="#" target="_blank" class="link"><spring:message code="my-diamonds.readMore" /></a><br>
 						</div>
 					</div>
 					<div class="vote-box">
 						<div class="inter _18s bold">
-							Want more Diamonds? Complete these tasks!<br>
+							<spring:message code="my-diamonds.wantMoreDiamonds" />
+							<br>
 						</div>
 						<div class="vote-wrap-box line-top">
 							<div class="w-layout-vflex vote-wrap-boxl">
 								<img src="/cmc/webflow/images/1839.png" loading="lazy" alt="" class="vote-img">
 								<div class="w-layout-vflex vote-flex-block">
-									<div class="inter _14s semibold">다음으로 암호화폐를 법정화폐로 만들 국가는 어디일까요?</div>
-									<div class="inter _14s normal _61co">최대 3개의 예측을 하고 다이아몬드 10개를 받으세요.</div>
+									<div class="inter _14s semibold">
+										<spring:message code="my-diamonds.predictionQuestion" />
+									</div>
+									<div class="inter _14s normal _61co">
+										<spring:message code="my-diamonds.predictionInstruction" />
+									</div>
 								</div>
 							</div>
 							<div class="diamonds-wrap-box">
 								<img src="/cmc/webflow/images/diamond.png" loading="lazy" alt="" class="diamonds-20s">
 								<div class="inter _14s bold">10</div>
 							</div>
-							<a href="#" class="service-blue-btn w-button">투표 페이지로 이동</a>
+							<a href="#" class="service-blue-btn w-button"> <spring:message code="my-diamonds.votePage" />
+							</a>
 						</div>
 						<div class="vote-wrap-box">
 							<div class="w-layout-vflex vote-wrap-boxl">
 								<img src="/cmc/webflow/images/1839.png" loading="lazy" alt="" class="vote-img">
 								<div class="w-layout-vflex vote-flex-block">
-									<div class="inter _14s semibold">Got any predictions right?</div>
-									<div class="inter _14s normal _61co">If your instincts served you well, you get 50 extra Diamonds.</div>
+									<div class="inter _14s semibold">
+										<spring:message code="my-diamonds.gotPredictionsRight" />
+									</div>
+									<div class="inter _14s normal _61co">
+										<spring:message code="my-diamonds.extraDiamonds" />
+									</div>
 								</div>
 							</div>
 							<div class="diamonds-wrap-box">
 								<img src="/cmc/webflow/images/diamond.png" loading="lazy" alt="" class="diamonds-20s">
 								<div class="inter _14s bold">10</div>
 							</div>
-							<a href="#" class="service-blue-btn w-button">투표 페이지로 이동</a>
+							<a href="#" class="service-blue-btn w-button"> <spring:message code="my-diamonds.votePage" />
+							</a>
 						</div>
 					</div>
 				</div>

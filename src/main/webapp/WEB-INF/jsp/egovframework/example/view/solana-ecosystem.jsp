@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Mon Mar 24 2025 07:01:23 GMT+0000 (Coordinated Universal Time)  -->
@@ -20,11 +21,13 @@
 				<div class="frame">
 					<div class="main-txt-box">
 						<div class="main-title">
-							시가총액 기준 상위 Solana Ecosystem 토큰<br>
+							<spring:message code="sol.mainTitle" />
+							<br>
 						</div>
 						<div class="main-txt-flex">
 							<div>
-								Solana Ecosystem에 사용되는 최고의 암호화폐 코인 및 토큰이 아래 나열되어 있습니다. 시가총액 기준으로 정렬되었습니다. 정렬 순서를 바꾸려면 24시간, 7일 등 기준을 클릭하여 다른 기준으로 정렬된 결과를 확인하세요.<br>
+								<spring:message code="sol.description" />
+								<br>
 							</div>
 						</div>
 					</div>
@@ -33,7 +36,8 @@
 							<div class="highlight-top">
 								<a href="#" class="highlight-left w-inline-block">
 									<div class="card-header-info-title">
-										가장 많이 방문한 종목<br>
+										<spring:message code="sol.mostViewed" />
+										<br>
 									</div>
 								</a>
 								<div class="h-tap">
@@ -128,11 +132,15 @@
 							<div class="highlight-top">
 								<a href="#" class="highlight-left w-inline-block">
 									<div class="card-header-info-title">
-										주요 상승 항목<br>
+										<spring:message code="sol.topGainers" />
+										<br>
 									</div>
 								</a>
 								<div class="h-tap">
-									<a href="#" class="tabselect-h empty on w-button">24시간</a> <a href="#" class="tabselect-h empty w-button">30일</a> <a href="#" class="tabselect-h empty w-button">전체</a>
+									<a href="#" class="tabselect-h empty on w-button"> <spring:message code="sol.time24h" />
+									</a> <a href="#" class="tabselect-h empty w-button"> <spring:message code="sol.time30d" />
+									</a> <a href="#" class="tabselect-h empty w-button"> <spring:message code="sol.allTime" />
+									</a>
 								</div>
 							</div>
 							<div class="card-content"></div>
@@ -141,7 +149,8 @@
 							<div class="highlight-top">
 								<a href="#" class="highlight-left w-inline-block">
 									<div class="card-header-info-title">
-										시가총액<br>
+										<spring:message code="sol.marketCap" />
+										<br>
 									</div>
 								</a>
 								<div class="w-layout-vflex h-tap-flex-box">
@@ -149,7 +158,10 @@
 										<a href="#" class="tabselect-h graph on w-button"></a> <a href="#" class="tabselect-h graph-circle w-button"></a>
 									</div>
 									<div class="h-tap">
-										<a href="#" class="tabselect-h empty on w-button">24시간</a> <a href="#" class="tabselect-h empty w-button">30일</a> <a href="#" class="tabselect-h empty w-button">전체</a>
+										<a href="#" class="tabselect-h empty on w-button"> <spring:message code="sol.time24h" />
+										</a> <a href="#" class="tabselect-h empty w-button"> <spring:message code="sol.time30d" />
+										</a> <a href="#" class="tabselect-h empty w-button"> <spring:message code="sol.allTime" />
+										</a>
 									</div>
 								</div>
 							</div>
@@ -201,60 +213,84 @@
 								<div class="coin-txt-table">#</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap name">
-								<div class="coin-txt-table name">이름</div>
+								<div class="coin-txt-table name">
+									<spring:message code="table.name" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap price">
-								<div class="coin-txt-table price">가격</div>
+								<div class="coin-txt-table price">
+									<spring:message code="table.price" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width85">
-								<div class="coin-txt-table">1h %</div>
+								<div class="coin-txt-table">
+									<spring:message code="table.time1-houre" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width85">
-								<div class="coin-txt-table">24시간%</div>
+								<div class="coin-txt-table">
+									<spring:message code="table.time24-houre" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width85">
-								<div class="coin-txt-table">7일 %</div>
+								<div class="coin-txt-table">
+									<spring:message code="table.time7-days" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width180">
-								<div class="coin-txt-table">시가 총액</div>
+								<div class="coin-txt-table">
+									<spring:message code="table.market.capitalization" />
+								</div>
 								<div class="hover-info-pop">
 									<div class="hover-info">
 										<div>
-											암호화폐 유통량의 전체 시장 가치 이는 주식 시장에서의 유동주식 시가총액과 유사합니다.<br> <br>시가 총액 = 현재 가격 x 써큘레이팅 공급.
+											<spring:message code="table.market.capitalization-info" />
 										</div>
 										<a href="#" class="link w-inline-block">
-											<div>더 읽기</div>
+											<div>
+												<spring:message code="table.readMore" />
+											</div>
 										</a>
 									</div>
 								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width180">
-								<div class="coin-txt-table">거래량 (24시간)</div>
+								<div class="coin-txt-table">
+									<spring:message code="table.trading.volume" />
+								</div>
 								<div class="hover-info-pop">
 									<div class="hover-info">
-										<div>지난 24시간 동안 거래된 가상자산의 양을 측정한 수치입니다.</div>
+										<div>
+											<spring:message code="table.trading.volume-info" />
+										</div>
 										<a href="#" class="link w-inline-block">
-											<div>더 읽기</div>
+											<div>
+												<spring:message code="table.readMore" />
+											</div>
 										</a>
 									</div>
 								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width150">
 								<div class="coin-txt-table">
-									<strong>유통 공급량</strong>
+									<strong><spring:message code="table.circulating.supply" /></strong>
 								</div>
 								<div class="hover-info-pop">
 									<div class="hover-info">
-										<div>시장 및 일반 대중들 사이에서 유통되는 코인의 양. 이는 주식시장에서 유통되는 주식과 유사합니다.</div>
+										<div>
+											<spring:message code="table.circulating.supply-info" />
+										</div>
 										<a href="#" class="link w-inline-block">
-											<div>더 읽기</div>
+											<div>
+												<spring:message code="table.readMore" />
+											</div>
 										</a>
 									</div>
 								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width180">
 								<div class="coin-txt-table">
-									<strong>최근 7일</strong>
+									<strong><spring:message code="table.Last7days" /></strong>
 								</div>
 							</div>
 						</div>
@@ -652,12 +688,20 @@
 						</div>
 					</div>
 					<div class="table-bottom">
-						<div class="coin-table-bottom-txt">1 보이기 - 10868 의 100</div>
+						<div class="coin-table-bottom-txt">
+							1
+							<spring:message code="table.showtxt" />
+							- 10868
+							<spring:message code="table.showtxt2" />
+							100
+						</div>
 						<div class="pagin-box">
 							<a href="#" class="paging-btn left w-button"></a> <a href="#" class="paging-btn on w-button">1</a> <a href="#" class="paging-btn w-button">2</a> <a href="#" class="paging-btn w-button">3</a> <a href="#" class="paging-btn w-button">4</a> <a href="#" class="paging-btn w-button">5</a> <a href="#" class="paging-btn right w-button"></a>
 						</div>
 						<div class="row-box">
-							<div>행 표시하기</div>
+							<div>
+								<spring:message code="table.rowShow" />
+							</div>
 							<div data-hover="false" data-delay="0" class="dropdown w-dropdown">
 								<div class="dropdown-toggle w-dropdown-toggle">
 									<div>100</div>
@@ -677,11 +721,13 @@
 						<div class="inter _32s bold">
 							<strong>Stay on top of crypto. All the time, any time.</strong>
 						</div>
-						<div class="stay-sub-tt">받은 편지함에서 뉴스, 보상, 상장 등에 대한 Logoname 업데이트를 받아보세요.</div>
+						<div class="stay-sub-tt">
+							<spring:message code="sol.inboxUpdates" />
+						</div>
 						<div class="form-block w-form">
 							<form id="email-form" name="email-form" data-name="Email Form" method="get" class="form" data-wf-page-id="67e0f82474ce058489f64114" data-wf-element-id="ca2fa0b6-19f4-5e3d-a95f-ff399c93c982">
-								<input class="text-field w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="이메일 주소 입력" type="text" id="name-2">
-								<input type="submit" data-wait="Please wait..." class="submit-button w-button" value="제출">
+								<input class="text-field w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="<spring:message code='sol.emailPlaceholder'/>" type="text" id="name-2">
+								<input type="submit" data-wait="Please wait..." class="submit-button w-button" value="<spring:message code='sol.submit'/>">
 							</form>
 						</div>
 					</div>

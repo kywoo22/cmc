@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -25,7 +26,9 @@
 									<div class="post-header">
 										<div class="post-header-wrap">
 											<a href="../community/feed.html" class="back-link w-inline-block"><img src="/cmc/webflow/images/arrow_left_long.svg" loading="lazy" alt=""></a>
-											<div class="inter _20s bold">게시물 정보</div>
+											<div class="inter _20s bold">
+												<spring:message code="post.postInfo" />
+											</div>
 										</div>
 										<div class="w-layout-vflex post-header-wrap">
 											<img src="/cmc/webflow/images/sms.svg" loading="lazy" alt=""><img src="/cmc/webflow/images/repeat.svg" loading="lazy" alt=""><img src="/cmc/webflow/images/add_reaction.svg" loading="lazy" alt=""><img src="/cmc/webflow/images/share_1.svg" loading="lazy" alt="">
@@ -37,7 +40,7 @@
 										</div>
 										<div class="post-middle">
 											<div class="inter _16s bold">
-												Username <span class="post-span">@Username · 19시간</span>
+												Username <span class="post-span">@Username · 19<spring:message code="post.time" /></span>
 											</div>
 											<div class="inter _16s medium">
 												Bitcoin&#x27;s Bull Cycle 🫳<br> <br>According to Ki Young Ju, CEO of CryptoQuant, a 30% correction during a Bitcoin bull cycle isn’t anything out of the ordinary. In fact, <a href="https://coinmarketcap.com/community/ko/coins/bitcoin/top/">$BTC</a> saw a massive 53% drop in 2021 and still managed to recover to an all-time high.
@@ -89,12 +92,15 @@
 													<div class="inter _11s semibold _61co">Bullish</div> </a>
 											</div>
 											<div class="sentiment"></div>
-											<a href="#" class="post-btn w-button">답글</a>
+											<a href="#" class="post-btn w-button"> <spring:message code="post.reply" />
+											</a>
 										</div>
 									</div>
 									<div class="comment-box">
 										<div class="post-tap">
-											<a href="#" class="post-tap-btn on w-button">댓글 (126)</a> <a href="#" class="post-tap-btn w-button">재게시 (12)</a>
+											<a href="#" class="post-tap-btn on w-button"> <spring:message code="post.comments" /> (126)
+											</a> <a href="#" class="post-tap-btn w-button"> <spring:message code="post.reposts" /> (12)
+											</a>
 										</div>
 										<div class="w-layout-vflex post-list">
 											<div class="other-post comment">
@@ -168,12 +174,6 @@
 										</div>
 									</div>
 								</form>
-								<div class="w-form-done">
-									<div>Thank you! Your submission has been received!</div>
-								</div>
-								<div class="w-form-fail">
-									<div>Oops! Something went wrong while submitting the form.</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -181,27 +181,37 @@
 						<div class="w-layout-vflex community-flex-box">
 							<div class="commnunity-wrap">
 								<div class="flex-between-box">
-									<div class="inter _16s bold">라이브 예정</div>
+									<div class="inter _16s bold">
+										<spring:message code="post.upcomingLive" />
+									</div>
 									<a href="#" class="link w-inline-block">
-										<div class="inter _12s semibold">더 보기</div>
+										<div class="inter _12s semibold">
+											<spring:message code="post.viewMore" />
+										</div>
 									</a>
 								</div>
 								<a href="#" class="community-live-wrap w-inline-block">
 									<div class="live-detail-box">
 										<img src="/cmc/webflow/images/mike.svg" loading="lazy" alt="">
-										<div>Live Title</div>
+										<div>
+											<spring:message code="post.liveTitle" />
+										</div>
 									</div>
 									<div class="live-detail-box txt14s">
 										<img src="/cmc/webflow/images/calendar.svg" loading="lazy" alt="">
 										<div>00:00, 0월 00</div>
 									</div>
-									<div class="live-btn">Set Reminder</div>
+									<div class="live-btn">
+										<spring:message code="post.setReminder" />
+									</div>
 								</a>
 							</div>
 							<a href="#" class="commnunity-wrap padding w-inline-block">
 								<div class="flex-box-left">
 									<img src="/cmc/webflow/images/fire_icon.svg" loading="lazy" alt="">
-									<div class="inter _16s bold">인기있는 주제</div>
+									<div class="inter _16s bold">
+										<spring:message code="post.popularTopics" />
+									</div>
 									<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
 								</div>
 								<div class="community-list">
@@ -248,7 +258,9 @@
 								</div>
 							</a> <a href="#" class="commnunity-wrap padding w-inline-block">
 								<div class="flex-box-left">
-									<div class="inter _16s bold">인기 급상승 토큰</div>
+									<div class="inter _16s bold">
+										<spring:message code="post.popularTokens" />
+									</div>
 									<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
 								</div>
 								<div class="community-list">
@@ -305,7 +317,9 @@
 								</div>
 							</a>
 							<div class="inter _12s medium _80co">
-								유의 사항: 여기에 포함된 데이터와 정보는 제3자에 의해 제공된 것으로, CoinMarketCap은 그러한 데이터를 생성하지 않습니다. 전체 내용은 <a href="#" class="link">여기</a>에서 확인하세요.
+								<spring:message code="post.disclaimer" />
+								<a href="#" class="link"> <spring:message code="post.viewFull" />
+								</a>
 							</div>
 						</div>
 					</div>

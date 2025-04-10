@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -19,13 +20,17 @@
 			<div class="service-banner">
 				<div class="service-middle-wrap">
 					<div class="service-banner-title">
-						Advertise on CoinMarketCap<br>
+						<spring:message code="advertise.title" />
+						<br>
 					</div>
 					<div class="inter _20s bold center">
-						Connect your brand and grow your audience with our community of crypto and blockchain enthusiasts around the world<br>
+						<spring:message code="advertise.subtitle" />
+						<br>
 					</div>
 					<div class="service-icon-box">
-						<a href="#" class="service-try-btn nomax w-button">Advertise Now</a> <a href="#" class="service-try-btn nomax w-button">Contact Sales</a>
+						<a href="#" class="service-try-btn nomax w-button"> <spring:message code="advertise.advertiseNow" />
+						</a> <a href="#" class="service-try-btn nomax w-button"> <spring:message code="advertise.contactSales" />
+						</a>
 					</div>
 				</div>
 			</div>
@@ -37,68 +42,92 @@
 								<div class="service-container">
 									<section class="section2">
 										<div class="subscribe-txt">
-											Advertisement Offerings<br>
+											<spring:message code="advertise.offerings" />
+											<br>
 										</div>
 										<div class="letter-box">
 											<div class="letter-txt-box">
-												<div class="inter _25s bold">Budget &gt; $20k?</div>
-												<div class="list-letter">
-													<div class="inter _14s medium width50">Contact our sales team to discuss how you can achieve your marketing goals through advertising on CMC</div>
+												<div class="inter _25s bold">
+													<spring:message code="advertise.budgetOver" />
 												</div>
-												<a href="#" class="service-try-btn w-button">Contact Sales</a>
+												<div class="list-letter">
+													<div class="inter _14s medium width50">
+														<spring:message code="advertise.overDesc" />
+													</div>
+												</div>
+												<a href="#" class="service-try-btn w-button"> <spring:message code="advertise.contactSales" />
+												</a>
 											</div>
 											<div class="letter-txt-box news-insights">
 												<div class="inter _25s bold">
-													Budget &lt; $20k?<br>
+													<spring:message code="advertise.budgetUnder" />
+													<br>
 												</div>
 												<div class="list-letter right">
-													<div class="inter _14s medium">Our advertiser-friendly platform allows you to start advertising as fast as 24h</div>
+													<div class="inter _14s medium">
+														<spring:message code="advertise.underDesc" />
+													</div>
 												</div>
-												<a href="#" class="service-try-btn w-button">Advertise now</a>
+												<a href="#" class="service-try-btn w-button"> <spring:message code="advertise.advertiseNow" />
+												</a>
 											</div>
 											<div class="letter-txt-box reserch">
-												<div class="inter _25s bold">Maximize your reach</div>
-												<div class="list-letter">
-													<div class="inter _14s medium">Geo-targeted ad spots available on web and app</div>
+												<div class="inter _25s bold">
+													<spring:message code="advertise.maximizeReach" />
 												</div>
-												<a href="#" class="service-try-btn w-button">Contact Sales</a>
+												<div class="list-letter">
+													<div class="inter _14s medium">
+														<spring:message code="advertise.geoTargeted" />
+													</div>
+												</div>
+												<a href="#" class="service-try-btn w-button"> <spring:message code="advertise.contactSales" />
+												</a>
 											</div>
 											<div class="letter-txt-box cmc">
 												<div class="inter _25s bold">
-													General partnerships<br>
+													<spring:message code="advertise.partnerships" />
+													<br>
 												</div>
 												<div class="list-letter right">
-													<div class="inter _14s medium">Want to propose a partnership idea?</div>
+													<div class="inter _14s medium">
+														<spring:message code="advertise.partnershipProposal" />
+													</div>
 												</div>
-												<a href="#" class="service-try-btn w-button">Want to propose a partnership idea?</a>
+												<a href="#" class="service-try-btn w-button"> <spring:message code="advertise.partnershipProposal" />
+												</a>
 											</div>
 										</div>
 									</section>
 									<section class="section3">
 										<div class="faq-txt">
-											FAQ<br>
+											<spring:message code="advertise.faq" />
+											<br>
 										</div>
 										<div class="faq-list-box">
 											<div class="faq-list">
 												<div class="w-layout-vflex faq-top">
 													<div class="inter _16s semibold">
-														<strong>What are the supported payment options?</strong>
+														<strong><spring:message code="advertise.q1" /></strong>
 													</div>
 													<div class="fqa-arrow light"></div>
 												</div>
 												<div class="faq-detail">
-													<div class="inter _14s medium">We accept cards, wire transfers, and crypto.</div>
+													<div class="inter _14s medium">
+														<spring:message code="advertise.a1" />
+													</div>
 												</div>
 											</div>
 											<div class="faq-list">
 												<div class="w-layout-vflex faq-top">
 													<div class="inter _16s semibold">
-														<strong>Can non-crypto companies advertise on CoinMarketCap?</strong>
+														<strong><spring:message code="advertise.q2" /></strong>
 													</div>
 													<div class="fqa-arrow light"></div>
 												</div>
 												<div class="faq-detail">
-													<div class="inter _14s medium">Definitely! If you would like to expose your brand to a massive crypto audience, there is no better platform to advertise on.</div>
+													<div class="inter _14s medium">
+														<spring:message code="advertise.a2" />
+													</div>
 												</div>
 											</div>
 										</div>

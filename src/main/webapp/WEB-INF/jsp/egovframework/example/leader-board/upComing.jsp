@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Thu Mar 13 2025 05:17:25 GMT+0000 (Coordinated Universal Time)  -->
@@ -10,7 +11,7 @@
 </head>
 <body>
 	<div class="root">
-	<jsp:include page="../frame/login-register.jsp"></jsp:include>
+		<jsp:include page="../frame/login-register.jsp"></jsp:include>
 		<div class="main-cotent">
 			<div class="w-layout-vflex main-top">
 				<jsp:include page="../frame/menu.jsp"></jsp:include>
@@ -19,10 +20,12 @@
 			<div class="body-wrap">
 				<div class="frame no-max">
 					<div class="main-txt-box">
-						<div class="main-title">곧 공개될 최고의 가상자산</div>
+						<div class="main-title">
+							<spring:message code="upComing.title" />
+						</div>
 						<div class="main-txt-flex">
 							<div>
-								업계를 선도하는 블록체인과 생태계에서 곧 출시 예정인 가상자산은 다음과 같습니다. 하루에 수백 개의 신규 가상자산 프로젝트와 토큰이 출시될 수 있기에, CoinMarketCap은 이 페이지에 나열된 프로젝트를 개별적으로 확인하거나 검증할 수 없습니다. 가상자산 구매를 결정하기 전에 블록체인, 생태계, 프로젝트 및 기술에 대해 철저한 조사를 수행하기를 추천합니다.<br>
+								<spring:message code="upComing.description" />
 							</div>
 						</div>
 					</div>
@@ -33,13 +36,19 @@
 								<div class="coin-txt-table">#</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width200per">
-								<div class="coin-txt-table name">이름</div>
+								<div class="coin-txt-table name">
+									<spring:message code="upcoming.name" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width85">
-								<div class="coin-txt-table price">첫 상장일</div>
+								<div class="coin-txt-table price">
+									<spring:message code="upcoming.firstListingDate" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width200per right">
-								<div class="coin-txt-table">더 보기</div>
+								<div class="coin-txt-table">
+									<spring:message code="upcoming.more" />
+								</div>
 							</div>
 						</div>
 						<div class="coin-list">
@@ -58,7 +67,9 @@
 								</div>
 								<div class="w-layout-vflex coin-table-top-wrap width200per right">
 									<a href="#" class="list-more-btn-board w-inline-block"><img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
-										<div class="text-block">더 읽기</div> </a>
+										<div class="text-block">
+											<spring:message code="upcoming.readMore" />
+										</div> </a>
 								</div>
 							</div>
 							<div class="list height40">
@@ -155,12 +166,21 @@
 						</div>
 					</div>
 					<div class="table-bottom">
-						<div class="coin-table-bottom-txt">1 보이기 - 10868 의 100</div>
+						<div class="coin-table-bottom-txt">
+							<spring:message code="table.showtxt" />
+							1
+							<spring:message code="table.showtxt2" />
+							10868
+							<spring:message code="table.rowShow" />
+							100
+						</div>
 						<div class="pagin-box">
 							<a href="#" class="paging-btn left w-button"></a> <a href="#" class="paging-btn on w-button">1</a> <a href="#" class="paging-btn w-button">2</a> <a href="#" class="paging-btn w-button">3</a> <a href="#" class="paging-btn w-button">4</a> <a href="#" class="paging-btn w-button">5</a> <a href="#" class="paging-btn right w-button"></a>
 						</div>
 						<div class="row-box">
-							<div>행 표시하기</div>
+							<div>
+								<spring:message code="table.rowShow" />
+							</div>
 							<div data-hover="false" data-delay="0" class="dropdown w-dropdown">
 								<div class="dropdown-toggle w-dropdown-toggle">
 									<div>100</div>

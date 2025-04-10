@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -19,22 +20,31 @@
 			<div class="body-wrap">
 				<div class="frame">
 					<div class="main-txt-box">
-						<div class="main-title">최고의 암호화폐 현물 교환</div>
+						<div class="main-title">
+							<spring:message code="spot.title" />
+						</div>
 						<div class="main-txt-flex">
-							<div>CoinMarketCap은 트래픽, 유동성, 거래량 및 보고된 거래량의 정당성에 대한 신뢰도를 기준으로 거래소의 순위를 매기고 거래량을 파악합니다.</div>
+							<div>
+								<spring:message code="spot.description" />
+							</div>
 							<a href="#" class="link-read-hide w-inline-block" onclick="showLeadMore(this)">
-								<div>더 읽기</div>
+								<div>
+									<spring:message code="table.readMore" />
+								</div>
 							</a>
 						</div>
 						<div class="w-layout-vflex lead-more-txt">
 							<div class="main-txt-flex">
 								<div>
-									We now track <strong>257</strong> spot exchanges with a total 24h volume of <strong>₩1.6P</strong>. For more info on exchange ranking, click <a href="#" target="_blank" class="link">here </a>.
+									<spring:message code="spot.trackingSummary" />
 								</div>
 								<a href="#" class="link-read-hide w-inline-block" onclick="hideLeadMore()">
-									<div>감추기</div>
+									<div>
+										<spring:message code="spot.hide" />
+									</div>
 								</a>
 							</div>
+
 						</div>
 					</div>
 					<jsp:include page="../frame/exchange-tap.jsp"></jsp:include>
@@ -44,28 +54,44 @@
 								<div class="coin-txt-table">#</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap name">
-								<div class="coin-txt-table name">거래소</div>
+								<div class="coin-txt-table name">
+									<spring:message code="spot.exchange" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width250">
-								<div class="coin-txt-table">거래량 (24시간)</div>
+								<div class="coin-txt-table">
+									<spring:message code="spot.volume24h" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width125">
-								<div class="coin-txt-table">평균 유동성</div>
+								<div class="coin-txt-table">
+									<spring:message code="spot.avgLiquidity" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width125">
-								<div class="coin-txt-table">주별 방문</div>
+								<div class="coin-txt-table">
+									<spring:message code="spot.weeklyVisits" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width125">
-								<div class="coin-txt-table">페어 수</div>
+								<div class="coin-txt-table">
+									<spring:message code="spot.pairCount" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width125">
-								<div class="coin-txt-table"># 순위</div>
+								<div class="coin-txt-table">
+									<spring:message code="spot.rank" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width125 supported">
-								<div class="coin-txt-table">지원 화폐</div>
+								<div class="coin-txt-table">
+									<spring:message code="spot.supportedCurrencies" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width250">
-								<div class="coin-txt-table">최근 7일</div>
+								<div class="coin-txt-table">
+									<spring:message code="spot.last7days" />
+								</div>
 							</div>
 						</div>
 						<div class="coin-list">
@@ -457,12 +483,19 @@
 						</div>
 					</div>
 					<div class="table-bottom">
-						<div class="coin-table-bottom-txt">1 보이기 - 10868 의 100</div>
-						<a href="#" class="more-btn position w-button">더 보기</a>
+						<div class="coin-table-bottom-txt">
+							1
+							<spring:message code="table.showtxt" />
+							- 10868
+							<spring:message code="table.showtxt2" />
+							100
+						</div>
+						<a href="#" class="more-btn position w-button"><spring:message code="spot.loadMore" /></a>
 					</div>
 					<div class="table-bottom">
 						<div class="coin-table-bottom-txt">
-							여기를 클릭하여 작업하는 방법을 알아봅니다. <a href="#" class="link61co">더 읽기</a>
+							<spring:message code="spot.howItWorks" />
+							<a href="#" class="link61co"><spring:message code="spot.readMore" /></a>
 						</div>
 					</div>
 				</div>
@@ -473,11 +506,13 @@
 						<div class="inter _32s bold">
 							<strong>Stay on top of crypto. All the time, any time.</strong>
 						</div>
-						<div class="stay-sub-tt">받은 편지함에서 뉴스, 보상, 상장 등에 대한 Logoname 업데이트를 받아보세요.</div>
+						<div class="stay-sub-tt">
+							<spring:message code="spot.inboxUpdates" />
+						</div>
 						<div class="form-block w-form">
 							<form id="email-form" name="email-form" data-name="Email Form" method="get" class="form" data-wf-page-id="67bd5af2298d0badefbca947" data-wf-element-id="d2713140-fe10-7788-e6a0-f0fcd477dc5e">
-								<input class="text-field w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="이메일 주소 입력" type="text" id="name-2">
-								<input type="submit" data-wait="Please wait..." class="submit-button w-button" value="제출">
+								<input class="text-field w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="<spring:message code='spot.emailPlaceholder'/>" type="text" id="name-2">
+								<input type="submit" data-wait="Please wait..." class="submit-button w-button" value="<spring:message code='spot.submit'/>">
 							</form>
 						</div>
 					</div>

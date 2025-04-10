@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -25,11 +26,14 @@
 						<div class="market-overview-wrap">
 							<div class="market-overview-top">
 								<div class="w-layout-vflex market-overview-top-wrap">
-									<div class="inter _25s bold">CMC 가상자산 공포 및 탐욕 지수</div>
-									<a href="#" class="api-detail-btn w-button">API 세부 정보 보기</a>
+									<div class="inter _25s bold">
+										<spring:message code="fearGreed.cmcFearGreedIndex" />
+									</div>
+									<a href="#" class="api-detail-btn w-button"> <spring:message code="fearGreed.apiDetails" />
+									</a>
 								</div>
 								<div class="inter _14s normal _61co">
-									시장 심리를 분석하여 정보에 입각한 가상자산 투자 결정에 도움을 주는 강력한 도구인 공포와 탐욕 지수를 확인해 보세요. 손쉬운 API를 통해 제공되는 실시간 및 과거 데이터로 시장 동향을 파악하세요.<br>
+									<spring:message code="fearGreed.description" />
 								</div>
 							</div>
 							<div class="market-overview-middle">
@@ -38,7 +42,8 @@
 										<div class="m-o-card gap24">
 											<div class="card-header">
 												<div class="card-header-title">
-													CMC 가상자산 공포 및 탐욕 지수<br>
+													<spring:message code="fearGreed.cmcFearGreedIndex" />
+													<br>
 												</div>
 											</div>
 											<div class="w-layout-vflex m-o-wrap">
@@ -46,32 +51,9 @@
 													<div class="circle"></div>
 													<div class="progress-txt-box">
 														<div class="inter _32s bold">35</div>
-														<div class="inter _11s normal _61co">Neutral</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="m-o-card gap24">
-											<div class="card-header">
-												<div class="card-header-title">과거 수치</div>
-											</div>
-											<div class="m-o-txt-list">
-												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">어제</div>
-													<div class="value-txt neutrality">
-														중립 - 59<br>
-													</div>
-												</div>
-												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">지난 주</div>
-													<div class="value-txt horror">
-														공포 - 38<br>
-													</div>
-												</div>
-												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">지난 달</div>
-													<div class="value-txt neutrality">
-														중립 - 59<br>
+														<div class="inter _11s normal _61co">
+															<spring:message code="fearGreed.neutral" />
+														</div>
 													</div>
 												</div>
 											</div>
@@ -79,22 +61,63 @@
 										<div class="m-o-card gap24">
 											<div class="card-header">
 												<div class="card-header-title">
-													연간 최고 및 최저<br>
+													<spring:message code="fearGreed.pastFigures" />
 												</div>
 											</div>
 											<div class="m-o-txt-list">
 												<div class="m-o-txt-box">
 													<div class="inter _12s medium _61co">
-														<strong>연간 최고 </strong>(Mar 12, 2024)
+														<spring:message code="fearGreed.yesterday" />
 													</div>
-													<div class="value-txt avarice">극도의 탐욕 - 92</div>
+													<div class="value-txt neutrality">
+														<spring:message code="fearGreed.neutral" />
+														- 59<br>
+													</div>
 												</div>
 												<div class="m-o-txt-box">
 													<div class="inter _12s medium _61co">
-														<strong>연간 최저 </strong>(Sep 07, 2024)
+														<spring:message code="fearGreed.lastWeek" />
 													</div>
 													<div class="value-txt horror">
-														공포 - 26<br>
+														<spring:message code="fearGreed.fear" />
+														- 38<br>
+													</div>
+												</div>
+												<div class="m-o-txt-box">
+													<div class="inter _12s medium _61co">
+														<spring:message code="fearGreed.lastMonth" />
+													</div>
+													<div class="value-txt neutrality">
+														<spring:message code="fearGreed.neutral" />
+														- 59<br>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="m-o-card gap24">
+											<div class="card-header">
+												<div class="card-header-title">
+													<spring:message code="fearGreed.annualHighLow" />
+													<br>
+												</div>
+											</div>
+											<div class="m-o-txt-list">
+												<div class="m-o-txt-box">
+													<div class="inter _12s medium _61co">
+														<strong><spring:message code="fearGreed.annualHigh" /></strong> (Mar 12, 2024)
+													</div>
+													<div class="value-txt avarice">
+														<spring:message code="fearGreed.extremeGreed" />
+														- 92
+													</div>
+												</div>
+												<div class="m-o-txt-box">
+													<div class="inter _12s medium _61co">
+														<strong><spring:message code="fearGreed.annualLow" /></strong> (Sep 07, 2024)
+													</div>
+													<div class="value-txt horror">
+														<spring:message code="fearGreed.fear" />
+														- 26<br>
 													</div>
 												</div>
 											</div>
@@ -103,11 +126,14 @@
 									<div class="m-o-chart-box">
 										<div class="card-header between space">
 											<div class="card-header-title">
-												<strong>공포 및 탐욕 지수 차트<br></strong>
+												<strong><spring:message code="fearGreed.fearGreedIndexChart" /><br></strong>
 											</div>
 											<div class="m-o-chart-btn-box">
 												<div class="m-o-chart-btn-wrap">
-													<a href="#" class="tabselect-chart-btn w-button">30일</a> <a href="#" class="tabselect-chart-btn w-button">1년</a> <a href="#" class="tabselect-chart-btn on w-button">전체</a>
+													<a href="#" class="tabselect-chart-btn w-button"> <spring:message code="fearGreed.time30d" />
+													</a> <a href="#" class="tabselect-chart-btn w-button"> <spring:message code="fearGreed.time1y" />
+													</a> <a href="#" class="tabselect-chart-btn on w-button"> <spring:message code="fearGreed.allTime" />
+													</a>
 												</div>
 												<div class="m-o-chart-btn-wrap"></div>
 											</div>
@@ -116,19 +142,22 @@
 											<div class="chart-wrap-box">
 												<div class="circle-color fear-greed"></div>
 												<div class="inter _12s medium _61co">
-													CMC 가상자산 공포 및 탐욕 지수<br>
+													<spring:message code="fearGreed.cmcFearGreedIndex" />
+													<br>
 												</div>
 											</div>
 											<div class="chart-wrap-box">
 												<div class="circle-color coin-price"></div>
 												<div class="inter _12s medium _61co">
-													비트코인 가격<br>
+													<spring:message code="fearGreed.bitcoinPrice" />
+													<br>
 												</div>
 											</div>
 											<div class="chart-wrap-box">
 												<div class="circle-color trading-volume"></div>
 												<div class="inter _12s medium _61co">
-													비트코인 거래량<br>
+													<spring:message code="fearGreed.bitcoinVolume" />
+													<br>
 												</div>
 											</div>
 										</div>
@@ -138,7 +167,8 @@
 							</div>
 							<div class="market-overview-bottom">
 								<div class="inter _25s bold">
-									CMC 가상자산 공포 및 탐욕 지수 기사<br>
+									<spring:message code="fearGreed.fearGreedIndexArticle" />
+									<br>
 								</div>
 								<div class="research-box">
 									<a href="#" class="research-link w-inline-block"><img src="/cmc/webflow/images/image_472_288.png" loading="lazy" alt="">

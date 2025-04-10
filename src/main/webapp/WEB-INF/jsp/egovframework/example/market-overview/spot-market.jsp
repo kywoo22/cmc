@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -26,12 +27,14 @@
 							<div class="market-overview-top">
 								<div class="w-layout-vflex market-overview-top-wrap gap12">
 									<div class="inter _25s bold">
-										현물 시장<br>
+										<spring:message code="spotMarket.title" />
 									</div>
-									<a href="#" class="api-detail-btn w-button">API 세부 정보 보기</a>
+									<a href="#" class="api-detail-btn w-button"> <spring:message code="spotMarket.apiDetail" />
+									</a>
 								</div>
 								<div class="inter _14s normal _61co">
-									가상자산 시가총액, 거래량, 과거 실적을 확인할 수 있는 가상자산 현물 시장 데이터 페이지를 살펴보세요. 사용하기 쉬운 API와 상세한 분석 도구를 사용하여 CEX 및 DEX 활동을 분석하고, 연간 추세를 살펴보고, 정보에 입각한 의사 결정을 내릴 수 있습니다.<br>
+									<spring:message code="spotMarket.description" />
+									<br>
 								</div>
 							</div>
 							<div class="market-overview-middle">
@@ -39,50 +42,74 @@
 									<div class="m-o-info-area width350">
 										<div class="m-o-card gap24 h-auto">
 											<div class="card-header">
-												<div class="card-header-title">가상자산 시가총액</div>
+												<div class="card-header-title">
+													<spring:message code="spotMarket.marketCap" />
+												</div>
 											</div>
 											<div class="cmc-rate-box">
 												<div class="inter _32s bold">$196.62</div>
 												<div class="m-o-coin-rate-wrap">
 													<div class="fluctuation-rate-img down"></div>
-													<div class="inter _14s bold down">1.89%(24시간)</div>
+													<div class="inter _14s bold down">
+														1.89% (
+														<spring:message code="spotMarket.24h" />
+														)
+													</div>
 												</div>
 											</div>
 										</div>
+
 										<div class="m-o-card gap24 h-auto">
 											<div class="card-header">
-												<div class="card-header-title">시가총액 과거 가치</div>
+												<div class="card-header-title">
+													<spring:message code="spotMarket.marketCapHistory" />
+												</div>
 											</div>
 											<div class="m-o-txt-list">
 												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">어제</div>
+													<div class="inter _12s medium _61co">
+														<spring:message code="spotMarket.yesterday" />
+													</div>
 													<div class="inter _12s bold">- $192.83</div>
 												</div>
 												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">지난 주</div>
+													<div class="inter _12s medium _61co">
+														<spring:message code="spotMarket.lastWeek" />
+													</div>
 													<div class="inter _12s bold">
 														$197.34<br>
 													</div>
 												</div>
 												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">최근 3달</div>
+													<div class="inter _12s medium _61co">
+														<spring:message code="spotMarket.last3Months" />
+													</div>
 													<div class="inter _12s bold">
 														+ $215.25<br>
 													</div>
 												</div>
 											</div>
 										</div>
+
 										<div class="m-o-coin-rate gap24 h-auto">
 											<div class="card-header">
-												<div class="card-header-title">시가총액 연간 실적</div>
+												<div class="card-header-title">
+													<spring:message code="spotMarket.annualPerformance" />
+												</div>
 											</div>
 											<div class="m-o-txt-list">
 												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">연간 최고 (Dec 18, 2024)</div>
+													<div class="inter _12s medium _61co">
+														<spring:message code="spotMarket.annualHigh" />
+														(Dec 18, 2024)
+													</div>
 													<div class="inter _12s bold">$192.83</div>
 												</div>
 												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">연간 최저 (Aug 05, 2024)</div>
+													<div class="inter _12s medium _61co">
+														<spring:message code="spotMarket.annualLow" />
+														(Aug 05, 2024)
+													</div>
 													<div class="inter _12s bold">
 														$197.34<br>
 													</div>
@@ -93,14 +120,14 @@
 									<div class="m-o-chart-box">
 										<div class="card-header between space">
 											<div class="card-header-title">
-												<strong>가상자산 시가총액 차트<br></strong>
+												<strong><spring:message code="spotMarket.chart.marketCap" /></strong><br>
 											</div>
 											<div class="m-o-chart-btn-box">
 												<div class="m-o-chart-btn-wrap">
-													<a href="#" class="tabselect-chart-btn on w-button">개요</a> <a href="#" class="tabselect-chart-btn w-button">세부 내역</a>
+													<a href="#" class="tabselect-chart-btn on w-button"><spring:message code="spotMarket.chart.overview" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.detail" /></a>
 												</div>
 												<div class="m-o-chart-btn-wrap">
-													<a href="#" class="tabselect-chart-btn w-button">24시간</a> <a href="#" class="tabselect-chart-btn w-button">7일</a> <a href="#" class="tabselect-chart-btn w-button">30일</a> <a href="#" class="tabselect-chart-btn w-button">1년</a> <a href="#" class="tabselect-chart-btn on w-button">전체</a>
+													<a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.24h" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.7d" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.30d" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.1y" /></a> <a href="#" class="tabselect-chart-btn on w-button"><spring:message code="spotMarket.chart.all" /></a>
 												</div>
 												<div class="m-o-chart-btn-wrap"></div>
 											</div>
@@ -112,29 +139,32 @@
 									<div class="m-o-chart-box">
 										<div class="card-header between space">
 											<div class="card-header-title">
-												가상자산 현물 거래량 (24시간)<br>
+												<spring:message code="spotMarket.chart.spotVolume" />
+												<br>
 											</div>
 											<div class="m-o-chart-btn-box">
 												<div class="m-o-chart-btn-wrap">
-													<a href="#" class="tabselect-chart-btn w-button">24시간</a> <a href="#" class="tabselect-chart-btn w-button">7일</a> <a href="#" class="tabselect-chart-btn w-button">30일</a> <a href="#" class="tabselect-chart-btn w-button">1년</a> <a href="#" class="tabselect-chart-btn on w-button">전체</a>
+													<a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.24h" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.7d" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.30d" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.1y" /></a> <a href="#" class="tabselect-chart-btn on w-button"><spring:message code="spotMarket.chart.all" /></a>
 												</div>
 											</div>
 										</div>
 										<div class="m-o-chart-big min250"></div>
 									</div>
+
 									<div class="m-o-chart-box">
 										<div class="card-header between space gap12">
 											<div class="card-header">
 												<div class="card-header-title">
-													CEX 현물 거래량 (24시간)<br>
+													<spring:message code="spotMarket.chart.cexVolume" />
+													<br>
 												</div>
 											</div>
 											<div class="m-o-chart-btn-box">
 												<div class="m-o-chart-btn-wrap">
-													<a href="#" class="tabselect-chart-btn on w-button">개요</a> <a href="#" class="tabselect-chart-btn w-button">세부 내역</a>
+													<a href="#" class="tabselect-chart-btn on w-button"><spring:message code="spotMarket.chart.overview" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.detail" /></a>
 												</div>
 												<div class="m-o-chart-btn-wrap">
-													<a href="#" class="tabselect-chart-btn w-button">24시간</a> <a href="#" class="tabselect-chart-btn w-button">7일</a> <a href="#" class="tabselect-chart-btn w-button">30일</a> <a href="#" class="tabselect-chart-btn w-button">1년</a> <a href="#" class="tabselect-chart-btn on w-button">전체</a>
+													<a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.24h" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.7d" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.30d" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.1y" /></a> <a href="#" class="tabselect-chart-btn on w-button"><spring:message code="spotMarket.chart.all" /></a>
 												</div>
 											</div>
 										</div>
@@ -183,7 +213,8 @@
 												<div class="chart-wrap-box">
 													<div class="circle-color etc"></div>
 													<div class="inter _12s medium _61co">
-														그 외 곳<br>
+														<spring:message code="spotMarket.chart.others" />
+														<br>
 													</div>
 												</div>
 											</div>
@@ -195,17 +226,19 @@
 									<div class="m-o-chart-box">
 										<div class="card-header between space gap12">
 											<div class="card-header-title">
-												DEX 현물 거래량 (24시간)<br>
+												<spring:message code="spotMarket.chart.dexVolume" />
+												<br>
 											</div>
 											<div class="m-o-chart-btn-box">
 												<div class="m-o-chart-btn-wrap">
-													<a href="#" class="tabselect-chart-btn on w-button">시장 점유율</a> <a href="#" class="tabselect-chart-btn w-button">총계</a>
+													<a href="#" class="tabselect-chart-btn on w-button"><spring:message code="spotMarket.chart.marketShare" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.total" /></a>
 												</div>
 												<div class="m-o-chart-btn-wrap">
-													<a href="#" class="tabselect-chart-btn w-button">24시간</a> <a href="#" class="tabselect-chart-btn w-button">7일</a> <a href="#" class="tabselect-chart-btn w-button">30일</a> <a href="#" class="tabselect-chart-btn w-button">1년</a> <a href="#" class="tabselect-chart-btn on w-button">전체</a>
+													<a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.24h" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.7d" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.30d" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="spotMarket.chart.1y" /></a> <a href="#" class="tabselect-chart-btn on w-button"><spring:message code="spotMarket.chart.all" /></a>
 												</div>
 											</div>
 										</div>
+
 										<div class="m-o-chart-txt-box">
 											<div class="txt-flex-box">
 												<div class="chart-wrap-box">
@@ -251,7 +284,8 @@
 												<div class="chart-wrap-box">
 													<div class="circle-color etc"></div>
 													<div class="inter _12s medium _61co">
-														그 외 곳<br>
+														<spring:message code="spotMarket.chart.others" />
+														<br>
 													</div>
 												</div>
 											</div>
@@ -265,7 +299,7 @@
 					</div>
 					<div class="market-overview-bottom">
 						<div class="inter _25s bold">
-							<strong>현물 시장 기사</strong>
+							<strong><spring:message code="spotMarket.articleTitle" /></strong>
 						</div>
 						<div class="research-box">
 							<a href="#" class="research-link w-inline-block"><img src="/cmc/webflow/images/image_472_288.png" loading="lazy" alt="">
@@ -312,11 +346,13 @@
 						<div class="inter _32s bold">
 							<strong>Stay on top of crypto. All the time, any time.</strong>
 						</div>
-						<div class="stay-sub-tt">CoinMarketCap의 최신 가상자산 뉴스, 리서치 결과, 보상 프로그램, 이벤트 업데이트, 코인 리스팅 및 다양한 정보를 이메일로 업데이트 받고 싶어요.</div>
+						<div class="stay-sub-tt">
+							<spring:message code="spotMarket.subscribeDescription" />
+						</div>
 						<div class="form-block w-form">
 							<form id="email-form" name="email-form" data-name="Email Form" method="get" class="form" data-wf-page-id="67b83718f39e1de3dee09b98" data-wf-element-id="06bbf910-e5ec-a387-53dd-6475c3a60579">
-								<input class="text-field w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="이메일 주소 입력" type="text" id="name-2">
-								<input type="submit" data-wait="Please wait..." class="submit-button w-button" value="제출">
+								<input class="text-field w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="<spring:message code='spotMarket.emailPlaceholder' />" type="text" id="name-2">
+								<input type="submit" data-wait="<spring:message code='spotMarket.submitWait' />" class="submit-button w-button" value="<spring:message code='spotMarket.submit' />">
 							</form>
 						</div>
 					</div>

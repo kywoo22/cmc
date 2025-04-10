@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
     String activeIndicator = (String) request.getAttribute("activeIndicator");
@@ -29,9 +30,9 @@
         <img src="/cmc/webflow/images/arrow_left_off.svg" loading="lazy" alt="">
     </div>
     <div class="indicator-wrapper scroll-container">
-        <a href="${mainUrl}" class="tap-btn ${activeIndicator eq 'main' ? 'on' : ''} w-button">모든 암호화폐</a>
+        <a href="${mainUrl}" class="tap-btn ${activeIndicator eq 'main' ? 'on' : ''} w-button"><spring:message code="indicatorTap.title"/></a>
         <a href="${nftUrl}" class="tap-btn ${activeIndicator eq 'nft' ? 'on' : ''} w-button">NFTs</a>
-        <a href="${categoryUrl}" class="tap-btn ${activeIndicator eq 'category' ? 'on' : ''} w-button">카테고리</a>
+        <a href="${categoryUrl}" class="tap-btn ${activeIndicator eq 'category' ? 'on' : ''} w-button"><spring:message code="indicatorTap.title2"/></a>
         <a href="${tokenUnlocksUrl}" class="tap-btn ${activeIndicator eq 'tokenUnlocks' ? 'on' : ''} w-button">Token Unlocks</a>
         <a href="${rehypoUrl}" class="tap-btn rehypo ${activeIndicator eq 'rehypo' ? 'on' : ''} w-button">Rehypo</a>
         <a href="${memesUrl}" class="tap-btn fire-icon ${activeIndicator eq 'memes' ? 'on' : ''} w-button">Memes</a>

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Thu Mar 13 2025 05:17:25 GMT+0000 (Coordinated Universal Time)  -->
@@ -10,17 +11,22 @@
 </head>
 <body>
 	<div class="root">
-	<jsp:include page="../frame/login-register.jsp"></jsp:include>
+		<jsp:include page="../frame/login-register.jsp"></jsp:include>
 		<div class="dexscan-contents">
 			<jsp:include page="../frame/menu.jsp"></jsp:include>
 			<div class="dexscan-body">
 				<jsp:include page="../frame/dexscan-menu.jsp"></jsp:include>
 				<div class="dexscan-detail">
 					<div class="w-layout-vflex header-info-flex-box">
-						<a href="/cmc/dexscan/top-gainers.do" class="dx-top-link w-inline-block">
-							<div class="inter _20s">주요 상승 항목</div>
-						</a> <a href="/cmc/dexscan/top-losers.do" aria-current="page" class="dx-top-link on w-inline-block w--current">
-							<div class="inter _20s">주요 하락 항목</div>
+						<a href="/cmc/dexscan/top-gainers.do" aria-current="page" class="dx-top-link w-inline-block w--current">
+							<div class="inter _20s">
+								<spring:message code="top-gainers.gainers" />
+							</div>
+						</a> 
+						<a href="/cmc/dexscan/top-losers.do" class="dx-top-link on w-inline-block">
+							<div class="inter _20s">
+								<spring:message code="top-gainers.losers" />
+							</div>
 							<div class="dx-stick"></div>
 						</a>
 					</div>
@@ -29,7 +35,9 @@
 							<div class="w-layout-vflex netwraok-wrap-box">
 								<div class="network-btn-box scroll-container">
 									<a href="#" class="dx-filter-btn on w-inline-block"><img src="/cmc/webflow/images/allnetwork.svg" loading="lazy" alt="" class="dx-filter-img all">
-										<div class="inter _14s medium nowrap">모든 네트워크</div> </a> <a href="#" class="dx-filter-btn w-inline-block"><img src="/cmc/webflow/images/20947.png" loading="lazy" alt="" class="dx-filter-img">
+										<div class="inter _14s medium nowrap">
+											<spring:message code="top-gainers.allNetworks" />
+										</div> </a> <a href="#" class="dx-filter-btn w-inline-block"><img src="/cmc/webflow/images/20947.png" loading="lazy" alt="" class="dx-filter-img">
 										<div class="inter _14s medium">Solana</div> </a> <a href="#" class="dx-filter-btn w-inline-block"><img src="/cmc/webflow/images/20947.png" loading="lazy" alt="" class="dx-filter-img">
 										<div class="inter _14s medium">Solana</div> </a> <a href="#" class="dx-filter-btn w-inline-block"><img src="/cmc/webflow/images/20947.png" loading="lazy" alt="" class="dx-filter-img">
 										<div class="inter _14s medium">Solana</div> </a> <a href="#" class="dx-filter-btn w-inline-block"><img src="/cmc/webflow/images/20947.png" loading="lazy" alt="" class="dx-filter-img">
@@ -84,29 +92,45 @@
 									<div class="inter _12s medium _61co">#</div>
 								</div>
 								<div class="dx-pair-box width-315">
-									<div class="inter _12s semibold">페어</div>
+									<div class="inter _12s semibold">
+										<spring:message code="table.pair" />
+									</div>
 								</div>
 								<div class="dx-dex-box">
-									<div class="inter _12s semibold">DEX</div>
+									<div class="inter _12s semibold">
+										<spring:message code="table.dex" />
+									</div>
 								</div>
 								<div class="dx-price">
-									<div class="inter _12s semibold">가격(USD)</div>
+									<div class="inter _12s semibold">
+										<spring:message code="table.price" />
+									</div>
 									<img src="/cmc/webflow/images/arrow_left_right.svg" loading="lazy" alt="">
 								</div>
 								<div class="dx-time">
-									<div class="inter _12s semibold">1시간</div>
+									<div class="inter _12s semibold">
+										<spring:message code="table.time1-houre" />
+									</div>
 								</div>
 								<div class="dx-time">
-									<div class="inter _12s semibold">24시간</div>
+									<div class="inter _12s semibold">
+										<spring:message code="table.time24-houre" />
+									</div>
 								</div>
 								<div class="dx-txn">
-									<div class="inter _12s semibold">24시간 Txn</div>
+									<div class="inter _12s semibold">
+										<spring:message code="table.tradeCount24h" />
+									</div>
 								</div>
 								<div class="dx-volume">
-									<div class="inter _12s semibold">24시간 거래량</div>
+									<div class="inter _12s semibold">
+										<spring:message code="table.trading.volume" />
+									</div>
 								</div>
 								<div class="dx-liquidity">
-									<div class="inter _12s semibold">유동성</div>
+									<div class="inter _12s semibold">
+										<spring:message code="table.liquidity" />
+									</div>
 								</div>
 								<div class="dx-fdv">
 									<div class="inter _12s semibold">FDV</div>
@@ -583,9 +607,17 @@
 							</div>
 						</div>
 						<div class="table-bottom mg-auto">
-							<div class="coin-table-bottom-txt">1 보이기 - 33 의 33</div>
+							<div class="coin-table-bottom-txt">
+								1
+								<spring:message code="table.showtxt" />
+								- 33
+								<spring:message code="table.showtxt2" />
+								33
+							</div>
 							<div class="row-box">
-								<div>행 표시하기</div>
+								<div>
+									<spring:message code="table.rowShow" />
+								</div>
 								<div data-hover="false" data-delay="0" class="dropdown w-dropdown">
 									<div class="dropdown-toggle w-dropdown-toggle">
 										<div>50</div>
@@ -601,6 +633,7 @@
 				</div>
 			</div>
 		</div>
+		<jsp:include page="../frame/popupLangCurrency.jsp"></jsp:include>
 	</div>
 	<script src="/cmc/js/scroll.js" type="text/javascript"></script>
 	<jsp:include page="../frame/footer.jsp"></jsp:include>

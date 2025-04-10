@@ -1,137 +1,137 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <div class="header">
 	<div class="header-left">
-		<a href="#" class="logo-link w-inline-block">
-			<div class="logo">로고</div>
+		<a href="/cmc/main.do" class="logo-link w-inline-block">
+			<div class="logo"><img src="/cmc/webflow/images/coin_express_logo.svg" loading="lazy" alt=""></div>
 		</a>
 		<div class="menu-wrap">
 			<div class="w-layout-vflex menu-box">
 				<a href="/cmc/main.do" class="menu-link w-inline-block">
-					<div>가상자산</div>
+					<div><spring:message code="menu.headTitle"/></div>
 				</a>
 				<div class="menu-wrap-box">
 					<div class="menu-sub-wrap">
-						<div class="inter _14s semibold a6co">가상자산</div>
+						<div class="inter _14s semibold a6co"><spring:message code="menu.subHeadtitle"/></div>
 						<div class="menu-link-box">
 							<a href="/cmc/main.do" aria-current="page" class="menu-sub-link w-inline-block w--current">
 								<div class="menu-circle color-b">
 									<img src="/cmc/webflow/images/1.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">순위</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle1"/></div>
 							</a> <a href="/cmc/virtual-assets/category.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-o">
 									<img src="/cmc/webflow/images/2.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">카테고리</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle2"/></div>
 							</a> <a href="/cmc/virtual-assets/historical.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-y">
 									<img src="/cmc/webflow/images/1.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">과거 스냅샷</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle3"/></div>
 							</a> <a href="/cmc/virtual-assets/token-unlocks.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-g">
 									<img src="/cmc/webflow/images/4.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">Token Unlocks</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle4"/></div>
 							</a> <a href="/cmc/virtual-assets/yield.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/5.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">이자농사</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle5"/></div>
 							</a>
 						</div>
 					</div>
 					<div class="menu-sub-wrap">
-						<div class="inter _14s semibold a6co">리더보드</div>
+						<div class="inter _14s semibold a6co"><spring:message code="menu.subHeadtitle2"/></div>
 						<div class="menu-link-box">
 							<a href="/cmc/leader-board/trending-cryptocurrencies.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-o">
 									<img src="/cmc/webflow/images/6.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">추세</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle6"/></div>
 							</a> <a href="/cmc/leader-board/upComing.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/7.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">예정</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle7"/></div>
 							</a> <a href="/cmc/leader-board/new.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/8.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">최근 상장된 종목</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle8"/></div>
 							</a> <a href="/cmc/leader-board/gainer-losers.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-g">
 									<img src="/cmc/webflow/images/9.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">상승 및 하락 종목</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle9"/></div>
 							</a> <a href="/cmc/leader-board/most-view.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-sky">
 									<img src="/cmc/webflow/images/10.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">가장 많이 방문한 종목</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle10"/></div>
 							</a> <a href="/cmc/leader-board/sentiment.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b">
 									<img src="/cmc/webflow/images/11.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">커뮤니티 정서</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle11"/></div>
 							</a> <a href="/cmc/leader-board/chain-ranking.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-y">
 									<img src="/cmc/webflow/images/12.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">Chain Ranking</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle12"/></div>
 							</a>
 						</div>
 					</div>
 					<div class="menu-sub-wrap">
-						<div class="inter _14s semibold a6co">시장 개요</div>
+						<div class="inter _14s semibold a6co"><spring:message code="menu.subHeadtitle3"/></div>
 						<div class="menu-link-box">
 							<a href="/cmc/market-overview/market-overview.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/13.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">시장 개요</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle13"/></div>
 							</a> <a href="/cmc/market-overview/100index.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/14.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">CoinMarketCap 100 지수</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle14"/></div>
 							</a> <a href="/cmc/market-overview/fear&greed.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-o">
 									<img src="/cmc/webflow/images/15.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">공포 및 탐욕 지수.</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle15"/></div>
 							</a> <a href="/cmc/market-overview/altCoin-season-index.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-sky">
 									<img src="/cmc/webflow/images/16.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">알트코인 시즌 지수</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle16"/></div>
 							</a> <a href="/cmc/market-overview/coin-dominance.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-y">
 									<img src="/cmc/webflow/images/17.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">비트코인 도미넌스</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle17"/></div>
 							</a> <a href="/cmc/market-overview/all-etf.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/18.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">가상자산 ETF</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle18"/></div>
 							</a>
 						</div>
 					</div>
 					<div class="menu-sub-wrap">
-						<div class="inter _14s semibold a6co">NFT</div>
+						<div class="inter _14s semibold a6co"><spring:message code="menu.subHeadtitle4"/></div>
 						<div class="menu-link-box">
 							<a href="/cmc/nft/nft.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/19.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">전체 NFT 통계</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle19"/></div>
 							</a> <a href="/cmc/nft/upComing.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-g">
 									<img src="/cmc/webflow/images/20.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">다가오는 판매</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle20"/></div>
 							</a>
 						</div>
 					</div>
@@ -139,7 +139,7 @@
 			</div>
 			<div class="w-layout-vflex menu-box">
 				<a href="/cmc/dexscan/new-pairs.do" class="menu-link w-inline-block">
-					<div>DexScan</div>
+					<div><spring:message code="menu.headTitle2"/></div>
 				</a>
 				<div class="menu-wrap-box">
 					<div class="menu-sub-wrap">
@@ -148,27 +148,27 @@
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/21.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">New Pairs</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle21"/></div>
 							</a> <a href="/cmc/dexscan/trending-pairs.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-o">
 									<img src="/cmc/webflow/images/22.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">Trending Pairs</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle22"/></div>
 							</a> <a href="/cmc/dexscan/top-gainers.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-g">
 									<img src="/cmc/webflow/images/23.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">상승 및 하락한 가상자산</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle23"/></div>
 							</a> <a href="/cmc/dexscan/ranking.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-sky">
 									<img src="/cmc/webflow/images/24.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">Community Votes</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle24"/></div>
 							</a> <a href="/cmc/dexscan/top-traders.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-b">
 									<img src="/cmc/webflow/images/25.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">Top Traders</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle25"/></div>
 							</a>
 						</div>
 					</div>
@@ -176,38 +176,38 @@
 			</div>
 			<div class="w-layout-vflex menu-box">
 				<a href="/cmc/exchange/spot.do" class="menu-link w-inline-block">
-					<div>거래소</div>
+					<div><spring:message code="menu.headTitle3"/></div>
 				</a>
 				<div class="menu-wrap-box flex-down">
 					<div class="menu-sub-wrap">
-						<div class="inter _14s semibold a6co">중앙화 거래소</div>
+						<div class="inter _14s semibold a6co"><spring:message code="menu.subHeadtitle5"/></div>
 						<div class="menu-link-box">
 							<a href="/cmc/exchange/spot.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-b">
 									<img src="/cmc/webflow/images/26.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">스팟</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle26"/></div>
 							</a> <a href="/cmc/exchange/derivatives.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/27.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">파생상품</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle27"/></div>
 							</a>
 						</div>
 					</div>
 					<div class="menu-sub-wrap">
-						<div class="inter _14s semibold a6co">탈중앙화 거래소</div>
+						<div class="inter _14s semibold a6co"><spring:message code="menu.subHeadtitle6"/></div>
 						<div class="menu-link-box">
 							<a href="/cmc/exchange/dex-spot.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-b">
 									<img src="/cmc/webflow/images/28.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">스팟</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle28"/></div>
 							</a> <a href="/cmc/exchange/dex-derivatives.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/29.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">파생상품</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle29"/></div>
 							</a>
 						</div>
 					</div>
@@ -215,7 +215,7 @@
 			</div>
 			<div class="w-layout-vflex menu-box">
 				<a href="/cmc/community/feed.do" class="menu-link w-inline-block">
-					<div>커뮤니티</div>
+					<div><spring:message code="menu.headTitle4"/></div>
 				</a>
 				<div class="menu-wrap-box">
 					<div class="menu-sub-wrap">
@@ -224,22 +224,22 @@
 								<div class="menu-circle color-b">
 									<img src="/cmc/webflow/images/30.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">피드</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle30"/></div>
 							</a> <a href="/cmc/community/topic.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-g">
 									<img src="/cmc/webflow/images/31.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">Topics</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle31"/></div>
 							</a> <a href="/cmc/community/lives.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-o">
 									<img src="/cmc/webflow/images/32.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">Lives</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle32"/></div>
 							</a> <a href="/cmc/community/articles.do" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/33.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">기사들</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle33"/></div>
 							</a>
 						</div>
 					</div>
@@ -247,37 +247,37 @@
 			</div>
 			<div class="w-layout-vflex menu-box">
 				<a href="#" class="menu-link w-inline-block">
-					<div>서비스</div>
+					<div><spring:message code="menu.headTitle5"/></div>
 				</a>
 				<div class="menu-wrap-box service">
 					<div class="menu-sub-wrap">
-						<div class="inter _14s semibold a6co">서비스</div>
+						<div class="inter _14s semibold a6co"><spring:message code="menu.subHeadtitle7"/></div>
 						<div class="menu-link-box line">
 							<a href="/cmc/service/converter.do" aria-current="page" class="menu-sub-link w-inline-block w--current">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/34.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">계산기</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle34"/></div>
 							</a> <a href="/cmc/service/news-letter.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/35.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">뉴스레터</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle35"/></div>
 							</a> <a href="/cmc/service/cmc-labs.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-g">
 									<img src="/cmc/webflow/images/36.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">CMC Labs</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle36"/></div>
 							</a> <a href="/cmc/service/telegram-bot.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-tele">
 									<img src="/cmc/webflow/images/37.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">Telegram Bot</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle37"/></div>
 							</a> <a href="/cmc/service/advertise.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b">
 									<img src="/cmc/webflow/images/38.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">광고</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle38"/></div>
 							</a>
 						</div>
 						<div class="menu-link-box">
@@ -285,117 +285,117 @@
 								<div class="menu-circle color-gray">
 									<img src="/cmc/webflow/images/39.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">가상자산 API</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle39"/></div>
 							</a> <a href="/cmc/service/ticker.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-gray">
 									<img src="/cmc/webflow/images/40.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">사이트 위젯</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle40"/></div>
 							</a>
 						</div>
 					</div>
 					<div class="menu-sub-wrap">
-						<div class="inter _14s semibold a6co">리더보드</div>
+						<div class="inter _14s semibold a6co"><spring:message code="menu.subHeadtitle8"/></div>
 						<div class="menu-link-box">
 							<a href="/cmc/service/air-drop.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-g">
 									<img src="/cmc/webflow/images/41.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">Airdrops</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle41"/></div>
 							</a> <a href="/cmc/service/rewards.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-o">
 									<img src="/cmc/webflow/images/42.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">다이아몬드 리워드</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle42"/></div>
 							</a> <a href="/cmc/service/learn-and-earn.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-bsky">
 									<img src="/cmc/webflow/images/43.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">알아보기 &amp; 손에 넣기</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle43"/></div>
 							</a>
 						</div>
-						<div class="inter _14s semibold a6co">Calendars</div>
+						<div class="inter _14s semibold a6co"><spring:message code="menu.subHeadtitle9"/></div>
 						<div class="menu-link-box">
 							<a href="/cmc/service/calendar.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-bsky">
 									<img src="/cmc/webflow/images/44.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">ICO 캘린더</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle44"/></div>
 							</a> <a href="/cmc/service/event-calendar.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/45.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">이벤트 달력</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle45"/></div>
 							</a>
 						</div>
 					</div>
 					<div class="menu-sub-wrap">
-						<div class="inter _14s semibold a6co">가상자산 배우기</div>
+						<div class="inter _14s semibold a6co"><spring:message code="menu.subHeadtitle10"/></div>
 						<div class="menu-link-box">
 							<a href="/cmc/service/service-news.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/46.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">뉴스</div>
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle46"/></div>
 							</a> <a href="/cmc/service/academy.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b">
 									<img src="/cmc/webflow/images/47.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">Academy</div> <img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle47"/></div> <img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
 							</a> <a href="/cmc/service/cmc-research.do" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/48.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">조사</div> <img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
-							</a> <a href="/cmc/market-overview/altcoin-season-index.html" class="menu-sub-link _w-auto w-inline-block">
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle48"/></div> <img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
+							</a> <a href=" " class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-r">
 									<img src="/cmc/webflow/images/49.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">비디오</div> <img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
-							</a> <a href="/cmc/market-overview/coin-dominance.html" class="menu-sub-link w-inline-block">
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle49"/></div> <img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
+							</a> <a href=" " class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/50.svg" loading="lazy" alt="">
 								</div>
-								<div class="inter _14s semibold">용어집</div> <img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
+								<div class="inter _14s semibold"><spring:message code="menu.subtitle50"/></div> <img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
 							</a>
 						</div>
 					</div>
 				</div>
 			</div>
-			<a href="#" class="menu-right-btn mobile w-inline-block"><img src="/cmc/webflow/images/chart.svg" loading="lazy" alt="">
-				<div>포트폴리오</div> </a> <a href="#" class="menu-right-btn mobile w-inline-block"><img src="/cmc/webflow/images/star.svg" loading="lazy" alt="">
-				<div>관심 목록</div> </a>
+			<a href="/cmc/portfolio-tracker.do" class="menu-right-btn mobile w-inline-block"><img src="/cmc/webflow/images/chart.svg" loading="lazy" alt="">
+				<div><spring:message code="menu.portfolio"/></div> </a> <a href="/cmc/watchlist.do" class="menu-right-btn mobile w-inline-block"><img src="/cmc/webflow/images/star.svg" loading="lazy" alt="">
+				<div><spring:message code="menu.watchlist"/></div> </a>
 			<div class="w-layout-vflex mo-menu-wrap">
-				<a href="#" class="login-btn mobile w-button">계정 생성</a> <a href="#" onclick="openLogin()" class="login-btn mobile w-button">Log in</a>
+				<a href="#" class="login-btn mobile w-button"><spring:message code="menu.newAccount"/></a> <a href="#" onclick="openLogin()" class="login-btn mobile w-button"><spring:message code="menu.Login"/></a>
 			</div>
 			<div class="menu-wrap-boxmo">
-				<div class="mo-gray-bg">
-					<div>한국어</div>
+				<div class="mo-gray-bg" onclick="triggerFooterBtnClick()">
+					<div >${lang == 'en' ? 'English' : '한국어' }</div>
 					<img src="/cmc/webflow/images/arrow_drop_black.svg" loading="lazy" alt="">
 				</div>
-				<div class="mo-gray-bg">
+				<div class="mo-gray-bg" onclick="triggerFooterMoneyClick(); event.stopPropagation();">
 					<img src="/cmc/webflow/images/korean_icon_M.svg" loading="lazy" alt="">
 					<div>KRW</div>
 					<img src="/cmc/webflow/images/arrow_drop_black.svg" loading="lazy" alt="">
 				</div>
 			</div>
 			<div class="h-tap mo">
-				<a href="#" class="tabselect-h empty mo w-button">라이트</a> <a href="#" class="tabselect-h empty mo w-button">다크</a> <a href="#" class="tabselect-h empty mo on w-button">시스템</a>
+				<a href="#" class="tabselect-h empty mo w-button"><spring:message code="menu.light"/></a> <a href="#" class="tabselect-h empty mo w-button"><spring:message code="menu.dark"/></a> <a href="#" class="tabselect-h empty mo on w-button"><spring:message code="menu.system"/></a>
 			</div>
 		</div>
 	</div>
 	<div class="header-right">
 		<div class="btn-box">
 			<a href="/cmc/portfolio-tracker.do" class="menu-right-btn w-inline-block"><img src="/cmc/webflow/images/chart.svg" loading="lazy" alt="">
-				<div>포트폴리오</div> </a> <a href="/cmc/watchlist.do" class="menu-right-btn w-inline-block"><img src="/cmc/webflow/images/star.svg" loading="lazy" alt="">
-				<div>관심 목록</div> </a>
+				<div><spring:message code="menu.portfolio"/></div> </a> <a href="/cmc/watchlist.do" class="menu-right-btn w-inline-block"><img src="/cmc/webflow/images/star.svg" loading="lazy" alt="">
+				<div><spring:message code="menu.watchlist"/></div> </a>
 		</div>
 		<form action="/search" class="search w-form">
 			<label for="search-2" class="search-icon"></label>
 			<input class="search-input w-input" maxlength="256" name="query" placeholder="검색" type="search" id="search" required="">
 			<input type="submit" class="slash-btn w-button" value="">
 		</form>
-		<a href="#" class="scan-btn w-button"></a> <a href="#" onclick="openLogin()" class="login-btn w-button">로그인</a>
+		<a href="#" class="scan-btn w-button"></a> <a href="#" onclick="openLogin()" class="login-btn w-button"><spring:message code="menu.Login"/></a>
 		<div class="popover-base">
 			<img src="/cmc/webflow/images/menu.svg" loading="lazy" alt="" class="menu-img"><img src="/cmc/webflow/images/close_1.svg" loading="lazy" alt="" class="menu-img close">
 			<div class="avatar"></div>
@@ -589,7 +589,6 @@
 	    }
 	  });
 </script>
-
 
 
 

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -19,10 +20,12 @@
 			<div class="body-wrap">
 				<div class="frame no-max">
 					<div class="main-txt-box">
-						<div class="main-title">최근 데이터 기반 가장 핫한 가상자산 페어</div>
+						<div class="main-title">
+							<spring:message code="hotDexPairs.mainTitle" />
+						</div>
 						<div class="main-txt-flex">
 							<div>
-								지난 24시간 거래량이 5만 달러 이상인 가상자산 중 가격이 오르거나 떨어진 가상자산을 확인해 보세요.<br>
+								<spring:message code="hotDexPairs.mainText" />
 							</div>
 						</div>
 					</div>
@@ -33,31 +36,46 @@
 								<div class="coin-txt-table">#</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap name">
-								<div class="coin-txt-table name">이름</div>
-							</div>
-							<div class="w-layout-vflex coin-table-top-wrap price">
-								<div class="coin-txt-table price">
-									<strong>덱스</strong>
+								<div class="coin-txt-table name">
+									<spring:message code="table.name" />
 								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap price">
-								<div class="coin-txt-table price">가격</div>
+								<div class="coin-txt-table price">
+									<strong><spring:message code="table.dex" /></strong>
+								</div>
+							</div>
+							<div class="w-layout-vflex coin-table-top-wrap price">
+								<div class="coin-txt-table price">
+									<spring:message code="table.price" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width85">
-								<div class="coin-txt-table">1h %</div>
+								<div class="coin-txt-table">
+									<spring:message code="table.time1-houre" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width85">
-								<div class="coin-txt-table">24시간 %</div>
+								<div class="coin-txt-table">
+									<spring:message code="table.time24-houre" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width125">
-								<div class="coin-txt-table">24시간 거래수</div>
+								<div class="coin-txt-table">
+									<spring:message code="table.tradeCount24h" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width180">
-								<div class="coin-txt-table">거래량 (24시간)</div>
+								<div class="coin-txt-table">
+									<spring:message code="table.trading.volume" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width180">
-								<div class="coin-txt-table">유동성</div>
+								<div class="coin-txt-table">
+									<spring:message code="table.liquidity" />
+								</div>
 							</div>
+
 							<div class="w-layout-vflex coin-table-top-wrap width180">
 								<div class="coin-txt-table">
 									<strong>FDV</strong>

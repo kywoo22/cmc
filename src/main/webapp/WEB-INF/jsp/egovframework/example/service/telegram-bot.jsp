@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -19,10 +20,12 @@
 			<div class="service-banner">
 				<div class="service-middle-wrap">
 					<div class="service-banner-title">
-						World&#x27;s Top TG Price Bot<br>
+						<spring:message code="telegram-bot.title" />
+						<br>
 					</div>
 					<div class="inter _20s bold center">
-						Receive real-time market data first hand on Telegram today!<br>
+						<spring:message code="telegram-bot.subtitle" />
+						<br>
 					</div>
 				</div>
 			</div>
@@ -34,78 +37,122 @@
 								<div class="service-container">
 									<section class="section2">
 										<div class="subscribe-txt">
-											More about CMC&#x27;s TG Bot<br>
+											<spring:message code="telegram-bot.moreTitle" />
+											<br>
 										</div>
 										<div class="letter-box">
 											<div class="letter-txt-box">
-												<div class="inter _25s bold">Enable Telegram price bot in group chat</div>
-												<div class="list-letter">
-													<div class="inter _14s medium">1. Add CoinMarketCap Price Bot on Telegram and go to its profile page.</div>
-													<div class="inter _14s medium">2. Click on “Add to Group or Channel” and select your chat group.</div>
-													<div class="inter _14s medium">3. Click on &quot;Add Bot as Admin&quot; with granted access and you are all set!</div>
+												<div class="inter _25s bold">
+													<spring:message code="telegram-bot.enableTitle" />
 												</div>
-												<a href="#" class="service-try-btn w-button">Try it now</a>
+												<div class="list-letter">
+													<div class="inter _14s medium">
+														<spring:message code="telegram-bot.enableStep1" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="telegram-bot.enableStep2" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="telegram-bot.enableStep3" />
+													</div>
+												</div>
+												<a href="#" class="service-try-btn w-button"><spring:message code="telegram-bot.tryNow" /></a>
 											</div>
 											<div class="letter-txt-box news-insights">
 												<div class="inter _25s bold">
-													Chat with the price bot directly<br>
+													<spring:message code="telegram-bot.chatTitle" />
+													<br>
 												</div>
 												<div class="list-letter right">
-													<div class="inter _14s medium">1. Add CoinMarketCap Price Bot on your Telegram.</div>
-													<div class="inter _14s medium">2. Go to the CoinMarketCap Telegram Bot profile page.</div>
-													<div class="inter _14s medium">3. Click on “Message” and start a conversation.</div>
-													<div class="inter _14s medium">4. Click on &quot;Start&quot; and you are all set!</div>
+													<div class="inter _14s medium">
+														<spring:message code="telegram-bot.chatStep1" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="telegram-bot.chatStep2" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="telegram-bot.chatStep3" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="telegram-bot.chatStep4" />
+													</div>
 												</div>
-												<a href="#" class="service-try-btn w-button">Try it now</a>
+												<a href="#" class="service-try-btn w-button"><spring:message code="telegram-bot.tryNow" /></a>
 											</div>
 											<div class="letter-txt-box reserch">
-												<div class="inter _25s bold">Check crypto prices directly on Telegram:</div>
-												<div class="list-letter">
-													<div class="inter _14s medium">1. Simply enter the /p command and receive the latest price data, trade volume, market cap and circulating supply of a specific token eg. /p eth</div>
-													<div class="inter _14s medium">2. The bot will reply your query with the latest price data, trade volume, market cap and circulating supply.</div>
+												<div class="inter _25s bold">
+													<spring:message code="telegram-bot.checkTitle" />
 												</div>
-												<a href="#" class="service-try-btn w-button">Try it now</a>
+												<div class="list-letter">
+													<div class="inter _14s medium">
+														<spring:message code="telegram-bot.checkStep1" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="telegram-bot.checkStep2" />
+													</div>
+												</div>
+												<a href="#" class="service-try-btn w-button"><spring:message code="telegram-bot.tryNow" /></a>
 											</div>
 											<div class="letter-txt-box cmc">
 												<div class="inter _25s bold">
-													Set a group default token<br>
+													<spring:message code="telegram-bot.setDefaultTitle" />
+													<br>
 												</div>
 												<div class="list-letter right">
-													<div class="inter _14s medium">1. Group admins to set up a default token: Enter the /set_contract command, e.g. /set_contract eth.</div>
-													<div class="inter _14s medium">2. Group members to receive price data: Enter the /p command</div>
+													<div class="inter _14s medium">
+														<spring:message code="telegram-bot.setDefaultStep1" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="telegram-bot.setDefaultStep2" />
+													</div>
 												</div>
-												<a href="#" class="service-add-bot-btn w-button">Add bot to your TH group</a>
+												<a href="#" class="service-add-bot-btn w-button"><spring:message code="telegram-bot.addBotToGroup" /></a>
 											</div>
 											<div class="letter-txt-box features">
 												<div class="inter _25s bold">
-													Manage default token setting<br>
+													<spring:message code="telegram-bot.manageTitle" />
+													<br>
 												</div>
 												<div class="list-letter">
-													<div class="inter _14s medium">1. To restrict price tracking for non-default tokens: Enter the /disable_other_tokens command</div>
-													<div class="inter _14s medium">2. To allow price tracking for non-default tokens: Enter the /enable_other_tokens command</div>
+													<div class="inter _14s medium">
+														<spring:message code="telegram-bot.manageStep1" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="telegram-bot.manageStep2" />
+													</div>
 												</div>
-												<a href="#" class="service-try-btn w-button">Try it now</a>
+												<a href="#" class="service-try-btn w-button"><spring:message code="telegram-bot.tryNow" /></a>
 											</div>
 											<div class="letter-txt-box cmc">
 												<div class="inter _25s bold">
-													Receive hourly price alerts<br>
+													<spring:message code="telegram-bot.alertTitle" />
+													<br>
 												</div>
 												<div class="list-letter right">
-													<div class="inter _14s medium">1. Set a default token for a chat</div>
-													<div class="inter _14s medium">2. Enter the /enable_hourly_price_alert command to turn on hourly price updates. To turn off the price alerts: Enter the /enable_hourly_price_alert command</div>
+													<div class="inter _14s medium">
+														<spring:message code="telegram-bot.alertStep1" />
+													</div>
+													<div class="inter _14s medium">
+														<spring:message code="telegram-bot.alertStep2" />
+													</div>
 												</div>
-												<a href="#" class="service-add-bot-btn w-button">Add TG bot</a>
+												<a href="#" class="service-add-bot-btn w-button"><spring:message code="telegram-bot.addBot" /></a>
 											</div>
 										</div>
 									</section>
 									<section class="section">
-										<div class="half newsletter">
+										<div class="half telegram-bot">
 											<div class="w-layout-vflex letter-wrap">
-												<div class="inter _32s bold">Stay on top of crypto. All the time, any time.</div>
-												<div class="inter _16s medium _61co">Please keep me updated by email with the latest crypto news, research findings, reward programs, event updates, coin listings and more information from CoinMarketCap.</div>
+												<div class="inter _32s bold">
+													<spring:message code="telegram-bot.subscribe.title" />
+												</div>
+												<div class="inter _16s medium _61co">
+													<spring:message code="telegram-bot.subscribe.desc" />
+												</div>
 												<div class="letter-input-box">
-													<input class="letter-input w-input" maxlength="256" name="field" data-name="Field" placeholder="Example Text" type="text" id="field" required="">
-													<a href="#" class="letter-btn w-button">Subscribe</a>
+													<input class="letter-input w-input" maxlength="256" name="field" data-name="Field" placeholder="<spring:message code='telegram-bot.subscribe.placeholder' />" type="text" id="field" required="">
+													<a href="#" class="letter-btn w-button"> <spring:message code="telegram-bot.subscribe.button" />
+													</a>
 												</div>
 											</div>
 										</div>

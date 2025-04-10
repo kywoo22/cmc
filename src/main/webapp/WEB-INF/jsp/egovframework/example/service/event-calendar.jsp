@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -21,41 +22,63 @@
 					<div class="evenet-calendar">
 						<div class="w-layout-vflex event-calendar-top">
 							<div class="inter _25s bold">
-								암호 이벤트 달력<br>
+								<spring:message code="event-calendar.title" />
+								<br>
 							</div>
 							<div class="inter _14s medium _61co">
-								CoinMarketCap 암호화폐 일정으로 최신 소식을 놓치지 마세요. 암호화폐 및 블록체인 생태계의 모든 주요 이벤트를 나열해 드립니다. 여러분 최신 정보를 놓치지 않도록 합니다.<br>
+								<spring:message code="event-calendar.description" />
+								<br>
 							</div>
 						</div>
 						<div class="evenet-calendar-tap">
 							<a href="#" class="event-calendar-btn w-inline-block">
-								<div class="text-block">All Events</div>
+								<div class="text-block">
+									<spring:message code="event-calendar.filter.all" />
+								</div>
 							</a> <a href="#" class="event-calendar-btn w-inline-block">
-								<div class="text-block">Release</div>
+								<div class="text-block">
+									<spring:message code="event-calendar.filter.release" />
+								</div>
 							</a> <a href="#" class="event-calendar-btn w-inline-block">
-								<div class="text-block">AMA</div>
+								<div class="text-block">
+									<spring:message code="event-calendar.filter.ama" />
+								</div>
 							</a> <a href="#" class="event-calendar-btn w-inline-block">
-								<div class="text-block">Airdrop</div>
+								<div class="text-block">
+									<spring:message code="event-calendar.filter.airdrop" />
+								</div>
 							</a> <a href="#" class="event-calendar-btn w-inline-block">
-								<div class="text-block">Tokenomics</div>
+								<div class="text-block">
+									<spring:message code="event-calendar.filter.tokenomics" />
+								</div>
 							</a> <a href="#" class="event-calendar-btn w-inline-block">
-								<div class="text-block">Fork/Swap</div>
+								<div class="text-block">
+									<spring:message code="event-calendar.filter.forkswap" />
+								</div>
 							</a> <a href="#" class="event-calendar-btn w-inline-block">
-								<div class="text-block">Partnership</div>
+								<div class="text-block">
+									<spring:message code="event-calendar.filter.partnership" />
+								</div>
 							</a> <a href="#" class="event-calendar-btn w-inline-block">
-								<div class="text-block">Community</div>
+								<div class="text-block">
+									<spring:message code="event-calendar.filter.community" />
+								</div>
 							</a> <a href="#" class="event-calendar-btn w-inline-block">
-								<div class="text-block">Other</div>
+								<div class="text-block">
+									<spring:message code="event-calendar.filter.other" />
+								</div>
 							</a>
 						</div>
 						<div class="event-calendar-box">
 							<div class="calendar-left-area">
 								<div class="date-info-box">
 									<div class="inter _14s bold">
-										Today<br>
+										<spring:message code="event-calendar.today" />
+										<br>
 									</div>
 									<div class="inter _12s medium _61co">
-										Friday, 7 March 2025 UTC<br>
+										<spring:message code="event-calendar.date" />
+										<br>
 									</div>
 								</div>
 								<div class="event-calendar-list-box">
@@ -281,10 +304,11 @@
 								</div>
 								<div class="date-info-box custom-mg">
 									<div class="inter _14s bold">
-										<strong>Tomorrow</strong><br>
+										<strong><spring:message code="event-calendar.tomorrow" /></strong><br>
 									</div>
 									<div class="inter _12s medium _61co">
-										Saturday, 8 March 2025 UTC<br>
+										<spring:message code="event-calendar.date.tomorrow" />
+										<br>
 									</div>
 								</div>
 								<div class="event-calendar-list-box">
@@ -508,21 +532,25 @@
 										</div>
 									</div>
 								</div>
-								<a href="#" class="list-more-btn w-button">더 보기</a>
+								<a href="#" class="list-more-btn w-button"> <spring:message code="event-calendar.loadMore" />
+								</a>
 							</div>
 							<div class="calendar-right-area">
 								<div class="c-right-top">
 									<div class="inter _14s bold">
-										Data partner:<br>
+										<spring:message code="event-calendar.dataPartner" />
+										<br>
 									</div>
-									<a href="#" class="event-calendar-btn radius w-inline-block"><img src="/cmc/webflow/images/Nonfungible.png" loading="lazy" alt="">
-										<div class="text-block">LOGONAME</div> <img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt=""> </a>
+									<a href="#" class="event-calendar-btn radius w-inline-block"> <img src="/cmc/webflow/images/Nonfungible.png" loading="lazy" alt="">
+										<div class="text-block">CoinExpress</div> <img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
+									</a>
 								</div>
 								<div class="evenet-calendar-box">
 									<div class="calendar-top">
 										<img src="/cmc/webflow/images/arrow_right-2.svg" loading="lazy" alt="" class="calendar-arrow rotate">
 										<div class="calenda-date">
-											March 2025<br>
+											<spring:message code="event-calendar.currentMonth" />
+											<br>
 										</div>
 										<img src="/cmc/webflow/images/arrow_right-2.svg" loading="lazy" alt="" class="calendar-arrow">
 									</div>
@@ -595,7 +623,8 @@
 								<div class="c-right-txt-box">
 									<img src="/cmc/webflow/images/fire_icon.svg" loading="lazy" alt="">
 									<div class="inter _14s bold">
-										Trending Events<br>
+										<spring:message code="event-calendar.trending" />
+										<br>
 									</div>
 								</div>
 								<div class="c-event-card">
@@ -678,7 +707,8 @@
 								<div class="c-right-txt-box">
 									<img src="/cmc/webflow/images/fire_icon.svg" loading="lazy" alt="">
 									<div class="inter _14s bold">
-										Significant Events<br>
+										<spring:message code="event-calendar.significant" />
+										<br>
 									</div>
 								</div>
 								<div class="c-event-card">
@@ -769,18 +799,14 @@
 						<div class="inter _32s bold">
 							<strong>Stay on top of crypto. All the time, any time.</strong>
 						</div>
-						<div class="stay-sub-tt">CoinMarketCap의 최신 가상자산 뉴스, 리서치 결과, 보상 프로그램, 이벤트 업데이트, 코인 리스팅 및 다양한 정보를 이메일로 업데이트 받고 싶어요.</div>
+						<div class="stay-sub-tt">
+							<spring:message code="event-calendar.subscribe.desc" />
+						</div>
 						<div class="form-block w-form">
 							<form id="email-form" name="email-form" data-name="Email Form" method="get" class="form" data-wf-page-id="67ca8bdd4270540e9aaf2279" data-wf-element-id="74ae9e6d-c4ab-a16a-ef74-a040c2a4e6e5">
-								<input class="text-field w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="이메일 주소 입력" type="text" id="name-2">
-								<input type="submit" data-wait="Please wait..." class="submit-button w-button" value="제출">
+								<input class="text-field w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="<spring:message code='event-calendar.subscribe.placeholder' />" type="text" id="name-2">
+								<input type="submit" data-wait="Please wait..." class="submit-button w-button" value="<spring:message code='event-calendar.subscribe.submit' />">
 							</form>
-							<div class="w-form-done">
-								<div>Thank you! Your submission has been received!</div>
-							</div>
-							<div class="w-form-fail">
-								<div>Oops! Something went wrong while submitting the form.</div>
-							</div>
 						</div>
 					</div>
 				</div>

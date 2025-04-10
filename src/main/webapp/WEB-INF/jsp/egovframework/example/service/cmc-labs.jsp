@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>\
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -18,9 +19,11 @@
 			</div>
 			<div class="service-banner">
 				<div class="service-middle-wrap">
-					<div class="service-banner-title">CMC LABS</div>
+					<div class="service-banner-title">
+						<spring:message code="cmc-labs.title" />
+					</div>
 					<div class="inter _20s bold center">
-						Accelerate your crypto startup with CMC Labs<br>
+						<spring:message code="cmc-labs.subtitle" />
 					</div>
 					<div class="service-icon-box">
 						<a href="#" class="service-btn w-inline-block"><img src="/cmc/webflow/images/facebook.svg" loading="lazy" alt=""></a> <a href="#" class="service-btn w-inline-block"><img src="/cmc/webflow/images/instagram.svg" loading="lazy" alt=""></a> <a href="#" class="service-btn w-inline-block"><img src="/cmc/webflow/images/twitter_x.svg" loading="lazy" alt=""></a> <a href="#" class="service-btn w-inline-block"><img src="/cmc/webflow/images/youtube.svg" loading="lazy" alt=""></a> <a href="#" class="service-btn w-inline-block"><img src="/cmc/webflow/images/telegram.svg" loading="lazy" alt=""></a>
@@ -35,75 +38,94 @@
 								<div class="service-container">
 									<section class="section2">
 										<div class="subscribe-txt">
-											CMC LAB FEATURES<br>
+											<spring:message code="cmc-labs.featuresTitle" />
 										</div>
 										<div class="inter _25s bold center">
-											Kickstart your project with CoinMarketCap&#x27;s Accelerator Program, with features including<br>
+											<spring:message code="cmc-labs.featuresIntro" />
 										</div>
 										<div class="letter-box">
 											<div class="letter-txt-box">
-												<div class="inter _25s bold">Learn &amp; Earn</div>
+												<div class="inter _25s bold">
+													<spring:message code="cmc-labs.learn.title" />
+												</div>
 												<div class="list-letter">
-													<div class="inter _14s medium width50">With a constant tidal wave of new market entrants, helping crypto enthusiasts understand your project is a powerful way to stand-out. A CMC “Learn &amp; Earn” campaign is a proven way to get users invested in your startup, where users earn token rewards for watching educational videos and successfully answering fun quiz questions.</div>
+													<div class="inter _14s medium width50">
+														<spring:message code="cmc-labs.learn.desc" />
+													</div>
 												</div>
 											</div>
 											<div class="letter-txt-box news-insights">
 												<div class="inter _25s bold">
-													Airdrop<br>
+													<spring:message code="cmc-labs.airdrop.title" />
 												</div>
 												<div class="list-letter right">
-													<div class="inter _14s medium width50">A CMC Airdrop Campaign will ensure your growing community won’t miss a thing. Airdrop campaigns require participants to (i) Add your project to their CMC Watchlist (ii) Follow your project’s Community profile so that updates and announcements are shared with them directly (iii) Download the CMC App and turn on your project-specific notifications, allowing CMC to send app push notifications about significant price movements.</div>
+													<div class="inter _14s medium width50">
+														<spring:message code="cmc-labs.airdrop.desc" />
+													</div>
 												</div>
 											</div>
 											<div class="letter-txt-box reserch">
-												<div class="inter _25s bold">Deep Dive (Video/Article)</div>
+												<div class="inter _25s bold">
+													<spring:message code="cmc-labs.deepdive.title" />
+												</div>
 												<div class="list-letter">
-													<div class="inter _14s medium width50">A CMC Deep Dive offers an in-depth article written by our expert content team to enhance SEO and improve discoverability. Additionally, the article can be made into a video for our YouTube channel. YouTube is a critically important venue for crypto enthusiasts, used by +2.6 billion people at least once a month.</div>
+													<div class="inter _14s medium width50">
+														<spring:message code="cmc-labs.deepdive.desc" />
+													</div>
 												</div>
 											</div>
 											<div class="letter-txt-box cmc">
 												<div class="inter _25s bold">
-													CMC Community:<br>
+													<spring:message code="cmc-labs.community.title" />
 												</div>
 												<div class="list-letter right">
-													<div class="inter _14s medium width50">CMC will create an infographic about your project with eye-catching design and accurate data, which will then be shared on CMC social media channels. You will receive amplification on CMC across social media. The infographic will also serve as an attention-grabbing asset to pitch your project to new users.</div>
+													<div class="inter _14s medium width50">
+														<spring:message code="cmc-labs.community.desc" />
+													</div>
 												</div>
 											</div>
 											<div class="letter-txt-box features">
 												<div class="inter _25s bold">
-													CMC Live<br>
+													<spring:message code="cmc-labs.live.title" />
 												</div>
 												<div class="list-letter">
-													<div class="inter _14s medium width50">Introducing CMC Community-Live! A CMC Community-Live event is a fantastic way to engage with an established follower base on CMC Community. Get questions and feedback from users in real-time with these highly interactive audio events.</div>
+													<div class="inter _14s medium width50">
+														<spring:message code="cmc-labs.live.desc" />
+													</div>
 												</div>
 											</div>
 										</div>
 									</section>
 									<section class="section3">
 										<div class="faq-txt">
-											FAQ (FREQUENTLY ASKED QUESTIONS)<br>
+											<spring:message code="cmc-labs.faqTitle" />
+											<br>
 										</div>
 										<div class="faq-list-box">
 											<div class="faq-list">
 												<div class="w-layout-vflex faq-top">
 													<div class="inter _16s semibold">
-														<strong>What kind of startups do you accept?</strong>
+														<strong><spring:message code="cmc-labs.faq1.q" /></strong>
 													</div>
 													<div class="fqa-arrow light"></div>
 												</div>
 												<div class="faq-detail">
-													<div class="inter _14s medium">We accept high-quality crypto startups who have product-market fit and who have significant traction. Often, these projects will have a valuation between $50 million and $500 million. Ideally, projects will be 2-6 months away from launching on an exchange, so we can offer the most added value.</div>
+													<div class="inter _14s medium">
+														<spring:message code="cmc-labs.faq1.a" />
+													</div>
 												</div>
 											</div>
 											<div class="faq-list">
 												<div class="w-layout-vflex faq-top">
 													<div class="inter _16s semibold">
-														<strong>What do you expect in return for your services?</strong>
+														<strong><spring:message code="cmc-labs.faq2.q" /></strong>
 													</div>
 													<div class="fqa-arrow light"></div>
 												</div>
 												<div class="faq-detail">
-													<div class="inter _14s medium">We generally take 0.5-3% of the token supply in exchange for our services, depending on your valuation. The value of the marketing and media products that CoinMarketCap offers are included in the program package. Users&#x27; rewards for certain campaigns need to be provided by the project.</div>
+													<div class="inter _14s medium">
+														<spring:message code="cmc-labs.faq2.a" />
+													</div>
 												</div>
 											</div>
 										</div>
@@ -111,11 +133,16 @@
 									<section class="section">
 										<div class="half newsletter">
 											<div class="w-layout-vflex letter-wrap">
-												<div class="inter _32s bold">Stay on top of crypto. All the time, any time.</div>
-												<div class="inter _16s medium _61co">Please keep me updated by email with the latest crypto news, research findings, reward programs, event updates, coin listings and more information from CoinMarketCap.</div>
+												<div class="inter _32s bold">
+													<spring:message code="cmc-labs.subscribe.title" />
+												</div>
+												<div class="inter _16s medium _61co">
+													<spring:message code="cmc-labs.subscribe.desc" />
+												</div>
 												<div class="letter-input-box">
-													<input class="letter-input w-input" maxlength="256" name="field-2" data-name="Field 2" placeholder="Example Text" type="text" id="field-2" required="">
-													<a href="#" class="letter-btn w-button">Subscribe</a>
+													<input class="letter-input w-input" maxlength="256" name="field-2" data-name="Field 2" placeholder="<spring:message code='cmc-labs.subscribe.placeholder' />" type="text" id="field-2" required="">
+													<a href="#" class="letter-btn w-button"> <spring:message code="cmc-labs.subscribe.button" />
+													</a>
 												</div>
 											</div>
 										</div>

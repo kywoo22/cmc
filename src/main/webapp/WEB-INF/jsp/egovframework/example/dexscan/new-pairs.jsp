@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Thu Mar 13 2025 05:17:25 GMT+0000 (Coordinated Universal Time)  -->
@@ -10,16 +12,18 @@
 </head>
 <body>
 	<div class="root">
-	<jsp:include page="../frame/login-register.jsp"></jsp:include>
+		<jsp:include page="../frame/login-register.jsp"></jsp:include>
 		<div class="dexscan-contents">
 			<jsp:include page="../frame/menu.jsp"></jsp:include>
 			<div class="dexscan-body">
 				<jsp:include page="../frame/dexscan-menu.jsp"></jsp:include>
 				<div class="dexscan-detail">
 					<div class="container-header-info">
-						<div class="inter _25s bold">Ethereum의 신규 페어 상장 라이브</div>
+						<div class="inter _25s bold">
+							<spring:message code="newPairs.title" />
+						</div>
 						<div class="inter _14s normal _61co">
-							최신 Ethereum 라이브 신규 페어 상장은 아래와 같습니다. Ethereum 및 DEX의 온체인 데이터를 사용해 가장 최신의 신규 가상자산 페어를 수집합니다.<a href="https://coinmarketcap.com/dexscan/ko/new-pairs/ethereum/?page=1">‍</a><br>
+							<spring:message code="newPairs.description" />
 						</div>
 					</div>
 					<div class="dx-table-wrap">
@@ -35,63 +39,88 @@
 							<div class="dx-filter-dropdown-box">
 								<div data-hover="false" data-delay="0" class="dx-filter-dropdown w-dropdown">
 									<div class="dx-toggle w-dropdown-toggle">
-										<div class="inter _12s medium">Age:&lt; 24 시간</div>
+										<div class="inter _12s medium">
+											<spring:message code="new-pairs.ageFilterTitle" />
+										</div>
 										<div class="dx-arrow-icon w-icon-dropdown-toggle"></div>
 									</div>
 									<nav class="drop-down w-dropdown-list">
-										<a href="#" class="drop-list-link w-dropdown-link">1시간</a> <a href="#" class="drop-list-link w-dropdown-link">3h</a> <a href="#" class="drop-list-link w-dropdown-link">6h</a> <a href="#" class="drop-list-link w-dropdown-link">12h</a> <a href="#" class="drop-list-link w-dropdown-link">24시간</a>
+										<a href="#" class="drop-list-link w-dropdown-link"><spring:message code="new-pairs.time1h" /></a> <a href="#" class="drop-list-link w-dropdown-link"><spring:message code="new-pairs.time3h" /></a> <a href="#" class="drop-list-link w-dropdown-link"><spring:message code="new-pairs.time6h" /></a> <a href="#" class="drop-list-link w-dropdown-link"><spring:message code="new-pairs.time12h" /></a> <a href="#" class="drop-list-link w-dropdown-link"><spring:message code="new-pairs.time24h" /></a>
 									</nav>
 								</div>
+
 								<div data-hover="false" data-delay="0" class="dx-filter-dropdown w-dropdown">
 									<div class="dx-toggle w-dropdown-toggle">
-										<div class="inter _12s medium">유동성: &gt; $1K</div>
+										<div class="inter _12s medium">
+											<spring:message code="new-pairs.liquidityFilterTitle" />
+										</div>
 										<div class="dx-arrow-icon w-icon-dropdown-toggle"></div>
 									</div>
 									<nav class="drop-down w-dropdown-list">
-										<a href="#" class="drop-list-link w-dropdown-link">Any</a> <a href="#" class="drop-list-link w-dropdown-link">&gt; $1K</a> <a href="#" class="drop-list-link w-dropdown-link">&gt; $5K</a>
+										<a href="#" class="drop-list-link w-dropdown-link"><spring:message code="new-pairs.liquidityAny" /></a> <a href="#" class="drop-list-link w-dropdown-link"><spring:message code="new-pairs.liquidity1k" /></a> <a href="#" class="drop-list-link w-dropdown-link"><spring:message code="new-pairs.liquidity5k" /></a>
 									</nav>
 								</div>
+
 								<div data-hover="false" data-delay="0" class="dx-filter-dropdown w-dropdown">
 									<div class="dx-toggle w-dropdown-toggle">
-										<div class="inter _12s medium">Age:&lt; 24 시간</div>
+										<div class="inter _12s medium">
+											<spring:message code="new-pairs.ageFilterTitle" />
+										</div>
 										<div class="dx-arrow-icon w-icon-dropdown-toggle"></div>
 									</div>
 									<nav class="drop-down w-dropdown-list">
-										<a href="#" class="drop-list-link w-dropdown-link">Any</a> <a href="#" class="drop-list-link w-dropdown-link">&gt; $1K</a> <a href="#" class="drop-list-link w-dropdown-link">&gt; $5K</a>
+										<a href="#" class="drop-list-link w-dropdown-link"><spring:message code="new-pairs.liquidityAny" /></a> <a href="#" class="drop-list-link w-dropdown-link"><spring:message code="new-pairs.liquidity1k" /></a> <a href="#" class="drop-list-link w-dropdown-link"><spring:message code="new-pairs.liquidity5k" /></a>
 									</nav>
 								</div>
+
 								<div class="dx-filter-dropdown">
 									<div class="dx-toggle check">
-										<div class="inter _12s medium">보안 스캔</div>
+										<div class="inter _12s medium">
+											<spring:message code="new-pairs.securityScan" />
+										</div>
 										<div class="dx-arrow-icon w-icon-dropdown-toggle"></div>
 									</div>
 									<div class="drop-down np">
 										<div class="drop-down-padding">
 											<div class="dorpdown--form w-form">
-												<form id="email-form" name="email-form" data-name="Email Form" method="get" class="drop-form-box" data-wf-page-id="67bbeea654a140c61a1a2009" data-wf-element-id="3eb317d7-eaea-ec44-294f-fe703ec6c46e">
+												<form id="email-form" name="email-form" method="get" class="drop-form-box">
 													<div class="drop-list-check">
-														<div>허니팟 점검</div>
-														<label class="w-checkbox checkbox-field"><input type="checkbox" id="checkbox" name="checkbox" data-name="Checkbox" class="w-checkbox-input checkbox"><span class="checkbox-label w-form-label" for="checkbox">Checkbox</span></label>
+														<div>
+															<spring:message code="new-pairs.check.honeypot" />
+														</div>
+														<label class="w-checkbox checkbox-field"> <input type="checkbox" class="w-checkbox-input checkbox" /> <span class="checkbox-label w-form-label">Checkbox</span>
+														</label>
 													</div>
 													<div class="drop-list-check">
-														<div>계약 인증됨</div>
-														<label class="w-checkbox checkbox-field"><input type="checkbox" id="checkbox-2" name="checkbox-2" data-name="Checkbox 2" class="w-checkbox-input checkbox"><span class="checkbox-label w-form-label" for="checkbox-2">Checkbox</span></label>
+														<div>
+															<spring:message code="new-pairs.check.verifiedContract" />
+														</div>
+														<label class="w-checkbox checkbox-field"> <input type="checkbox" class="w-checkbox-input checkbox" /> <span class="checkbox-label w-form-label">Checkbox</span>
+														</label>
 													</div>
 													<div class="drop-list-check">
-														<div>컨트랙트 포기</div>
-														<label class="w-checkbox checkbox-field"><input type="checkbox" id="checkbox-2" name="checkbox-2" data-name="Checkbox 2" class="w-checkbox-input checkbox"><span class="checkbox-label w-form-label" for="checkbox-2">Checkbox</span></label>
+														<div>
+															<spring:message code="new-pairs.check.abandonedContract" />
+														</div>
+														<label class="w-checkbox checkbox-field"> <input type="checkbox" class="w-checkbox-input checkbox" /> <span class="checkbox-label w-form-label">Checkbox</span>
+														</label>
 													</div>
 													<div class="drop-list-check">
-														<div>잠긴 유동성</div>
-														<label class="w-checkbox checkbox-field"><input type="checkbox" id="checkbox-2" name="checkbox-2" data-name="Checkbox 2" class="w-checkbox-input checkbox"><span class="checkbox-label w-form-label" for="checkbox-2">Checkbox</span></label>
+														<div>
+															<spring:message code="new-pairs.check.lockedLiquidity" />
+														</div>
+														<label class="w-checkbox checkbox-field"> <input type="checkbox" class="w-checkbox-input checkbox" /> <span class="checkbox-label w-form-label">Checkbox</span>
+														</label>
 													</div>
 												</form>
 											</div>
 										</div>
 										<div class="drop-bottom">
 											<a href="#" class="clearall-btn w-inline-block">
-												<div>Clear All</div>
-											</a> <a href="#" class="check-btn w-button">OK</a>
+												<div>
+													<spring:message code="new-pairs.clearAll" />
+												</div>
+											</a> <a href="#" class="check-btn w-button"><spring:message code="new-pairs.ok" /></a>
 										</div>
 									</div>
 								</div>
@@ -101,35 +130,55 @@
 							<div class="dx-table-top">
 								<div class="dx-star"></div>
 								<div class="dx-pair-box">
-									<div class="inter _12s semibold">페어</div>
+									<div class="inter _12s semibold">
+										<spring:message code="new-pairs.pair" />
+									</div>
 								</div>
 								<div class="dx-dex-box">
-									<div class="inter _12s semibold">DEX</div>
+									<div class="inter _12s semibold">
+										<spring:message code="new-pairs.dex" />
+									</div>
 								</div>
 								<div class="dx-age-box">
-									<div class="inter _12s semibold">Age</div>
+									<div class="inter _12s semibold">
+										<spring:message code="new-pairs.age" />
+									</div>
 								</div>
 								<div class="dx-price">
-									<div class="inter _12s semibold">가격(USD)</div>
+									<div class="inter _12s semibold">
+										<spring:message code="new-pairs.price" />
+									</div>
 									<img src="/cmc/webflow/images/arrow_left_right.svg" loading="lazy" alt="">
 								</div>
 								<div class="dx-percent">
-									<div class="inter _12s semibold">5m%</div>
+									<div class="inter _12s semibold">
+										<spring:message code="new-pairs.percent5m" />
+									</div>
 								</div>
 								<div class="dx-time">
-									<div class="inter _12s semibold">1시간%</div>
+									<div class="inter _12s semibold">
+										<spring:message code="new-pairs.percent1h" />
+									</div>
 								</div>
 								<div class="dx-volume">
-									<div class="inter _12s semibold">1시간 거래량</div>
+									<div class="inter _12s semibold">
+										<spring:message code="new-pairs.volume1h" />
+									</div>
 								</div>
 								<div class="dx-liquidity">
-									<div class="inter _12s semibold">유동성</div>
+									<div class="inter _12s semibold">
+										<spring:message code="new-pairs.liquidity" />
+									</div>
 								</div>
 								<div class="dx-capitalization">
-									<div class="inter _12s semibold">시가총액</div>
+									<div class="inter _12s semibold">
+										<spring:message code="new-pairs.marketCap" />
+									</div>
 								</div>
 								<div class="dx-security">
-									<div class="inter _12s semibold">보안 스캔</div>
+									<div class="inter _12s semibold">
+										<spring:message code="new-pairs.securityScan" />
+									</div>
 								</div>
 							</div>
 							<div class="dx-table-list-box">
@@ -1006,12 +1055,19 @@
 							</div>
 						</div>
 						<div class="table-bottom">
-							<div class="coin-table-bottom-txt">1 보이기 - 33 의 33</div>
+							<div class="coin-table-bottom-txt">
+								<spring:message code="table.showtxt" />
+								- 33
+								<spring:message code="table.showtxt2" />
+								33
+							</div>
 							<div class="pagin-box">
 								<a href="#" class="paging-btn left w-button"></a> <a href="#" class="paging-btn on w-button">1</a> <a href="#" class="paging-btn w-button">2</a> <a href="#" class="paging-btn w-button">3</a> <a href="#" class="paging-btn w-button">4</a> <a href="#" class="paging-btn w-button">5</a> <a href="#" class="paging-btn right w-button"></a>
 							</div>
 							<div class="row-box">
-								<div>행 표시하기</div>
+								<div>
+									<spring:message code="table.rowShow" />
+								</div>
 								<div data-hover="false" data-delay="0" class="dropdown w-dropdown">
 									<div class="dropdown-toggle w-dropdown-toggle">
 										<div>50</div>
@@ -1027,6 +1083,7 @@
 				</div>
 			</div>
 		</div>
+		<jsp:include page="../frame/popupLangCurrency.jsp"></jsp:include>
 	</div>
 	<jsp:include page="../frame/footer.jsp"></jsp:include>
 </body>

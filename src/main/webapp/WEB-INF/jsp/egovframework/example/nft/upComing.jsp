@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -19,10 +20,12 @@
 			<div class="body-wrap">
 				<div class="frame no-max">
 					<div class="main-txt-box">
-						<div class="main-title">NFT 컬렉션의 향후 판매</div>
+						<div class="main-title">
+							<spring:message code="nftUpComing.title" />
+						</div>
 						<div class="main-txt-flex">
 							<div>
-								다음은 NFT 컬렉션의 향후 판매 목록입니다. 이들은 릴리즈 시간 및 날짜별로 나열되며 정보에는 수집품이 호스트되는 블록체인이 포함되어 있습니다.<br>
+								<spring:message code="nftUpComing.description" />
 							</div>
 						</div>
 					</div>

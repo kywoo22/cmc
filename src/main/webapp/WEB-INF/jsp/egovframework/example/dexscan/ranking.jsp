@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -17,21 +18,29 @@
 				<jsp:include page="../frame/dexscan-menu.jsp"></jsp:include>
 				<div class="dexscan-detail">
 					<div class="container-header-info">
-						<div class="inter _25s bold">Community Votes Leaderboard</div>
+						<div class="inter _25s bold">
+							<spring:message code="ranking.title" />
+						</div>
 						<div class="inter _14s normal _61co">
-							Would you like to see your favorite token listed on CoinMarketCap? Your vote counts. This list displays the tokens with the highest votes from the CoinMarketCap community for verification. Please vote for your favorite projects to help us better understand what you want to see listed. Click here to <a href="#" class="link">view more details.</a><br> <br>커뮤니티 투표는 의사 결정 과정에서 중요한 부분이지만, 이는 평가의 한 측면일 뿐입니다. 각 토큰은 당사의 위와 같은 상장 기준에 의거하여 평가됩니다. 최종 상장 결정은 logoname이 내립니다.<br> <br>This list is refreshed hourly. 최근 업데이트: 2025-02-24 17:00:00<br>
+							<spring:message code="ranking.description" />
 						</div>
 					</div>
 					<div class="voting-tap">
 						<div class="w-layout-vflex vote-tap-btn-box">
-							<a href="/cmc/dexscan/ranking.do" aria-current="page" class="vote-tap-btn on w-inline-block w--current"><img src="/cmc/webflow/images/rocket.svg" loading="lazy" alt="">
-								<div>Current Ranking</div> </a> <a href="/cmc/dexscan/past-winners.do" class="vote-tap-btn w-inline-block"><img src="/cmc/webflow/images/trophy.svg" loading="lazy" alt="">
-								<div>Past Winners</div> </a>
+							<a href="/cmc/dexscan/ranking.do" aria-current="page" class="vote-tap-btn on w-inline-block w--current"> <img src="/cmc/webflow/images/rocket.svg" loading="lazy" alt="">
+								<div>
+									<spring:message code="ranking.currentRanking" />
+								</div>
+							</a> <a href="/cmc/dexscan/past-winners.do" class="vote-tap-btn w-inline-block"> <img src="/cmc/webflow/images/trophy.svg" loading="lazy" alt="">
+								<div>
+									<spring:message code="ranking.pastWinners" />
+								</div>
+							</a>
 						</div>
 						<div class="vote-time-wrap">
 							<img src="/cmc/webflow/images/clock_off.svg" loading="lazy" alt="">
 							<div>
-								<strong>Current cycle ends in: 2 days 3 hours</strong>
+								<strong><spring:message code="ranking.currentCycle" /></strong>
 							</div>
 						</div>
 					</div>
@@ -42,35 +51,51 @@
 									<div class="inter _12s medium _61co">#</div>
 								</div>
 								<div class="dx-pair-box">
-									<div class="inter _12s semibold">토큰</div>
+									<div class="inter _12s semibold">
+										<spring:message code="table.token" />
+									</div>
 								</div>
 								<div class="dx-vote">
-									<div class="inter _12s semibold">투표</div>
+									<div class="inter _12s semibold">
+										<spring:message code="table.voteCount" />
+									</div>
 								</div>
 								<div class="dx-pool">
 									<div class="inter _12s semibold">
-										<strong>Largest Pool </strong>
+										<strong><spring:message code="table.largestPool" /></strong>
 									</div>
 									<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
 								</div>
 								<div class="dx-dex-box">
-									<div class="inter _12s semibold">체인</div>
+									<div class="inter _12s semibold">
+										<spring:message code="table.chain" />
+									</div>
 								</div>
 								<div class="dx-price">
-									<div class="inter _12s semibold">가격(USD)</div>
+									<div class="inter _12s semibold">
+										<spring:message code="table.price" />
+									</div>
 									<img src="/cmc/webflow/images/arrow_left_right.svg" loading="lazy" alt="">
 								</div>
 								<div class="dx-time">
-									<div class="inter _12s semibold">24h%</div>
+									<div class="inter _12s semibold">
+										<spring:message code="table.time24hPercent" />
+									</div>
 								</div>
 								<div class="dx-txn">
-									<div class="inter _12s semibold">24시간 거래수</div>
+									<div class="inter _12s semibold">
+										<spring:message code="table.tradeCount24h" />
+									</div>
 								</div>
 								<div class="dx-volume">
-									<div class="inter _12s semibold">24시간 거래량</div>
+									<div class="inter _12s semibold">
+										<spring:message code="table.trading.volume" />
+									</div>
 								</div>
 								<div class="dx-liquidity">
-									<div class="inter _12s semibold">유동성</div>
+									<div class="inter _12s semibold">
+										<spring:message code="table.liquidity" />
+									</div>
 								</div>
 								<div class="dx-fdv">
 									<div class="inter _12s semibold">FDV</div>
@@ -631,9 +656,17 @@
 							</div>
 						</div>
 						<div class="table-bottom mg-auto">
-							<div class="coin-table-bottom-txt">1 보이기 - 33 의 33</div>
+							<div class="coin-table-bottom-txt">
+								1
+								<spring:message code="table.showtxt" />
+								- 33
+								<spring:message code="table.showtxt2" />
+								33
+							</div>
 							<div class="row-box">
-								<div>행 표시하기</div>
+								<div>
+									<spring:message code="table.rowShow" />
+								</div>
 								<div data-hover="false" data-delay="0" class="dropdown w-dropdown">
 									<div class="dropdown-toggle w-dropdown-toggle">
 										<div>50</div>
@@ -649,6 +682,7 @@
 				</div>
 			</div>
 		</div>
+		<jsp:include page="../frame/popupLangCurrency.jsp"></jsp:include>
 	</div>
 	<jsp:include page="../frame/footer.jsp"></jsp:include>
 </body>

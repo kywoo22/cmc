@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Thu Mar 13 2025 05:17:25 GMT+0000 (Coordinated Universal Time)  -->
@@ -10,7 +11,7 @@
 </head>
 <body>
 	<div class="root">
-	<jsp:include page="../frame/login-register.jsp"></jsp:include>
+		<jsp:include page="../frame/login-register.jsp"></jsp:include>
 		<div class="main-cotent">
 			<div class="w-layout-vflex main-top">
 				<jsp:include page="../frame/menu.jsp"></jsp:include>
@@ -19,24 +20,30 @@
 			<div class="body-wrap">
 				<div class="frame no-max">
 					<div class="main-txt-box">
-						<div class="main-title">가상자산 커뮤니티 심리</div>
+						<div class="main-title">
+							<spring:message code="sentiment.mainTitle" />
+						</div>
 						<div class="main-txt-flex">
 							<div>
-								CoinMarketCap 커뮤니티에서 가장 강세 또는 약세를 보이는 가상자산 커뮤니티 시장 심리는 CoinMarketCap 사용자의 강세 및 약세 투표를 집계하여 측정합니다.<br>
+								<spring:message code="sentiment.mainText" />
 							</div>
 						</div>
 					</div>
 					<jsp:include page="../frame/leaderboard-tap.jsp"></jsp:include>
 					<div class="w-layout-vflex sentiment-box">
 						<div class="w-layout-vflex cointable-box-sentiment">
-							<div class="inter _18s bold">가장 강세인 심리</div>
+							<div class="inter _18s bold">
+								<spring:message code="sentiment.mostBullish" />
+							</div>
 							<div class="coin-table">
 								<div class="coin-table-top sticky">
 									<div class="w-layout-vflex coin-table-top-wrap num">
 										<div class="coin-txt-table">#</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width200per">
-										<div class="coin-txt-table name">이름</div>
+										<div class="coin-txt-table name">
+											<spring:message code="table.name" />
+										</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width85">
 										<div class="coin-txt-table">
@@ -49,10 +56,14 @@
 										</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap price">
-										<div class="coin-txt-table price">가격</div>
+										<div class="coin-txt-table price">
+											<spring:message code="table.price" />
+										</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width85">
-										<div class="coin-txt-table">24시간</div>
+										<div class="coin-txt-table">
+											<spring:message code="table.time24-houre" />
+										</div>
 									</div>
 								</div>
 								<div class="coin-list">
@@ -200,14 +211,18 @@
 							</div>
 						</div>
 						<div class="w-layout-vflex cointable-box-sentiment">
-							<div class="inter _18s bold">가장 약세인 심리</div>
+							<div class="inter _18s bold">
+								<spring:message code="sentiment.mostBearish" />
+							</div>
 							<div class="coin-table">
 								<div class="coin-table-top sticky">
 									<div class="w-layout-vflex coin-table-top-wrap num">
 										<div class="coin-txt-table">#</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width200per">
-										<div class="coin-txt-table name">이름</div>
+										<div class="coin-txt-table name">
+											<spring:message code="table.name" />
+										</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width85">
 										<div class="coin-txt-table">
@@ -220,10 +235,14 @@
 										</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap price">
-										<div class="coin-txt-table price">가격</div>
+										<div class="coin-txt-table price">
+											<spring:message code="table.price" />
+										</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width85">
-										<div class="coin-txt-table">24시간</div>
+										<div class="coin-txt-table">
+											<spring:message code="table.time24-houre" />
+										</div>
 									</div>
 								</div>
 								<div class="coin-list">
@@ -261,14 +280,18 @@
 					</div>
 					<div class="w-layout-vflex sentiment-box">
 						<div class="w-layout-vflex cointable-box-sentiment">
-							<div class="inter _18s bold">일일 강세 추세</div>
+							<div class="inter _18s bold">
+								<spring:message code="sentiment.dailyBullishTrend" />
+							</div>
 							<div class="coin-table">
 								<div class="coin-table-top sticky">
 									<div class="w-layout-vflex coin-table-top-wrap num">
 										<div class="coin-txt-table">#</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width200per">
-										<div class="coin-txt-table name">이름</div>
+										<div class="coin-txt-table name">
+											<spring:message code="table.name" />
+										</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width85">
 										<div class="coin-txt-table">
@@ -281,10 +304,14 @@
 										</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width85">
-										<div class="coin-txt-table price">추세</div>
+										<div class="coin-txt-table price">
+											<spring:message code="table.trend" />
+										</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap price">
-										<div class="coin-txt-table price">가격</div>
+										<div class="coin-txt-table price">
+											<spring:message code="table.price" />
+										</div>
 									</div>
 								</div>
 								<div class="coin-list">
@@ -466,14 +493,18 @@
 							</div>
 						</div>
 						<div class="w-layout-vflex cointable-box-sentiment">
-							<div class="inter _18s bold">일일 약세 추세</div>
+							<div class="inter _18s bold">
+								<spring:message code="sentiment.dailyBearishTrend" />
+							</div>
 							<div class="coin-table">
 								<div class="coin-table-top sticky">
 									<div class="w-layout-vflex coin-table-top-wrap num">
 										<div class="coin-txt-table">#</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width200per">
-										<div class="coin-txt-table name">이름</div>
+										<div class="coin-txt-table name">
+											<spring:message code="table.name" />
+										</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width85">
 										<div class="coin-txt-table">
@@ -486,10 +517,14 @@
 										</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width85">
-										<div class="coin-txt-table price">추세</div>
+										<div class="coin-txt-table price">
+											<spring:message code="table.trend" />
+										</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap price">
-										<div class="coin-txt-table price">가격</div>
+										<div class="coin-txt-table price">
+											<spring:message code="table.price" />
+										</div>
 									</div>
 								</div>
 								<div class="coin-list">
@@ -673,14 +708,18 @@
 					</div>
 					<div class="w-layout-vflex sentiment-box">
 						<div class="w-layout-vflex cointable-box-sentiment">
-							<div class="inter _18s bold">최다 투표</div>
+							<div class="inter _18s bold">
+								<spring:message code="sentiment.mostVotes" />
+							</div>
 							<div class="coin-table">
 								<div class="coin-table-top sticky">
 									<div class="w-layout-vflex coin-table-top-wrap num">
 										<div class="coin-txt-table">#</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width200per">
-										<div class="coin-txt-table name">이름</div>
+										<div class="coin-txt-table name">
+											<spring:message code="table.name" />
+										</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width85">
 										<div class="coin-txt-table">
@@ -699,7 +738,7 @@
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width125">
 										<div class="coin-txt-table">
-											<strong>투표 수</strong>
+											<spring:message code="table.voteCount" />
 										</div>
 									</div>
 								</div>

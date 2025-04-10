@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Thu Mar 13 2025 05:17:25 GMT+0000 (Coordinated Universal Time)  -->
@@ -19,10 +20,12 @@
 			<div class="body-wrap">
 				<div class="frame no-max">
 					<div class="main-txt-box">
-						<div class="main-title">현재 코인마켓캡 사용자들이 가장 많이 찾고 있는 가상자산</div>
+						<div class="main-title">
+							<spring:message code="mostView.mainTitle" />
+						</div>
 						<div class="main-txt-flex">
 							<div>
-								아래 목록은 CoinMarketCap 실시간 데이터에 기반한, 가장 많이 조회된 가상자산입니다. 좋아하는 코인 또는 토큰이 이 조회 목록에 있나요?<br>
+								<spring:message code="mostView.mainText" />
 							</div>
 						</div>
 					</div>
@@ -33,31 +36,67 @@
 								<div class="coin-txt-table">#</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap name">
-								<div class="coin-txt-table name">이름</div>
+								<div class="coin-txt-table name">
+									<spring:message code="table.name" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap price">
-								<div class="coin-txt-table price">가격</div>
+								<div class="coin-txt-table price">
+									<spring:message code="table.price" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width85">
-								<div class="coin-txt-table">24시간</div>
+								<div class="coin-txt-table">
+									<spring:message code="table.time1-houre" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width85">
-								<div class="coin-txt-table">7일</div>
+								<div class="coin-txt-table">
+									<spring:message code="table.time7-days" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width85">
-								<div class="coin-txt-table">30일</div>
-							</div>
-							<div class="w-layout-vflex coin-table-top-wrap width180">
-								<div class="coin-txt-table">시가 총액</div>
-								<div class="hover-info-pop"></div>
-							</div>
-							<div class="w-layout-vflex coin-table-top-wrap width180">
-								<div class="coin-txt-table">거래량 (24시간)</div>
-								<div class="hover-info-pop"></div>
+								<div class="coin-txt-table">
+									<spring:message code="table.time30-days" />
+								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width180">
 								<div class="coin-txt-table">
-									<strong>최근 7일</strong>
+									<spring:message code="table.market.capitalization" />
+								</div>
+								<div class="hover-info-pop">
+									<div class="hover-info">
+										<div>
+											<spring:message code="table.market.capitalization-info" />
+										</div>
+										<a href="#" class="link w-inline-block">
+											<div>
+												<spring:message code="table.readMore" />
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="w-layout-vflex coin-table-top-wrap width180">
+								<div class="coin-txt-table">
+									<spring:message code="table.trading.volume" />
+								</div>
+								<div class="hover-info-pop">
+									<div class="hover-info">
+										<div>
+											<spring:message code="table.trading.volume-info" />
+										</div>
+										<a href="#" class="link w-inline-block">
+											<div>
+												<spring:message code="table.readMore" />
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="w-layout-vflex coin-table-top-wrap width180">
+								<div class="coin-txt-table">
+									<strong><spring:message code="table.Last7days" /></strong>
 								</div>
 							</div>
 						</div>
@@ -394,70 +433,90 @@
 						</div>
 					</div>
 					<div class="table-bottom">
-						<div class="coin-table-bottom-txt">1 보이기 - 10868 의 100</div>
+						<div class="coin-table-bottom-txt">
+							<spring:message code="table.showtxt" />
+							- 10868
+							<spring:message code="table.showtxt2" />
+							100
+						</div>
 						<div class="pagin-box">
 							<a href="#" class="paging-btn left w-button"></a> <a href="#" class="paging-btn on w-button">1</a> <a href="#" class="paging-btn w-button">2</a> <a href="#" class="paging-btn w-button">3</a> <a href="#" class="paging-btn w-button">4</a> <a href="#" class="paging-btn w-button">5</a> <a href="#" class="paging-btn right w-button"></a>
 						</div>
 						<div class="row-box">
-							<div>행 표시하기</div>
+							<div>
+								<spring:message code="table.rowShow" />
+							</div>
 							<div data-hover="false" data-delay="0" class="dropdown w-dropdown">
 								<div class="dropdown-toggle w-dropdown-toggle">
 									<div>100</div>
 									<div class="icon w-icon-dropdown-toggle"></div>
 								</div>
 								<nav class="dropdown-list w-dropdown-list">
-									<a href="#" class="dropdown-link w-dropdown-link">Cryptocurrency</a> <a href="#" class="w-dropdown-link">Exchange</a> <a href="#" class="w-dropdown-link">Page updates</a>
+									<a href="#" class="dropdown-link w-dropdown-link"> <spring:message code="table.pair" />
+									</a> <a href="#" class="w-dropdown-link"> <spring:message code="table.depth" />
+									</a> <a href="#" class="w-dropdown-link"> <spring:message code="table.reliability" />
+									</a>
 								</nav>
 							</div>
 						</div>
+
 					</div>
 					<section class="section3 right">
 						<div class="inter _32s bold">
-							자주 묻는 질문<br>
+							<spring:message code="mostView.faqTitle" />
+							<br>
 						</div>
 						<div class="faq-list-box width100">
 							<div class="faq-list">
 								<div class="w-layout-vflex faq-top">
 									<div class="inter _16s semibold">
-										<strong>현재 가장 인기 있는 암호화폐는 무엇인가요?</strong>
+										<strong><spring:message code="mostView.faq01.q" /></strong>
 									</div>
 									<div class="fqa-arrow light"></div>
 								</div>
 								<div class="faq-detail">
-									<div class="inter _14s medium _61co">암호화폐의 인기는 시장의 변동성에 따라 빠르게 변화합니다. 따라서 가장 인기 있는 암호화폐를 정확하게 지정하는 것은 어렵습니다. 그러나, 일반적으로 가장 널리 알려진 암호화폐는 비트코인입니다. 비트코인은 첫 번째 암호화폐로서, 가장 넓은 인지도를 가지고 있습니다. 그러나 이더리움, 리플, 라이트코인 등 다른 암호화폐들도 많은 관심을 받고 있습니다.</div>
+									<div class="inter _14s medium _61co">
+										<spring:message code="mostView.faq01.a" />
+									</div>
 								</div>
 							</div>
 							<div class="faq-list">
 								<div class="w-layout-vflex faq-top">
 									<div class="inter _16s semibold">
-										<strong>CoinMarketCap에서 가장 많이 조회된 코인은 어떤 것들인가요?<br></strong>
+										<strong><spring:message code="mostView.faq02.q" /><br></strong>
 									</div>
 									<div class="fqa-arrow light"></div>
 								</div>
 								<div class="faq-detail">
-									<div class="inter _14s medium _61co">CoinMarketCap은 전 세계 암호화폐의 시세, 거래량, 시가 총액 등 다양한 정보를 제공하는 플랫폼입니다. 이 플랫폼에서 가장 많이 조회된 코인은 시장 상황에 따라 변화합니다. 일반적으로, 비트코인, 이더리움, 리플 등의 주요 암호화폐가 상위에 랭크되는 경향이 있습니다. 그러나 다양한 요인에 따라 이 순위는 빠르게 변할 수 있습니다.</div>
+									<div class="inter _14s medium _61co">
+										<spring:message code="mostView.faq02.a" />
+									</div>
 								</div>
 							</div>
 							<div class="faq-list">
 								<div class="w-layout-vflex faq-top">
 									<div class="inter _16s semibold">
-										<strong>현재 가장 인기 있는 코인은 무엇인가요?</strong>
+										<strong><spring:message code="mostView.faq03.q" /></strong>
 									</div>
 									<div class="fqa-arrow light"></div>
 								</div>
 								<div class="faq-detail">
-									<div class="inter _14s medium _61co">현재 가장 인기 있는 코인을 정확하게 지정하는 것은 어렵습니다. 암호화폐의 인기는 시장의 변동성, 기술적인 발전, 규제 환경 등 다양한 요인에 의해 결정됩니다. 그러나 일반적으로, 비트코인, 이더리움, 리플 등의 주요 암호화폐가 가장 인기가 많습니다. 이들 암호화폐는 넓은 사용자 기반과 높은 시가 총액을 가지고 있습니다.</div>
+									<div class="inter _14s medium _61co">
+										<spring:message code="mostView.faq03.a" />
+									</div>
 								</div>
 							</div>
 							<div class="faq-list">
 								<div class="w-layout-vflex faq-top">
 									<div class="inter _16s semibold">
-										<strong>가장 많이 검색된 암호화폐는 무엇인가요?</strong>
+										<strong><spring:message code="mostView.faq04.q" /></strong>
 									</div>
 									<div class="fqa-arrow light"></div>
 								</div>
 								<div class="faq-detail">
-									<div class="inter _14s medium _61co">암호화폐의 검색 트렌드는 시장의 변동성과 관련된 뉴스, 이벤트 등에 따라 빠르게 변화합니다. 그러나 일반적으로, 비트코인은 가장 많이 검색되는 암호화폐입니다. 비트코인은 암호화폐의 선구자로서, 가장 넓은 인지도를 가지고 있습니다. 그 외에도 이더리움, 리플, 라이트코인 등의 암호화폐도 많이 검색됩니다.</div>
+									<div class="inter _14s medium _61co">
+										<spring:message code="mostView.faq04.a" />
+									</div>
 								</div>
 							</div>
 						</div>
@@ -469,5 +528,6 @@
 	<jsp:include page="../frame/list-footer.jsp"></jsp:include>
 	<jsp:include page="../frame/footer.jsp"></jsp:include>
 	<script src="/cmc/js/faq.js" type="text/javascript"></script>
+	<script src="/cmc/js/pop-hover.js" type="text/javascript"></script>
 </body>
 </html>

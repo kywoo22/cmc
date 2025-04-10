@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -20,7 +21,8 @@
 					</div>
 					<div class="community-right-w">
 						<div class="inter _18s bold">
-							최신<br>
+							<spring:message code="articles.latest" />
+							<br>
 						</div>
 						<div class="news-box">
 							<a href="#" class="article-item w-inline-block"><img src="/cmc/webflow/images/image_558_314.png" loading="lazy" sizes="(max-width: 1116px) 100vw, 1116px" srcset="/cmc/webflow/images/image_558_314-p-500.png 500w, /cmc/webflow/images/image_558_314-p-800.png 800w, /cmc/webflow/images/image_558_314-p-1080.png 1080w, /cmc/webflow/images/image_558_314.png 1116w" alt="" class="article-img">

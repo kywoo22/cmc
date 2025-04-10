@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:48:39 GMT+0000 (Coordinated Universal Time)  -->
@@ -29,11 +30,13 @@
 								</div>
 								<div class="w-layout-vflex market-overview-top-wrap gap12">
 									<div class="inter _25s bold">
-										비트코인 ETF 트래커<br>
+										<spring:message code="bitcoinEtf.title" />
+										<br>
 									</div>
 								</div>
 								<div class="inter _14s normal _61co">
-									다음은 비트코인에 투자한 ETF(상장지수펀드)입니다. 이는 비트코인 현물 또는 선물을 보유하는 단일 자산 비트코인 ETF입니다. 또한 자금 유출입, 총 운용자산(AUM), 순자산가치(NAV)도 표시됩니다.<br>
+									<spring:message code="bitcoinEtf.description" />
+									<br>
 								</div>
 							</div>
 							<div class="market-overview-middle">
@@ -42,7 +45,7 @@
 										<div class="m-o-card gap24 h-auto">
 											<div class="card-header">
 												<div class="card-header-title">
-													<strong>비트코인 ETF 순유입 </strong><span class="small-61co"><strong>(Feb 20, 2025)</strong></span>
+													<strong><spring:message code="bitcoinEtf.inflow" /></strong> <span class="small-61co"><strong>(Feb 20, 2025)</strong></span>
 												</div>
 											</div>
 											<div class="cmc-rate-box">
@@ -53,23 +56,31 @@
 										</div>
 										<div class="m-o-card gap24 h-auto">
 											<div class="card-header">
-												<div class="card-header-title">과거 수치</div>
+												<div class="card-header-title">
+													<spring:message code="bitcoinEtf.pastFigures" />
+												</div>
 											</div>
 											<div class="m-o-txt-list">
 												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">어제</div>
+													<div class="inter _12s medium _61co">
+														<spring:message code="bitcoinEtf.yesterday" />
+													</div>
 													<div class="inter _12s bold down">
 														<strong> - $192.83</strong>
 													</div>
 												</div>
 												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">지난 주</div>
+													<div class="inter _12s medium _61co">
+														<spring:message code="bitcoinEtf.lastWeek" />
+													</div>
 													<div class="inter _12s bold up">
 														$197.34<br>
 													</div>
 												</div>
 												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">최근 3달</div>
+													<div class="inter _12s medium _61co">
+														<spring:message code="bitcoinEtf.last3months" />
+													</div>
 													<div class="inter _12s bold up">
 														+ $215.25<br>
 													</div>
@@ -78,15 +89,23 @@
 										</div>
 										<div class="m-o-coin-rate gap24 h-auto">
 											<div class="card-header">
-												<div class="card-header-title">연간 성과</div>
+												<div class="card-header-title">
+													<spring:message code="bitcoinEtf.annualPerformance" />
+												</div>
 											</div>
 											<div class="m-o-txt-list">
 												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">연간 최고 (Dec 18, 2024)</div>
+													<div class="inter _12s medium _61co">
+														<spring:message code="bitcoinEtf.annualHigh" />
+														(Dec 18, 2024)
+													</div>
 													<div class="inter _12s bold up">$192.83</div>
 												</div>
 												<div class="m-o-txt-box">
-													<div class="inter _12s medium _61co">연간 최저 (Aug 05, 2024)</div>
+													<div class="inter _12s medium _61co">
+														<spring:message code="bitcoinEtf.annualLow" />
+														(Aug 05, 2024)
+													</div>
 													<div class="inter _12s bold down">
 														$197.34<br>
 													</div>
@@ -97,14 +116,14 @@
 									<div class="m-o-chart-box">
 										<div class="card-header between space">
 											<div class="card-header-title">
-												<strong>비트코인 ETF 순유입 차트</strong>
+												<strong><spring:message code="bitcoinEtf.inflowChartTitle" /></strong>
 											</div>
 											<div class="m-o-chart-btn-box">
 												<div class="m-o-chart-btn-wrap">
-													<a href="#" class="tabselect-chart-btn on w-button">총 순유입량</a> <a href="#" class="tabselect-chart-btn w-button">펀드별</a>
+													<a href="#" class="tabselect-chart-btn on w-button"><spring:message code="bitcoinEtf.inflowTotal" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="bitcoinEtf.inflowByFund" /></a>
 												</div>
 												<div class="m-o-chart-btn-wrap">
-													<a href="#" class="tabselect-chart-btn on w-button">30일</a> <a href="#" class="tabselect-chart-btn w-button">1년</a> <a href="#" class="tabselect-chart-btn w-button">전체</a>
+													<a href="#" class="tabselect-chart-btn on w-button"><spring:message code="bitcoinEtf.time30d" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="bitcoinEtf.time1y" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="bitcoinEtf.timeAll" /></a>
 												</div>
 												<div class="m-o-chart-btn-wrap"></div>
 											</div>
@@ -114,7 +133,8 @@
 												<div class="chart-wrap-box">
 													<div class="circle-color bitcoin"></div>
 													<div class="inter _12s medium _61co">
-														비트코인<br>
+														<spring:message code="bitcoinEtf.bitcoin" />
+														<br />
 													</div>
 												</div>
 											</div>
@@ -122,7 +142,8 @@
 												<div class="chart-wrap-box">
 													<div class="circle-color etc"></div>
 													<div class="inter _12s medium _61co">
-														비트코인 가격<br>
+														<spring:message code="bitcoinEtf.bitcoinPrice" />
+														<br />
 													</div>
 												</div>
 											</div>
@@ -134,28 +155,31 @@
 									<div class="m-o-chart-box">
 										<div class="card-header between space">
 											<div class="card-header-title">
-												총 AUM<br>
+												<spring:message code="bitcoinEtf.totalAum" />
+												<br>
 											</div>
 											<div class="m-o-chart-btn-box">
 												<div class="m-o-chart-btn-wrap">
-													<a href="#" class="tabselect-chart-btn on w-button">30일</a> <a href="#" class="tabselect-chart-btn w-button">1년</a> <a href="#" class="tabselect-chart-btn w-button">전체</a>
+													<a href="#" class="tabselect-chart-btn on w-button"><spring:message code="bitcoinEtf.time30d" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="bitcoinEtf.time1y" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="bitcoinEtf.timeAll" /></a>
 												</div>
 												<div class="m-o-chart-btn-wrap"></div>
 											</div>
 										</div>
 										<div class="m-o-chart-big min250"></div>
 									</div>
+
 									<div class="m-o-chart-box">
 										<div class="card-header between space">
 											<div class="card-header">
 												<div class="card-header-title">
-													시가총액의 백분율로 표시된 AUM<br>
+													<spring:message code="bitcoinEtf.aumPercentageOfMarketCap" />
+													<br>
 												</div>
 												<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
 											</div>
 											<div class="m-o-chart-btn-box">
 												<div class="m-o-chart-btn-wrap">
-													<a href="#" class="tabselect-chart-btn on w-button">30일</a> <a href="#" class="tabselect-chart-btn w-button">1년</a> <a href="#" class="tabselect-chart-btn w-button">전체</a>
+													<a href="#" class="tabselect-chart-btn on w-button"><spring:message code="bitcoinEtf.time30d" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="bitcoinEtf.time1y" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="bitcoinEtf.timeAll" /></a>
 												</div>
 												<div class="m-o-chart-btn-wrap"></div>
 											</div>
@@ -166,43 +190,59 @@
 								<div class="market-overview-etf-table">
 									<div class="w-layout-vflex left-flex-box">
 										<div class="m-o-chart-btn-wrap">
-											<a href="#" class="tabselect-chart-btn on w-button">개요</a> <a href="#" class="tabselect-chart-btn w-button"> 흐름</a>
+											<a href="#" class="tabselect-chart-btn on w-button"><spring:message code="bitcoinEtf.tab.overview" /></a> <a href="#" class="tabselect-chart-btn w-button"><spring:message code="bitcoinEtf.tab.flow" /></a>
 										</div>
 										<div class="m-o-chart-btn-wrap">
-											<a href="#" class="tabselect-chart-btn bold _61co on w-button">KRW</a> <a href="#" class="tabselect-chart-btn bold _61co w-button"> BTC</a>
+											<a href="#" class="tabselect-chart-btn bold _61co on w-button">KRW</a> <a href="#" class="tabselect-chart-btn bold _61co w-button">BTC</a>
 										</div>
 									</div>
 									<div class="etf-table outline">
 										<div class="etf-table-top">
 											<div class="etf-table-txt-box">
-												<div>티커</div>
+												<div>
+													<spring:message code="table.ticker" />
+												</div>
 											</div>
 											<div class="etf-table-txt-box fundname">
-												<div>펀드명</div>
-											</div>
-											<div class="etf-table-txt-box width10">
-												<div>가격</div>
-											</div>
-											<div class="etf-table-txt-box width10">
-												<div>거래량</div>
-											</div>
-											<div class="etf-table-txt-box width10">
-												<div>AUM</div>
-												<img src="/cmc/webflow/images/icon3.svg" loading="lazy" alt="">
-											</div>
-											<div class="etf-table-txt-box width10">
-												<div>시가총액</div>
-											</div>
-											<div class="etf-table-txt-box width10">
-												<div>프리미엄</div>
-												<img src="/cmc/webflow/images/icon3.svg" loading="lazy" alt="">
-											</div>
-											<div class="etf-table-txt-box width10">
-												<div>순 수수료</div>
+												<div>
+													<spring:message code="table.fundName" />
+												</div>
 											</div>
 											<div class="etf-table-txt-box width10">
 												<div>
-													<strong>유형</strong>
+													<spring:message code="table.price" />
+												</div>
+											</div>
+											<div class="etf-table-txt-box width10">
+												<div>
+													<spring:message code="table.trading.volumeN" />
+												</div>
+											</div>
+											<div class="etf-table-txt-box width10">
+												<div>
+													<spring:message code="table.aum" />
+												</div>
+												<img src="/cmc/webflow/images/icon3.svg" loading="lazy" alt="">
+											</div>
+											<div class="etf-table-txt-box width10">
+												<div>
+													<spring:message code="table.market.capitalization" />
+												</div>
+											</div>
+											<div class="etf-table-txt-box width10">
+												<div>
+													<spring:message code="table.premium" />
+												</div>
+												<img src="/cmc/webflow/images/icon3.svg" loading="lazy" alt="">
+											</div>
+											<div class="etf-table-txt-box width10">
+												<div>
+													<spring:message code="table.net.fee" />
+												</div>
+											</div>
+											<div class="etf-table-txt-box width10">
+												<div>
+													<strong><spring:message code="table.type" /></strong>
 												</div>
 											</div>
 										</div>
@@ -1760,9 +1800,16 @@
 											</div>
 										</div>
 										<div class="table-bottom">
-											<div class="coin-table-bottom-txt">1 보이기 - 33 의 33</div>
+											<div class="coin-table-bottom-txt">
+												<spring:message code="table.showtxt" />
+												- 33
+												<spring:message code="table.showtxt2" />
+												33
+											</div>
 											<div class="row-box">
-												<div>행 표시하기</div>
+												<div>
+													<spring:message code="table.rowShow" />
+												</div>
 												<div data-hover="false" data-delay="0" class="dropdown w-dropdown">
 													<div class="dropdown-toggle w-dropdown-toggle">
 														<div>50</div>
@@ -1851,7 +1898,9 @@
 													<div>ETH</div>
 												</div>
 												<div class="etf-table-txt-box-flow right">
-													<div>총계</div>
+													<div>
+														<spring:message code="table.total" />
+													</div>
 												</div>
 											</div>
 											<div class="etf-table-list">
@@ -2782,12 +2831,19 @@
 											</div>
 										</div>
 										<div class="table-bottom">
-											<div class="coin-table-bottom-txt">1 보이기 - 292 의 51</div>
+											<div class="coin-table-bottom-txt">
+												<spring:message code="table.showtxt" />
+												- 292
+												<spring:message code="table.showtxt2" />
+												51
+											</div>
 											<div class="pagin-box none">
 												<a href="#" class="paging-btn left w-button"></a> <a href="#" class="paging-btn on w-button">1</a> <a href="#" class="paging-btn w-button">2</a> <a href="#" class="paging-btn w-button">3</a> <a href="#" class="paging-btn w-button">4</a> <a href="#" class="paging-btn w-button">5</a> <a href="#" class="paging-btn right w-button"></a>
 											</div>
 											<div class="row-box">
-												<div>행 표시하기</div>
+												<div>
+													<spring:message code="table.rowShow" />
+												</div>
 												<div data-hover="false" data-delay="0" class="dropdown w-dropdown">
 													<div class="dropdown-toggle w-dropdown-toggle">
 														<div>50</div>
@@ -2803,7 +2859,9 @@
 								</div>
 							</div>
 							<div class="market-overview-bottom">
-								<div class="inter _25s bold">비트코인 ETF 뉴스</div>
+								<div class="inter _25s bold">
+									<spring:message code="bitcoinEtf.news" />
+								</div>
 								<div class="scroll-bar-arrow scroll-left">
 									<div class="btn-circle">
 										<img src="/cmc/webflow/images/arrow_left_off.svg" loading="lazy" alt="">
@@ -2861,74 +2919,75 @@
 							<div class="market-overview-faq-txt">
 								<div class="w-layout-vflex market-overview-top-wrap between">
 									<div class="inter _25s bold">
-										자주 묻는 질문(FAQ)<br>
+										<spring:message code="bitcoinEtf.faqTitle" />
+										<br>
 									</div>
 								</div>
 								<div class="index-list-box">
 									<div class="faq-list">
 										<div class="w-layout-vflex index-list-title">
 											<div class="inter _16s medium">
-												<strong>비트코인 ETF란 무엇인가요?</strong>
+												<strong><spring:message code="bitcoinEtf.faq01.q" /></strong>
 											</div>
 											<div class="fqa-arrow light"></div>
 										</div>
 										<div class="w-layout-vflex faq-detail">
-											<div class="inter _14s normal _61co">비트코인 ETF는 거래소에서 거래되는 투자 기금으로, 비트코인의 가격 변동을 추적합니다. 이는 투자자들이 비트코인을 직접 소유하지 않고도 그 가치의 변동에 대한 노출을 얻을 수 있게 해줍니다.</div>
+											<div class="inter _14s normal _61co">
+												<spring:message code="bitcoinEtf.faq01.a" />
+											</div>
+										</div>
+									</div>
+
+									<div class="faq-list">
+										<div class="w-layout-vflex index-list-title">
+											<div class="inter _16s medium">
+												<strong><spring:message code="bitcoinEtf.faq02.q" /></strong>
+											</div>
+											<div class="fqa-arrow light"></div>
+										</div>
+										<div class="w-layout-vflex faq-detail">
+											<div class="inter _14s normal _61co">
+												<spring:message code="bitcoinEtf.faq02.a" />
+											</div>
 										</div>
 									</div>
 									<div class="faq-list">
 										<div class="w-layout-vflex index-list-title">
 											<div class="inter _16s medium">
-												<strong>비트코인 스팟 ETF 목록을 어떻게 사용할 수 있나요?</strong>
+												<strong><spring:message code="bitcoinEtf.faq04.q" /></strong>
 											</div>
 											<div class="fqa-arrow light"></div>
 										</div>
 										<div class="w-layout-vflex faq-detail">
-											<div class="inter _14s normal _61co">비트코인 스팟 ETF 목록은 현재 시장에서 거래되고 있는 비트코인 ETF를 확인하는 데 사용됩니다. 이 목록을 통해 투자자들은 각 ETF의 성능, 관리 비용, 거래량 등 다양한 정보를 비교하고 분석할 수 있습니다.</div>
+											<div class="inter _14s normal _61co">
+												<spring:message code="bitcoinEtf.faq04.a" />
+											</div>
 										</div>
 									</div>
 									<div class="faq-list">
 										<div class="w-layout-vflex index-list-title">
 											<div class="inter _16s medium">
-												<strong>비트코인 선물 ETF 목록을 어떻게 사용할 수 있나요?</strong>
+												<strong><spring:message code="bitcoinEtf.faq05.q" /></strong>
 											</div>
 											<div class="fqa-arrow light"></div>
 										</div>
 										<div class="w-layout-vflex faq-detail">
-											<div class="inter _14s normal _61co">비트코인 선물 ETF 목록은 비트코인 선물 계약을 기반으로 하는 ETF를 확인하는 데 사용됩니다. 이 목록을 통해 투자자들은 각 ETF의 성능, 관리 비용, 거래량 등 다양한 정보를 비교하고 분석할 수 있습니다.</div>
+											<div class="inter _14s normal _61co">
+												<spring:message code="bitcoinEtf.faq05.a" />
+											</div>
 										</div>
 									</div>
 									<div class="faq-list">
 										<div class="w-layout-vflex index-list-title">
 											<div class="inter _16s medium">
-												<strong>비트코인 ETF 티커를 어디에서 찾을 수 있나요?</strong>
+												<strong><spring:message code="bitcoinEtf.faq06.q" /></strong>
 											</div>
 											<div class="fqa-arrow light"></div>
 										</div>
 										<div class="w-layout-vflex faq-detail">
-											<div class="inter _14s normal _61co">비트코인 ETF 티커는 주로 금융 뉴스 웹사이트, 주식 거래 플랫폼, 그리고 각 ETF의 공식 웹사이트에서 찾을 수 있습니다. 티커는 각 ETF를 식별하는 데 사용되는 고유한 심볼입니다.</div>
-										</div>
-									</div>
-									<div class="faq-list">
-										<div class="w-layout-vflex index-list-title">
-											<div class="inter _16s medium">
-												<strong>비트코인 ETF는 직접 비트코인을 소유하는 것과 어떻게 다른가요?</strong>
+											<div class="inter _14s normal _61co">
+												<spring:message code="bitcoinEtf.faq06.a" />
 											</div>
-											<div class="fqa-arrow light"></div>
-										</div>
-										<div class="w-layout-vflex faq-detail">
-											<div class="inter _14s normal _61co">비트코인 ETF는 비트코인의 가격 변동을 추적하는 반면, 직접 비트코인을 소유하면 실제로 디지털 자산을 보유하게 됩니다. 따라서, ETF를 통한 투자는 비트코인의 가격 변동에 대한 노출을 얻는 것이며, 직접 비트코인을 소유하는 것은 실제 디지털 자산을 소유하는 것입니다.</div>
-										</div>
-									</div>
-									<div class="faq-list">
-										<div class="w-layout-vflex index-list-title">
-											<div class="inter _16s medium">
-												<strong>기관 투자자들은 비트코인 ETF에 어떻게 접근하고 있나요?</strong>
-											</div>
-											<div class="fqa-arrow light"></div>
-										</div>
-										<div class="w-layout-vflex faq-detail">
-											<div class="inter _14s normal _61co">기관 투자자들은 비트코인 ETF를 통해 비트코인 시장에 안전하게 접근할 수 있습니다. 이는 비트코인을 직접 구매, 보유, 그리고 보안에 대한 우려 없이 비트코인의 가격 변동에 대한 노출을 얻을 수 있게 해줍니다.</div>
 										</div>
 									</div>
 								</div>
@@ -2943,11 +3002,13 @@
 						<div class="inter _32s bold">
 							<strong>Stay on top of crypto. All the time, any time.</strong>
 						</div>
-						<div class="stay-sub-tt">CoinMarketCap의 최신 가상자산 뉴스, 리서치 결과, 보상 프로그램, 이벤트 업데이트, 코인 리스팅 및 다양한 정보를 이메일로 업데이트 받고 싶어요.</div>
+						<div class="stay-sub-tt">
+							<spring:message code="bitcoinEtf.subscriptionDesc" />
+						</div>
 						<div class="form-block w-form">
 							<form id="email-form" name="email-form" data-name="Email Form" method="get" class="form" data-wf-page-id="67b82f4fb35aaeb9c48de6ba" data-wf-element-id="638f6fd3-9be0-81dd-7399-3bc28d221dac">
-								<input class="text-field w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="이메일 주소 입력" type="text" id="name-2">
-								<input type="submit" data-wait="Please wait..." class="submit-button w-button" value="제출">
+								<input class="text-field w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="<spring:message code='bitcoinEtf.emailPlaceholder' />" type="text" id="name-2">
+								<input type="submit" data-wait="<spring:message code='bitcoinEtf.submitWait' />" class="submit-button w-button" value="<spring:message code='bitcoinEtf.submit' />">
 							</form>
 						</div>
 					</div>

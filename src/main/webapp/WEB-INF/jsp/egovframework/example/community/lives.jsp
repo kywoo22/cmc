@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -20,16 +21,18 @@
 					</div>
 					<div class="community-right-w">
 						<div class="inter _25s bold">
-							주제<br>
+							<spring:message code="lives.title" />
+							<br>
 						</div>
 						<div class="lives-tap">
 							<div class="lives-tap-sticky">
-								<a href="#" class="lives-btn on w-button">전체</a> <a href="#" class="lives-btn w-button">예정</a> <a href="#" class="lives-btn w-button">완료</a>
+								<a href="#" class="lives-btn on w-button"><spring:message code="lives.all" /></a> <a href="#" class="lives-btn w-button"><spring:message code="lives.upcoming" /></a> <a href="#" class="lives-btn w-button"><spring:message code="lives.completed" /></a>
 							</div>
 							<div class="lives-contents">
 								<div class="w-layout-vflex lives-wrap">
 									<div class="inter _14s semibold">
-										예정<br>
+										<spring:message code="lives.upcomingTitle" />
+										<br>
 									</div>
 									<div class="half">
 										<a href="#" class="community-live-wrap w-inline-block">
@@ -48,7 +51,8 @@
 								<div class="w-layout-vflex lives-wrap">
 									<div class="w-layout-vflex space-between">
 										<div class="inter _14s semibold">
-											완료<br>
+											<spring:message code="lives.completedTitle" />
+											<br>
 										</div>
 										<a href="#" class="inter _14s semibold link">See All &gt;<br></a>
 									</div>

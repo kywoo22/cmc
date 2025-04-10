@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -18,7 +19,9 @@
 			<div class="body-wrap">
 				<div class="frame">
 					<div class="service-wrap">
-						<div class="inter _20s bold">암호화폐 환전 계산기</div>
+						<div class="inter _20s bold">
+							<spring:message code="converter.title" />
+						</div>
 						<div class="calculating">
 							<div class="calculating-form-box w-form">
 								<form id="email-form" name="email-form" data-name="Email Form" method="get" class="calculating-form" data-wf-page-id="67c69d5d2a16fea2bd11dded" data-wf-element-id="efeabffb-1d5c-7f2c-5913-765d74eafa4a">
@@ -74,20 +77,17 @@
 										</div>
 									</div>
 									<div class="refresh-btn">
-										<div class="inter _14s medium">갱신</div>
+										<div class="inter _14s medium">
+											<spring:message code="converter.refresh" />
+										</div>
 									</div>
 								</form>
-								<div class="w-form-done">
-									<div>Thank you! Your submission has been received!</div>
-								</div>
-								<div class="w-form-fail">
-									<div>Oops! Something went wrong while submitting the form.</div>
-								</div>
 							</div>
 						</div>
 						<div class="popular-coin-box">
 							<div class="inter _18s bold">
-								인기 암호 화폐 환전<br>
+								<spring:message code="converter.popularConvertTitle" />
+								<br>
 							</div>
 							<div class="popular-coin-wrap">
 								<div class="popular-coin">
@@ -368,19 +368,31 @@
 		</div>
 	</div>
 	<jsp:include page="../frame/footer.jsp"></jsp:include>
+	<jsp:include page="../frame/list-footer.jsp"></jsp:include>
 	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-		  const dropdowns = document.querySelectorAll('.select-dropdown');
-		  dropdowns.forEach(function(dropdown) {
-		    dropdown.addEventListener('click', function() {
-		      // dropdown과 같은 부모 안의 .select-drop-list 찾기
-		      const dropList = dropdown.parentElement.querySelector('.select-drop-list');
-		      if (!dropList) return; // 대응되는 drop-list가 없는 경우는 중단
-		      // display 속성이 'flex'이면 'none'으로, 'none'이면 'flex'로 바꿈
-		      dropList.style.display = (dropList.style.display === 'flex') ? 'none' : 'flex';
-		    });
-		  });
-		});
-	</script>
+	document
+		.addEventListener(
+			'DOMContentLoaded',
+			function() {
+			    const dropdowns = document
+				    .querySelectorAll('.select-dropdown');
+			    dropdowns
+				    .forEach(function(dropdown) {
+					dropdown
+						.addEventListener(
+							'click',
+							function() {
+							    // dropdown과 같은 부모 안의 .select-drop-list 찾기
+							    const dropList = dropdown.parentElement
+								    .querySelector('.select-drop-list');
+							    if (!dropList)
+								return; // 대응되는 drop-list가 없는 경우는 중단
+							    // display 속성이 'flex'이면 'none'으로, 'none'이면 'flex'로 바꿈
+							    dropList.style.display = (dropList.style.display === 'flex') ? 'none'
+								    : 'flex';
+							});
+				    });
+			});
+    </script>
 </body>
 </html>
