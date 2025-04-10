@@ -37,6 +37,7 @@ public class MainController {
 			session.setAttribute("lang", lang.toLowerCase());
 		}
 		request.setAttribute("activeIndicator", "main");
+		Scheduler.executeDataFetchJob();
 		return "main";
 	}
 	@RequestMapping("/currencies.do")

@@ -61,13 +61,11 @@
 		    <artifactId>json-simple</artifactId>
 		    <version>1.1.1</version>
 		</dependency>
-
 		<dependency>
-			<groupId>org.jsoup</groupId>
-			<artifactId>jsoup</artifactId>
-			<version>1.15.3</version>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.15.2</version> <!-- 최신 버전을 사용하세요 -->
 		</dependency>
-		
         <dependency>
 		    <groupId>egovframework.rte</groupId>
 		    <artifactId>egovframework.rte.ptl.mvc</artifactId>

@@ -6,99 +6,111 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
+import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import egovframework.example.sample.model.GlobalData;
-import egovframework.example.sample.web.utils.Log;
+import egovframework.example.sample.web.utils.Log;	
 
 @Component
 public class Scheduler {
 
-	// 크롤링 목록 
-    private static final List<String> urlsToCrawl = Arrays.asList(
-            "https://coinmarketcap.com/"
-        );
+    // Node.js API 엔드포인트 목록
+    private static final List<String> API_ENDPOINTS = Arrays.asList(
+            "http://localhost:3000/main"
+            // 필요한 다른 API 엔드포인트들 추가
+    );
     
-    private static final Map<String, Consumer<Document>> crawlerFunctions = new HashMap<>();
+    // API 처리 함수 맵
+    private static final Map<String, Consumer<JsonNode>> apiProcessors = new HashMap<>();
     
     static {
-        // CoinMarketCap 크롤링 함수 등록
-    	crawlerFunctions.put("https://coinmarketcap.com/", doc -> {
+        // CoinMarketCap API 데이터 처리 함수
+        apiProcessors.put("http://localhost:3000/main", data -> {
             try {
-                GlobalData.setCryptos(doc.select("[data-test=cryptos-count-num]").text());
-                GlobalData.setExchanges(doc.select("[data-test=active-ex-num]").text());
-                GlobalData.setMarketCap(doc.select("[data-test=mkt-cap-num]").text());
-                GlobalData.setMarketCapColor(doc.select("[data-test=mkt-cap-percentage-change]").attr("color").contains("negative") ? "down" : "up");
-                GlobalData.setMarketCapPercent(doc.select("[data-test=mkt-cap-percentage-change]").text());
-                GlobalData.setT24hVol(doc.select("[data-test=24h-vol-num]").text());
-                GlobalData.setT24hVolColor(doc.select("[data-test=24h-vol-percentage-change]").attr("color").contains("negative") ? "down" : "up");
-                GlobalData.setT24hVolPercent(doc.select("[data-test=24h-vol-percentage-change]").text());
-                GlobalData.setDominance(doc.select("div[data-test=global-stats-dominance] a").text());
-                GlobalData.setEthGas(doc.select("[data-test=ether-gas-num]").text());
-                GlobalData.setFearGreed(doc.select("[data-test=fear-greed-index-num]").text());
-                
-                // 로그 출력
-                Log.print("cryptos: " + GlobalData.getCryptos(), "call");
-                Log.print("exchanges: " + GlobalData.getExchanges(), "call");
-                Log.print("marketCap: " + GlobalData.getMarketCap(), "call");
-                Log.print("marketCapColor: " + GlobalData.getMarketCapColor(), "call");
-                Log.print("marketCapPercent: " + GlobalData.getMarketCapPercent(), "call");
-                Log.print("24hVol: " + GlobalData.getT24hVol(), "call");
-                Log.print("24hVolColor: " + GlobalData.getT24hVolColor(), "call");
-                Log.print("24hVolPercent: " + GlobalData.getT24hVolPercent(), "call");
-                Log.print("dominance: " + GlobalData.getDominance(), "call");
-                Log.print("ethGas: " + GlobalData.getEthGas(), "call");
-                Log.print("fearGreed: " + GlobalData.getFearGreed(), "call");
+            	Log.print(":: " + data, "call");
+//                // GlobalData에 값 설정
+//                GlobalData.setCryptos(data.path("cryptos").asText());
+//                GlobalData.setExchanges(data.path("exchanges").asText());
+//                GlobalData.setMarketCap(data.path("marketCap").asText());
+//                GlobalData.setMarketCapColor(data.path("marketCapColor").asText());
+//                GlobalData.setMarketCapPercent(data.path("marketCapPercent").asText());
+//                GlobalData.setT24hVol(data.path("t24hVol").asText());
+//                GlobalData.setT24hVolColor(data.path("t24hVolColor").asText());
+//                GlobalData.setT24hVolPercent(data.path("t24hVolPercent").asText());
+//                GlobalData.setDominance(data.path("dominance").asText());
+//                GlobalData.setEthGas(data.path("ethGas").asText());
+//                GlobalData.setFearGreed(data.path("fearGreed").asText());
+//                
+//                // 로그 출력
+//                Log.print("cryptos: " + GlobalData.getCryptos(), "call");
+//                Log.print("exchanges: " + GlobalData.getExchanges(), "call");
+//                Log.print("marketCap: " + GlobalData.getMarketCap(), "call");
+//                Log.print("marketCapColor: " + GlobalData.getMarketCapColor(), "call");
+//                Log.print("marketCapPercent: " + GlobalData.getMarketCapPercent(), "call");
+//                Log.print("24hVol: " + GlobalData.getT24hVol(), "call");
+//                Log.print("24hVolColor: " + GlobalData.getT24hVolColor(), "call");
+//                Log.print("24hVolPercent: " + GlobalData.getT24hVolPercent(), "call");
+//                Log.print("dominance: " + GlobalData.getDominance(), "call");
+//                Log.print("ethGas: " + GlobalData.getEthGas(), "call");
+//                Log.print("fearGreed: " + GlobalData.getFearGreed(), "call");
             } catch (Exception e) {
-                Log.print("CoinMarketCap 데이터 처리 중 오류: " + e.getMessage(), "err");
+                Log.print("CoinMarketCap API 데이터 처리 중 오류: " + e.getMessage(), "err");
             }
         });
         
-        // 다른 사이트 크롤링 함수도 필요하면 여기에 추가
-        /*
-        crawlerFunctions.put("https://another-site.com/", doc -> {
+        // 다른 API 엔드포인트 처리 함수 추가
+        apiProcessors.put("http://your-nodejs-server/api/another-endpoint", data -> {
             try {
-                anotherSiteVar1 = doc.select("selector1").text();
-                anotherSiteVar2 = doc.select("selector2").text();
-                
-                // 로그 출력
-                Log.print("anotherSiteVar1: " + anotherSiteVar1, "call");
-                Log.print("anotherSiteVar2: " + anotherSiteVar2, "call");
+                // 다른 API에서 받은 데이터 처리 로직
+                // 예: GlobalData.setOtherData(data.path("otherData").asText());
+                Log.print("다른 API 데이터 처리 완료", "call");
             } catch (Exception e) {
-                Log.print("다른 사이트 데이터 처리 중 오류: " + e.getMessage(), "err");
+                Log.print("다른 API 데이터 처리 중 오류: " + e.getMessage(), "err");
             }
         });
-        */
     }
     
+    private static final RestTemplate restTemplate = new RestTemplate();
+    private static final ObjectMapper objectMapper = new ObjectMapper();
     
-	//@Scheduled(cron = "0 0 */1 * * *")
-	public static void executeCrawlingJob(){
-		Log.print("scheduler executeCrawlingJob ... 크롤링 작업 시작 ", "call");
-		for(String url : urlsToCrawl){
-			Log.print("url 크롤링 : " + url, "call");
-			try {
-                // JSoup을 사용하여 웹페이지 가져오기
-                Document doc = Jsoup.connect(url)
-                    .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
-                    .timeout(10000)
-                    .get();
+    // 1시간마다 실행 (cron = "0 0 */1 * * *")
+//    @Scheduled(cron = "0 0 */1 * * *")
+    public static void executeDataFetchJob() {
+        Log.print("Scheduler executeDataFetchJob ... API 데이터 가져오기 시작", "call");
+        
+        for (String apiUrl : API_ENDPOINTS) {
+            fetchDataFromApi(apiUrl);
+        }
+    }
+    
+    private static void fetchDataFromApi(String apiUrl) {
+        Log.print("API 호출: " + apiUrl, "call");
+        try {
+            // RestTemplate을 사용하여 API 호출
+            ResponseEntity<String> response = restTemplate.getForEntity(apiUrl, String.class);
+            
+            if (response.getStatusCode().is2xxSuccessful()) {
+                String responseBody = response.getBody();
+                JsonNode rootNode = objectMapper.readTree(responseBody);
                 
-                if (crawlerFunctions.containsKey(url)) {
-                    crawlerFunctions.get(url).accept(doc);
-                    Log.print(url + " 크롤링 완료", "call");
+                // API 처리 함수가 있는 경우 실행
+                if (apiProcessors.containsKey(apiUrl)) {
+                    apiProcessors.get(apiUrl).accept(rootNode);
+                    Log.print(apiUrl + " 데이터 처리 완료", "call");
                 } else {
-                    Log.print(url + " 에 대한 크롤링 메서드가 정의되지 않았습니다", "err");
+                    Log.print(apiUrl + "에 대한 처리 메서드가 정의되지 않았습니다", "err");
                 }
-                
-                // 크롤링 성공 로그
-                Log.print(url + " 크롤링 완료", "call");
-			} catch (Exception e) {
-				Log.print("url 크롤링 중 Err : " + e.getMessage(), "err");
-			}
-		}
-	}	
-	
+            } else {
+                Log.print(apiUrl + " API 응답 오류: " + response.getStatusCode(), "err");
+            }
+        } catch (Exception e) {
+            Log.print(apiUrl + " API 호출 중 오류 발생: " + e.getMessage(), "err");
+        }
+    }
 }
