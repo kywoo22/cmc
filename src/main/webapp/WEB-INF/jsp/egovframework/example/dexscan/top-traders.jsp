@@ -25,7 +25,7 @@
 						<div class="inter _14s normal _61co">
 							<spring:message code="top-trader.desc" />
 							<a href="#" class="link"><spring:message code="table.readMore" /></a>
-							<spring:message code="top-trader.lastUpdated" />
+							<spring:message code="top-trader.lastUpdated" />  2025-02-25 09:00:00
 							<br>
 						</div>
 					</div>

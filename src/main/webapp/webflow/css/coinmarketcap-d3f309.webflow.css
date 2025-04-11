@@ -6379,7 +6379,7 @@ a {
   grid-column-gap: 12px;
   grid-row-gap: 12px;
   flex-flow: column;
-  width: 80%;
+  width: 100%;
   display: flex;
 }
 
@@ -8654,6 +8654,8 @@ a {
 }
 
 .menu-box {
+  justify-content: flex-start;
+  align-items: center;
   position: relative;
 }
 
@@ -8667,6 +8669,7 @@ a {
   display: none;
   position: absolute;
   top: 55px;
+  left: auto;
 }
 
 .menu-wrap-box.none {
@@ -8680,7 +8683,11 @@ a {
 }
 
 .menu-wrap-box.service {
-  left: -1100%;
+  display: none;
+}
+
+.menu-wrap-box.left {
+  left: 0;
 }
 
 .menu-sub-wrap {

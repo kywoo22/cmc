@@ -10,7 +10,7 @@
 				<a href="/cmc/main.do" class="menu-link w-inline-block">
 					<div><spring:message code="menu.headTitle"/></div>
 				</a>
-				<div class="menu-wrap-box">
+				<div class="menu-wrap-box left">
 					<div class="menu-sub-wrap">
 						<div class="inter _14s semibold a6co"><spring:message code="menu.subHeadtitle"/></div>
 						<div class="menu-link-box">

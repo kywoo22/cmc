@@ -245,8 +245,8 @@
 												</div>
 											</div>
 										</div>
+										<div class="m-o-chart-big"></div>
 									</div>
-									<div class="m-o-chart-big"></div>
 								</div>
 							</div>
 							<div class="market-overview-info">
