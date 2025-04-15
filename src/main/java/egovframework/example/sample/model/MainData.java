@@ -3,63 +3,140 @@ package egovframework.example.sample.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.ui.Model;
+
 import egovframework.rte.psl.dataaccess.util.EgovMap;
 
 public class MainData {
-	private static List<EgovMap> hotcoins = new ArrayList<>(); // 요즘 핫한 코인 
-	private static List<EgovMap> hotDexScancoins = new ArrayList<>(); // dexScan에서 핫한 
-	private static String marketCap; // 시가총액
-	private static String cmc100;
-	private static String feerGreed; // 공포와탐욕
-	private static String altcoinSeason; // 알트코인 시즌 
+	public static String marketCapValue; // 시가총액 값
+	public static String marketCapPercnet; // 시가총액 퍼센트 
+	public static String marketCapPercnetStatus; // up / down
+	public static String marketCapChart; // 시가총액 차트 
+
+	public static String cmcValue; // cmc 값
+	public static String cmcPercnet; // cmc퍼센트 
+	public static String cmcPercnetStatus; // up / down
+	public static String cmcChart; // cmc 차트 
+	
+	public static String fearGreedMeterValue; // 공포와 탐욕 값 
+	public static String fearGreedMeterStatus; // 공포와 탐욕 설명 
+	
+	public static String altcoinValue; // 알트코인 값 
+	
+	public static List<EgovMap> cryptoList = new ArrayList<>();
+	public static List<EgovMap> hotList = new ArrayList<>();
+	public static List<EgovMap> dexList = new ArrayList<>();
+	
+	public static void addData(Model model){
+		GlobalData.addData(model);
+	    // MainData 값들 추가
+	    model.addAttribute("marketCapValue", marketCapValue);
+	    model.addAttribute("marketCapPercnet", marketCapPercnet);
+	    model.addAttribute("marketCapPercnetStatus", marketCapPercnetStatus);
+	    model.addAttribute("marketCapChart", marketCapChart);
+	    
+	    model.addAttribute("cmcValue", cmcValue);
+	    model.addAttribute("cmcPercnet", cmcPercnet);
+	    model.addAttribute("cmcPercnetStatus", cmcPercnetStatus);
+	    model.addAttribute("cmcChart", cmcChart);
+	    
+	    model.addAttribute("fearGreedMeterValue", fearGreedMeterValue);
+	    model.addAttribute("fearGreedMeterStatus", fearGreedMeterStatus);
+	    
+	    model.addAttribute("altcoinValue", altcoinValue);
+	    
+	    // 리스트 데이터 추가
+	    model.addAttribute("cryptoList", cryptoList);
+	    model.addAttribute("hotList", hotList);
+	    model.addAttribute("dexList", dexList);
+	}
 	
 	
-	public static List<EgovMap> getHotcoins() {
-		return hotcoins;
+	
+	public static List<EgovMap> getHotList() {
+		return hotList;
+	}
+	public static void setHotList(List<EgovMap> hotList) {
+		MainData.hotList = hotList;
+	}
+	public static List<EgovMap> getDexList() {
+		return dexList;
+	}
+	public static void setDexList(List<EgovMap> dexList) {
+		MainData.dexList = dexList;
+	}
+	public static List<EgovMap> getCryptoList() {
+		return cryptoList;
+	}
+	public static void setCryptoList(List<EgovMap> cryptoList) {
+		MainData.cryptoList = cryptoList;
+	}
+	public static String getFearGreedMeterValue() {
+		return fearGreedMeterValue;
+	}
+	public static void setFearGreedMeterValue(String fearGreedMeterValue) {
+		MainData.fearGreedMeterValue = fearGreedMeterValue;
+	}
+	public static String getFearGreedMeterStatus() {
+		return fearGreedMeterStatus;
+	}
+	public static void setFearGreedMeterStatus(String fearGreedMeterStatus) {
+		MainData.fearGreedMeterStatus = fearGreedMeterStatus;
+	}
+	public static String getAltcoinValue() {
+		return altcoinValue;
+	}
+	public static void setAltcoinValue(String altcoinValue) {
+		MainData.altcoinValue = altcoinValue;
+	}
+	public static String getMarketCapValue() {
+		return marketCapValue;
+	}
+	public static void setMarketCapValue(String marketCapValue) {
+		MainData.marketCapValue = marketCapValue;
+	}
+	public static String getMarketCapPercnet() {
+		return marketCapPercnet;
+	}
+	public static void setMarketCapPercnet(String marketCapPercnet) {
+		MainData.marketCapPercnet = marketCapPercnet;
+	}
+	public static String getMarketCapPercnetStatus() {
+		return marketCapPercnetStatus;
+	}
+	public static void setMarketCapPercnetStatus(String marketCapPercnetStatus) {
+		MainData.marketCapPercnetStatus = marketCapPercnetStatus;
+	}
+	public static String getMarketCapChart() {
+		return marketCapChart;
+	}
+	public static void setMarketCapChart(String marketCapChart) {
+		MainData.marketCapChart = marketCapChart;
+	}
+	public static String getCmcValue() {
+		return cmcValue;
+	}
+	public static void setCmcValue(String cmcValue) {
+		MainData.cmcValue = cmcValue;
+	}
+	public static String getCmcPercnet() {
+		return cmcPercnet;
+	}
+	public static void setCmcPercnet(String cmcPercnet) {
+		MainData.cmcPercnet = cmcPercnet;
+	}
+	public static String getCmcPercnetStatus() {
+		return cmcPercnetStatus;
+	}
+	public static void setCmcPercnetStatus(String cmcPercnetStatus) {
+		MainData.cmcPercnetStatus = cmcPercnetStatus;
+	}
+	public static String getCmcChart() {
+		return cmcChart;
+	}
+	public static void setCmcChart(String cmcChart) {
+		MainData.cmcChart = cmcChart;
 	}
 
-	public static void setHotcoins(List<EgovMap> hotcoins) {
-		MainData.hotcoins = hotcoins;
-	}
-
-	public static List<EgovMap> getHotDexScancoins() {
-		return hotDexScancoins;
-	}
-
-	public static void setHotDexScancoins(List<EgovMap> hotDexScancoins) {
-		MainData.hotDexScancoins = hotDexScancoins;
-	}
-
-	public static String getMarketCap() {
-		return marketCap;
-	}
-
-	public static void setMarketCap(String marketCap) {
-		MainData.marketCap = marketCap;
-	}
-
-	public static String getCmc100() {
-		return cmc100;
-	}
-
-	public static void setCmc100(String cmc100) {
-		MainData.cmc100 = cmc100;
-	}
-
-	public static String getFeerGreed() {
-		return feerGreed;
-	}
-
-	public static void setFeerGreed(String feerGreed) {
-		MainData.feerGreed = feerGreed;
-	}
-
-	public static String getAltcoinSeason() {
-		return altcoinSeason;
-	}
-
-	public static void setAltcoinSeason(String altcoinSeason) {
-		MainData.altcoinSeason = altcoinSeason;
-	}
-    
+	
 }

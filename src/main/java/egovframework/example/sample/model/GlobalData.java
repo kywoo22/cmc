@@ -1,41 +1,100 @@
 package egovframework.example.sample.model;
 
+import org.springframework.ui.Model;
+
 public class GlobalData {
-	private static String cryptos; // 가상자산
-    private static String exchanges; // 거래소
-    private static String marketCap; // 시가총액
-    private static String marketCapColor;
-    private static String marketCapPercent;
-    private static String t24hVol; // 24시간 거래량 
-    private static String t24hVolColor;
-    private static String t24hVolPercent;
-    private static String dominance; // 도미넌스
-    private static String ethGas; // ETH 가스
-    private static String fearGreed; // 공포와 탐욕
-    
-    // 게터 메서드들
-    public static String getCryptos() { return cryptos; }
-    public static String getExchanges() { return exchanges; }
-    public static String getMarketCap() { return marketCap; }
-    public static String getMarketCapColor() { return marketCapColor; }
-    public static String getMarketCapPercent() { return marketCapPercent; }
-    public static String getT24hVol() { return t24hVol; }
-    public static String getT24hVolColor() { return t24hVolColor; }
-    public static String getT24hVolPercent() { return t24hVolPercent; }
-    public static String getDominance() { return dominance; }
-    public static String getEthGas() { return ethGas; }
-    public static String getFearGreed() { return fearGreed; }
-    
-    // 세터 메서드들
-    public static void setCryptos(String value) { cryptos = value; }
-    public static void setExchanges(String value) { exchanges = value; }
-    public static void setMarketCap(String value) { marketCap = value; }
-    public static void setMarketCapColor(String value) { marketCapColor = value; }
-    public static void setMarketCapPercent(String value) { marketCapPercent = value; }
-    public static void setT24hVol(String value) { t24hVol = value; }
-    public static void setT24hVolColor(String value) { t24hVolColor = value; }
-    public static void setT24hVolPercent(String value) { t24hVolPercent = value; }
-    public static void setDominance(String value) { dominance = value; }
-    public static void setEthGas(String value) { ethGas = value; }
-    public static void setFearGreed(String value) { fearGreed = value; }
+	public static String totalCrypots; // 가상자산 
+	public static String totalExchange; // 거래소
+	public static String totalMarketCap; // 시가옻액
+	public static String marketCapChange; //  시가총액 %
+	public static String marketCapChangeStatus; //  시가총액 up / down
+	public static String total24hVolume; //  24시간 거래량
+	public static String volumeChange; //  24시간 거래량 % 
+	public static String volumeChangeStatus; //  24시간 거래량 up / down 
+	public static String dominance; //  도미넌스
+	public static String ethGas; //  eth 가스 
+	public static String fearAndGreed; //  공포와 탐욕 
+	public static String getTotalCrypots() {
+		return totalCrypots;
+	}
+	public static void setTotalCrypots(String totalCrypots) {
+		GlobalData.totalCrypots = totalCrypots;
+	}
+	public static String getTotalExchange() {
+		return totalExchange;
+	}
+	public static void setTotalExchange(String totalExchange) {
+		GlobalData.totalExchange = totalExchange;
+	}
+	public static String getTotalMarketCap() {
+		return totalMarketCap;
+	}
+	public static void setTotalMarketCap(String totalMarketCap) {
+		GlobalData.totalMarketCap = totalMarketCap;
+	}
+	public static String getMarketCapChange() {
+		return marketCapChange;
+	}
+	public static void setMarketCapChange(String marketCapChange) {
+		GlobalData.marketCapChange = marketCapChange;
+	}
+	public static String getMarketCapChangeStatus() {
+		return marketCapChangeStatus;
+	}
+	public static void setMarketCapChangeStatus(String marketCapChangeStatus) {
+		GlobalData.marketCapChangeStatus = marketCapChangeStatus;
+	}
+	public static String getTotal24hVolume() {
+		return total24hVolume;
+	}
+	public static void setTotal24hVolume(String total24hVolume) {
+		GlobalData.total24hVolume = total24hVolume;
+	}
+	public static String getVolumeChange() {
+		return volumeChange;
+	}
+	public static void setVolumeChange(String volumeChange) {
+		GlobalData.volumeChange = volumeChange;
+	}
+	public static String getVolumeChangeStatus() {
+		return volumeChangeStatus;
+	}
+	public static void setVolumeChangeStatus(String volumeChangeStatus) {
+		GlobalData.volumeChangeStatus = volumeChangeStatus;
+	}
+	public static String getDominance() {
+		return dominance;
+	}
+	public static void setDominance(String dominance) {
+		GlobalData.dominance = dominance;
+	}
+	public static String getEthGas() {
+		return ethGas;
+	}
+	public static void setEthGas(String ethGas) {
+		GlobalData.ethGas = ethGas;
+	}
+	public static String getFearAndGreed() {
+		return fearAndGreed;
+	}
+	public static void setFearAndGreed(String fearAndGreed) {
+		GlobalData.fearAndGreed = fearAndGreed;
+	}
+	
+	public static void addData(Model model){
+        model.addAttribute("totalCrypots", GlobalData.getTotalCrypots());
+        model.addAttribute("totalExchange", GlobalData.getTotalExchange());
+        model.addAttribute("totalMarketCap", GlobalData.getTotalMarketCap());
+        model.addAttribute("marketCapChange", GlobalData.getMarketCapChange());
+        model.addAttribute("marketCapChangeStatus", GlobalData.getMarketCapChangeStatus());
+        model.addAttribute("total24hVolume", GlobalData.getTotal24hVolume());
+        model.addAttribute("volumeChange", GlobalData.getVolumeChange());
+        model.addAttribute("volumeChangeStatus", GlobalData.getVolumeChangeStatus());
+        model.addAttribute("dominance", GlobalData.getDominance());
+        model.addAttribute("ethGas", GlobalData.getEthGas());
+        model.addAttribute("fearAndGreed", GlobalData.getFearAndGreed());
+	}
+	
+	
+	
 }

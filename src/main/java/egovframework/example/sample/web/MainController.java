@@ -5,10 +5,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
+import egovframework.example.sample.model.GlobalData;
+import egovframework.example.sample.model.MainData;
 import egovframework.example.sample.web.utils.Utils;
 
 @Controller
@@ -27,7 +30,7 @@ public class MainController {
 	}
 	
 	@RequestMapping("/main.do")
-	public String main(HttpServletRequest request){
+	public String main(HttpServletRequest request , Model model){
 		HttpSession session = request.getSession();
 		if(session.getAttribute("lang") == null) {
 			String lang = ""+session.getAttribute("lang");
@@ -38,6 +41,7 @@ public class MainController {
 		}
 		request.setAttribute("activeIndicator", "main");
 		Scheduler.executeDataFetchJob();
+		MainData.addData(model);
 		return "main";
 	}
 	@RequestMapping("/currencies.do")

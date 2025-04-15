@@ -5,23 +5,23 @@
 		<div class="info-stat-item">
 			<div class="base-txt"><spring:message code="infoBar.basetxt"/></div>
 			<a href="#" class="link-num w-inline-block">
-				<div class="base-txt">1.23M+</div>
+				<div class="base-txt">${totalCrypots}</div>
 			</a>
 		</div>
 		<div class="info-stat-item">
 			<div class="base-txt"><spring:message code="infoBar.basetxt2"/></div>
 			<a href="#" class="link-num w-inline-block">
-				<div class="base-txt">123</div>
+				<div class="base-txt">${totalExchange}</div>
 			</a>
 		</div>
 		<div class="info-stat-item">
 			<div class="base-txt"><spring:message code="infoBar.basetxt3"/></div>
 			<a href="#" class="link-num w-inline-block">
 				<div class="base-txt">
-					<strong><spring:message code="currency.symbol"/>1.1P</strong>
+					<strong><%-- <spring:message code="currency.symbol"/> --%>${totalMarketCap}</strong>
 				</div>
-				<div class="base-txt up">
-					<strong>8.16%</strong>
+				<div class="base-txt ${marketCapChangeStatus}">
+					<strong>${marketCapChange}</strong>
 				</div>
 			</a>
 		</div>
@@ -29,29 +29,29 @@
 			<div class="base-txt"><spring:message code="infoBar.basetxt4"/></div>
 			<a href="#" class="link-num w-inline-block">
 				<div class="base-txt">
-					<strong><spring:message code="currency.symbol"/>123,456</strong>
+					<strong><%-- <spring:message code="currency.symbol"/> --%>${total24hVolume}</strong>
 				</div>
-				<div class="base-txt up">
-					<strong>8.16%</strong>
+				<div class="base-txt ${volumeChangeStatus}">
+					<strong>${volumeChange}</strong>
 				</div>
 			</a>
 		</div>
 		<div class="info-stat-item">
 			<div class="base-txt"><spring:message code="infoBar.basetxt5"/></div>
 			<a href="#" class="link-num w-inline-block">
-				<div class="base-txt">BTC:12.3% ETH12.3%</div>
+				<div class="base-txt">${dominance}</div>
 			</a>
 		</div>
 		<div class="info-stat-item">
 			<div class="base-txt"><spring:message code="infoBar.basetxt6"/></div>
 			<a href="#" class="link-num hover-pop w-inline-block">
-				<div class="base-txt">4.53 Gwei</div>
+				<div class="base-txt">${ethGas}</div>
 			</a>
 		</div>
 		<div class="info-stat-item">
 			<div class="base-txt"><spring:message code="infoBar.basetxt7"/></div>
 			<a href="#" class="link-num w-inline-block">
-				<div class="base-txt">12/100</div>
+				<div class="base-txt">${fearAndGreed}</div>
 			</a>
 		</div>
 	</div>
