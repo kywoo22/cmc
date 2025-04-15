@@ -15,9 +15,10 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import egovframework.example.sample.model.GlobalData;
-import egovframework.example.sample.model.MainData;
-import egovframework.example.sample.model.NftData;
+import egovframework.example.sample.model.Category;
+import egovframework.example.sample.model.Global;
+import egovframework.example.sample.model.Main;
+import egovframework.example.sample.model.Nft;
 import egovframework.example.sample.web.utils.Log;
 import egovframework.rte.psl.dataaccess.util.EgovMap;	
 
@@ -28,6 +29,7 @@ public class Scheduler {
     private static final List<String> API_ENDPOINTS = Arrays.asList(
             "http://localhost:3000/main"
     		,"http://localhost:3000/nft"
+    		,"http://localhost:3000/cate"
             // 필요한 다른 API 엔드포인트들 추가
     );
     
@@ -38,42 +40,42 @@ public class Scheduler {
         // CoinMarketCap API 데이터 처리 함수
         apiProcessors.put("http://localhost:3000/main", data -> {
             try {
-            	Log.print(":: " + data, "call");
+            	Log.print("main API 데이터 처리 완료" + data, "call");
                 // GlobalData에 값 설정          
             	JsonNode gd = data.path("marketOverview");
                 if (gd.isObject()) {
-                	GlobalData.setTotalCrypots(gd.path("totalCryptos").asText());
-                	GlobalData.setTotalExchange(gd.path("totalExchanges").asText());
-                	GlobalData.setTotalMarketCap(gd.path("totalMarketCap").asText());
-                	GlobalData.setMarketCapChange(gd.path("marketCapChange").asText());
-                	GlobalData.setMarketCapChangeStatus(gd.path("marketCapChangeStatus").asText());
-                	GlobalData.setTotal24hVolume(gd.path("total24hVolume").asText());
-                	GlobalData.setVolumeChange(gd.path("volumeChange").asText());
-                	GlobalData.setVolumeChangeStatus(gd.path("volumeChangeStatus").asText());
-                	GlobalData.setDominance(gd.path("dominance").asText());
-                	GlobalData.setEthGas(gd.path("ethGas").asText());
-                	GlobalData.setFearAndGreed(gd.path("fearAndGreed").asText());
+                	Global.setTotalCrypots(gd.path("totalCryptos").asText());
+                	Global.setTotalExchange(gd.path("totalExchanges").asText());
+                	Global.setTotalMarketCap(gd.path("totalMarketCap").asText());
+                	Global.setMarketCapChange(gd.path("marketCapChange").asText());
+                	Global.setMarketCapChangeStatus(gd.path("marketCapChangeStatus").asText());
+                	Global.setTotal24hVolume(gd.path("total24hVolume").asText());
+                	Global.setVolumeChange(gd.path("volumeChange").asText());
+                	Global.setVolumeChangeStatus(gd.path("volumeChangeStatus").asText());
+                	Global.setDominance(gd.path("dominance").asText());
+                	Global.setEthGas(gd.path("ethGas").asText());
+                	Global.setFearAndGreed(gd.path("fearAndGreed").asText());
                 }
                 
                 // Main Data 값 설정
                 JsonNode metricsCards = gd.path("metricsCards");
                 JsonNode marketCap = metricsCards.get(0);
-                MainData.setMarketCapValue(marketCap.path("value").asText());
-                MainData.setMarketCapPercnet(marketCap.path("percentageChange").asText());
-                MainData.setMarketCapPercnetStatus(marketCap.path("changeDirection").asText());
-                MainData.setMarketCapChart(marketCap.path("chartSvg").asText());
+                Main.setMarketCapValue(marketCap.path("value").asText());
+                Main.setMarketCapPercnet(marketCap.path("percentageChange").asText());
+                Main.setMarketCapPercnetStatus(marketCap.path("changeDirection").asText());
+                Main.setMarketCapChart(marketCap.path("chartSvg").asText());
                 
                 JsonNode cmc = metricsCards.get(1);
-                MainData.setCmcValue(cmc.path("value").asText());
-                MainData.setCmcPercnet(cmc.path("percentageChange").asText());
-                MainData.setCmcPercnetStatus(cmc.path("changeDirection").asText());
-                MainData.setCmcChart(cmc.path("chartSvg").asText());
+                Main.setCmcValue(cmc.path("value").asText());
+                Main.setCmcPercnet(cmc.path("percentageChange").asText());
+                Main.setCmcPercnetStatus(cmc.path("changeDirection").asText());
+                Main.setCmcChart(cmc.path("chartSvg").asText());
                 
-                MainData.setFearGreedMeterValue(gd.path("fearGreedMeterValue").asText());
-                MainData.setFearGreedMeterStatus(gd.path("fearGreedMeterStatus").asText());
+                Main.setFearGreedMeterValue(gd.path("fearGreedMeterValue").asText());
+                Main.setFearGreedMeterStatus(gd.path("fearGreedMeterStatus").asText());
                 
                 JsonNode alt = gd.path("altcoinIndexDetails");
-                MainData.setAltcoinValue(alt.path("value").asText());
+                Main.setAltcoinValue(alt.path("value").asText());
                 
                 JsonNode cryptoList = data.path("cryptoList");
                 List<EgovMap> list = new ArrayList<>();
@@ -93,7 +95,7 @@ public class Scheduler {
                 	in.put("iconImg", c.path("iconImg").asText());
                 	list.add(in);
                 }
-                MainData.setCryptoList(list);
+                Main.setCryptoList(list);
                 
                 JsonNode hotCoinList = data.path("hotCoinList");
                 list = new ArrayList<>();
@@ -110,7 +112,7 @@ public class Scheduler {
                 	in.put("chartStatus", chart.path("direction").asText());
                 	list.add(in);
                 }
-                MainData.setHotList(list);
+                Main.setHotList(list);
                 
                 JsonNode dexList = data.path("hotDexPairList");
                 list = new ArrayList<>();
@@ -127,17 +129,16 @@ public class Scheduler {
                 	in.put("symbol2", quote.path("symbol").asText());
                 	list.add(in);
                 }
-                MainData.setDexList(list);
+                Main.setDexList(list);
             } catch (Exception e) {
-                Log.print("CoinMarketCap API 데이터 처리 중 오류: " + e.getMessage(), "err");
+                Log.print("main API 데이터 처리 중 오류: " + e.getMessage(), "err");
             }
         });
         
-        // 다른 API 엔드포인트 처리 함수 추가
         apiProcessors.put("http://localhost:3000/nft", data -> {
             try {
                 // 다른 API에서 받은 데이터 처리 로직
-                Log.print("다른 API 데이터 처리 완료" + data, "call");
+                Log.print("nft API 데이터 처리 완료" + data, "call");
                 JsonNode nftlist = data.path("nftCollections");
                 List<EgovMap> list = new ArrayList<>();
                 for(JsonNode c : nftlist){
@@ -162,30 +163,75 @@ public class Scheduler {
                 	in.put("ownerPercentage", c.path("ownerPercentage").asText());
                 	list.add(in);
                 }
-                NftData.setNftList(list);
+                Nft.setNftList(list);
                 
                 JsonNode statistics = data.path("statistics");
                 JsonNode marketCap = statistics.path("marketCap");
-                NftData.setMarketCap(marketCap.path("value").asText());
-                NftData.setMarketCapPercent(marketCap.path("changePercent").asText());
-                NftData.setMarketCapPercentStatus(marketCap.path("changeDirection").asText());
-                NftData.setMarketCapPercnetPeriod(marketCap.path("period").asText());
+                Nft.setMarketCap(marketCap.path("value").asText());
+                Nft.setMarketCapPercent(marketCap.path("changePercent").asText());
+                Nft.setMarketCapPercentStatus(marketCap.path("changeDirection").asText());
+                Nft.setMarketCapPercnetPeriod(marketCap.path("period").asText());
                 
                 JsonNode sales = statistics.path("salesVolume");
-                NftData.setSales(sales.path("value").asText());
-                NftData.setSalesPercent(sales.path("changePercent").asText());
-                NftData.setSalesPercentStatus(sales.path("changeDirection").asText());
-                NftData.setSalesPercentPeriod(sales.path("period").asText());
+                Nft.setSales(sales.path("value").asText());
+                Nft.setSalesPercent(sales.path("changePercent").asText());
+                Nft.setSalesPercentStatus(sales.path("changeDirection").asText());
+                Nft.setSalesPercentPeriod(sales.path("period").asText());
                 
                 JsonNode totsales = statistics.path("salesVolume");
-                NftData.setTotSales(totsales.path("value").asText());
-                NftData.setTotSalesPercent(totsales.path("changePercent").asText());
-                NftData.setTotSalesPercentStatus(totsales.path("changeDirection").asText());
-                NftData.setTotSalesPercentPeriod(totsales.path("period").asText());
+                Nft.setTotSales(totsales.path("value").asText());
+                Nft.setTotSalesPercent(totsales.path("changePercent").asText());
+                Nft.setTotSalesPercentStatus(totsales.path("changeDirection").asText());
+                Nft.setTotSalesPercentPeriod(totsales.path("period").asText());
                 
             } catch (Exception e) {
-                Log.print("다른 API 데이터 처리 중 오류: " + e.getMessage(), "err");
+                Log.print("nft API 데이터 처리 중 오류: " + e.getMessage(), "err");
             }
+        });
+        apiProcessors.put("http://localhost:3000/cate", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("cate API 데이터 처리 완료" + data, "call");
+        		JsonNode catelist = data.path("categories");
+                List<EgovMap> list = new ArrayList<>();
+                for(JsonNode c : catelist){
+                	EgovMap in = new EgovMap();
+                	in.put("rank", c.path("rank").asText());
+                	in.put("name", c.path("name").asText());
+                	in.put("priceChange", c.path("priceChange").asText());
+                	in.put("priceChangeDirection", c.path("priceChangeDirection").asText());
+                
+                	List<EgovMap> tlist = new ArrayList<>();
+                	JsonNode toplist = c.path("topGainers");
+                	for(JsonNode t : toplist){
+                		EgovMap i = new EgovMap();
+                		if(t.path("name").isValueNode()){
+                			i.put("name", t.path("name").asText());
+                			i.put("symbol", t.path("symbol").asText());
+                			i.put("change", t.path("change").asText());
+                			i.put("changeDirection", t.path("changeDirection").asText());
+                		}
+                		i.put("imageUrl", t.path("imageUrl").asText());
+                		tlist.add(i);
+                	}
+                	in.put("tlist", tlist);
+                	
+                	in.put("marketCap", c.path("marketCap").asText());
+                	in.put("marketCapChange", c.path("marketCapChange").asText());
+                	in.put("marketCapChangeDirection", c.path("marketCapChangeDirection").asText());
+                	in.put("dominance", c.path("dominance").asText());
+                	in.put("volume", c.path("volume").asText());
+                	in.put("volumeBTC", c.path("volumeBTC").asText());
+                	in.put("gainersCount", c.path("gainersCount").asText());
+                	in.put("losersCount", c.path("losersCount").asText());
+                	in.put("gainersBarWidth", c.path("gainersBarWidth").asText());
+                	in.put("losersBarWidth", c.path("losersBarWidth").asText());
+                	list.add(in);
+                }
+                Category.setList(list);
+        	} catch (Exception e) {
+        		Log.print("cate API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
         });
     }
     

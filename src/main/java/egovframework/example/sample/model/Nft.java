@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 
 import egovframework.rte.psl.dataaccess.util.EgovMap;
 
-public class NftData {
+public class Nft {
 
 	public static List<EgovMap> nftList = new ArrayList<>();
 	
@@ -27,7 +27,7 @@ public class NftData {
 	public static String totSalesPercentPeriod; // 총 판매량 기간
 
 	public static void addData(Model model) {
-		GlobalData.addData(model);
+		Global.addData(model);
 	    // NFT 관련 데이터 추가
 	    model.addAttribute("nftList", nftList);
 	    
@@ -52,7 +52,7 @@ public class NftData {
 	}
 
 	public static void setNftList(List<EgovMap> nftList) {
-		NftData.nftList = nftList;
+		Nft.nftList = nftList;
 	}
 
 	public static String getMarketCap() {
@@ -60,7 +60,7 @@ public class NftData {
 	}
 
 	public static void setMarketCap(String marketCap) {
-		NftData.marketCap = marketCap;
+		Nft.marketCap = marketCap;
 	}
 
 	public static String getMarketCapPercent() {
@@ -68,7 +68,7 @@ public class NftData {
 	}
 
 	public static void setMarketCapPercent(String marketCapPercent) {
-		NftData.marketCapPercent = marketCapPercent;
+		Nft.marketCapPercent = marketCapPercent;
 	}
 
 	public static String getMarketCapPercentStatus() {
@@ -76,7 +76,7 @@ public class NftData {
 	}
 
 	public static void setMarketCapPercentStatus(String marketCapPercentStatus) {
-		NftData.marketCapPercentStatus = marketCapPercentStatus;
+		Nft.marketCapPercentStatus = marketCapPercentStatus;
 	}
 
 	public static String getMarketCapPercnetPeriod() {
@@ -84,7 +84,7 @@ public class NftData {
 	}
 
 	public static void setMarketCapPercnetPeriod(String marketCapPercnetPeriod) {
-		NftData.marketCapPercnetPeriod = marketCapPercnetPeriod;
+		Nft.marketCapPercnetPeriod = marketCapPercnetPeriod;
 	}
 
 	public static String getSales() {
@@ -92,7 +92,7 @@ public class NftData {
 	}
 
 	public static void setSales(String sales) {
-		NftData.sales = sales;
+		Nft.sales = sales;
 	}
 
 	public static String getSalesPercent() {
@@ -100,7 +100,7 @@ public class NftData {
 	}
 
 	public static void setSalesPercent(String salesPercent) {
-		NftData.salesPercent = salesPercent;
+		Nft.salesPercent = salesPercent;
 	}
 
 	public static String getSalesPercentStatus() {
@@ -108,7 +108,7 @@ public class NftData {
 	}
 
 	public static void setSalesPercentStatus(String salesPercentStatus) {
-		NftData.salesPercentStatus = salesPercentStatus;
+		Nft.salesPercentStatus = salesPercentStatus;
 	}
 
 	public static String getSalesPercentPeriod() {
@@ -116,7 +116,7 @@ public class NftData {
 	}
 
 	public static void setSalesPercentPeriod(String salesPercentPeriod) {
-		NftData.salesPercentPeriod = salesPercentPeriod;
+		Nft.salesPercentPeriod = salesPercentPeriod;
 	}
 
 	public static String getTotSales() {
@@ -124,7 +124,7 @@ public class NftData {
 	}
 
 	public static void setTotSales(String totSales) {
-		NftData.totSales = totSales;
+		Nft.totSales = totSales;
 	}
 
 	public static String getTotSalesPercent() {
@@ -132,7 +132,7 @@ public class NftData {
 	}
 
 	public static void setTotSalesPercent(String totSalesPercent) {
-		NftData.totSalesPercent = totSalesPercent;
+		Nft.totSalesPercent = totSalesPercent;
 	}
 
 	public static String getTotSalesPercentStatus() {
@@ -140,7 +140,7 @@ public class NftData {
 	}
 
 	public static void setTotSalesPercentStatus(String totSalesPercentStatus) {
-		NftData.totSalesPercentStatus = totSalesPercentStatus;
+		Nft.totSalesPercentStatus = totSalesPercentStatus;
 	}
 
 	public static String getTotSalesPercentPeriod() {
@@ -148,7 +148,7 @@ public class NftData {
 	}
 
 	public static void setTotSalesPercentPeriod(String totSalesPercentPeriod) {
-		NftData.totSalesPercentPeriod = totSalesPercentPeriod;
+		Nft.totSalesPercentPeriod = totSalesPercentPeriod;
 	}
 	
 	

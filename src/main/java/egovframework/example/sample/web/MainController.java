@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
-import egovframework.example.sample.model.MainData;
-import egovframework.example.sample.model.NftData;
+import egovframework.example.sample.model.Category;
+import egovframework.example.sample.model.Main;
+import egovframework.example.sample.model.Nft;
 import egovframework.example.sample.web.utils.Utils;
 
 @Controller
@@ -40,7 +41,7 @@ public class MainController {
 			session.setAttribute("lang", lang.toLowerCase());
 		}
 		request.setAttribute("activeIndicator", "main");
-		MainData.addData(model);
+		Main.addData(model);
 		return "main";
 	}
 	@RequestMapping("/currencies.do")
@@ -67,7 +68,7 @@ public class MainController {
 		request.setAttribute("activeIndicator", "memes");
 		return "view/memes";
 	}
-	@RequestMapping("/view/solana-ecosystem.do")
+	@RequestMapping("/view/solana-ecosystem.do") 
 	public String sol(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "sol");
 		return "view/solana-ecosystem";
@@ -113,6 +114,8 @@ public class MainController {
 	@RequestMapping("/virtual-assets/category.do")
 	public String category(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "category");
+		Scheduler.executeDataFetchJob();
+		Category.addData(model);
 		return "virtual-assets/category";
 	}
 	@RequestMapping("/virtual-assets/historical.do")
@@ -230,8 +233,7 @@ public class MainController {
 	@RequestMapping("/nft/nft.do")
 	public String nft(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "nft");
-		Scheduler.executeDataFetchJob();
-		NftData.addData(model);
+		Nft.addData(model);
 		return "nft/nft";
 	}
 	@RequestMapping("/nft/upComing.do")

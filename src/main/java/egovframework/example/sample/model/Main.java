@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 
 import egovframework.rte.psl.dataaccess.util.EgovMap;
 
-public class MainData {
+public class Main {
 	public static String marketCapValue; // 시가총액 값
 	public static String marketCapPercnet; // 시가총액 퍼센트 
 	public static String marketCapPercnetStatus; // up / down
@@ -28,7 +28,7 @@ public class MainData {
 	public static List<EgovMap> dexList = new ArrayList<>();
 	
 	public static void addData(Model model){
-		GlobalData.addData(model);
+		Global.addData(model);
 	    // MainData 값들 추가
 	    model.addAttribute("marketCapValue", marketCapValue);
 	    model.addAttribute("marketCapPercnet", marketCapPercnet);
@@ -57,85 +57,85 @@ public class MainData {
 		return hotList;
 	}
 	public static void setHotList(List<EgovMap> hotList) {
-		MainData.hotList = hotList;
+		Main.hotList = hotList;
 	}
 	public static List<EgovMap> getDexList() {
 		return dexList;
 	}
 	public static void setDexList(List<EgovMap> dexList) {
-		MainData.dexList = dexList;
+		Main.dexList = dexList;
 	}
 	public static List<EgovMap> getCryptoList() {
 		return cryptoList;
 	}
 	public static void setCryptoList(List<EgovMap> cryptoList) {
-		MainData.cryptoList = cryptoList;
+		Main.cryptoList = cryptoList;
 	}
 	public static String getFearGreedMeterValue() {
 		return fearGreedMeterValue;
 	}
 	public static void setFearGreedMeterValue(String fearGreedMeterValue) {
-		MainData.fearGreedMeterValue = fearGreedMeterValue;
+		Main.fearGreedMeterValue = fearGreedMeterValue;
 	}
 	public static String getFearGreedMeterStatus() {
 		return fearGreedMeterStatus;
 	}
 	public static void setFearGreedMeterStatus(String fearGreedMeterStatus) {
-		MainData.fearGreedMeterStatus = fearGreedMeterStatus;
+		Main.fearGreedMeterStatus = fearGreedMeterStatus;
 	}
 	public static String getAltcoinValue() {
 		return altcoinValue;
 	}
 	public static void setAltcoinValue(String altcoinValue) {
-		MainData.altcoinValue = altcoinValue;
+		Main.altcoinValue = altcoinValue;
 	}
 	public static String getMarketCapValue() {
 		return marketCapValue;
 	}
 	public static void setMarketCapValue(String marketCapValue) {
-		MainData.marketCapValue = marketCapValue;
+		Main.marketCapValue = marketCapValue;
 	}
 	public static String getMarketCapPercnet() {
 		return marketCapPercnet;
 	}
 	public static void setMarketCapPercnet(String marketCapPercnet) {
-		MainData.marketCapPercnet = marketCapPercnet;
+		Main.marketCapPercnet = marketCapPercnet;
 	}
 	public static String getMarketCapPercnetStatus() {
 		return marketCapPercnetStatus;
 	}
 	public static void setMarketCapPercnetStatus(String marketCapPercnetStatus) {
-		MainData.marketCapPercnetStatus = marketCapPercnetStatus;
+		Main.marketCapPercnetStatus = marketCapPercnetStatus;
 	}
 	public static String getMarketCapChart() {
 		return marketCapChart;
 	}
 	public static void setMarketCapChart(String marketCapChart) {
-		MainData.marketCapChart = marketCapChart;
+		Main.marketCapChart = marketCapChart;
 	}
 	public static String getCmcValue() {
 		return cmcValue;
 	}
 	public static void setCmcValue(String cmcValue) {
-		MainData.cmcValue = cmcValue;
+		Main.cmcValue = cmcValue;
 	}
 	public static String getCmcPercnet() {
 		return cmcPercnet;
 	}
 	public static void setCmcPercnet(String cmcPercnet) {
-		MainData.cmcPercnet = cmcPercnet;
+		Main.cmcPercnet = cmcPercnet;
 	}
 	public static String getCmcPercnetStatus() {
 		return cmcPercnetStatus;
 	}
 	public static void setCmcPercnetStatus(String cmcPercnetStatus) {
-		MainData.cmcPercnetStatus = cmcPercnetStatus;
+		Main.cmcPercnetStatus = cmcPercnetStatus;
 	}
 	public static String getCmcChart() {
 		return cmcChart;
 	}
 	public static void setCmcChart(String cmcChart) {
-		MainData.cmcChart = cmcChart;
+		Main.cmcChart = cmcChart;
 	}
 
 	
