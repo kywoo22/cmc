@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.function.Consumer;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,6 +17,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import egovframework.example.sample.model.GlobalData;
 import egovframework.example.sample.model.MainData;
+import egovframework.example.sample.model.NftData;
 import egovframework.example.sample.web.utils.Log;
 import egovframework.rte.psl.dataaccess.util.EgovMap;	
 
@@ -25,6 +27,7 @@ public class Scheduler {
     // Node.js API 엔드포인트 목록
     private static final List<String> API_ENDPOINTS = Arrays.asList(
             "http://localhost:3000/main"
+    		,"http://localhost:3000/nft"
             // 필요한 다른 API 엔드포인트들 추가
     );
     
@@ -131,11 +134,55 @@ public class Scheduler {
         });
         
         // 다른 API 엔드포인트 처리 함수 추가
-        apiProcessors.put("http://your-nodejs-server/api/another-endpoint", data -> {
+        apiProcessors.put("http://localhost:3000/nft", data -> {
             try {
                 // 다른 API에서 받은 데이터 처리 로직
-                // 예: GlobalData.setOtherData(data.path("otherData").asText());
-                Log.print("다른 API 데이터 처리 완료", "call");
+                Log.print("다른 API 데이터 처리 완료" + data, "call");
+                JsonNode nftlist = data.path("nftCollections");
+                List<EgovMap> list = new ArrayList<>();
+                for(JsonNode c : nftlist){
+                	EgovMap in = new EgovMap();
+                	in.put("rank", c.path("rank").asText());
+                	in.put("name", c.path("name").asText());
+                	in.put("imageUrl", c.path("imageUrl").asText());
+                	in.put("chain", c.path("chain").asText());
+                	in.put("volume", c.path("volume").asText());
+                	in.put("volumeChange", c.path("volumeChange").asText());
+                	in.put("volumeChangeDirection", c.path("volumeChangeDirection").asText());
+                	in.put("marketCap", c.path("marketCap").asText());
+                	in.put("floorPrice", c.path("floorPrice").asText());
+                	in.put("averagePrice", c.path("averagePrice").asText());
+                	in.put("averagePriceChange", c.path("averagePriceChange").asText());
+                	in.put("averagePriceChangeDirection", c.path("averagePriceChangeDirection").asText());
+                	in.put("sales", c.path("sales").asText());
+                	in.put("salesChange", c.path("salesChange").asText());
+                	in.put("salesChangeDirection", c.path("salesChangeDirection").asText());
+                	in.put("assets", c.path("assets").asText());
+                	in.put("owners", c.path("owners").asText());
+                	in.put("ownerPercentage", c.path("ownerPercentage").asText());
+                	list.add(in);
+                }
+                NftData.setNftList(list);
+                
+                JsonNode statistics = data.path("statistics");
+                JsonNode marketCap = statistics.path("marketCap");
+                NftData.setMarketCap(marketCap.path("value").asText());
+                NftData.setMarketCapPercent(marketCap.path("changePercent").asText());
+                NftData.setMarketCapPercentStatus(marketCap.path("changeDirection").asText());
+                NftData.setMarketCapPercnetPeriod(marketCap.path("period").asText());
+                
+                JsonNode sales = statistics.path("salesVolume");
+                NftData.setSales(sales.path("value").asText());
+                NftData.setSalesPercent(sales.path("changePercent").asText());
+                NftData.setSalesPercentStatus(sales.path("changeDirection").asText());
+                NftData.setSalesPercentPeriod(sales.path("period").asText());
+                
+                JsonNode totsales = statistics.path("salesVolume");
+                NftData.setTotSales(totsales.path("value").asText());
+                NftData.setTotSalesPercent(totsales.path("changePercent").asText());
+                NftData.setTotSalesPercentStatus(totsales.path("changeDirection").asText());
+                NftData.setTotSalesPercentPeriod(totsales.path("period").asText());
+                
             } catch (Exception e) {
                 Log.print("다른 API 데이터 처리 중 오류: " + e.getMessage(), "err");
             }
@@ -146,7 +193,7 @@ public class Scheduler {
     private static final ObjectMapper objectMapper = new ObjectMapper();
     
     // 1시간마다 실행 (cron = "0 0 */1 * * *")
-//    @Scheduled(cron = "0 0 */1 * * *")
+    @Scheduled(cron = "0 0 */1 * * *")
     public static void executeDataFetchJob() {
         Log.print("Scheduler executeDataFetchJob ... API 데이터 가져오기 시작", "call");
         
