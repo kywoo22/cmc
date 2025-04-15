@@ -48,9 +48,9 @@
 											</div>
 											<div class="w-layout-vflex m-o-wrap">
 												<div class="progressbar-wrapper">
-													<div class="circle"></div>
+													<div class="circle" id="circle"></div>
 													<div class="progress-txt-box">
-														<div class="inter _32s bold">35</div>
+														<div class="inter _20s bold">35</div>
 														<div class="inter _11s normal _61co">
 															<spring:message code="fearGreed.neutral" />
 														</div>
@@ -221,5 +221,6 @@
 	</div>
 	<jsp:include page="../frame/list-footer.jsp"></jsp:include>
 	<jsp:include page="../frame/footer.jsp"></jsp:include>
+	<script src="/cmc/js/fear-and-greed.js" type="text/javascript"></script>
 </body>
 </html>

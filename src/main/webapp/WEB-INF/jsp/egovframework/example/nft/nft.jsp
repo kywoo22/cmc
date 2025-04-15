@@ -22,7 +22,7 @@
 				<jsp:include page="../frame/infoBar.jsp"></jsp:include>
 			</div>
 			<div class="body-wrap">
-				<div class="frame">
+				<div class="frame no-max">
 					<div class="main-txt-box">
 						<div class="main-title">
 							<spring:message code="nft.topSales.title" />
@@ -185,7 +185,7 @@
 										</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width85 left">
-										<img src="/cmc/webflow/images/eth.svg" loading="lazy" alt="">
+										<img src="/cmc/webflow/images/eth.svg" loading="lazy" alt="" class="chain-img">
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
 										<div class="coin-txt-table">

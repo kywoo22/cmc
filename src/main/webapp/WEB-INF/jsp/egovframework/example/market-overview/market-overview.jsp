@@ -144,9 +144,9 @@
 											</div>
 											<div class="w-layout-vflex m-o-wrap">
 												<div class="progressbar-wrapper">
-													<div class="circle"></div>
+													<div class="circle" id="circle"></div>
 													<div class="progress-txt-box">
-														<div class="inter _32s bold">35</div>
+														<div class="inter _20s bold">35</div>
 														<div class="inter _11s normal _61co">
 															<spring:message code="marketOverview.neutral" />
 														</div>
@@ -287,7 +287,7 @@
 									<div class="m-o-chart-big"></div>
 								</div>
 								<div class="m-o-info-area">
-									<a href="#" class="m-o-card gap24 w-inline-block">
+									<a href="/cmc/market-overview/fear&greed.do" class="m-o-card gap24 w-inline-block">
 										<div class="card-header">
 											<div class="card-header-title">
 												<spring:message code="marketOverview.bitcoinDominance" />
@@ -340,7 +340,7 @@
 												</div>
 											</div>
 										</div>
-									</a> <a href="#" class="m-o-card gap24 w-inline-block">
+									</a> <a href="/cmc/market-overview/altCoin-season-index.do" class="m-o-card gap24 w-inline-block">
 										<div class="card-header">
 											<div class="card-header-title">
 												<spring:message code="marketOverview.openInterest" />
@@ -394,7 +394,7 @@
 								</div>
 							</div>
 							<div class="m-o-info-area">
-								<a href="#" class="m-o-card gap24 h-auto w-inline-block">
+								<a href="/cmc/market-overview/100index.do" class="m-o-card gap24 h-auto w-inline-block">
 									<div class="card-header">
 										<div class="card-header-title">
 											<spring:message code="marketOverview.ethGas" />
@@ -492,5 +492,6 @@
 	<jsp:include page="../frame/list-footer.jsp"></jsp:include>
 	<jsp:include page="../frame/footer.jsp"></jsp:include>
 	<script src="/cmc/js/scroll.js" type="text/javascript"></script>
+	<script src="/cmc/js/fear-and-greed.js" type="text/javascript"></script>
 </body>
 </html>

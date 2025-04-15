@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<% pageContext.setAttribute("newLineChar", "\n\n"); %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%
+	pageContext.setAttribute("newLineChar", "\n\n");
+%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Thu Mar 13 2025 05:17:25 GMT+0000 (Coordinated Universal Time)  -->
@@ -22,7 +24,7 @@
 				<jsp:include page="frame/infoBar.jsp"></jsp:include>
 			</div>
 			<div class="body-wrap">
-				<div class="frame">
+				<div class="frame no-max">
 					<div class="main-txt-box">
 						<div class="main-title">
 							<spring:message code="main.mainTitle" />
@@ -96,7 +98,7 @@
 										<div class="w-layout-vflex space-between">
 											<div class="card-coin-info">
 												<div class="coin-num">${item.rank}</div>
-												<img src="${item.logoUrl}" loading="lazy" alt="">
+												<img src="${item.logoUrl}" loading="lazy" alt="" class="coin-img">
 												<div class="coin-name-info">${item.symbol}</div>
 											</div>
 											<div class="base-txt">
@@ -111,7 +113,7 @@
 												<div class="fluctuation-rate-txt ${item.changeDirection}">${item.percentageChange}%</div>
 											</div>
 										</div>
-									</a> 
+									</a>
 								</c:forEach>
 							</div>
 						</div>
@@ -132,7 +134,7 @@
 										<div class="w-layout-vflex space-between">
 											<div class="card-coin-info">
 												<div class="coin-num">${item.rank}</div>
-												<img src="${item.logoUrl}" loading="lazy" alt="">
+												<img src="${item.logoUrl}" loading="lazy" alt="" class="coin-img">
 												<div class="coin-name-info">
 													${item.symbol}<span class="text-span">/${item.symbol2}</span>
 												</div>
@@ -148,7 +150,7 @@
 												<div class="fluctuation-rate-txt ${item.changeDirection}">${item.percentageChange}%</div>
 											</div>
 										</div>
-									</a> 
+									</a>
 								</c:forEach>
 							</div>
 						</div>
@@ -198,12 +200,11 @@
 									<a href="/cmc/market-overview/fear&greed.do" class="card-link w-inline-block">
 										<div class="card-header-title">
 											<spring:message code="main.smallcard-header-title3" />
-										</div> 
-										<img src="webflow/images/arrow_right.svg" loading="lazy" alt="">
+										</div> <img src="webflow/images/arrow_right.svg" loading="lazy" alt="">
 									</a>
 								</div>
 								<div class="progressbar-wrapper">
-									<div class="circle"></div>
+									<div class="circle" id="circle"></div>
 									<div class="progress-txt-box">
 										<div class="inter _20s bold">${fearGreedMeterValue}</div>
 										<div class="inter _11s normal _61co">
@@ -215,24 +216,37 @@
 							</div>
 							<div class="metricscard">
 								<div class="card-header">
-									<a href="/cmc/market-overview/coin-dominance.do" class="card-link w-inline-block">
+									<a href="/cmc/market-overview/altCoin-season-index.do" class="card-link w-inline-block">
 										<div class="card-header-title">
-											<spring:message code="main.dominance" />
+											<spring:message code="main.alt-coin-season" />
 										</div> <img src="webflow/images/arrow_right.svg" loading="lazy" alt="">
 									</a>
 								</div>
-								<div class="card-content-dominuns">
-									<a href="#" class="card-coin-item-dominuns w-inline-block">
-										<div class="w-layout-vflex flex-box-l gap-8">
-											<img src="webflow/images/bitcoin_icon.svg" loading="lazy" alt="">
-											<div class="inter _16s bold">12.34%</div>
+								<div class="m-o-card-alt">
+									<div class="inter _25s bold">
+										38<span class="text-span-4">/ 100</span>
+									</div>
+									<div class="season-box">
+										<div class="txt-space-between">
+											<div class="inter _12s medium _61co">
+												<spring:message code="main.bitcoin" />
+											</div>
+											<div class="inter _12s medium _61co">
+												<spring:message code="main.altcoin" />
+											</div>
 										</div>
-									</a> <a href="#" class="card-coin-item-dominuns w-inline-block">
-										<div class="w-layout-vflex flex-box-l gap-8">
-											<img src="webflow/images/bitcoin_icon.svg" loading="lazy" alt="">
-											<div class="inter _16s bold">12.34%</div>
+										<div class="w-layout-vflex season-wrap">
+											<div class="season-stick-box">
+												<div class="season-block color-a"></div>
+												<div class="season-block color-b"></div>
+												<div class="season-block color-c"></div>
+												<div class="season-block color-d"></div>
+											</div>
+											<div class="status-circle">
+												<div class="black-circle"></div>
+											</div>
 										</div>
-									</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -380,8 +394,7 @@
 										<img src="${item.iconImg}" loading="lazy" alt="" class="coin-img">
 										<div class="coin-txt-table name">
 											<%-- <spring:message code="bitcoin" /> --%>
-											${item.name}
-											<span class="text-span-2">${item.symbol}</span>
+											${item.name} <span class="text-span-2">${item.symbol}</span>
 										</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap price">
@@ -407,7 +420,7 @@
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
 										<div class="coin-txt-table flex-down">
-											<%-- <spring:message code="currency.symbol" /> --%>											
+											<%-- <spring:message code="currency.symbol" /> --%>
 											<c:set var="volumeParts" value="${fn:split(item.volume24h, newLineChar)}" />
 											${volumeParts[0]}<br> <span class="text-span-3">${volumeParts[1] }</span>
 										</div>
@@ -1261,64 +1274,70 @@
 	<script src="/cmc/js/virtual-assets-scroll.js" type="text/javascript"></script>
 	<script src="/cmc/js/pop-hover.js" type="text/javascript"></script>
 	<script src="/cmc/js/readmore.js" type="text/javascript"></script>
+	<script src="/cmc/js/fear-and-greed.js" type="text/javascript"></script>
 	<script>
-	function triggerPopupFilter() {
-	    // 모든 popupbox 요소 선택
-	    var popupboxes = document.querySelectorAll('.popupbox');
+		function triggerPopupFilter() {
+		    // 모든 popupbox 요소 선택
+		    var popupboxes = document.querySelectorAll('.popupbox');
 
-	    popupboxes.forEach(function(popupbox) {
-		// popupbox 내부에 .popupframe.filter 요소가 있는지 확인
-		if (popupbox.querySelector('.popupframe.filter')) {
-		    popupbox.style.display = 'flex'; // filter가 있는 popupbox만 flex로 표시
-		    // 내부의 .popupframe.filter도 확실히 표시
-		    var frame = popupbox.querySelector('.popupframe.filter');
-		    if (frame) {
-			frame.style.display = 'flex';
-		    }
-		} else {
-		    popupbox.style.display = 'none'; // 그 외는 숨김 처리
+		    popupboxes.forEach(function(popupbox) {
+			// popupbox 내부에 .popupframe.filter 요소가 있는지 확인
+			if (popupbox.querySelector('.popupframe.filter')) {
+			    popupbox.style.display = 'flex'; // filter가 있는 popupbox만 flex로 표시
+			    // 내부의 .popupframe.filter도 확실히 표시
+			    var frame = popupbox
+				    .querySelector('.popupframe.filter');
+			    if (frame) {
+				frame.style.display = 'flex';
+			    }
+			} else {
+			    popupbox.style.display = 'none'; // 그 외는 숨김 처리
+			}
+		    });
+
+		    // 팝업 열릴 때 배경 스크롤 막기
+		    document.body.style.overflow = 'hidden';
 		}
-	    });
 
-	    // 팝업 열릴 때 배경 스크롤 막기
-	    document.body.style.overflow = 'hidden';
-	}
+		function triggerPopupRow() {
+		    // 모든 popupbox 요소 선택
+		    var popupboxes = document.querySelectorAll('.popupbox');
 
-	function triggerPopupRow() {
-	    // 모든 popupbox 요소 선택
-	    var popupboxes = document.querySelectorAll('.popupbox');
+		    popupboxes.forEach(function(popupbox) {
+			// popupbox 내부에 .popupframe.row 요소가 있는지 확인
+			if (popupbox.querySelector('.popupframe.row')) {
+			    popupbox.style.display = 'flex'; // row가 있는 popupbox만 flex로 표시
+			    var frame = popupbox
+				    .querySelector('.popupframe.row');
+			    if (frame) {
+				frame.style.display = 'flex';
+			    }
+			} else {
+			    popupbox.style.display = 'none'; // 그 외는 숨김 처리
+			}
+		    });
 
-	    popupboxes.forEach(function(popupbox) {
-		// popupbox 내부에 .popupframe.row 요소가 있는지 확인
-		if (popupbox.querySelector('.popupframe.row')) {
-		    popupbox.style.display = 'flex'; // row가 있는 popupbox만 flex로 표시
-		    var frame = popupbox.querySelector('.popupframe.row');
-		    if (frame) {
-			frame.style.display = 'flex';
-		    }
-		} else {
-		    popupbox.style.display = 'none'; // 그 외는 숨김 처리
+		    // 팝업 열릴 때 배경 스크롤 막기
+		    document.body.style.overflow = 'hidden';
 		}
-	    });
 
-	    // 팝업 열릴 때 배경 스크롤 막기
-	    document.body.style.overflow = 'hidden';
-	}
-
-	function triggerPopupClose() {
-	    // 모든 popupbox 요소 선택 후 숨김 처리
-	    var popupboxes = document.querySelectorAll('.popupbox');
-	    popupboxes.forEach(function(popupbox) {
-	      popupbox.style.display = 'none';
-	      // popupbox 내부에 있는 popupframe 요소도 숨김 처리
-	      var popupframes = popupbox.querySelectorAll('.popupframe');
-	      popupframes.forEach(function(popupframe) {
-	        popupframe.style.display = 'none';
-	      });
-	    });
-	    // 페이지 스크롤 다시 활성화
-	    document.body.style.overflow = 'auto';
-	  }
-    </script>
+		function triggerPopupClose() {
+		    // 모든 popupbox 요소 선택 후 숨김 처리
+		    var popupboxes = document.querySelectorAll('.popupbox');
+		    popupboxes.forEach(function(popupbox) {
+			popupbox.style.display = 'none';
+			// popupbox 내부에 있는 popupframe 요소도 숨김 처리
+			var popupframes = popupbox
+				.querySelectorAll('.popupframe');
+			popupframes.forEach(function(popupframe) {
+			    popupframe.style.display = 'none';
+			});
+		    });
+		    // 페이지 스크롤 다시 활성화
+		    document.body.style.overflow = 'auto';
+		}
+		
+		
+	    </script>
 </body>
 </html>

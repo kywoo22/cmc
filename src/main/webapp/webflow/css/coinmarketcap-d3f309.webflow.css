@@ -645,8 +645,9 @@ a {
   align-items: center;
   height: 32px;
   font-family: Inter Variablefont Opsz Wght, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
+  line-height: 125%;
   display: flex;
 }
 
@@ -890,8 +891,9 @@ a {
   align-items: center;
   height: 22.5px;
   font-family: Inter Variablefont Opsz Wght, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
+  line-height: 125%;
   display: flex;
 }
 
@@ -1314,9 +1316,11 @@ a {
   flex-flow: column;
   justify-content: flex-end;
   align-items: center;
-  height: 80px;
+  width: 108px;
+  height: 60px;
   margin-top: auto;
-  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   position: relative;
 }
@@ -1327,8 +1331,7 @@ a {
   width: 10px;
   height: 10px;
   position: absolute;
-  top: 16px;
-  right: 74px;
+  top: 0%;
 }
 
 .progress-txt-box {
@@ -1624,6 +1627,7 @@ a {
   flex-flow: column;
   display: flex;
   overflow: auto;
+  min-height: 200px;
 }
 
 .coin-table.line-top {
@@ -2635,7 +2639,6 @@ a {
 .m-o-wrap {
   justify-content: flex-start;
   align-items: stretch;
-  width: 120px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -2735,7 +2738,7 @@ a {
   height: 20px;
   display: flex;
   position: absolute;
-  left: 35%;
+  left: 32%;
 }
 
 .black-circle {
@@ -11601,6 +11604,19 @@ a {
 .snapshot-more:hover {
   background-color: var(--eff-color);
   color: var(--black);
+}
+
+.wh24 {
+  width: 24px;
+  height: 24px;
+}
+
+.chain-img {
+  border-radius: 100%;
+  width: 24px;
+  max-width: 24px;
+  height: 24px;
+  max-height: 24px;
 }
 
 @media screen and (max-width: 991px) {

@@ -18,7 +18,7 @@
 				<jsp:include page="../frame/infoBar.jsp"></jsp:include>
 			</div>
 			<div class="body-wrap">
-				<div class="frame">
+				<div class="frame no-max">
 					<div class="main-txt-box">
 						<div class="main-title">
 							<spring:message code="memes.mainTitle" />

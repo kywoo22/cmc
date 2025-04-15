@@ -18,7 +18,7 @@
 				<jsp:include page="../frame/infoBar.jsp"></jsp:include>
 			</div>
 			<div class="body-wrap">
-				<div class="frame">
+				<div class="frame no-max">
 					<div class="main-txt-box">
 						<div class="main-title">
 							<spring:message code="ai-big-data.mainTitle" />
@@ -49,7 +49,7 @@
 									<div class="w-layout-vflex space-between">
 										<div class="card-coin-info">
 											<div class="coin-num">1</div>
-											<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="">
+											<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
 											<div class="coin-name-info">BTC</div>
 										</div>
 										<div class="base-txt">$95,965.47</div>

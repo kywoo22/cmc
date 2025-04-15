@@ -70,3 +70,13 @@
   opacity: 1;               /* 불투명하게 */
   max-height: 100%;        /* 충분히 큰 값으로 설정 (내용 높이에 따라 조절) */
 }
+
+/* 공포와 탐욕 */
+.circle {
+  width: 10px;
+  height: 10px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}

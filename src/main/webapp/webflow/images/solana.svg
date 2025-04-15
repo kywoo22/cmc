@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_333" data-name="사각형 333" width="12" height="12" rx="6" transform="translate(393 199.625)"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.907" y1="1.512" x2="0.355" y2="-3.91" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00ffa3"/>
+      <stop offset="1" stop-color="#dc1fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.666" y1="5.175" x2="0.114" y2="-0.247" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="0.786" y1="3.356" x2="0.234" y2="-2.067" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="solana" transform="translate(-394 -200)">
+    <rect id="사각형_276" data-name="사각형 276" width="16" height="16" rx="8" transform="translate(394 200)"/>
+    <g id="마스크_그룹_80" data-name="마스크 그룹 80" transform="translate(3 2.375)" clip-path="url(#clip-path)">
+      <g id="solana-sol-logo_2_" data-name="solana-sol-logo (2)" transform="translate(393.772 201.528)">
+        <path id="패스_162" data-name="패스 162" d="M1.7,9.511a.353.353,0,0,1,.242-.094h8.345a.16.16,0,0,1,.121.275L8.757,11.248a.353.353,0,0,1-.242.094H.171a.16.16,0,0,1-.121-.275Z" transform="translate(0.001 -3.148)" fill="url(#linear-gradient)"/>
+        <path id="패스_163" data-name="패스 163" d="M1.7.094A.363.363,0,0,1,1.94,0h8.345a.16.16,0,0,1,.121.275L8.757,1.831a.353.353,0,0,1-.242.094H.171A.16.16,0,0,1,.05,1.65Z" transform="translate(0.001)" fill="url(#linear-gradient-2)"/>
+        <path id="패스_164" data-name="패스 164" d="M8.757,4.773a.353.353,0,0,0-.242-.094H.171a.16.16,0,0,0-.121.275L1.7,6.509A.353.353,0,0,0,1.94,6.6h8.345a.16.16,0,0,0,.121-.275Z" transform="translate(0.001 -1.564)" fill="url(#linear-gradient-3)"/>
+      </g>
+    </g>
+  </g>
+</svg>

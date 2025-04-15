@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Thu Apr 10 2025 08:02:34 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Tue Apr 15 2025 05:21:12 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="67ac1e9d774ae9ae33d5f484" data-wf-site="67ac1e9d774ae9ae33d5f462">
 <head>
   <meta charset="utf-8">
@@ -29,6 +29,14 @@
   background:#cfd6e4;
   border-radius:4px;
   }
+  .circle {
+  width: 10px;
+  height: 10px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
 </style>
 </head>
 <body>
@@ -43,7 +51,7 @@
                 <a href="#" class="menu-link w-inline-block">
                   <div>가상자산</div>
                 </a>
-                <div class="menu-wrap-box">
+                <div class="menu-wrap-box left">
                   <div class="menu-sub-wrap">
                     <div class="inter _14s semibold a6co">가상자산</div>
                     <div class="menu-link-box">
@@ -438,7 +446,7 @@
         </div>
       </div>
       <div class="body-wrap">
-        <div class="frame">
+        <div class="frame no-max">
           <div class="main-txt-box">
             <div class="main-title">오늘의 시가총액별 상위 100개의 가상자산</div>
             <div class="main-txt-flex">
@@ -477,7 +485,7 @@
                 <a href="#" class="card-coin-item w-inline-block">
                   <div class="w-layout-vflex space-between">
                     <div class="card-coin-info">
-                      <div class="coin-num">1</div><img src="images/bitcoin_icon.svg" loading="lazy" alt="">
+                      <div class="coin-num">1</div><img src="images/bitcoin_icon.svg" loading="lazy" alt="" class="wh24">
                       <div class="coin-name-info">BTC</div>
                     </div>
                     <div class="base-txt">$95,965.47</div>
@@ -683,7 +691,7 @@
                   </a>
                 </div>
                 <div class="progressbar-wrapper">
-                  <div class="circle"></div>
+                  <div id="circle" class="circle"></div>
                   <div class="progress-txt-box">
                     <div class="inter _20s bold">35</div>
                     <div class="inter _11s normal _61co">탐욕</div>
@@ -693,20 +701,28 @@
               <div class="metricscard">
                 <div class="card-header">
                   <a href="#" class="card-link w-inline-block">
-                    <div class="card-header-title">도미넌스</div><img src="images/arrow_right.svg" loading="lazy" alt="">
+                    <div class="card-header-title">알트코인 시즌</div><img src="images/arrow_right.svg" loading="lazy" alt="">
                   </a>
                 </div>
-                <div class="card-content-dominuns">
-                  <a href="#" class="card-coin-item-dominuns w-inline-block">
-                    <div class="w-layout-vflex flex-box-l gap-8"><img src="images/bitcoin_icon.svg" loading="lazy" alt="">
-                      <div class="inter _16s bold">12.34%</div>
+                <div class="m-o-card-alt">
+                  <div class="inter _25s bold">38<span class="text-span-4">/ 100</span></div>
+                  <div class="season-box">
+                    <div class="txt-space-between">
+                      <div class="inter _12s medium _61co">비트코인</div>
+                      <div class="inter _12s medium _61co">알트코인</div>
                     </div>
-                  </a>
-                  <a href="#" class="card-coin-item-dominuns w-inline-block">
-                    <div class="w-layout-vflex flex-box-l gap-8"><img src="images/bitcoin_icon.svg" loading="lazy" alt="">
-                      <div class="inter _16s bold">12.34%</div>
+                    <div class="w-layout-vflex season-wrap">
+                      <div class="season-stick-box">
+                        <div class="season-block color-a"></div>
+                        <div class="season-block color-b"></div>
+                        <div class="season-block color-c"></div>
+                        <div class="season-block color-d"></div>
+                      </div>
+                      <div class="status-circle">
+                        <div class="black-circle"></div>
+                      </div>
                     </div>
-                  </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2657,6 +2673,27 @@
         window.addEventListener("resize", updateScrollButtons);
         updateScrollButtons(); // 초기 실행 시 버튼 상태 업데이트
     });
+function updateCirclePosition(value) {
+  const circle = document.getElementById('circle');
+  if (!circle) return;
+  const wrapperWidth = 108;
+  const wrapperHeight = 60;
+  const radius = wrapperWidth / 2;
+  // 각도 조정: 가장자리를 살짝 안쪽으로 (보정값)
+  const startAngle = 8;   // 시작 각도 (좌측)
+  const endAngle = 172;    // 끝 각도 (우측)
+  const angleDeg = startAngle + (value / 100) * (endAngle - startAngle);
+  const angleRad = (angleDeg * Math.PI) / 180;
+  const centerX = wrapperWidth / 2;
+  const centerY = wrapperHeight;
+  const x = centerX + radius * Math.cos(Math.PI - angleRad);
+  const y = centerY - radius * Math.sin(angleRad);
+  circle.style.left = `${x}px`;
+  circle.style.top = `${y}px`;
+}
+document.addEventListener('DOMContentLoaded', () => {
+  updateCirclePosition(35); // 탐욕 수치
+});
 </script>
 </body>
 </html>
