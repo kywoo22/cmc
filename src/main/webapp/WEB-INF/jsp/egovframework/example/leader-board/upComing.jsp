@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%
+	pageContext.setAttribute("newLineChar", "\n\n");
+%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Thu Mar 13 2025 05:17:25 GMT+0000 (Coordinated Universal Time)  -->
@@ -52,117 +58,44 @@
 							</div>
 						</div>
 						<div class="coin-list">
-							<div class="list height40">
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200per">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
+							<c:forEach var="item" items="${list}">
+								<div class="list height40">
+									<div class="w-layout-vflex coin-table-top-wrap num">
+										<div class="coin-txt-table">${item.rank}</div>
+									</div>
+									<div class="w-layout-vflex coin-table-top-wrap width200per">
+										<img src="${item.logoUrl}" loading="lazy" alt="" class="coin-img">
+										<div class="coin-txt-table name">
+											${item.name} <span class="text-span-2">${item.symbol}</span>
+										</div>
+									</div>
+									<div class="w-layout-vflex coin-table-top-wrap width85">
+										<div class="coin-txt-table price semibold">${item.launchDate}</div>
+									</div>
+									<div class="w-layout-vflex coin-table-top-wrap width200per right">
+										<a 
+										  <c:if test="${empty item.moreInfoLink}">
+										    href="javascript:void(0)"
+										  </c:if>
+										  <c:if test="${not empty item.moreInfoLink}">
+										    href="${item.moreInfoLink}" target="_blank"
+										  </c:if>
+										class="list-more-btn-board w-inline-block">
+											<c:if test="${not empty item.moreInfoLink}">
+												<img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
+											</c:if>
+											<div class="text-block">
+												<c:if test="${empty item.moreInfoLink}">
+												    ${item.moreInfoLabel }
+												  </c:if>
+												<c:if test="${not empty item.moreInfoLink}">
+													<spring:message code="upcoming.readMore" />
+												</c:if>
+											</div> 
+										</a>
 									</div>
 								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table price semibold">H1 2025</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200per right">
-									<a href="#" class="list-more-btn-board w-inline-block"><img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
-										<div class="text-block">
-											<spring:message code="upcoming.readMore" />
-										</div> </a>
-								</div>
-							</div>
-							<div class="list height40">
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200per">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table price semibold">H1 2025</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200per right">
-									<a href="#" class="list-more-btn-board w-inline-block">
-										<div class="text-block">--</div>
-									</a>
-								</div>
-							</div>
-							<div class="list height40">
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200per">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table price semibold">H1 2025</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200per right">
-									<a href="#" class="list-more-btn-board w-inline-block"><img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
-										<div class="text-block">더 읽기</div> </a>
-								</div>
-							</div>
-							<div class="list height40">
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200per">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table price semibold">H1 2025</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200per right">
-									<a href="#" class="list-more-btn-board w-inline-block"><img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
-										<div class="text-block">더 읽기</div> </a>
-								</div>
-							</div>
-							<div class="list height40">
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200per">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table price semibold">H1 2025</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200per right">
-									<a href="#" class="list-more-btn-board w-inline-block"><img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
-										<div class="text-block">더 읽기</div> </a>
-								</div>
-							</div>
-							<div class="list height40">
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200per">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table price semibold">H1 2025</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200per right">
-									<a href="#" class="list-more-btn-board w-inline-block"><img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
-										<div class="text-block">더 읽기</div> </a>
-								</div>
-							</div>
+							</c:forEach>
 						</div>
 					</div>
 					<div class="table-bottom">

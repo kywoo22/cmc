@@ -21,14 +21,19 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import egovframework.example.sample.model.Ai;
 import egovframework.example.sample.model.Aiagent;
 import egovframework.example.sample.model.Category;
+import egovframework.example.sample.model.Chain;
+import egovframework.example.sample.model.Coming;
+import egovframework.example.sample.model.Community;
 import egovframework.example.sample.model.Defai;
 import egovframework.example.sample.model.Depin;
 import egovframework.example.sample.model.Dot;
 import egovframework.example.sample.model.Gaming;
 import egovframework.example.sample.model.Gl;
 import egovframework.example.sample.model.Global;
+import egovframework.example.sample.model.Hotdex;
 import egovframework.example.sample.model.Main;
 import egovframework.example.sample.model.Memes;
+import egovframework.example.sample.model.New;
 import egovframework.example.sample.model.Nft;
 import egovframework.example.sample.model.Rehypo;
 import egovframework.example.sample.model.Sol;
@@ -66,6 +71,11 @@ public class Scheduler {
     		,"http://localhost:3000/gl"
     		,"http://localhost:3000/trending"
     		,"http://localhost:3000/visit"
+    		,"http://localhost:3000/new"
+    		,"http://localhost:3000/coming"
+    		,"http://localhost:3000/community"
+    		,"http://localhost:3000/hotdex"
+    		,"http://localhost:3000/chain"
     );
     
     // API 처리 함수 맵
@@ -240,7 +250,7 @@ public class Scheduler {
                 	JsonNode toplist = c.path("topGainers");
                 	for(JsonNode t : toplist){
                 		EgovMap i = new EgovMap();
-                		if(t.path("name").isValueNode()){
+                		if(t.hasNonNull("name")){
                 			i.put("name", t.path("name").asText());
                 			i.put("symbol", t.path("symbol").asText());
                 			i.put("change", t.path("change").asText());
@@ -970,6 +980,208 @@ public class Scheduler {
         		Visit.setList(list);
         	} catch (Exception e) {
         		Log.print("visit API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/new", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("new API 데이터 처리 완료" + data, "call");
+        		
+        		JsonNode coins = data.path("newListings");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : coins){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("symbol" , c.path("symbol").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change24hDirection" , c.path("change24hDirection").asText());
+        			in.put("change24h" , c.path("change24h").asText());
+        			in.put("change1hDirection" , c.path("change1hDirection").asText());
+        			in.put("change1h" , c.path("change1h").asText());
+        			in.put("fullyDilutedMarketCap" , c.path("fullyDilutedMarketCap").asText());
+        			in.put("volume" , c.path("volume").asText());
+        			in.put("blockchain" , c.path("blockchain").asText());
+        			in.put("blockchainLogoUrl" , c.path("blockchainLogoUrl").asText());
+        			in.put("addedDate" , c.path("addedDate").asText());
+        			
+        			list.add(in);
+        		}
+        		New.setList(list);
+        	} catch (Exception e) {
+        		Log.print("new API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/coming", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("coming API 데이터 처리 완료" + data, "call");
+        		
+        		JsonNode coins = data.path("upcomingCoins");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : coins){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("symbol" , c.path("symbol").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("launchDate" , c.path("launchDate").asText());
+        			in.put("moreInfoLabel" , c.path("moreInfoLabel").asText());
+        			if(c.hasNonNull("moreInfoLink"))
+        				in.put("moreInfoLink" , c.path("moreInfoLink").asText());
+        			list.add(in);
+        		}
+        		Coming.setList(list);
+        	} catch (Exception e) {
+        		Log.print("coming API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/community", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("community API 데이터 처리 완료" + data, "call");
+        		
+        		JsonNode sentimentData = data.path("sentimentData");
+        		
+        		JsonNode topBullish = sentimentData.path("topBullish");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : topBullish){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("symbol" , c.path("symbol").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("bullishPercent" , c.path("bullishPercent").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change24h" , c.path("change24h").asText());
+        			in.put("change24hDirection" , c.path("change24hDirection").asText());
+        			list.add(in);
+        		}
+        		Community.setTopBullish(list);
+        		
+        		JsonNode topBearish = sentimentData.path("topBearish");
+        		list = new ArrayList<>();
+        		for(JsonNode c : topBearish){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("symbol" , c.path("symbol").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("bullishPercent" , c.path("bullishPercent").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change24h" , c.path("change24h").asText());
+        			in.put("change24hDirection" , c.path("change24hDirection").asText());
+        			list.add(in);
+        		}
+        		Community.setTopBearish(list);
+        		
+        		JsonNode dailyBullishTrend = sentimentData.path("dailyBullishTrend");
+        		list = new ArrayList<>();
+        		for(JsonNode c : dailyBullishTrend){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("symbol" , c.path("symbol").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("bullishPercent" , c.path("bullishPercent").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("trendChange" , c.path("trendChange").asText());
+        			list.add(in);
+        		}
+        		Community.setDailyBullishTrend(list);
+        		
+        		JsonNode dailyBearishTrend = sentimentData.path("dailyBearishTrend");
+        		list = new ArrayList<>();
+        		for(JsonNode c : dailyBearishTrend){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("symbol" , c.path("symbol").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("bearishPercent" , c.path("bearishPercent").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("trendChange" , c.path("trendChange").asText());
+        			list.add(in);
+        		}
+        		Community.setDailyBearishTrend(list);
+        		
+        		JsonNode mostVoted = sentimentData.path("mostVoted");
+        		list = new ArrayList<>();
+        		for(JsonNode c : mostVoted){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("symbol" , c.path("symbol").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("bullishPercent" , c.path("bullishPercent").asText());
+        			in.put("bearishPercent" , c.path("bearishPercent").asText());
+        			in.put("votes" , c.path("votes").asText());
+        			list.add(in);
+        		}
+        		Community.setMostVoted(list);
+        		
+        	} catch (Exception e) {
+        		Log.print("community API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/hotdex", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("hotdex API 데이터 처리 완료" + data, "call");
+        		
+        		JsonNode hotPairs = data.path("hotPairs");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : hotPairs){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("baseSymbol" , c.path("baseSymbol").asText());
+        			in.put("quoteSymbol" , c.path("quoteSymbol").asText() + " "+ c.path("tokenName").asText());
+        			in.put("exchangeLogoUrl" , c.path("exchangeLogoUrl").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change1h" , c.path("change1h").asText());
+        			in.put("change1hDirection" , c.path("change1hDirection").asText());
+        			in.put("change24h" , c.path("change24h").asText());
+        			in.put("change24hDirection" , c.path("change24hDirection").asText());
+        			in.put("trades24h" , c.path("trades24h").asText());
+        			in.put("volume24h" , c.path("volume24h").asText());
+        			in.put("liquidity" , c.path("liquidity").asText());
+        			in.put("fdv" , c.path("fdv").asText());
+        			list.add(in);
+        		}
+        		Hotdex.setList(list);
+        	} catch (Exception e) {
+        		Log.print("hotdex API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/chain", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("chain API 데이터 처리 완료" + data, "call");
+        		
+        		JsonNode chainRankings = data.path("chainRankings");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : chainRankings){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("symbol" , c.path("symbol").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("protocols" , c.path("protocols").asText());
+        			in.put("change1d" , c.path("change1d").asText());
+        			in.put("change1dDirection" , c.path("change1dDirection").asText());
+        			in.put("change1w" , c.path("change1w").asText());
+        			in.put("change1wDirection" , c.path("change1wDirection").asText());
+        			in.put("change1m" , c.path("change1m").asText());
+        			in.put("change1mDirection" , c.path("change1mDirection").asText());
+        			in.put("tvl" , c.path("tvl").asText());
+        			in.put("marketCap" , c.path("marketCap").asText());
+        			in.put("mcapTvlRatio" , c.path("mcapTvlRatio").asText());
+        			list.add(in);
+        		}
+        		Chain.setList(list);
+        	} catch (Exception e) {
+        		Log.print("chain API 데이터 처리 중 오류: " + e.getMessage(), "err");
         	}
         });
         apiProcessors.put("http://localhost:3000/sample", data -> {

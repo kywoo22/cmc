@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%
+	pageContext.setAttribute("newLineChar", "\n\n");
+%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Thu Mar 13 2025 05:17:25 GMT+0000 (Coordinated Universal Time)  -->
@@ -48,17 +54,12 @@
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width85">
 								<div class="coin-txt-table">
+									<spring:message code="table.time1-houre" />
+								</div>
+							</div>
+							<div class="w-layout-vflex coin-table-top-wrap width85">
+								<div class="coin-txt-table">
 									<spring:message code="table.time24-houre" />
-								</div>
-							</div>
-							<div class="w-layout-vflex coin-table-top-wrap width85">
-								<div class="coin-txt-table">
-									<spring:message code="table.time7-days" />
-								</div>
-							</div>
-							<div class="w-layout-vflex coin-table-top-wrap width85">
-								<div class="coin-txt-table">
-									<spring:message code="table.time30-days" />
 								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width180">
@@ -108,456 +109,50 @@
 
 						</div>
 						<div class="coin-list">
-							<div class="list height40">
-								<div class="interest-box star"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
+							<c:forEach var="item" items="${list}">
+								<div class="list height40">
+									<div class="interest-box star"></div>
+									<div class="w-layout-vflex coin-table-top-wrap num">
+										<div class="coin-txt-table">${item.rank}</div>
 									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap price">
-									<div class="coin-txt-table price semibold">₩139,890,829.50</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon down">1h %</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">1.21%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										₩1,241,249,730,128<br>
+									<div class="w-layout-vflex coin-table-top-wrap name">
+										<img src="${item.logoUrl}" loading="lazy" alt="" class="coin-img">
+										<div class="coin-txt-table name">
+											${item.name} <span class="text-span-2">${item.symbol}</span>
+										</div>
 									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="list-filter-btn">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="filter-img">
-										<div>
-											Base<br>
+									<div class="w-layout-vflex coin-table-top-wrap price">
+										<div class="coin-txt-table price semibold">${item.price}</div>
+									</div>
+									<div class="w-layout-vflex coin-table-top-wrap width85">
+										<div class="coin-txt-table rate-icon ${item.change1hDirection}">${item.change1h}</div>
+									</div>
+									<div class="w-layout-vflex coin-table-top-wrap width85">
+										<div class="coin-txt-table rate-icon ${item.change24hDirection}">${item.change24h}</div>
+									</div>
+									<div class="w-layout-vflex coin-table-top-wrap width180">
+										<div class="coin-txt-table">${item.fullyDilutedMarketCap}</div>
+									</div>
+									<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
+										<div class="coin-txt-table flex-down">
+											${item.volume}<br>
+										</div>
+									</div>
+									<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
+										<div class="list-filter-btn">
+											<img src="${item.blockchainLogoUrl}" loading="lazy" alt="" class="filter-img">
+											<div>
+												${item.blockchain}<br>
+											</div>
+										</div>
+									</div>
+									<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
+										<div class="coin-txt-table flex-down">
+											${item.addedDate}<br>
 										</div>
 									</div>
 								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										22 Minutes ago<br>
-									</div>
-								</div>
-							</div>
-							<div class="list height40">
-								<div class="interest-box star"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap price">
-									<div class="coin-txt-table price semibold">₩139,890,829.50</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon down">1h %</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">1.21%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										₩1,241,249,730,128<br>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="list-filter-btn">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="filter-img">
-										<div>
-											Base<br>
-										</div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										22 Minutes ago<br>
-									</div>
-								</div>
-							</div>
-							<div class="list height40">
-								<div class="interest-box star"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap price">
-									<div class="coin-txt-table price semibold">₩139,890,829.50</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon down">1h %</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">1.21%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										₩1,241,249,730,128<br>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="list-filter-btn">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="filter-img">
-										<div>
-											Base<br>
-										</div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										22 Minutes ago<br>
-									</div>
-								</div>
-							</div>
-							<div class="list height40">
-								<div class="interest-box star"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap price">
-									<div class="coin-txt-table price semibold">₩139,890,829.50</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon down">1h %</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">1.21%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										₩1,241,249,730,128<br>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="list-filter-btn">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="filter-img">
-										<div>
-											Base<br>
-										</div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										22 Minutes ago<br>
-									</div>
-								</div>
-							</div>
-							<div class="list height40">
-								<div class="interest-box star"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap price">
-									<div class="coin-txt-table price semibold">₩139,890,829.50</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon down">1h %</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">1.21%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										₩1,241,249,730,128<br>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="list-filter-btn">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="filter-img">
-										<div>
-											Base<br>
-										</div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										22 Minutes ago<br>
-									</div>
-								</div>
-							</div>
-							<div class="list height40">
-								<div class="interest-box star"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap price">
-									<div class="coin-txt-table price semibold">₩139,890,829.50</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon down">1h %</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">1.21%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										₩1,241,249,730,128<br>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="list-filter-btn">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="filter-img">
-										<div>
-											Base<br>
-										</div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										22 Minutes ago<br>
-									</div>
-								</div>
-							</div>
-							<div class="list height40">
-								<div class="interest-box star"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap price">
-									<div class="coin-txt-table price semibold">₩139,890,829.50</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon down">1h %</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">1.21%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										₩1,241,249,730,128<br>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="list-filter-btn">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="filter-img">
-										<div>
-											Base<br>
-										</div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										22 Minutes ago<br>
-									</div>
-								</div>
-							</div>
-							<div class="list height40">
-								<div class="interest-box star"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap price">
-									<div class="coin-txt-table price semibold">₩139,890,829.50</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon down">1h %</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">1.21%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										₩1,241,249,730,128<br>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="list-filter-btn">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="filter-img">
-										<div>
-											Base<br>
-										</div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										22 Minutes ago<br>
-									</div>
-								</div>
-							</div>
-							<div class="list height40">
-								<div class="interest-box star"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap price">
-									<div class="coin-txt-table price semibold">₩139,890,829.50</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon down">1h %</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">1.21%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										₩1,241,249,730,128<br>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="list-filter-btn">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="filter-img">
-										<div>
-											Base<br>
-										</div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										22 Minutes ago<br>
-									</div>
-								</div>
-							</div>
-							<div class="list height40">
-								<div class="interest-box star"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap price">
-									<div class="coin-txt-table price semibold">₩139,890,829.50</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon down">1h %</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">1.21%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										₩1,241,249,730,128<br>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="list-filter-btn">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="filter-img">
-										<div>
-											Base<br>
-										</div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180 flex-down">
-									<div class="coin-txt-table flex-down">
-										22 Minutes ago<br>
-									</div>
-								</div>
-							</div>
+							</c:forEach>
 						</div>
 					</div>
 					<div class="table-bottom">

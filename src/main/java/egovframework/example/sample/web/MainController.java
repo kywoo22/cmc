@@ -13,13 +13,18 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import egovframework.example.sample.model.Ai;
 import egovframework.example.sample.model.Aiagent;
 import egovframework.example.sample.model.Category;
+import egovframework.example.sample.model.Chain;
+import egovframework.example.sample.model.Coming;
+import egovframework.example.sample.model.Community;
 import egovframework.example.sample.model.Defai;
 import egovframework.example.sample.model.Depin;
 import egovframework.example.sample.model.Dot;
 import egovframework.example.sample.model.Gaming;
 import egovframework.example.sample.model.Gl;
+import egovframework.example.sample.model.Hotdex;
 import egovframework.example.sample.model.Main;
 import egovframework.example.sample.model.Memes;
+import egovframework.example.sample.model.New;
 import egovframework.example.sample.model.Nft;
 import egovframework.example.sample.model.Rehypo;
 import egovframework.example.sample.model.Sol;
@@ -173,6 +178,7 @@ public class MainController {
 	@RequestMapping("/leader-board/new.do")
 	public String leaderboardnew(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "newListing");
+		New.addData(model);
 		return "leader-board/new";
 	}
 	@RequestMapping("/leader-board/most-view.do")
@@ -184,6 +190,7 @@ public class MainController {
 	@RequestMapping("/leader-board/upComing.do")
 	public String upComing(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "upComing");
+		Coming.addData(model);
 		return "leader-board/upComing";
 	}
 	@RequestMapping("/leader-board/gainer-losers.do")
@@ -200,15 +207,18 @@ public class MainController {
 	@RequestMapping("/leader-board/hot-dex-pairs.do")
 	public String hotdexpairs(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "hotDexPairs");
+		Hotdex.addData(model);
 		return "leader-board/hot-dex-pairs";
 	}
 	@RequestMapping("/leader-board/sentiment.do")
 	public String sentiment(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "sentiment");
+		Community.addData(model);
 		return "leader-board/sentiment";
 	}
 	@RequestMapping("/leader-board/chain-ranking.do")
 	public String chainranking(HttpServletRequest request , Model model){
+		Chain.addData(model);
 		return "leader-board/chain-ranking";
 	}
 	
