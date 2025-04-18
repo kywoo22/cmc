@@ -819,12 +819,9 @@ a {
 }
 
 .coin-graph {
-  background-image: url('../images/chart_image2.png');
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: 100%;
   width: 60px;
   height: 20px;
+  display: none;
 }
 
 .coin-graph.big {
@@ -1300,12 +1297,9 @@ a {
 }
 
 .coin-graph-h2 {
-  background-image: url('../images/chart_image2.png');
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: 100%;
   width: 100%;
   height: 60px;
+  display: none;
 }
 
 .progressbar-wrapper {
@@ -1627,7 +1621,6 @@ a {
   flex-flow: column;
   display: flex;
   overflow: auto;
-  min-height: 200px;
 }
 
 .coin-table.line-top {
@@ -1992,6 +1985,17 @@ a {
   align-items: stretch;
   width: 20%;
   min-width: 200px;
+}
+
+.coin-table-top-wrap.width20per.left {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.coin-table-top-wrap.width20per.flex-down {
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .coin-table-top-wrap.width15per {
@@ -4746,7 +4750,9 @@ a {
   justify-content: center;
   align-items: center;
   width: 15px;
+  min-width: 15px;
   height: 15px;
+  min-height: 15px;
 }
 
 .dx-adress {
@@ -9077,7 +9083,7 @@ a {
 }
 
 .currencies-top {
-  z-index: 104;
+  z-index: 100;
   border-bottom: 1px solid var(--eff-color);
   background-color: var(--white);
   padding-top: 12px;

@@ -1306,27 +1306,27 @@
 										<div class="w-layout-vflex coin-table-top-wrap num">
 											<div class="coin-txt-table">#</div>
 										</div>
-										<div class="w-layout-vflex coin-table-top-wrap width15per left">
+										<div class="w-layout-vflex coin-table-top-wrap width20per left">
 											<div class="coin-txt-table name">
 												<spring:message code="table.name" />
 											</div>
 										</div>
-										<div class="w-layout-vflex coin-table-top-wrap width15per">
+										<div class="w-layout-vflex coin-table-top-wrap width20per">
 											<div class="coin-txt-table name">
 												<spring:message code="table.trading.volume" />
 											</div>
 										</div>
-										<div class="w-layout-vflex coin-table-top-wrap width15per">
+										<div class="w-layout-vflex coin-table-top-wrap width20per">
 											<div class="coin-txt-table name">
 												<spring:message code="table.lowestPrice" />
 											</div>
 										</div>
-										<div class="w-layout-vflex coin-table-top-wrap width15per">
+										<div class="w-layout-vflex coin-table-top-wrap width20per">
 											<div class="coin-txt-table name">
 												<spring:message code="table.avgPrice24h" />
 											</div>
 										</div>
-										<div class="w-layout-vflex coin-table-top-wrap width15per">
+										<div class="w-layout-vflex coin-table-top-wrap width20per">
 											<div class="coin-txt-table name">
 												<spring:message code="table.sales24h" />
 											</div>
@@ -1337,11 +1337,11 @@
 											<div class="w-layout-vflex coin-table-top-wrap num">
 												<div class="coin-txt-table">1</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per left">
+											<div class="w-layout-vflex coin-table-top-wrap width20per left">
 												<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
 												<div class="coin-txt-table name">비트코인</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													1.2838 BTC<br>
 												</div>
@@ -1350,12 +1350,12 @@
 													<div class="fluctuation-rate-txt up">-18.25%</div>
 												</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													--<br>
 												</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													1.2838 BTC<br>
 												</div>
@@ -1364,7 +1364,7 @@
 													<div class="fluctuation-rate-txt down">-18.25%</div>
 												</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													37<br>
 												</div>
@@ -1378,11 +1378,11 @@
 											<div class="w-layout-vflex coin-table-top-wrap num">
 												<div class="coin-txt-table">1</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per left">
+											<div class="w-layout-vflex coin-table-top-wrap width20per left">
 												<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
 												<div class="coin-txt-table name">비트코인</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													1.2838 BTC<br>
 												</div>
@@ -1391,12 +1391,12 @@
 													<div class="fluctuation-rate-txt up">-18.25%</div>
 												</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													--<br>
 												</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													1.2838 BTC<br>
 												</div>
@@ -1405,7 +1405,7 @@
 													<div class="fluctuation-rate-txt down">-18.25%</div>
 												</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													37<br>
 												</div>
@@ -1419,11 +1419,11 @@
 											<div class="w-layout-vflex coin-table-top-wrap num">
 												<div class="coin-txt-table">1</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per left">
+											<div class="w-layout-vflex coin-table-top-wrap width20per left">
 												<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
 												<div class="coin-txt-table name">비트코인</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													1.2838 BTC<br>
 												</div>
@@ -1432,12 +1432,12 @@
 													<div class="fluctuation-rate-txt up">-18.25%</div>
 												</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													--<br>
 												</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													1.2838 BTC<br>
 												</div>
@@ -1446,7 +1446,7 @@
 													<div class="fluctuation-rate-txt down">-18.25%</div>
 												</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													37<br>
 												</div>
@@ -1460,11 +1460,11 @@
 											<div class="w-layout-vflex coin-table-top-wrap num">
 												<div class="coin-txt-table">1</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per left">
+											<div class="w-layout-vflex coin-table-top-wrap width20per left">
 												<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
 												<div class="coin-txt-table name">비트코인</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													1.2838 BTC<br>
 												</div>
@@ -1473,12 +1473,12 @@
 													<div class="fluctuation-rate-txt up">-18.25%</div>
 												</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													--<br>
 												</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													1.2838 BTC<br>
 												</div>
@@ -1487,7 +1487,7 @@
 													<div class="fluctuation-rate-txt down">-18.25%</div>
 												</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													37<br>
 												</div>
@@ -1501,11 +1501,11 @@
 											<div class="w-layout-vflex coin-table-top-wrap num">
 												<div class="coin-txt-table">1</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per left">
+											<div class="w-layout-vflex coin-table-top-wrap width20per left">
 												<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
 												<div class="coin-txt-table name">비트코인</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													1.2838 BTC<br>
 												</div>
@@ -1514,12 +1514,12 @@
 													<div class="fluctuation-rate-txt up">-18.25%</div>
 												</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													--<br>
 												</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													1.2838 BTC<br>
 												</div>
@@ -1528,7 +1528,7 @@
 													<div class="fluctuation-rate-txt down">-18.25%</div>
 												</div>
 											</div>
-											<div class="w-layout-vflex coin-table-top-wrap width15per flex-down">
+											<div class="w-layout-vflex coin-table-top-wrap width20per flex-down">
 												<div class="coin-txt-table small">
 													37<br>
 												</div>
