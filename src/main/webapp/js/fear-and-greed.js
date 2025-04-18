@@ -23,5 +23,5 @@ function updateCirclePosition(value) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    updateCirclePosition(31); // 0이면 극공포 100이면 극탐욕
+    updateCirclePosition(35); // 탐욕 수치
   });
