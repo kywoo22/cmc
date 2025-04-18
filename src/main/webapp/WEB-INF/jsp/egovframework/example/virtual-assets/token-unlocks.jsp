@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%
+	pageContext.setAttribute("newLineChar", "\n\n");
+%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Thu Mar 13 2025 05:17:25 GMT+0000 (Coordinated Universal Time)  -->
@@ -98,644 +104,68 @@
 							</div>
 						</div>
 						<div class="coin-list">
-							<div class="list">
-								<div class="interest-box star-err"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
+							<c:forEach var="item" items="${list}">
+								<div class="list">
+									<div class="interest-box star-err"></div>
+									<div class="w-layout-vflex coin-table-top-wrap num">
+										<div class="coin-txt-table">${item.rank}</div>
 									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table">₩1,285.34</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume green"></div>
-										<div class="volume yellow"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200 flex-down">
-									<div class="coin-txt-table semibold">240M RED</div>
-									<div class="inter _12s normal _61co">₩305.31B (<spring:message code="tokenUnlocks.totalLockedOf" /> 24.00%)</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="w-layout-vflex coin-unlocks-box">
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Days</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Hrs</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Min</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Sec</div>
+									<div class="w-layout-vflex coin-table-top-wrap name">
+										<img src="${item.imageUrl}" loading="lazy" alt="" class="coin-img">
+										<div class="coin-txt-table name">
+											${item.name} <span class="text-span-2">${item.symbol}</span>
 										</div>
 									</div>
-								</div>
-							</div>
-							<div class="list">
-								<div class="interest-box star-err"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
+									<div class="w-layout-vflex coin-table-top-wrap width85">
+										<div class="coin-txt-table">${item.price}</div>
 									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table">₩1,285.34</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume"></div>
+									<div class="w-layout-vflex coin-table-top-wrap width85">
+										<div class="coin-txt-table rate-icon ${item.priceChangeDirection}">${item.priceChange24h}</div>
 									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume green"></div>
-										<div class="volume yellow"></div>
+									<div class="w-layout-vflex coin-table-top-wrap width200">
+										<div class="coin-txt-table">${item.marketCapLong}</div>
 									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200 flex-down">
-									<div class="coin-txt-table semibold">240M RED</div>
-									<div class="inter _12s normal _61co">₩305.31B (총 잠금량의 24.00%)</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="w-layout-vflex coin-unlocks-box">
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Days</div>
+									<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
+										<div class="coin-txt-table semibold">${item.circulatingSupplyValue} ${item.circulatingSupplySymbol}</div>
+										<c:if test="${item.circulatingSupplyPercentage != 'null'}">
+										<div class="block-coin">
+											<div class="volume" style="width:${item.circulatingSupplyPercentage}"></div>
 										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Hrs</div>
+										</c:if>
+									</div>
+									<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
+										<div class="coin-txt-table semibold">${item.unlockProgressPercentage}</div>
+										<div class="block-coin">
+											<div class="volume green" style="width:${item.unlockProgressPercentage}"></div>
+											<div class="volume yellow"></div>
 										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Min</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Sec</div>
+									</div>
+									<div class="w-layout-vflex coin-table-top-wrap width200 flex-down">
+										<div class="coin-txt-table semibold">${item.nextUnlockAmount}</div>
+										<div class="inter _12s normal _61co">${item.nextUnlockValue} (<spring:message code="tokenUnlocks.totalLockedOf" /> ${item.nextUnlockPercentage}%)</div>
+									</div>
+									<div class="w-layout-vflex coin-table-top-wrap width200">
+										<div class="w-layout-vflex coin-unlocks-box">
+											<div class="token-unlock-date">
+												<div class="coin-txt-table semibold">${item.days}</div>
+												<div class="inter _12s normal _61co">Days</div>
+											</div>
+											<div class="token-unlock-date">
+												<div class="coin-txt-table semibold">${item.hours}</div>
+												<div class="inter _12s normal _61co">Hrs</div>
+											</div>
+											<div class="token-unlock-date">
+												<div class="coin-txt-table semibold">${item.minutes}</div>
+												<div class="inter _12s normal _61co">Min</div>
+											</div>
+											<div class="token-unlock-date">
+												<div class="coin-txt-table semibold">${item.seconds}</div>
+												<div class="inter _12s normal _61co">Sec</div>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="list">
-								<div class="interest-box star-err"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table">₩1,285.34</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume green"></div>
-										<div class="volume yellow"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200 flex-down">
-									<div class="coin-txt-table semibold">240M RED</div>
-									<div class="inter _12s normal _61co">₩305.31B (총 잠금량의 24.00%)</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="w-layout-vflex coin-unlocks-box">
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Days</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Hrs</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Min</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Sec</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="list">
-								<div class="interest-box star-err"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table">₩1,285.34</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume green"></div>
-										<div class="volume yellow"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200 flex-down">
-									<div class="coin-txt-table semibold">240M RED</div>
-									<div class="inter _12s normal _61co">₩305.31B (총 잠금량의 24.00%)</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="w-layout-vflex coin-unlocks-box">
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Days</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Hrs</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Min</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Sec</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="list">
-								<div class="interest-box star-err"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table">₩1,285.34</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume green"></div>
-										<div class="volume yellow"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200 flex-down">
-									<div class="coin-txt-table semibold">240M RED</div>
-									<div class="inter _12s normal _61co">₩305.31B (총 잠금량의 24.00%)</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="w-layout-vflex coin-unlocks-box">
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Days</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Hrs</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Min</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Sec</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="list">
-								<div class="interest-box star-err"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table">₩1,285.34</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume green"></div>
-										<div class="volume yellow"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200 flex-down">
-									<div class="coin-txt-table semibold">240M RED</div>
-									<div class="inter _12s normal _61co">₩305.31B (총 잠금량의 24.00%)</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="w-layout-vflex coin-unlocks-box">
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Days</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Hrs</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Min</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Sec</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="list">
-								<div class="interest-box star-err"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table">₩1,285.34</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume green"></div>
-										<div class="volume yellow"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200 flex-down">
-									<div class="coin-txt-table semibold">240M RED</div>
-									<div class="inter _12s normal _61co">₩305.31B (총 잠금량의 24.00%)</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="w-layout-vflex coin-unlocks-box">
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Days</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Hrs</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Min</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Sec</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="list">
-								<div class="interest-box star-err"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table">₩1,285.34</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume green"></div>
-										<div class="volume yellow"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200 flex-down">
-									<div class="coin-txt-table semibold">240M RED</div>
-									<div class="inter _12s normal _61co">₩305.31B (총 잠금량의 24.00%)</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="w-layout-vflex coin-unlocks-box">
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Days</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Hrs</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Min</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Sec</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="list">
-								<div class="interest-box star-err"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table">₩1,285.34</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume green"></div>
-										<div class="volume yellow"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200 flex-down">
-									<div class="coin-txt-table semibold">240M RED</div>
-									<div class="inter _12s normal _61co">₩305.31B (총 잠금량의 24.00%)</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="w-layout-vflex coin-unlocks-box">
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Days</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Hrs</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Min</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Sec</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="list">
-								<div class="interest-box star-err"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table">₩1,285.34</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume green"></div>
-										<div class="volume yellow"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200 flex-down">
-									<div class="coin-txt-table semibold">240M RED</div>
-									<div class="inter _12s normal _61co">₩305.31B (총 잠금량의 24.00%)</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="w-layout-vflex coin-unlocks-box">
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Days</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Hrs</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Min</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Sec</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="list">
-								<div class="interest-box star-err"></div>
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap name">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table">₩1,285.34</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width85">
-									<div class="coin-txt-table rate-icon up">0.72%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="coin-txt-table">₩1,241,249,730,128</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width150 flex-down">
-									<div class="coin-txt-table semibold">986.06T BTT</div>
-									<div class="block-coin">
-										<div class="volume green"></div>
-										<div class="volume yellow"></div>
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200 flex-down">
-									<div class="coin-txt-table semibold">240M RED</div>
-									<div class="inter _12s normal _61co">₩305.31B (총 잠금량의 24.00%)</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="w-layout-vflex coin-unlocks-box">
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Days</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Hrs</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Min</div>
-										</div>
-										<div class="token-unlock-date">
-											<div class="coin-txt-table semibold">0</div>
-											<div class="inter _12s normal _61co">Sec</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							</c:forEach>
 						</div>
 					</div>
 					<div class="table-bottom">

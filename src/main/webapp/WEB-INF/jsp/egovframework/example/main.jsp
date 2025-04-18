@@ -224,7 +224,7 @@
 								</div>
 								<div class="m-o-card-alt">
 									<div class="inter _25s bold">
-										38<span class="text-span-4">/ 100</span>
+										${altcoinValue}<span class="text-span-4">/ 100</span>
 									</div>
 									<div class="season-box">
 										<div class="txt-space-between">
@@ -242,7 +242,7 @@
 												<div class="season-block color-c"></div>
 												<div class="season-block color-d"></div>
 											</div>
-											<div class="status-circle">
+											<div class="status-circle" style="left:${altcoinValue}%">
 												<div class="black-circle"></div>
 											</div>
 										</div>
@@ -431,7 +431,7 @@
 											<div class="volume"></div>
 										</div>
 									</div>
-									<div class="w-layout-vflex coin-table-top-wrap width180 graph"></div>
+									<div class="w-layout-vflex coin-table-top-wrap width180 graph" style="background-image:url('${item.sparklineImg}')"></div>
 								</div>
 							</c:forEach>
 						</div>
@@ -1276,6 +1276,10 @@
 	<script src="/cmc/js/readmore.js" type="text/javascript"></script>
 	<script src="/cmc/js/fear-and-greed.js" type="text/javascript"></script>
 	<script>
+		$(function(){
+			let fgv = '${fearGreedMeterValue}';
+			updateCirclePosition(Number(fgv));
+		})
 		function triggerPopupFilter() {
 		    // 모든 popupbox 요소 선택
 		    var popupboxes = document.querySelectorAll('.popupbox');

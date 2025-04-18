@@ -15,10 +15,22 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import egovframework.example.sample.model.Ai;
+import egovframework.example.sample.model.Aiagent;
 import egovframework.example.sample.model.Category;
+import egovframework.example.sample.model.Defai;
+import egovframework.example.sample.model.Depin;
+import egovframework.example.sample.model.Dot;
+import egovframework.example.sample.model.Gaming;
 import egovframework.example.sample.model.Global;
 import egovframework.example.sample.model.Main;
+import egovframework.example.sample.model.Memes;
 import egovframework.example.sample.model.Nft;
+import egovframework.example.sample.model.Rehypo;
+import egovframework.example.sample.model.Sol;
+import egovframework.example.sample.model.Token;
+import egovframework.example.sample.model.Usa;
+import egovframework.example.sample.model.Yield;
 import egovframework.example.sample.web.utils.Log;
 import egovframework.rte.psl.dataaccess.util.EgovMap;	
 
@@ -30,7 +42,18 @@ public class Scheduler {
             "http://localhost:3000/main"
     		,"http://localhost:3000/nft"
     		,"http://localhost:3000/cate"
-            // 필요한 다른 API 엔드포인트들 추가
+    		,"http://localhost:3000/token"
+    		,"http://localhost:3000/rehypo"
+    		,"http://localhost:3000/dot"
+    		,"http://localhost:3000/aiagent"
+    		,"http://localhost:3000/depin"
+    		,"http://localhost:3000/defai"
+    		,"http://localhost:3000/usa"
+    		,"http://localhost:3000/memes"
+    		,"http://localhost:3000/ai"
+    		,"http://localhost:3000/gaming"
+    		,"http://localhost:3000/sql"
+    		,"http://localhost:3000/yield"
     );
     
     // API 처리 함수 맵
@@ -231,6 +254,633 @@ public class Scheduler {
                 Category.setList(list);
         	} catch (Exception e) {
         		Log.print("cate API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/token", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("token API 데이터 처리 완료" + data, "call");
+        		JsonNode tokenlist = data.path("tokenUnlockData");
+                List<EgovMap> list = new ArrayList<>();
+                for(JsonNode t : tokenlist){
+                	EgovMap in = new EgovMap();
+                	in.put("rank" , t.path("rank").asText());
+                	in.put("name" , t.path("name").asText());
+                	in.put("symbol" , t.path("symbol").asText());
+                	in.put("imageUrl" , t.path("imageUrl").asText());
+                	in.put("price" , t.path("price").asText());
+                	in.put("priceChange24h" , t.path("priceChange24h").asText());
+                	in.put("priceChangeDirection" , t.path("priceChangeDirection").asText());
+                	in.put("marketCapLong" , t.path("marketCapLong").asText());
+                	in.put("circulatingSupplyValue" , t.path("circulatingSupplyValue").asText());
+                	in.put("circulatingSupplySymbol" , t.path("circulatingSupplySymbol").asText());
+                	in.put("circulatingSupplyPercentage" , t.path("circulatingSupplyPercentage").asText());
+                	in.put("unlockProgressPercentage" , t.path("unlockProgressPercentage").asText());
+                	in.put("nextUnlockAmount" , t.path("nextUnlockAmount").asText());
+                	in.put("nextUnlockValue" , t.path("nextUnlockValue").asText());
+                	in.put("nextUnlockPercentage" , t.path("nextUnlockPercentage").asText());
+                	JsonNode count = t.path("countdown");
+                	in.put("days" , count.path("days").asText());
+                	in.put("hours" , count.path("hours").asText());
+                	in.put("minutes" , count.path("minutes").asText());
+                	in.put("seconds" , count.path("seconds").asText());
+                	list.add(in);
+                }
+                Token.setList(list);
+        	} catch (Exception e) {
+        		Log.print("token API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/rehypo", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("rehypo API 데이터 처리 완료" + data, "call");
+        		JsonNode marketOverview = data.path("marketOverview");
+                Rehypo.setMarketCap(marketOverview.path("marketCap").asText());
+                Rehypo.setmarketCapChange(marketOverview.path("marketCapChange").asText());
+                Rehypo.setMarketCapChangeDirection(marketOverview.path("marketCapChangeDirection").asText());
+                Rehypo.setMarketCapChartUrl(marketOverview.path("marketCapChartUrl").asText());
+                Rehypo.setVolume(marketOverview.path("volume").asText());
+                Rehypo.setVolumeChange(marketOverview.path("volumeChange").asText());
+                Rehypo.setVolumeChangeDirection(marketOverview.path("volumeChangeDirection").asText());
+                Rehypo.setVolumeChartUrl(marketOverview.path("volumeChartUrl").asText());
+                
+                JsonNode coins = data.path("coins");
+                List<EgovMap> list = new ArrayList<>();
+                for(JsonNode c : coins){
+                	EgovMap in = new EgovMap();
+                	in.put("rank" , c.path("rank").asText());
+                	in.put("name" , c.path("name").asText());
+                	in.put("symbol" , c.path("symbol").asText());
+                	in.put("imageUrl" , c.path("imageUrl").asText());
+                	in.put("price" , c.path("price").asText());
+                	in.put("change1h" , c.path("change1h").asText());
+                	in.put("change1hDirection" , c.path("change1hDirection").asText());
+                	in.put("change24h" , c.path("change24h").asText());
+                	in.put("change24hDirection" , c.path("change24hDirection").asText());
+                	in.put("change7d" , c.path("change7d").asText());
+                	in.put("change7dDirection" , c.path("change7dDirection").asText());
+                	in.put("marketCapLong" , c.path("marketCapLong").asText());
+                	in.put("volume24h" , c.path("volume24h").asText());
+                	in.put("volume24hCoin" , c.path("volume24hCoin").asText());
+                	in.put("circulatingSupplyValue" , c.path("circulatingSupplyValue").asText());
+                	in.put("circulatingSupplySymbol" , c.path("circulatingSupplySymbol").asText());
+                	in.put("chartImageUrl" , c.path("chartImageUrl").asText());
+                	list.add(in);
+                }
+                Rehypo.setList(list);
+
+        	} catch (Exception e) {
+        		Log.print("rehypo API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/dot", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("dot API 데이터 처리 완료" + data, "call");
+        		JsonNode marketOverview = data.path("marketOverview");
+        		Dot.setMarketCap(marketOverview.path("marketCap").asText());
+        		Dot.setmarketCapChange(marketOverview.path("marketCapChange").asText());
+        		Dot.setMarketCapChangeDirection(marketOverview.path("marketCapChangeDirection").asText());
+        		Dot.setMarketCapChartUrl(marketOverview.path("marketCapChartUrl").asText());
+        		Dot.setVolume(marketOverview.path("volume").asText());
+        		Dot.setVolumeChange(marketOverview.path("volumeChange").asText());
+        		Dot.setVolumeChangeDirection(marketOverview.path("volumeChangeDirection").asText());
+        		Dot.setVolumeChartUrl(marketOverview.path("volumeChartUrl").asText());
+        		
+        		JsonNode coins = data.path("coins");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : coins){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("symbol" , c.path("symbol").asText());
+        			in.put("imageUrl" , c.path("imageUrl").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change1h" , c.path("change1h").asText());
+        			in.put("change1hDirection" , c.path("change1hDirection").asText());
+        			in.put("change24h" , c.path("change24h").asText());
+        			in.put("change24hDirection" , c.path("change24hDirection").asText());
+        			in.put("change7d" , c.path("change7d").asText());
+        			in.put("change7dDirection" , c.path("change7dDirection").asText());
+        			in.put("marketCapLong" , c.path("marketCapLong").asText());
+        			in.put("volume24h" , c.path("volume24h").asText());
+        			in.put("volume24hCoin" , c.path("volume24hCoin").asText());
+        			in.put("circulatingSupplyValue" , c.path("circulatingSupplyValue").asText());
+        			in.put("circulatingSupplySymbol" , c.path("circulatingSupplySymbol").asText());
+        			in.put("chartImageUrl" , c.path("chartImageUrl").asText());
+        			list.add(in);
+        		}
+        		Dot.setList(list);
+        		
+        	} catch (Exception e) {
+        		Log.print("dot API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/aiagent", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("aiagent API 데이터 처리 완료" + data, "call");
+        		JsonNode marketOverview = data.path("marketOverview");
+        		Aiagent.setMarketCap(marketOverview.path("marketCap").asText());
+        		Aiagent.setmarketCapChange(marketOverview.path("marketCapChange").asText());
+        		Aiagent.setMarketCapChangeDirection(marketOverview.path("marketCapChangeDirection").asText());
+        		Aiagent.setMarketCapChartUrl(marketOverview.path("marketCapChartUrl").asText());
+        		Aiagent.setVolume(marketOverview.path("volume").asText());
+        		Aiagent.setVolumeChange(marketOverview.path("volumeChange").asText());
+        		Aiagent.setVolumeChangeDirection(marketOverview.path("volumeChangeDirection").asText());
+        		Aiagent.setVolumeChartUrl(marketOverview.path("volumeChartUrl").asText());
+        		
+        		JsonNode coins = data.path("coins");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : coins){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("symbol" , c.path("symbol").asText());
+        			in.put("imageUrl" , c.path("imageUrl").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change1h" , c.path("change1h").asText());
+        			in.put("change1hDirection" , c.path("change1hDirection").asText());
+        			in.put("change24h" , c.path("change24h").asText());
+        			in.put("change24hDirection" , c.path("change24hDirection").asText());
+        			in.put("change7d" , c.path("change7d").asText());
+        			in.put("change7dDirection" , c.path("change7dDirection").asText());
+        			in.put("marketCapLong" , c.path("marketCapLong").asText());
+        			in.put("volume24h" , c.path("volume24h").asText());
+        			in.put("volume24hCoin" , c.path("volume24hCoin").asText());
+        			in.put("circulatingSupplyValue" , c.path("circulatingSupplyValue").asText());
+        			in.put("circulatingSupplySymbol" , c.path("circulatingSupplySymbol").asText());
+        			in.put("chartImageUrl" , c.path("chartImageUrl").asText());
+        			list.add(in);
+        		}
+        		Aiagent.setList(list);
+        		
+        	} catch (Exception e) {
+        		Log.print("aiagent API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/depin", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("depin API 데이터 처리 완료" + data, "call");
+        		JsonNode marketOverview = data.path("marketOverview");
+        		Depin.setMarketCap(marketOverview.path("marketCap").asText());
+        		Depin.setmarketCapChange(marketOverview.path("marketCapChange").asText());
+        		Depin.setMarketCapChangeDirection(marketOverview.path("marketCapChangeDirection").asText());
+        		Depin.setMarketCapChartUrl(marketOverview.path("marketCapChartUrl").asText());
+        		Depin.setVolume(marketOverview.path("volume").asText());
+        		Depin.setVolumeChange(marketOverview.path("volumeChange").asText());
+        		Depin.setVolumeChangeDirection(marketOverview.path("volumeChangeDirection").asText());
+        		Depin.setVolumeChartUrl(marketOverview.path("volumeChartUrl").asText());
+        		
+        		JsonNode coins = data.path("coins");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : coins){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("symbol" , c.path("symbol").asText());
+        			in.put("imageUrl" , c.path("imageUrl").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change1h" , c.path("change1h").asText());
+        			in.put("change1hDirection" , c.path("change1hDirection").asText());
+        			in.put("change24h" , c.path("change24h").asText());
+        			in.put("change24hDirection" , c.path("change24hDirection").asText());
+        			in.put("change7d" , c.path("change7d").asText());
+        			in.put("change7dDirection" , c.path("change7dDirection").asText());
+        			in.put("marketCapLong" , c.path("marketCapLong").asText());
+        			in.put("volume24h" , c.path("volume24h").asText());
+        			in.put("volume24hCoin" , c.path("volume24hCoin").asText());
+        			in.put("circulatingSupplyValue" , c.path("circulatingSupplyValue").asText());
+        			in.put("circulatingSupplySymbol" , c.path("circulatingSupplySymbol").asText());
+        			in.put("chartImageUrl" , c.path("chartImageUrl").asText());
+        			list.add(in);
+        		}
+        		Depin.setList(list);
+        		
+        	} catch (Exception e) {
+        		Log.print("depin API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/defai", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("defai API 데이터 처리 완료" + data, "call");
+        		JsonNode marketOverview = data.path("marketOverview");
+        		Defai.setMarketCap(marketOverview.path("marketCap").asText());
+        		Defai.setmarketCapChange(marketOverview.path("marketCapChange").asText());
+        		Defai.setMarketCapChangeDirection(marketOverview.path("marketCapChangeDirection").asText());
+        		Defai.setMarketCapChartUrl(marketOverview.path("marketCapChartUrl").asText());
+        		Defai.setVolume(marketOverview.path("volume").asText());
+        		Defai.setVolumeChange(marketOverview.path("volumeChange").asText());
+        		Defai.setVolumeChangeDirection(marketOverview.path("volumeChangeDirection").asText());
+        		Defai.setVolumeChartUrl(marketOverview.path("volumeChartUrl").asText());
+        		
+        		JsonNode coins = data.path("coins");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : coins){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("symbol" , c.path("symbol").asText());
+        			in.put("imageUrl" , c.path("imageUrl").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change1h" , c.path("change1h").asText());
+        			in.put("change1hDirection" , c.path("change1hDirection").asText());
+        			in.put("change24h" , c.path("change24h").asText());
+        			in.put("change24hDirection" , c.path("change24hDirection").asText());
+        			in.put("change7d" , c.path("change7d").asText());
+        			in.put("change7dDirection" , c.path("change7dDirection").asText());
+        			in.put("marketCapLong" , c.path("marketCapLong").asText());
+        			in.put("volume24h" , c.path("volume24h").asText());
+        			in.put("volume24hCoin" , c.path("volume24hCoin").asText());
+        			in.put("circulatingSupplyValue" , c.path("circulatingSupplyValue").asText());
+        			in.put("circulatingSupplySymbol" , c.path("circulatingSupplySymbol").asText());
+        			in.put("chartImageUrl" , c.path("chartImageUrl").asText());
+        			list.add(in);
+        		}
+        		Defai.setList(list);
+        		
+        	} catch (Exception e) {
+        		Log.print("defai API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/usa", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("usa API 데이터 처리 완료" + data, "call");
+        		JsonNode marketOverview = data.path("marketOverview");
+        		Usa.setMarketCap(marketOverview.path("marketCap").asText());
+        		Usa.setmarketCapChange(marketOverview.path("marketCapChange").asText());
+        		Usa.setMarketCapChangeDirection(marketOverview.path("marketCapChangeDirection").asText());
+        		Usa.setMarketCapChartUrl(marketOverview.path("marketCapChartUrl").asText());
+        		Usa.setVolume(marketOverview.path("volume").asText());
+        		Usa.setVolumeChange(marketOverview.path("volumeChange").asText());
+        		Usa.setVolumeChangeDirection(marketOverview.path("volumeChangeDirection").asText());
+        		Usa.setVolumeChartUrl(marketOverview.path("volumeChartUrl").asText());
+        		
+        		JsonNode coins = data.path("coins");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : coins){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("symbol" , c.path("symbol").asText());
+        			in.put("imageUrl" , c.path("imageUrl").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change1h" , c.path("change1h").asText());
+        			in.put("change1hDirection" , c.path("change1hDirection").asText());
+        			in.put("change24h" , c.path("change24h").asText());
+        			in.put("change24hDirection" , c.path("change24hDirection").asText());
+        			in.put("change7d" , c.path("change7d").asText());
+        			in.put("change7dDirection" , c.path("change7dDirection").asText());
+        			in.put("marketCapLong" , c.path("marketCapLong").asText());
+        			in.put("volume24h" , c.path("volume24h").asText());
+        			in.put("volume24hCoin" , c.path("volume24hCoin").asText());
+        			in.put("circulatingSupplyValue" , c.path("circulatingSupplyValue").asText());
+        			in.put("circulatingSupplySymbol" , c.path("circulatingSupplySymbol").asText());
+        			in.put("chartImageUrl" , c.path("chartImageUrl").asText());
+        			list.add(in);
+        		}
+        		Usa.setList(list);
+        		
+        	} catch (Exception e) {
+        		Log.print("usa API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/memes", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("memes API 데이터 처리 완료" + data, "call");
+        		
+        		JsonNode topGainers = data.path("topGainers");
+        		JsonNode topGainersItems = topGainers.path("items");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode t : topGainersItems){
+        			EgovMap in = new EgovMap();
+        			in.put("symbol", t.path("symbol").asText());
+        			in.put("change", t.path("change").asText());
+        			in.put("direction", t.path("direction").asText());
+        			list.add(in);
+        		}
+        		Memes.setToplist(list);
+        		
+        		JsonNode marketCap = data.path("marketCap");
+        		JsonNode md = marketCap.path("data");
+        		Memes.setMarketCap(md.path("value").asText());
+        		Memes.setMarketCapChange(md.path("change").asText());
+        		Memes.setMarketCapDirection(md.path("direction").asText());
+        		
+        		JsonNode volume = marketCap.path("volume");
+        		Memes.setVolume(volume.path("value").asText());
+        		Memes.setVolumeChange(volume.path("change").asText());
+        		Memes.setVolumeDirection(volume.path("direction").asText());
+
+        		JsonNode mostVisited = data.path("mostVisited");
+        		JsonNode mostVisitedItems = mostVisited.path("items");
+        		list = new ArrayList<>();
+        		for(JsonNode t : mostVisitedItems){
+        			EgovMap in = new EgovMap();
+        			in.put("rank", t.path("rank").asText());
+        			in.put("symbol", t.path("symbol").asText());
+        			in.put("logoUrl", t.path("logoUrl").asText());
+        			in.put("price", t.path("price").asText());
+        			in.put("direction", t.path("direction").asText());
+        			in.put("change", t.path("change").asText());
+        			list.add(in);
+        		}
+        		Memes.setVisitlist(list);
+        		
+        		JsonNode memeCoins = data.path("memeCoins");
+        		list = new ArrayList<>();
+        		for(JsonNode t : memeCoins){
+        			EgovMap in = new EgovMap();
+        			in.put("rank", t.path("rank").asText());
+        			in.put("name", t.path("name").asText());
+        			in.put("symbol", t.path("symbol").asText());
+        			in.put("logoUrl", t.path("logoUrl").asText());
+        			in.put("price", t.path("price").asText());
+        			in.put("hour1Change", t.path("hour1Change").asText());
+        			in.put("hour1ChangeDirection", t.path("hour1ChangeDirection").asText());
+        			in.put("hour24Change", t.path("hour24Change").asText());
+        			in.put("hour24ChangeDirection", t.path("hour24ChangeDirection").asText());
+        			in.put("day7Change", t.path("day7Change").asText());
+        			in.put("day7ChangeDirection", t.path("day7ChangeDirection").asText());
+        			in.put("marketCapFull", t.path("marketCapFull").asText());
+        			in.put("volume24h", t.path("volume24h").asText());
+        			in.put("volume24hCoin", t.path("volume24hCoin").asText());
+        			in.put("circulatingSupply", t.path("circulatingSupply").asText());
+        			in.put("priceChart7d", t.path("priceChart7d").asText());
+        			list.add(in);
+        		}
+        		Memes.setList(list);
+        	} catch (Exception e) {
+        		Log.print("memes API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/ai", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("ai API 데이터 처리 완료" + data, "call");
+        		
+        		JsonNode topGainers = data.path("topGainers");
+        		JsonNode topGainersItems = topGainers.path("items");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode t : topGainersItems){
+        			EgovMap in = new EgovMap();
+        			in.put("symbol", t.path("symbol").asText());
+        			in.put("change", t.path("change").asText());
+        			in.put("direction", t.path("direction").asText());
+        			list.add(in);
+        		}
+        		Ai.setToplist(list);
+        		
+        		JsonNode marketCap = data.path("marketCap");
+        		JsonNode md = marketCap.path("data");
+        		Ai.setMarketCap(md.path("value").asText());
+        		Ai.setMarketCapChange(md.path("change").asText());
+        		Ai.setMarketCapDirection(md.path("direction").asText());
+        		
+        		JsonNode volume = marketCap.path("volume");
+        		Ai.setVolume(volume.path("value").asText());
+        		Ai.setVolumeChange(volume.path("change").asText());
+        		Ai.setVolumeDirection(volume.path("direction").asText());
+        		
+        		JsonNode mostVisited = data.path("mostVisited");
+        		JsonNode mostVisitedItems = mostVisited.path("items");
+        		list = new ArrayList<>();
+        		for(JsonNode t : mostVisitedItems){
+        			EgovMap in = new EgovMap();
+        			in.put("rank", t.path("rank").asText());
+        			in.put("symbol", t.path("symbol").asText());
+        			in.put("logoUrl", t.path("logoUrl").asText());
+        			in.put("price", t.path("price").asText());
+        			in.put("direction", t.path("direction").asText());
+        			in.put("change", t.path("change").asText());
+        			list.add(in);
+        		}
+        		Ai.setVisitlist(list);
+        		
+        		JsonNode memeCoins = data.path("aiCoins");
+        		list = new ArrayList<>();
+        		for(JsonNode t : memeCoins){
+        			EgovMap in = new EgovMap();
+        			in.put("rank", t.path("rank").asText());
+        			in.put("name", t.path("name").asText());
+        			in.put("symbol", t.path("symbol").asText());
+        			in.put("logoUrl", t.path("logoUrl").asText());
+        			in.put("price", t.path("price").asText());
+        			in.put("hour1Change", t.path("hour1Change").asText());
+        			in.put("hour1ChangeDirection", t.path("hour1ChangeDirection").asText());
+        			in.put("hour24Change", t.path("hour24Change").asText());
+        			in.put("hour24ChangeDirection", t.path("hour24ChangeDirection").asText());
+        			in.put("day7Change", t.path("day7Change").asText());
+        			in.put("day7ChangeDirection", t.path("day7ChangeDirection").asText());
+        			in.put("marketCapFull", t.path("marketCapFull").asText());
+        			in.put("volume24h", t.path("volume24h").asText());
+        			in.put("volume24hCoin", t.path("volume24hCoin").asText());
+        			in.put("circulatingSupply", t.path("circulatingSupply").asText());
+        			in.put("priceChart7d", t.path("priceChart7d").asText());
+        			list.add(in);
+        		}
+        		Ai.setList(list);
+        	} catch (Exception e) {
+        		Log.print("ai API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/gaming", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("gaming API 데이터 처리 완료" + data, "call");
+        		
+        		JsonNode topGgamingners = data.path("topGgamingners");
+        		JsonNode topGgamingnersItems = topGgamingners.path("items");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode t : topGgamingnersItems){
+        			EgovMap in = new EgovMap();
+        			in.put("symbol", t.path("symbol").asText());
+        			in.put("change", t.path("change").asText());
+        			in.put("direction", t.path("direction").asText());
+        			list.add(in);
+        		}
+        		Gaming.setToplist(list);
+        		
+        		JsonNode marketCap = data.path("marketCap");
+        		JsonNode md = marketCap.path("data");
+        		Gaming.setMarketCap(md.path("value").asText());
+        		Gaming.setMarketCapChange(md.path("change").asText());
+        		Gaming.setMarketCapDirection(md.path("direction").asText());
+        		
+        		JsonNode volume = marketCap.path("volume");
+        		Gaming.setVolume(volume.path("value").asText());
+        		Gaming.setVolumeChange(volume.path("change").asText());
+        		Gaming.setVolumeDirection(volume.path("direction").asText());
+        		
+        		JsonNode mostVisited = data.path("mostVisited");
+        		JsonNode mostVisitedItems = mostVisited.path("items");
+        		list = new ArrayList<>();
+        		for(JsonNode t : mostVisitedItems){
+        			EgovMap in = new EgovMap();
+        			in.put("rank", t.path("rank").asText());
+        			in.put("symbol", t.path("symbol").asText());
+        			in.put("logoUrl", t.path("logoUrl").asText());
+        			in.put("price", t.path("price").asText());
+        			in.put("direction", t.path("direction").asText());
+        			in.put("change", t.path("change").asText());
+        			list.add(in);
+        		}
+        		Gaming.setVisitlist(list);
+        		
+        		JsonNode memeCoins = data.path("gaming");
+        		list = new ArrayList<>();
+        		for(JsonNode t : memeCoins){
+        			EgovMap in = new EgovMap();
+        			in.put("rank", t.path("rank").asText());
+        			in.put("name", t.path("name").asText());
+        			in.put("symbol", t.path("symbol").asText());
+        			in.put("logoUrl", t.path("logoUrl").asText());
+        			in.put("price", t.path("price").asText());
+        			in.put("hour1Change", t.path("hour1Change").asText());
+        			in.put("hour1ChangeDirection", t.path("hour1ChangeDirection").asText());
+        			in.put("hour24Change", t.path("hour24Change").asText());
+        			in.put("hour24ChangeDirection", t.path("hour24ChangeDirection").asText());
+        			in.put("day7Change", t.path("day7Change").asText());
+        			in.put("day7ChangeDirection", t.path("day7ChangeDirection").asText());
+        			in.put("marketCapFull", t.path("marketCapFull").asText());
+        			in.put("volume24h", t.path("volume24h").asText());
+        			in.put("volume24hCoin", t.path("volume24hCoin").asText());
+        			in.put("circulatingSupply", t.path("circulatingSupply").asText());
+        			in.put("priceChart7d", t.path("priceChart7d").asText());
+        			list.add(in);
+        		}
+        		Gaming.setList(list);
+        	} catch (Exception e) {
+        		Log.print("gaming API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/sql", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("sql API 데이터 처리 완료" + data, "call");
+        		
+        		JsonNode topGainers = data.path("topGainers");
+        		JsonNode topGainersItems = topGainers.path("items");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode t : topGainersItems){
+        			EgovMap in = new EgovMap();
+        			in.put("symbol", t.path("symbol").asText());
+        			in.put("change", t.path("change").asText());
+        			in.put("direction", t.path("direction").asText());
+        			list.add(in);
+        		}
+        		Sol.setToplist(list);
+        		
+        		JsonNode marketCap = data.path("marketCap");
+        		JsonNode md = marketCap.path("data");
+        		Sol.setMarketCap(md.path("value").asText());
+        		Sol.setMarketCapChange(md.path("change").asText());
+        		Sol.setMarketCapDirection(md.path("direction").asText());
+        		
+        		JsonNode volume = marketCap.path("volume");
+        		Sol.setVolume(volume.path("value").asText());
+        		Sol.setVolumeChange(volume.path("change").asText());
+        		Sol.setVolumeDirection(volume.path("direction").asText());
+        		
+        		JsonNode mostVisited = data.path("mostVisited");
+        		JsonNode mostVisitedItems = mostVisited.path("items");
+        		list = new ArrayList<>();
+        		for(JsonNode t : mostVisitedItems){
+        			EgovMap in = new EgovMap();
+        			in.put("rank", t.path("rank").asText());
+        			in.put("symbol", t.path("symbol").asText());
+        			in.put("logoUrl", t.path("logoUrl").asText());
+        			in.put("price", t.path("price").asText());
+        			in.put("direction", t.path("direction").asText());
+        			in.put("change", t.path("change").asText());
+        			list.add(in);
+        		}
+        		Sol.setVisitlist(list);
+        		
+        		JsonNode memeCoins = data.path("sqlCoins");
+        		list = new ArrayList<>();
+        		for(JsonNode t : memeCoins){
+        			EgovMap in = new EgovMap();
+        			in.put("rank", t.path("rank").asText());
+        			in.put("name", t.path("name").asText());
+        			in.put("symbol", t.path("symbol").asText());
+        			in.put("logoUrl", t.path("logoUrl").asText());
+        			in.put("price", t.path("price").asText());
+        			in.put("hour1Change", t.path("hour1Change").asText());
+        			in.put("hour1ChangeDirection", t.path("hour1ChangeDirection").asText());
+        			in.put("hour24Change", t.path("hour24Change").asText());
+        			in.put("hour24ChangeDirection", t.path("hour24ChangeDirection").asText());
+        			in.put("day7Change", t.path("day7Change").asText());
+        			in.put("day7ChangeDirection", t.path("day7ChangeDirection").asText());
+        			in.put("marketCapFull", t.path("marketCapFull").asText());
+        			in.put("volume24h", t.path("volume24h").asText());
+        			in.put("volume24hCoin", t.path("volume24hCoin").asText());
+        			in.put("circulatingSupply", t.path("circulatingSupply").asText());
+        			in.put("priceChart7d", t.path("priceChart7d").asText());
+        			list.add(in);
+        		}
+        		Sol.setList(list);
+        	} catch (Exception e) {
+        		Log.print("sql API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/yield", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("yield API 데이터 처리 완료" + data, "call");
+        		
+        		
+        		JsonNode datalist = data.path("yieldFarmingData");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : datalist){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("coinName" , c.path("coinName").asText());
+        			in.put("coinSymbol" , c.path("coinSymbol").asText());
+        			in.put("coinLogoUrl" , c.path("coinLogoUrl").asText());
+        			
+        			List<EgovMap> providers = new ArrayList<>();
+        			JsonNode plist = c.path("providers");
+        			for(JsonNode p : plist){
+        				EgovMap i = new EgovMap();
+        				i.put("logo", p.path("logoUrl").asText());
+        				providers.add(i);
+        			}
+        			in.put("plist", providers);
+        			in.put("additionalProviders" , c.path("additionalProviders").asText());
+        			in.put("netAPY" , c.path("netAPY").asText());
+        			in.put("yieldType" , c.path("yieldType").asText());
+        			in.put("defiCefi" , c.path("defiCefi").asText());
+        			list.add(in);
+        		}
+        		Yield.setList(list);
+        	} catch (Exception e) {
+        		Log.print("yield API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/sample", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("sample API 데이터 처리 완료" + data, "call");
+        		
+        		JsonNode marketOverview = data.path("marketOverview");
+                Rehypo.setMarketCap(marketOverview.path("marketCap").asText());
+
+                JsonNode coins = data.path("coins");
+                List<EgovMap> list = new ArrayList<>();
+                for(JsonNode c : coins){
+                	EgovMap in = new EgovMap();
+                	in.put("rank" , c.path("rank").asText());
+                	list.add(in);
+                }
+                Token.setList(list);
+        	} catch (Exception e) {
+        		Log.print("sample API 데이터 처리 중 오류: " + e.getMessage(), "err");
         	}
         });
     }

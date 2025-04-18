@@ -10,9 +10,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
+import egovframework.example.sample.model.Ai;
+import egovframework.example.sample.model.Aiagent;
 import egovframework.example.sample.model.Category;
+import egovframework.example.sample.model.Defai;
+import egovframework.example.sample.model.Depin;
+import egovframework.example.sample.model.Dot;
+import egovframework.example.sample.model.Gaming;
 import egovframework.example.sample.model.Main;
+import egovframework.example.sample.model.Memes;
 import egovframework.example.sample.model.Nft;
+import egovframework.example.sample.model.Rehypo;
+import egovframework.example.sample.model.Sol;
+import egovframework.example.sample.model.Token;
+import egovframework.example.sample.model.Usa;
+import egovframework.example.sample.model.Yield;
 import egovframework.example.sample.web.utils.Utils;
 
 @Controller
@@ -40,6 +52,7 @@ public class MainController {
 			session.setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, locales);
 			session.setAttribute("lang", lang.toLowerCase());
 		}
+		Scheduler.executeDataFetchJob();
 		request.setAttribute("activeIndicator", "main");
 		Main.addData(model);
 		return "main";
@@ -61,51 +74,61 @@ public class MainController {
 	@RequestMapping("/view/rehypothecated-crypto.do")
 	public String rehypo(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "rehypo");
+		Rehypo.addData(model);
 		return "view/rehypothecated-crypto";
 	}
 	@RequestMapping("/view/memes.do")
 	public String memes(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "memes");
+		Memes.addData(model);
 		return "view/memes";
 	}
 	@RequestMapping("/view/solana-ecosystem.do") 
 	public String sol(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "sol");
+		Sol.addData(model);
 		return "view/solana-ecosystem";
 	}
 	@RequestMapping("/view/polkadot-ecosystem.do")
 	public String dot(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "dot");
+		Dot.addData(model);
 		return "view/polkadot-ecosystem";
 	}
 	@RequestMapping("/view/made-in-americao.do")
 	public String usa(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "madeInUSA");
+		Usa.addData(model);
 		return "view/made-in-america";
 	}
 	@RequestMapping("/view/ai-big-data.do")
 	public String ai(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "ai");
+		Ai.addData(model);
 		return "view/ai-big-data";
 	}
 	@RequestMapping("/view/ai-agents.do")
 	public String aiAgents(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "aiAgents");
+		Aiagent.addData(model);
 		return "view/ai-agents";
 	}
 	@RequestMapping("/view/gaming.do")
 	public String gaming(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "gaming");
+		Gaming.addData(model);
 		return "view/gaming";
 	}
 	@RequestMapping("/view/depin.do")
 	public String depin(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "depin");
+		Depin.addData(model);
 		return "view/depin";
 	}
 	@RequestMapping("/view/defai.do")
 	public String defai(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "defai");
+		Defai.addData(model);
 		return "view/defai";
 	}
 	
@@ -113,8 +136,7 @@ public class MainController {
 	//virtual-assets
 	@RequestMapping("/virtual-assets/category.do")
 	public String category(HttpServletRequest request , Model model){
-		request.setAttribute("activeIndicator", "category");
-		Scheduler.executeDataFetchJob();
+		request.setAttribute("activeIndicator", "category");		
 		Category.addData(model);
 		return "virtual-assets/category";
 	}
@@ -129,10 +151,12 @@ public class MainController {
 	@RequestMapping("/virtual-assets/token-unlocks.do")
 	public String tokenUnlocks(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "tokenUnlocks");
+		Token.addData(model);
 		return "virtual-assets/token-unlocks";
 	}
 	@RequestMapping("/virtual-assets/yield.do")
 	public String yield(HttpServletRequest request , Model model){
+		Yield.addData(model);
 		return "virtual-assets/yield";
 	}
 	
