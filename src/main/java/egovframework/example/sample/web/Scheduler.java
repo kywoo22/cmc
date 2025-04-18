@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.function.Consumer;
 
 import org.springframework.http.ResponseEntity;
@@ -32,6 +35,7 @@ import egovframework.example.sample.model.Sol;
 import egovframework.example.sample.model.Token;
 import egovframework.example.sample.model.Trending;
 import egovframework.example.sample.model.Usa;
+import egovframework.example.sample.model.Visit;
 import egovframework.example.sample.model.Yield;
 import egovframework.example.sample.web.utils.Log;
 import egovframework.rte.psl.dataaccess.util.EgovMap;	
@@ -61,6 +65,7 @@ public class Scheduler {
     		// 리더보드
     		,"http://localhost:3000/gl"
     		,"http://localhost:3000/trending"
+    		,"http://localhost:3000/visit"
     );
     
     // API 처리 함수 맵
@@ -938,6 +943,35 @@ public class Scheduler {
         		Log.print("trending API 데이터 처리 중 오류: " + e.getMessage(), "err");
         	}
         });
+        apiProcessors.put("http://localhost:3000/visit", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("visit API 데이터 처리 완료" + data, "call");
+        		JsonNode coins = data.path("visitCoins");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : coins){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("symbol" , c.path("symbol").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change24hDirection" , c.path("change24hDirection").asText());
+        			in.put("change24h" , c.path("change24h").asText());
+        			in.put("change7dDirection" , c.path("change7dDirection").asText());
+        			in.put("change7d" , c.path("change7d").asText());
+        			in.put("change30dDirection" , c.path("change30dDirection").asText());
+        			in.put("change30d" , c.path("change30d").asText());
+        			in.put("marketCap" , c.path("marketCap").asText());
+        			in.put("volume" , c.path("volume").asText());
+        			in.put("chartImageUrl" , c.path("chartImageUrl").asText());
+        			list.add(in);
+        		}
+        		Visit.setList(list);
+        	} catch (Exception e) {
+        		Log.print("visit API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
         apiProcessors.put("http://localhost:3000/sample", data -> {
         	try {
         		// 다른 API에서 받은 데이터 처리 로직
@@ -964,14 +998,35 @@ public class Scheduler {
     private static final ObjectMapper objectMapper = new ObjectMapper();
     
     // 1시간마다 실행 (cron = "0 0 */1 * * *")
-    @Scheduled(cron = "0 0 */1 * * *")
+    @Scheduled(cron = "0 0 */1 * * *") 
     public static void executeDataFetchJob() {
-        Log.print("Scheduler executeDataFetchJob ... API 데이터 가져오기 시작", "call");
-        
+        Log.print("Scheduler executeDataFetchJob ... 병렬로 API 데이터 가져오기 시작", "call");
+
+        ExecutorService executor = Executors.newFixedThreadPool(10); // 최대 동시 실행 10개
+        List<Future<?>> futures = new ArrayList<>();
+
         for (String apiUrl : API_ENDPOINTS) {
-            fetchDataFromApi(apiUrl);
+            futures.add(executor.submit(() -> {
+                try {
+                    fetchDataFromApi(apiUrl);
+                } catch (Exception e) {
+                    Log.print(apiUrl + " 처리 중 예외 발생: " + e.getMessage(), "err");
+                }
+            }));
         }
+
+        // 모든 작업이 끝날 때까지 대기
+        for (Future<?> future : futures) {
+            try {
+                future.get(); // 작업 완료까지 대기
+            } catch (Exception e) {
+                Log.print("스케줄러 병렬 처리 중 오류: " + e.getMessage(), "err");
+            }
+        }
+
+        executor.shutdown(); // 스레드 풀 종료
     }
+
     
     private static void fetchDataFromApi(String apiUrl) {
         Log.print("API 호출: " + apiUrl, "call");

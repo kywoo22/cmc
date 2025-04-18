@@ -26,6 +26,7 @@ import egovframework.example.sample.model.Sol;
 import egovframework.example.sample.model.Token;
 import egovframework.example.sample.model.Trending;
 import egovframework.example.sample.model.Usa;
+import egovframework.example.sample.model.Visit;
 import egovframework.example.sample.model.Yield;
 import egovframework.example.sample.web.utils.Utils;
 
@@ -177,6 +178,7 @@ public class MainController {
 	@RequestMapping("/leader-board/most-view.do")
 	public String mostview(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "mostView");
+		Visit.addData(model);
 		return "leader-board/most-view";
 	}
 	@RequestMapping("/leader-board/upComing.do")
