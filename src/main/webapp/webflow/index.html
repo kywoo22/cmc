@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Tue Apr 15 2025 05:21:12 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Fri Apr 18 2025 07:02:15 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="67ac1e9d774ae9ae33d5f484" data-wf-site="67ac1e9d774ae9ae33d5f462">
 <head>
   <meta charset="utf-8">
@@ -660,8 +660,8 @@
                     <div class="card-header-title">시가 총액</div><img src="images/arrow_right.svg" loading="lazy" alt="">
                   </a>
                 </div>
-                <div class="card-content-wrap">
-                  <div class="inter _16s bold">$3.14T</div>
+                <div class="card-content-wrap mg-auto">
+                  <div class="inter _24s bold">$3.14T</div>
                   <div class="w-layout-vflex flex-box-l">
                     <div class="fluctuation-rate-img down"></div>
                     <div class="fluctuation-rate-txt down">2.40%</div>
@@ -675,8 +675,8 @@
                     <div class="card-header-title">CMC 100</div><img src="images/arrow_right.svg" loading="lazy" alt="">
                   </a>
                 </div>
-                <div class="card-content-wrap">
-                  <div class="inter _16s bold">$3.14T</div>
+                <div class="card-content-wrap mg-auto">
+                  <div class="inter _24s bold">$3.14T</div>
                   <div class="w-layout-vflex flex-box-l">
                     <div class="fluctuation-rate-img up"></div>
                     <div class="fluctuation-rate-txt up">2.40%</div>
@@ -1218,7 +1218,7 @@
         </div>
       </div>
       <div class="stay-section">
-        <div class="frame">
+        <div class="frame no-max">
           <div class="stay-wrap">
             <div class="inter _32s bold"><strong>Stay on top of crypto. All the time, any time.</strong></div>
             <div class="stay-sub-tt">받은 편지함에서 뉴스, 보상, 상장 등에 대한 Logoname 업데이트를 받아보세요.</div>
@@ -2673,27 +2673,6 @@
         window.addEventListener("resize", updateScrollButtons);
         updateScrollButtons(); // 초기 실행 시 버튼 상태 업데이트
     });
-function updateCirclePosition(value) {
-  const circle = document.getElementById('circle');
-  if (!circle) return;
-  const wrapperWidth = 108;
-  const wrapperHeight = 60;
-  const radius = wrapperWidth / 2;
-  // 각도 조정: 가장자리를 살짝 안쪽으로 (보정값)
-  const startAngle = 8;   // 시작 각도 (좌측)
-  const endAngle = 172;    // 끝 각도 (우측)
-  const angleDeg = startAngle + (value / 100) * (endAngle - startAngle);
-  const angleRad = (angleDeg * Math.PI) / 180;
-  const centerX = wrapperWidth / 2;
-  const centerY = wrapperHeight;
-  const x = centerX + radius * Math.cos(Math.PI - angleRad);
-  const y = centerY - radius * Math.sin(angleRad);
-  circle.style.left = `${x}px`;
-  circle.style.top = `${y}px`;
-}
-document.addEventListener('DOMContentLoaded', () => {
-  updateCirclePosition(35); // 탐욕 수치
-});
 </script>
 </body>
 </html>

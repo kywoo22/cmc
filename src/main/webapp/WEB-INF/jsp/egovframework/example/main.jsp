@@ -163,8 +163,8 @@
 										</div> <img src="webflow/images/arrow_right.svg" loading="lazy" alt="">
 									</a>
 								</div>
-								<div class="card-content-wrap">
-									<div class="inter _16s bold">
+								<div class="card-content-wrap mg-auto">
+									<div class="inter _24s bold">
 										<%-- <spring:message code="currency.symbol" /> --%>
 										${marketCapValue}
 									</div>
@@ -183,8 +183,8 @@
 										</div> <img src="webflow/images/arrow_right.svg" loading="lazy" alt="">
 									</a>
 								</div>
-								<div class="card-content-wrap">
-									<div class="inter _16s bold">
+								<div class="card-content-wrap mg-auto">
+									<div class="inter _24s bold">
 										<%-- <spring:message code="currency.symbol" /> --%>
 										${cmcValue}
 									</div>

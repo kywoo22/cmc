@@ -819,12 +819,9 @@ a {
 }
 
 .coin-graph {
-  background-image: url('../images/chart_image2.png');
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: 100%;
   width: 60px;
   height: 20px;
+  display: none;
 }
 
 .coin-graph.big {
@@ -915,6 +912,11 @@ a {
   flex-flow: column;
   margin-top: 8px;
   display: flex;
+}
+
+.card-content-wrap.mg-auto {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .card-link {
@@ -1300,12 +1302,9 @@ a {
 }
 
 .coin-graph-h2 {
-  background-image: url('../images/chart_image2.png');
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: 100%;
   width: 100%;
   height: 60px;
+  display: none;
 }
 
 .progressbar-wrapper {
@@ -1627,7 +1626,6 @@ a {
   flex-flow: column;
   display: flex;
   overflow: auto;
-  min-height: 200px;
 }
 
 .coin-table.line-top {
@@ -1992,6 +1990,17 @@ a {
   align-items: stretch;
   width: 20%;
   min-width: 200px;
+}
+
+.coin-table-top-wrap.width20per.left {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.coin-table-top-wrap.width20per.flex-down {
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .coin-table-top-wrap.width15per {
@@ -4746,7 +4755,9 @@ a {
   justify-content: center;
   align-items: center;
   width: 15px;
+  min-width: 15px;
   height: 15px;
+  min-height: 15px;
 }
 
 .dx-adress {
@@ -9077,7 +9088,7 @@ a {
 }
 
 .currencies-top {
-  z-index: 104;
+  z-index: 100;
   border-bottom: 1px solid var(--eff-color);
   background-color: var(--white);
   padding-top: 12px;
@@ -10504,8 +10515,7 @@ a {
 .card-info {
   box-shadow: 0 0 5px 0 var(--shadow);
   border-radius: 6px;
-  width: 360px;
-  padding: 12px;
+  padding: 12px 16px;
   display: flex;
 }
 
@@ -10517,7 +10527,8 @@ a {
 }
 
 .graph-info {
-  width: 50%;
+  width: 150px;
+  display: none;
 }
 
 .table-btn-filter {
@@ -13766,7 +13777,7 @@ a {
 }
 @font-face {
   font-family: 'Inter Variablefont Opsz Wght';
-  src: url('../fonts/Inter-VariableFont_opszwght.ttf') format('ttf');
+  src: url('../images/') format('truetype');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
