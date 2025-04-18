@@ -17,12 +17,14 @@ import egovframework.example.sample.model.Defai;
 import egovframework.example.sample.model.Depin;
 import egovframework.example.sample.model.Dot;
 import egovframework.example.sample.model.Gaming;
+import egovframework.example.sample.model.Gl;
 import egovframework.example.sample.model.Main;
 import egovframework.example.sample.model.Memes;
 import egovframework.example.sample.model.Nft;
 import egovframework.example.sample.model.Rehypo;
 import egovframework.example.sample.model.Sol;
 import egovframework.example.sample.model.Token;
+import egovframework.example.sample.model.Trending;
 import egovframework.example.sample.model.Usa;
 import egovframework.example.sample.model.Yield;
 import egovframework.example.sample.web.utils.Utils;
@@ -36,7 +38,7 @@ public class MainController {
 		HttpSession session = request.getSession();
 		String lang = request.getParameter("lang");
 		Locale locales = new Locale(lang);
-		if(Utils.isNull(lang)) lang = "en";
+		if(Utils.isNull(lang)) lang = "ko";
 		session.setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, locales);
 		session.setAttribute("lang", lang.toLowerCase());
 		return "ok";
@@ -47,7 +49,7 @@ public class MainController {
 		HttpSession session = request.getSession();
 		if(session.getAttribute("lang") == null) {
 			String lang = ""+session.getAttribute("lang");
-			lang = "en";
+			lang = "ko";
 			Locale locales = new Locale(lang);
 			session.setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, locales);
 			session.setAttribute("lang", lang.toLowerCase());
@@ -164,6 +166,7 @@ public class MainController {
 	@RequestMapping("/leader-board/trending-cryptocurrencies.do")
 	public String trendingcryptocurrencies(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "trending");
+		Trending.addData(model);
 		return "leader-board/trending-cryptocurrencies";
 	}
 	@RequestMapping("/leader-board/new.do")
@@ -184,6 +187,7 @@ public class MainController {
 	@RequestMapping("/leader-board/gainer-losers.do")
 	public String gainerlosers(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "gainerLosers");
+		Gl.addData(model);
 		return "leader-board/gainer-losers";
 	}
 	@RequestMapping("/leader-board/best-crypto.do")

@@ -22,6 +22,7 @@ import egovframework.example.sample.model.Defai;
 import egovframework.example.sample.model.Depin;
 import egovframework.example.sample.model.Dot;
 import egovframework.example.sample.model.Gaming;
+import egovframework.example.sample.model.Gl;
 import egovframework.example.sample.model.Global;
 import egovframework.example.sample.model.Main;
 import egovframework.example.sample.model.Memes;
@@ -29,6 +30,7 @@ import egovframework.example.sample.model.Nft;
 import egovframework.example.sample.model.Rehypo;
 import egovframework.example.sample.model.Sol;
 import egovframework.example.sample.model.Token;
+import egovframework.example.sample.model.Trending;
 import egovframework.example.sample.model.Usa;
 import egovframework.example.sample.model.Yield;
 import egovframework.example.sample.web.utils.Log;
@@ -39,6 +41,7 @@ public class Scheduler {
 
     // Node.js API 엔드포인트 목록
     private static final List<String> API_ENDPOINTS = Arrays.asList(
+    		// 가상자산 
             "http://localhost:3000/main"
     		,"http://localhost:3000/nft"
     		,"http://localhost:3000/cate"
@@ -54,6 +57,10 @@ public class Scheduler {
     		,"http://localhost:3000/gaming"
     		,"http://localhost:3000/sql"
     		,"http://localhost:3000/yield"
+    		
+    		// 리더보드
+    		,"http://localhost:3000/gl"
+    		,"http://localhost:3000/trending"
     );
     
     // API 처리 함수 맵
@@ -861,6 +868,74 @@ public class Scheduler {
         		Yield.setList(list);
         	} catch (Exception e) {
         		Log.print("yield API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/gl", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("gl API 데이터 처리 완료" + data, "call");
+        		
+        		JsonNode gainers = data.path("gainers");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : gainers){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("symbol" , c.path("symbol").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("changeDirection" , c.path("changeDirection").asText());
+        			in.put("change" , c.path("change").asText());
+        			in.put("volume" , c.path("volume").asText());
+        			list.add(in);
+        		}
+        		Gl.setTopList(list);
+        		JsonNode losers = data.path("losers");
+        		list = new ArrayList<>();
+        		for(JsonNode c : losers){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("symbol" , c.path("symbol").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("changeDirection" , c.path("changeDirection").asText());
+        			in.put("change" , c.path("change").asText());
+        			in.put("volume" , c.path("volume").asText());
+        			list.add(in);
+        		}
+        		Gl.setLowList(list);
+        	} catch (Exception e) {
+        		Log.print("gl API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/trending", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("trending API 데이터 처리 완료" + data, "call");
+        		JsonNode coins = data.path("trendingCoins");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : coins){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("symbol" , c.path("symbol").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change24hDirection" , c.path("change24hDirection").asText());
+        			in.put("change24h" , c.path("change24h").asText());
+        			in.put("change7dDirection" , c.path("change7dDirection").asText());
+        			in.put("change7d" , c.path("change7d").asText());
+        			in.put("change30dDirection" , c.path("change30dDirection").asText());
+        			in.put("change30d" , c.path("change30d").asText());
+        			in.put("marketCap" , c.path("marketCap").asText());
+        			in.put("volume" , c.path("volume").asText());
+        			in.put("chartImageUrl" , c.path("chartImageUrl").asText());
+        			list.add(in);
+        		}
+        		Trending.setList(list);
+        	} catch (Exception e) {
+        		Log.print("trending API 데이터 처리 중 오류: " + e.getMessage(), "err");
         	}
         });
         apiProcessors.put("http://localhost:3000/sample", data -> {
