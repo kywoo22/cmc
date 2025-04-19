@@ -35,12 +35,17 @@ import egovframework.example.sample.model.Nethereum;
 import egovframework.example.sample.model.New;
 import egovframework.example.sample.model.Nft;
 import egovframework.example.sample.model.Nsolana;
+import egovframework.example.sample.model.Ranking;
+import egovframework.example.sample.model.Rankingpast;
 import egovframework.example.sample.model.Rehypo;
 import egovframework.example.sample.model.Sol;
 import egovframework.example.sample.model.Spot;
 import egovframework.example.sample.model.Token;
 import egovframework.example.sample.model.Topgainers;
 import egovframework.example.sample.model.Toploser;
+import egovframework.example.sample.model.Trader;
+import egovframework.example.sample.model.Traderbsc;
+import egovframework.example.sample.model.Tradereth;
 import egovframework.example.sample.model.Trending;
 import egovframework.example.sample.model.Trendingall;
 import egovframework.example.sample.model.Usa;
@@ -333,16 +338,26 @@ public class MainController {
 	@RequestMapping("/dexscan/ranking.do") 
 	public String ranking(HttpServletRequest request , Model model){
 		request.setAttribute("activeMenu", "ranking");
+		Ranking.addData(model);
 		return "dexscan/ranking";
 	}
 	@RequestMapping("/dexscan/past-winners.do") 
 	public String pastwinners(HttpServletRequest request , Model model){
 		request.setAttribute("activeMenu", "pastWinners");
+		Rankingpast.addData(model);
 		return "dexscan/past-winners";
 	}
 	@RequestMapping("/dexscan/top-traders.do") 
 	public String toptraders(HttpServletRequest request , Model model){
 		request.setAttribute("activeMenu", "topTraders");
+		String type = request.getParameter("t");
+		if(Utils.isNull(type))
+			Trader.addData(model);
+		else if (type.equals("e"))
+			Tradereth.addData(model);
+		else if (type.equals("bs"))
+			Traderbsc.addData(model);
+		model.addAttribute("t", type);
 		return "dexscan/top-traders";
 	}
 	

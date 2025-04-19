@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%
+	pageContext.setAttribute("newLineChar", "\n\n");
+%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -103,556 +109,58 @@
 								</div>
 							</div>
 							<div class="dx-table-list-box">
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
+								<c:forEach var="item" items="${list}">
+									<div class="dx-list">
+										<div class="dx-num">
+											<div class="inter _14s">${item.rank }</div>
+										</div>
+										<div class="dx-pair-box">
+											<img src="${item.logoUrl }" loading="lazy" alt="" class="pair-img">
+											<div class="pair-wrap-box flex-left">
+												<div class="inter _14s semibold">
+													${item.baseToken } <span class="txt-user-small">${item.fullName }</span>
+												</div>
 											</div>
 										</div>
-									</div>
-									<div class="dx-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
+										<div class="dx-vote">
+											<div class="vote-wrap">
+												<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb">
+												<div class="inter _14s semibold">${item.upvotes }</div>
+											</div>
+											<div class="vote-wrap">
+												<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb">
+												<div class="inter _14s semibold">${item.downvotes }</div>
 											</div>
 										</div>
-									</div>
-									<div class="dx-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
+										<div class="dx-pool">
 											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
+												${item.poolBaseToken } <span class="inter _12s medium _61co">/${item.quoteToken }</span>
 											</div>
 										</div>
-									</div>
-									<div class="dx-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
+										<div class="dx-dex-box">
+											<img src="${item.chainLogoUrl }" loading="lazy" alt="" class="dex-img">
 										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
+										<div class="dx-price">
+											<div class="inter _14s medium">${item.price }</div>
 										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
+										<div class="dx-time">
+											<div class="fluctuation-rate-img ${item.change24hDirection }"></div>
+											<div class="inter _14s medium ${item.change24hDirection }">${item.change24h }</div>
 										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
+										<div class="dx-txn">
+											<div class="inter _14s">${item.txCount24h }</div>
+										</div>
+										<div class="dx-volume">
+											<div class="inter _14s">${item.volume24h }</div>
+										</div>
+										<div class="dx-capitalization">
+											<div class="inter _14s">${item.liquidity }</div>
+										</div>
+										<div class="dx-fdv">
+											<div class="inter _14s">${item.fdv }</div>
 										</div>
 									</div>
-									<div class="dx-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
+								</c:forEach>
 							</div>
 						</div>
 						<div class="table-bottom mg-auto">

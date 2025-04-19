@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%
+	pageContext.setAttribute("newLineChar", "\n\n");
+%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -32,12 +38,19 @@
 					<div class="dx-table-wrap">
 						<div class="new-pairs-filter">
 							<div class="dx-filter-btn-box">
-								<a href="#" class="dx-filter-btn on w-inline-block"><img src="/cmc/webflow/images/allnetwork.svg" loading="lazy" alt="" class="dx-filter-img all">
+								<a href="/cmc/dexscan/top-traders.do" class="dx-filter-btn ${t == null || t == '' ? 'on' : ''  } w-inline-block"><img src="/cmc/webflow/images/allnetwork.svg" loading="lazy" alt="" class="dx-filter-img all">
 									<div class="inter _14s medium nowrap">
 										<spring:message code="top-trader.allNetwork" />
-									</div> </a> <a href="#" class="dx-filter-btn w-inline-block"><img src="/cmc/webflow/images/eth.svg" loading="lazy" alt="" class="dx-filter-img">
-									<div class="inter _14s medium">Ethereum</div> </a> <a href="#" class="dx-filter-btn w-inline-block"><img src="/cmc/webflow/images/1839.png" loading="lazy" alt="" class="dx-filter-img">
-									<div class="inter _14s medium">BSC</div> </a>
+									</div> 
+								</a> 
+								<a href="/cmc/dexscan/top-traders.do?t=e" class="dx-filter-btn ${t == 'e' ? 'on' : '' } w-inline-block">
+									<img src="/cmc/webflow/images/eth.svg" loading="lazy" alt="" class="dx-filter-img">
+									<div class="inter _14s medium">Ethereum</div> 
+								</a> 
+								<a href="/cmc/dexscan/top-traders.do?t=bs" class="dx-filter-btn ${t == 'e' ? 'bs' : '' } w-inline-block">
+									<img src="/cmc/webflow/images/1839.png" loading="lazy" alt="" class="dx-filter-img">
+									<div class="inter _14s medium">BSC</div> 
+								</a>
 							</div>
 							<div class="dx-filter-dropdown-box">
 								<div data-hover="false" data-delay="0" class="dx-filter-dropdown w-dropdown">
@@ -115,487 +128,46 @@
 								</div>
 							</div>
 							<div class="dx-table-list-box">
-								<div class="dx-list no-point">
-									<div class="dx-num">
-										<div class="inter _12s medium _61co">#</div>
-									</div>
-									<div class="dx-adress">
-										<div class="wallet-address-txt txt-space">0x0dba3423f1dasdddddddsada</div>
-										<img src="/cmc/webflow/images/copy.svg" loading="lazy" alt="" class="address-icon"><img src="/cmc/webflow/images/search.svg" loading="lazy" alt="" class="address-icon">
-									</div>
-									<div class="dx-pair-box">
-										<div class="w-layout-vflex trader-user-info-box">
-											<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img"><img src="/cmc/webflow/images/1839.png" loading="lazy" alt="" class="user-coin-info">
+								<c:forEach var="item" items="${list}">
+									<div class="dx-list no-point">
+										<div class="dx-num">
+											<div class="inter _12s medium _61co">${item.rank }</div>
 										</div>
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">Broccoli</span>
+										<div class="dx-adress">
+											<div class="wallet-address-txt txt-space">${item.walletAddress }</div>
+											<img src="/cmc/webflow/images/copy.svg" loading="lazy" alt="" class="address-icon"><img src="/cmc/webflow/images/search.svg" loading="lazy" alt="" class="address-icon">
+										</div>
+										<div class="dx-pair-box">
+											<div class="w-layout-vflex trader-user-info-box">
+												<img src="${item.tokenLogoUrl }" loading="lazy" alt="" class="pair-img">
+												<img src="${item.chainLogoUrl }" loading="lazy" alt="" class="user-coin-info">
+											</div>
+											<div class="pair-wrap-box flex-left">
+												<div class="inter _14s semibold">
+													${item.tokenSymbol } <span class="txt-user-small">${item.tokenName }</span>
+												</div>
 											</div>
 										</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold up">$35.37K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold down">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">13.03%</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold pointer _38co">2</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">02-23 04:01</div>
-									</div>
-								</div>
-								<div class="dx-list no-point">
-									<div class="dx-num">
-										<div class="inter _12s medium _61co">#</div>
-									</div>
-									<div class="dx-adress">
-										<div class="wallet-address-txt txt-space">0x0dba3423f1dasdddddddsada</div>
-										<img src="/cmc/webflow/images/copy.svg" loading="lazy" alt="" class="address-icon"><img src="/cmc/webflow/images/search.svg" loading="lazy" alt="" class="address-icon">
-									</div>
-									<div class="dx-pair-box">
-										<div class="w-layout-vflex trader-user-info-box">
-											<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img"><img src="/cmc/webflow/images/1839.png" loading="lazy" alt="" class="user-coin-info">
+										<div class="dx-width130">
+											<div class="inter _14s semibold ${item.realizedProfit7dStatus }">${item.realizedProfit7d }</div>
 										</div>
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">Broccoli</span>
-											</div>
+										<div class="dx-width130">
+											<div class="inter _14s semibold ${item.unrealizedProfit7dStatus }">${item.unrealizedProfit7d }</div>
+										</div>
+										<div class="dx-width130">
+											<div class="inter _14s semibold">${item.totalProfit }</div>
+										</div>
+										<div class="dx-width130">
+											<div class="inter _14s semibold">${item.realizedROI }</div>
+										</div>
+										<div class="dx-width130">
+											<div class="inter _14s semibold pointer _38co">${item.totalTrades }</div>
+										</div>
+										<div class="dx-width130">
+											<div class="inter _14s semibold">${item.lastTrade }</div>
 										</div>
 									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold up">$35.37K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold down">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">13.03%</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold pointer _38co">2</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">02-23 04:01</div>
-									</div>
-								</div>
-								<div class="dx-list no-point">
-									<div class="dx-num">
-										<div class="inter _12s medium _61co">#</div>
-									</div>
-									<div class="dx-adress">
-										<div class="wallet-address-txt txt-space">0x0dba3423f1dasdddddddsada</div>
-										<img src="/cmc/webflow/images/copy.svg" loading="lazy" alt="" class="address-icon"><img src="/cmc/webflow/images/search.svg" loading="lazy" alt="" class="address-icon">
-									</div>
-									<div class="dx-pair-box">
-										<div class="w-layout-vflex trader-user-info-box">
-											<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img"><img src="/cmc/webflow/images/1839.png" loading="lazy" alt="" class="user-coin-info">
-										</div>
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">Broccoli</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold up">$35.37K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold down">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">13.03%</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold pointer _38co">2</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">02-23 04:01</div>
-									</div>
-								</div>
-								<div class="dx-list no-point">
-									<div class="dx-num">
-										<div class="inter _12s medium _61co">#</div>
-									</div>
-									<div class="dx-adress">
-										<div class="wallet-address-txt txt-space">0x0dba3423f1dasdddddddsada</div>
-										<img src="/cmc/webflow/images/copy.svg" loading="lazy" alt="" class="address-icon"><img src="/cmc/webflow/images/search.svg" loading="lazy" alt="" class="address-icon">
-									</div>
-									<div class="dx-pair-box">
-										<div class="w-layout-vflex trader-user-info-box">
-											<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img"><img src="/cmc/webflow/images/1839.png" loading="lazy" alt="" class="user-coin-info">
-										</div>
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">Broccoli</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold up">$35.37K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold down">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">13.03%</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold pointer _38co">2</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">02-23 04:01</div>
-									</div>
-								</div>
-								<div class="dx-list no-point">
-									<div class="dx-num">
-										<div class="inter _12s medium _61co">#</div>
-									</div>
-									<div class="dx-adress">
-										<div class="wallet-address-txt txt-space">0x0dba3423f1dasdddddddsada</div>
-										<img src="/cmc/webflow/images/copy.svg" loading="lazy" alt="" class="address-icon"><img src="/cmc/webflow/images/search.svg" loading="lazy" alt="" class="address-icon">
-									</div>
-									<div class="dx-pair-box">
-										<div class="w-layout-vflex trader-user-info-box">
-											<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img"><img src="/cmc/webflow/images/1839.png" loading="lazy" alt="" class="user-coin-info">
-										</div>
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">Broccoli</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold up">$35.37K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold down">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">13.03%</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold pointer _38co">2</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">02-23 04:01</div>
-									</div>
-								</div>
-								<div class="dx-list no-point">
-									<div class="dx-num">
-										<div class="inter _12s medium _61co">#</div>
-									</div>
-									<div class="dx-adress">
-										<div class="wallet-address-txt txt-space">0x0dba3423f1dasdddddddsada</div>
-										<img src="/cmc/webflow/images/copy.svg" loading="lazy" alt="" class="address-icon"><img src="/cmc/webflow/images/search.svg" loading="lazy" alt="" class="address-icon">
-									</div>
-									<div class="dx-pair-box">
-										<div class="w-layout-vflex trader-user-info-box">
-											<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img"><img src="/cmc/webflow/images/1839.png" loading="lazy" alt="" class="user-coin-info">
-										</div>
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">Broccoli</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold up">$35.37K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold down">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">13.03%</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold pointer _38co">2</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">02-23 04:01</div>
-									</div>
-								</div>
-								<div class="dx-list no-point">
-									<div class="dx-num">
-										<div class="inter _12s medium _61co">#</div>
-									</div>
-									<div class="dx-adress">
-										<div class="wallet-address-txt txt-space">0x0dba3423f1dasdddddddsada</div>
-										<img src="/cmc/webflow/images/copy.svg" loading="lazy" alt="" class="address-icon"><img src="/cmc/webflow/images/search.svg" loading="lazy" alt="" class="address-icon">
-									</div>
-									<div class="dx-pair-box">
-										<div class="w-layout-vflex trader-user-info-box">
-											<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img"><img src="/cmc/webflow/images/1839.png" loading="lazy" alt="" class="user-coin-info">
-										</div>
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">Broccoli</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold up">$35.37K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold down">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">13.03%</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold pointer _38co">2</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">02-23 04:01</div>
-									</div>
-								</div>
-								<div class="dx-list no-point">
-									<div class="dx-num">
-										<div class="inter _12s medium _61co">#</div>
-									</div>
-									<div class="dx-adress">
-										<div class="wallet-address-txt txt-space">0x0dba3423f1dasdddddddsada</div>
-										<img src="/cmc/webflow/images/copy.svg" loading="lazy" alt="" class="address-icon"><img src="/cmc/webflow/images/search.svg" loading="lazy" alt="" class="address-icon">
-									</div>
-									<div class="dx-pair-box">
-										<div class="w-layout-vflex trader-user-info-box">
-											<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img"><img src="/cmc/webflow/images/1839.png" loading="lazy" alt="" class="user-coin-info">
-										</div>
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">Broccoli</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold up">$35.37K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold down">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">13.03%</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold pointer _38co">2</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">02-23 04:01</div>
-									</div>
-								</div>
-								<div class="dx-list no-point">
-									<div class="dx-num">
-										<div class="inter _12s medium _61co">#</div>
-									</div>
-									<div class="dx-adress">
-										<div class="wallet-address-txt txt-space">0x0dba3423f1dasdddddddsada</div>
-										<img src="/cmc/webflow/images/copy.svg" loading="lazy" alt="" class="address-icon"><img src="/cmc/webflow/images/search.svg" loading="lazy" alt="" class="address-icon">
-									</div>
-									<div class="dx-pair-box">
-										<div class="w-layout-vflex trader-user-info-box">
-											<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img"><img src="/cmc/webflow/images/1839.png" loading="lazy" alt="" class="user-coin-info">
-										</div>
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">Broccoli</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold up">$35.37K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold down">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">13.03%</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold pointer _38co">2</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">02-23 04:01</div>
-									</div>
-								</div>
-								<div class="dx-list no-point">
-									<div class="dx-num">
-										<div class="inter _12s medium _61co">#</div>
-									</div>
-									<div class="dx-adress">
-										<div class="wallet-address-txt txt-space">0x0dba3423f1dasdddddddsada</div>
-										<img src="/cmc/webflow/images/copy.svg" loading="lazy" alt="" class="address-icon"><img src="/cmc/webflow/images/search.svg" loading="lazy" alt="" class="address-icon">
-									</div>
-									<div class="dx-pair-box">
-										<div class="w-layout-vflex trader-user-info-box">
-											<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img"><img src="/cmc/webflow/images/1839.png" loading="lazy" alt="" class="user-coin-info">
-										</div>
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">Broccoli</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold up">$35.37K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold down">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">13.03%</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold pointer _38co">2</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">02-23 04:01</div>
-									</div>
-								</div>
-								<div class="dx-list no-point">
-									<div class="dx-num">
-										<div class="inter _12s medium _61co">#</div>
-									</div>
-									<div class="dx-adress">
-										<div class="wallet-address-txt txt-space">0x0dba3423f1dasdddddddsada</div>
-										<img src="/cmc/webflow/images/copy.svg" loading="lazy" alt="" class="address-icon"><img src="/cmc/webflow/images/search.svg" loading="lazy" alt="" class="address-icon">
-									</div>
-									<div class="dx-pair-box">
-										<div class="w-layout-vflex trader-user-info-box">
-											<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img"><img src="/cmc/webflow/images/1839.png" loading="lazy" alt="" class="user-coin-info">
-										</div>
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">Broccoli</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold up">$35.37K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold down">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">13.03%</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold pointer _38co">2</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">02-23 04:01</div>
-									</div>
-								</div>
-								<div class="dx-list no-point">
-									<div class="dx-num">
-										<div class="inter _12s medium _61co">#</div>
-									</div>
-									<div class="dx-adress">
-										<div class="wallet-address-txt txt-space">0x0dba3423f1dasdddddddsada</div>
-										<img src="/cmc/webflow/images/copy.svg" loading="lazy" alt="" class="address-icon"><img src="/cmc/webflow/images/search.svg" loading="lazy" alt="" class="address-icon">
-									</div>
-									<div class="dx-pair-box">
-										<div class="w-layout-vflex trader-user-info-box">
-											<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img"><img src="/cmc/webflow/images/1839.png" loading="lazy" alt="" class="user-coin-info">
-										</div>
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">Broccoli</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold up">$35.37K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold down">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">13.03%</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold pointer _38co">2</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">02-23 04:01</div>
-									</div>
-								</div>
-								<div class="dx-list no-point">
-									<div class="dx-num">
-										<div class="inter _12s medium _61co">#</div>
-									</div>
-									<div class="dx-adress">
-										<div class="wallet-address-txt txt-space">0x0dba3423f1dasdddddddsada</div>
-										<img src="/cmc/webflow/images/copy.svg" loading="lazy" alt="" class="address-icon"><img src="/cmc/webflow/images/search.svg" loading="lazy" alt="" class="address-icon">
-									</div>
-									<div class="dx-pair-box">
-										<div class="w-layout-vflex trader-user-info-box">
-											<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img"><img src="/cmc/webflow/images/1839.png" loading="lazy" alt="" class="user-coin-info">
-										</div>
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">Broccoli</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold up">$35.37K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold down">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">$3.03K</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">13.03%</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold pointer _38co">2</div>
-									</div>
-									<div class="dx-width130">
-										<div class="inter _14s semibold">02-23 04:01</div>
-									</div>
-								</div>
+								</c:forEach>
 							</div>
 						</div>
 						<div class="table-bottom mg-auto">

@@ -44,12 +44,17 @@ import egovframework.example.sample.model.Nethereum;
 import egovframework.example.sample.model.New;
 import egovframework.example.sample.model.Nft;
 import egovframework.example.sample.model.Nsolana;
+import egovframework.example.sample.model.Ranking;
+import egovframework.example.sample.model.Rankingpast;
 import egovframework.example.sample.model.Rehypo;
 import egovframework.example.sample.model.Sol;
 import egovframework.example.sample.model.Spot;
 import egovframework.example.sample.model.Token;
 import egovframework.example.sample.model.Topgainers;
 import egovframework.example.sample.model.Toploser;
+import egovframework.example.sample.model.Trader;
+import egovframework.example.sample.model.Traderbsc;
+import egovframework.example.sample.model.Tradereth;
 import egovframework.example.sample.model.Trending;
 import egovframework.example.sample.model.Trendingall;
 import egovframework.example.sample.model.Usa;
@@ -106,6 +111,11 @@ public class Scheduler {
     		,"http://localhost:3000/trendingall"
     		,"http://localhost:3000/topgainers"
     		,"http://localhost:3000/toploser"
+    		,"http://localhost:3000/ranking"
+    		,"http://localhost:3000/rankingpast"
+    		,"http://localhost:3000/trader"
+    		,"http://localhost:3000/tradereth"
+    		,"http://localhost:3000/traderbsc"
     );
     
     // API 처리 함수 맵
@@ -1590,6 +1600,151 @@ public class Scheduler {
         		Toploser.setList(list);
         	} catch (Exception e) {
         		Log.print("toploser API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/ranking", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("ranking API 데이터 처리 완료" + data, "call");
+        		JsonNode tokenPairs = data.path("tokenPairs");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : tokenPairs){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("baseToken" , c.path("baseToken").asText());
+        			in.put("fullName" , c.path("fullName").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("upvotes" , c.path("upvotes").asText());
+        			in.put("downvotes" , c.path("downvotes").asText());
+        			in.put("poolBaseToken" , c.path("poolBaseToken").asText());
+        			in.put("quoteToken" , c.path("quoteToken").asText());
+        			in.put("chainLogoUrl" , c.path("chainLogoUrl").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change24hDirection" , c.path("change24hDirection").asText());
+        			in.put("change24h" , c.path("change24h").asText());
+        			in.put("txCount24h" , c.path("txCount24h").asText());
+        			in.put("volume24h" , c.path("volume24h").asText());
+        			in.put("liquidity" , c.path("liquidity").asText());
+        			in.put("fdv" , c.path("fdv").asText());
+        			list.add(in);
+        		}
+        		Ranking.setList(list);
+        	} catch (Exception e) {
+        		Log.print("ranking API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/rankingpast", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("rankingpast API 데이터 처리 완료" + data, "call");
+        		JsonNode tokenPairs = data.path("tokenPairs");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : tokenPairs){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("baseToken" , c.path("baseToken").asText());
+        			in.put("fullName" , c.path("fullName").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("poolBaseToken" , c.path("poolBaseToken").asText());
+        			in.put("quoteToken" , c.path("quoteToken").asText());
+        			in.put("chainLogoUrl" , c.path("chainLogoUrl").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("fdv" , c.path("fdv").asText());
+        			in.put("verifiedDate" , c.path("verifiedDate").asText());
+        			in.put("upvotes" , c.path("upvotes").asText());
+        			in.put("downvotes" , c.path("downvotes").asText());
+        			list.add(in);
+        		}
+        		Rankingpast.setList(list);
+        	} catch (Exception e) {
+        		Log.print("rankingpast API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/trader", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("trader API 데이터 처리 완료" + data, "call");
+        		JsonNode tokenPairs = data.path("tokenPairs");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : tokenPairs){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("walletAddress" , c.path("walletAddress").asText());
+        			in.put("tokenSymbol" , c.path("tokenSymbol").asText());
+        			in.put("tokenName" , c.path("tokenName").asText());
+        			in.put("tokenLogoUrl" , c.path("tokenLogoUrl").asText());
+        			in.put("chainLogoUrl" , c.path("chainLogoUrl").asText());
+        			in.put("realizedProfit7d" , c.path("realizedProfit7d").asText());
+        			in.put("realizedProfit7dStatus" , c.path("realizedProfit7dStatus").asText().equals("profit") ? "up" : (c.path("realizedProfit7dStatus").asText().equals("loss") ? "down" : ""));
+        			in.put("unrealizedProfit7d" , c.path("unrealizedProfit7d").asText());
+        			in.put("unrealizedProfit7dStatus" , c.path("unrealizedProfit7dStatus").asText().equals("profit") ? "up" : (c.path("unrealizedProfit7dStatus").asText().equals("loss") ? "down" : ""));
+        			in.put("totalProfit" , c.path("totalProfit").asText());
+        			in.put("realizedROI" , c.path("realizedROI").asText());
+        			in.put("totalTrades" , c.path("totalTrades").asText());
+        			in.put("lastTrade" , c.path("lastTrade").asText());
+        			list.add(in);
+        		}
+        		Trader.setList(list);
+        	} catch (Exception e) {
+        		Log.print("trader API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/tradereth", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("tradereth API 데이터 처리 완료" + data, "call");
+        		JsonNode tokenPairs = data.path("tokenPairs");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : tokenPairs){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("walletAddress" , c.path("walletAddress").asText());
+        			in.put("tokenSymbol" , c.path("tokenSymbol").asText());
+        			in.put("tokenName" , c.path("tokenName").asText());
+        			in.put("tokenLogoUrl" , c.path("tokenLogoUrl").asText());
+        			in.put("chainLogoUrl" , c.path("chainLogoUrl").asText());
+        			in.put("realizedProfit7d" , c.path("realizedProfit7d").asText());
+        			in.put("realizedProfit7dStatus" , c.path("realizedProfit7dStatus").asText().equals("profit") ? "up" : (c.path("realizedProfit7dStatus").asText().equals("loss") ? "down" : ""));
+        			in.put("unrealizedProfit7d" , c.path("unrealizedProfit7d").asText());
+        			in.put("unrealizedProfit7dStatus" , c.path("unrealizedProfit7dStatus").asText().equals("profit") ? "up" : (c.path("unrealizedProfit7dStatus").asText().equals("loss") ? "down" : ""));
+        			in.put("totalProfit" , c.path("totalProfit").asText());
+        			in.put("realizedROI" , c.path("realizedROI").asText());
+        			in.put("totalTrades" , c.path("totalTrades").asText());
+        			in.put("lastTrade" , c.path("lastTrade").asText());
+        			list.add(in);
+        		}
+        		Tradereth.setList(list);
+        	} catch (Exception e) {
+        		Log.print("tradereth API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/traderbsc", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("traderbsc API 데이터 처리 완료" + data, "call");
+        		JsonNode tokenPairs = data.path("tokenPairs");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : tokenPairs){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("walletAddress" , c.path("walletAddress").asText());
+        			in.put("tokenSymbol" , c.path("tokenSymbol").asText());
+        			in.put("tokenName" , c.path("tokenName").asText());
+        			in.put("tokenLogoUrl" , c.path("tokenLogoUrl").asText());
+        			in.put("chainLogoUrl" , c.path("chainLogoUrl").asText());
+        			in.put("realizedProfit7d" , c.path("realizedProfit7d").asText());
+        			in.put("realizedProfit7dStatus" , c.path("realizedProfit7dStatus").asText().equals("profit") ? "up" : (c.path("realizedProfit7dStatus").asText().equals("loss") ? "down" : ""));
+        			in.put("unrealizedProfit7d" , c.path("unrealizedProfit7d").asText());
+        			in.put("unrealizedProfit7dStatus" , c.path("unrealizedProfit7dStatus").asText().equals("profit") ? "up" : (c.path("unrealizedProfit7dStatus").asText().equals("loss") ? "down" : ""));
+        			in.put("totalProfit" , c.path("totalProfit").asText());
+        			in.put("realizedROI" , c.path("realizedROI").asText());
+        			in.put("totalTrades" , c.path("totalTrades").asText());
+        			in.put("lastTrade" , c.path("lastTrade").asText());
+        			list.add(in);
+        		}
+        		Traderbsc.setList(list);
+        	} catch (Exception e) {
+        		Log.print("traderbsc API 데이터 처리 중 오류: " + e.getMessage(), "err");
         	}
         });
         apiProcessors.put("http://localhost:3000/sample", data -> {

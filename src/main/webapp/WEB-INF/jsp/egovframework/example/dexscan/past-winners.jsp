@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%
+	pageContext.setAttribute("newLineChar", "\n\n");
+%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -89,539 +95,49 @@
 								</div>
 							</div>
 							<div class="dx-table-list-box">
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
+								<c:forEach var="item" items="${list}">
+									<div class="dx-list">
+										<div class="dx-num">
+											<div class="inter _14s">${item.rank}</div>
+										</div>
+										<div class="dx-pair-box">
+											<img src="${item.logoUrl}" loading="lazy" alt="" class="pair-img">
+											<div class="pair-wrap-box flex-left">
+												<div class="inter _14s semibold">
+													${item.baseToken} <span class="txt-user-small">${item.fullName}</span>
+												</div>
+											</div>
+										</div>
+										<div class="dx-pool">
 											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
+												${item.poolBaseToken} <span class="inter _12s medium _61co">/${item.quoteToken}</span>
+											</div>
+										</div>
+										<div class="dx-dex-box width-10">
+											<img src="${item.chainLogoUrl}" loading="lazy" alt="" class="dex-img">
+										</div>
+										<div class="dx-price width-price">
+											<div class="inter _14s medium">${item.price}</div>
+										</div>
+										<div class="dx-fdv width-fdv">
+											<div class="inter _14s medium">${item.fdv}</div>
+										</div>
+										<div class="dx-verified">
+											<div class="inter _14s medium">${item.verifiedDate}</div>
+											<div class="w-layout-vflex verified-circle"></div>
+										</div>
+										<div class="dx-vote final-vote">
+											<div class="vote-wrap">
+												<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb filter-gray">
+												<div class="inter _14s semibold">${item.upvotes}</div>
+											</div>
+											<div class="vote-wrap">
+												<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb filter-gray">
+												<div class="inter _14s semibold">${item.downvotes}</div>
 											</div>
 										</div>
 									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box width-10">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price width-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-fdv width-fdv">
-										<div class="inter _14s medium">$4.1M</div>
-									</div>
-									<div class="dx-verified">
-										<div class="inter _14s medium">2025-02-20</div>
-										<div class="w-layout-vflex verified-circle"></div>
-									</div>
-									<div class="dx-vote final-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box width-10">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price width-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-fdv width-fdv">
-										<div class="inter _14s medium">$4.1M</div>
-									</div>
-									<div class="dx-verified">
-										<div class="inter _14s medium">2025-02-20</div>
-										<div class="w-layout-vflex verified-circle"></div>
-									</div>
-									<div class="dx-vote final-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box width-10">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price width-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-fdv width-fdv">
-										<div class="inter _14s medium">$4.1M</div>
-									</div>
-									<div class="dx-verified">
-										<div class="inter _14s medium">2025-02-20</div>
-										<div class="w-layout-vflex verified-circle"></div>
-									</div>
-									<div class="dx-vote final-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box width-10">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price width-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-fdv width-fdv">
-										<div class="inter _14s medium">$4.1M</div>
-									</div>
-									<div class="dx-verified">
-										<div class="inter _14s medium">2025-02-20</div>
-										<div class="w-layout-vflex verified-circle"></div>
-									</div>
-									<div class="dx-vote final-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box width-10">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price width-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-fdv width-fdv">
-										<div class="inter _14s medium">$4.1M</div>
-									</div>
-									<div class="dx-verified">
-										<div class="inter _14s medium">2025-02-20</div>
-										<div class="w-layout-vflex verified-circle"></div>
-									</div>
-									<div class="dx-vote final-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box width-10">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price width-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-fdv width-fdv">
-										<div class="inter _14s medium">$4.1M</div>
-									</div>
-									<div class="dx-verified">
-										<div class="inter _14s medium">2025-02-20</div>
-										<div class="w-layout-vflex verified-circle"></div>
-									</div>
-									<div class="dx-vote final-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box width-10">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price width-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-fdv width-fdv">
-										<div class="inter _14s medium">$4.1M</div>
-									</div>
-									<div class="dx-verified">
-										<div class="inter _14s medium">2025-02-20</div>
-										<div class="w-layout-vflex verified-circle"></div>
-									</div>
-									<div class="dx-vote final-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box width-10">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price width-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-fdv width-fdv">
-										<div class="inter _14s medium">$4.1M</div>
-									</div>
-									<div class="dx-verified">
-										<div class="inter _14s medium">2025-02-20</div>
-										<div class="w-layout-vflex verified-circle"></div>
-									</div>
-									<div class="dx-vote final-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box width-10">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price width-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-fdv width-fdv">
-										<div class="inter _14s medium">$4.1M</div>
-									</div>
-									<div class="dx-verified">
-										<div class="inter _14s medium">2025-02-20</div>
-										<div class="w-layout-vflex verified-circle"></div>
-									</div>
-									<div class="dx-vote final-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box width-10">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price width-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-fdv width-fdv">
-										<div class="inter _14s medium">$4.1M</div>
-									</div>
-									<div class="dx-verified">
-										<div class="inter _14s medium">2025-02-20</div>
-										<div class="w-layout-vflex verified-circle"></div>
-									</div>
-									<div class="dx-vote final-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box width-10">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price width-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-fdv width-fdv">
-										<div class="inter _14s medium">$4.1M</div>
-									</div>
-									<div class="dx-verified">
-										<div class="inter _14s medium">2025-02-20</div>
-										<div class="w-layout-vflex verified-circle"></div>
-									</div>
-									<div class="dx-vote final-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box width-10">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price width-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-fdv width-fdv">
-										<div class="inter _14s medium">$4.1M</div>
-									</div>
-									<div class="dx-verified">
-										<div class="inter _14s medium">2025-02-20</div>
-										<div class="w-layout-vflex verified-circle"></div>
-									</div>
-									<div class="dx-vote final-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-num">
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-										</div>
-									</div>
-									<div class="dx-pool">
-										<div class="inter _14s semibold">
-											VARCH <span class="inter _12s medium _61co">/SOL</span>
-										</div>
-									</div>
-									<div class="dx-dex-box width-10">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price width-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-fdv width-fdv">
-										<div class="inter _14s medium">$4.1M</div>
-									</div>
-									<div class="dx-verified">
-										<div class="inter _14s medium">2025-02-20</div>
-										<div class="w-layout-vflex verified-circle"></div>
-									</div>
-									<div class="dx-vote final-vote">
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_up.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-										<div class="vote-wrap">
-											<img src="/cmc/webflow/images/thumb_down.svg" loading="lazy" alt="" class="thumb filter-gray">
-											<div class="inter _14s semibold">1,628</div>
-										</div>
-									</div>
-								</div>
+								</c:forEach>
 							</div>
 						</div>
 						<div class="table-bottom mg-auto">
