@@ -177,6 +177,7 @@ public class Scheduler {
                 	in.put("volume24h", c.path("volume24h").asText());
                 	in.put("circulatingSupply", c.path("circulatingSupply").asText());
                 	in.put("sparklineImg", c.path("sparklineImg").asText());
+                	in.put("sparklineDirection", c.path("sparklineDirection").asText());
                 	in.put("iconImg", c.path("iconImg").asText());
                 	list.add(in);
                 }
@@ -388,6 +389,7 @@ public class Scheduler {
                 	in.put("circulatingSupplyValue" , c.path("circulatingSupplyValue").asText());
                 	in.put("circulatingSupplySymbol" , c.path("circulatingSupplySymbol").asText());
                 	in.put("chartImageUrl" , c.path("chartImageUrl").asText());
+                	in.put("chartTrend" , c.path("chartTrend").asText());
                 	list.add(in);
                 }
                 Rehypo.setList(list);
@@ -431,6 +433,7 @@ public class Scheduler {
         			in.put("circulatingSupplyValue" , c.path("circulatingSupplyValue").asText());
         			in.put("circulatingSupplySymbol" , c.path("circulatingSupplySymbol").asText());
         			in.put("chartImageUrl" , c.path("chartImageUrl").asText());
+        			in.put("chartTrend" , c.path("chartTrend").asText());
         			list.add(in);
         		}
         		Dot.setList(list);
@@ -474,6 +477,7 @@ public class Scheduler {
         			in.put("circulatingSupplyValue" , c.path("circulatingSupplyValue").asText());
         			in.put("circulatingSupplySymbol" , c.path("circulatingSupplySymbol").asText());
         			in.put("chartImageUrl" , c.path("chartImageUrl").asText());
+        			in.put("chartTrend" , c.path("chartTrend").asText());
         			list.add(in);
         		}
         		Aiagent.setList(list);
@@ -517,6 +521,7 @@ public class Scheduler {
         			in.put("circulatingSupplyValue" , c.path("circulatingSupplyValue").asText());
         			in.put("circulatingSupplySymbol" , c.path("circulatingSupplySymbol").asText());
         			in.put("chartImageUrl" , c.path("chartImageUrl").asText());
+        			in.put("chartTrend" , c.path("chartTrend").asText());
         			list.add(in);
         		}
         		Depin.setList(list);
@@ -560,6 +565,7 @@ public class Scheduler {
         			in.put("circulatingSupplyValue" , c.path("circulatingSupplyValue").asText());
         			in.put("circulatingSupplySymbol" , c.path("circulatingSupplySymbol").asText());
         			in.put("chartImageUrl" , c.path("chartImageUrl").asText());
+        			in.put("chartTrend" , c.path("chartTrend").asText());
         			list.add(in);
         		}
         		Defai.setList(list);
@@ -603,6 +609,7 @@ public class Scheduler {
         			in.put("circulatingSupplyValue" , c.path("circulatingSupplyValue").asText());
         			in.put("circulatingSupplySymbol" , c.path("circulatingSupplySymbol").asText());
         			in.put("chartImageUrl" , c.path("chartImageUrl").asText());
+        			in.put("chartTrend" , c.path("chartTrend").asText());
         			list.add(in);
         		}
         		Usa.setList(list);
@@ -674,6 +681,7 @@ public class Scheduler {
         			in.put("volume24hCoin", t.path("volume24hCoin").asText());
         			in.put("circulatingSupply", t.path("circulatingSupply").asText());
         			in.put("priceChart7d", t.path("priceChart7d").asText());
+        			in.put("chartTrend" , t.path("chartTrend").asText());
         			list.add(in);
         		}
         		Memes.setList(list);
@@ -744,6 +752,7 @@ public class Scheduler {
         			in.put("volume24hCoin", t.path("volume24hCoin").asText());
         			in.put("circulatingSupply", t.path("circulatingSupply").asText());
         			in.put("priceChart7d", t.path("priceChart7d").asText());
+        			in.put("chartTrend", t.path("chartTrend").asText());
         			list.add(in);
         		}
         		Ai.setList(list);
@@ -814,6 +823,7 @@ public class Scheduler {
         			in.put("volume24hCoin", t.path("volume24hCoin").asText());
         			in.put("circulatingSupply", t.path("circulatingSupply").asText());
         			in.put("priceChart7d", t.path("priceChart7d").asText());
+        			in.put("chartTrend", t.path("chartTrend").asText());
         			list.add(in);
         		}
         		Gaming.setList(list);
@@ -884,6 +894,7 @@ public class Scheduler {
         			in.put("volume24hCoin", t.path("volume24hCoin").asText());
         			in.put("circulatingSupply", t.path("circulatingSupply").asText());
         			in.put("priceChart7d", t.path("priceChart7d").asText());
+        			in.put("chartTrend" , t.path("chartTrend").asText());
         			list.add(in);
         		}
         		Sol.setList(list);
@@ -1015,6 +1026,7 @@ public class Scheduler {
         			in.put("marketCap" , c.path("marketCap").asText());
         			in.put("volume" , c.path("volume").asText());
         			in.put("chartImageUrl" , c.path("chartImageUrl").asText());
+        			in.put("chartTrend" , c.path("chartTrend").asText());
         			list.add(in);
         		}
         		Visit.setList(list);

@@ -256,7 +256,7 @@
 											<div class="volume"></div>
 										</div> -->
 									</div>
-									<div class="w-layout-vflex coin-table-top-wrap width180 graph" style="background-image:url('${item.priceChart7d}')"></div>
+									<div class="w-layout-vflex coin-table-top-wrap width180 graph" style="${item.chartTrend == 'up' ? 'filter: hue-rotate(85deg) saturate(80%) brightness(0.85);' : 'filter: hue-rotate(300deg) saturate(210%) brightness(0.7) contrast(170%);'}background-image:url('${item.priceChart7d}')"></div>
 								</div>
 							</c:forEach>
 						</div>

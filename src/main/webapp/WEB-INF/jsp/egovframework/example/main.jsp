@@ -431,7 +431,7 @@
 											<div class="volume"></div>
 										</div>
 									</div>
-									<div class="w-layout-vflex coin-table-top-wrap width180 graph" style="background-image:url('${item.sparklineImg}')"></div>
+									<div class="w-layout-vflex coin-table-top-wrap width180 graph" style="${item.sparklineDirection == 'up' ? 'filter: hue-rotate(85deg) saturate(80%) brightness(0.85);' : 'filter: hue-rotate(300deg) saturate(210%) brightness(0.7) contrast(170%);'}background-image:url('${item.sparklineImg}')"></div>
 								</div>
 							</c:forEach>
 						</div>

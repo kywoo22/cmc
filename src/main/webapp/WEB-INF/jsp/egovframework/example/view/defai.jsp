@@ -52,7 +52,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="graph-info" style="display:flex;background-image:url('${marketCapChartUrl}');background-size: cover;"></div>
+							<div class="graph-info" style="display:flex;${marketCapChangeDirection == 'up' ? 'filter: hue-rotate(85deg) saturate(80%) brightness(0.85);' : 'filter: hue-rotate(300deg) saturate(210%) brightness(0.7) contrast(170%);'}background-image:url('${marketCapChartUrl}');background-size: cover;"></div>
 						</div>
 						<div class="card-info">
 							<div class="card-info-flex">
@@ -68,7 +68,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="graph-info" style="display:flex;background-image:url('${volumeChartUrl}');background-size: cover;"></div>
+							<div class="graph-info" style="display:flex;${volumeChangeDirection == 'up' ? 'filter: hue-rotate(85deg) saturate(80%) brightness(0.85);' : 'filter: hue-rotate(300deg) saturate(210%) brightness(0.7) contrast(170%);'}background-image:url('${volumeChartUrl}');background-size: cover;"></div>
 						</div>
 					</div>
 					<jsp:include page="../frame/indicator-tap.jsp"></jsp:include>
@@ -199,7 +199,7 @@
 											<div class="volume"></div>
 										</div> -->
 									</div>
-									<div class="w-layout-vflex coin-table-top-wrap width180 graph" style="background-image:url('${item.chartImageUrl}')"></div>
+									<div class="w-layout-vflex coin-table-top-wrap width180 graph" style="${item.chartTrend == 'up' ? 'filter: hue-rotate(85deg) saturate(80%) brightness(0.85);' : 'filter: hue-rotate(300deg) saturate(210%) brightness(0.7) contrast(170%);'}background-image:url('${item.chartImageUrl}')"></div>
 								</div>
 							</c:forEach>
 						</div>
