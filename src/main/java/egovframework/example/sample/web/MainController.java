@@ -18,18 +18,31 @@ import egovframework.example.sample.model.Coming;
 import egovframework.example.sample.model.Community;
 import egovframework.example.sample.model.Defai;
 import egovframework.example.sample.model.Depin;
+import egovframework.example.sample.model.Derivatives;
+import egovframework.example.sample.model.Dexderivatives;
+import egovframework.example.sample.model.Dexspot;
 import egovframework.example.sample.model.Dot;
 import egovframework.example.sample.model.Gaming;
 import egovframework.example.sample.model.Gl;
 import egovframework.example.sample.model.Hotdex;
+import egovframework.example.sample.model.Lending;
 import egovframework.example.sample.model.Main;
 import egovframework.example.sample.model.Memes;
+import egovframework.example.sample.model.Nbase;
+import egovframework.example.sample.model.Nblast;
+import egovframework.example.sample.model.Nbsc;
+import egovframework.example.sample.model.Nethereum;
 import egovframework.example.sample.model.New;
 import egovframework.example.sample.model.Nft;
+import egovframework.example.sample.model.Nsolana;
 import egovframework.example.sample.model.Rehypo;
 import egovframework.example.sample.model.Sol;
+import egovframework.example.sample.model.Spot;
 import egovframework.example.sample.model.Token;
+import egovframework.example.sample.model.Topgainers;
+import egovframework.example.sample.model.Toploser;
 import egovframework.example.sample.model.Trending;
+import egovframework.example.sample.model.Trendingall;
 import egovframework.example.sample.model.Usa;
 import egovframework.example.sample.model.Visit;
 import egovframework.example.sample.model.Yield;
@@ -285,21 +298,36 @@ public class MainController {
 	@RequestMapping("/dexscan/new-pairs.do")
 	public String newpairs(HttpServletRequest request , Model model){
 		request.setAttribute("activeMenu", "newPairs");
+		String type = request.getParameter("t");
+		if(Utils.isNull(type))
+			Nethereum.addData(model);
+		else if (type.equals("s"))
+			Nsolana.addData(model);
+		else if (type.equals("ba"))
+			Nbase.addData(model);
+		else if (type.equals("bs"))
+			Nbsc.addData(model);
+		else if (type.equals("bl"))
+			Nblast.addData(model);
+		model.addAttribute("t", type);
 		return "dexscan/new-pairs";
 	}
 	@RequestMapping("/dexscan/trending-pairs.do") 
 	public String trendingpairs(HttpServletRequest request , Model model){
 		request.setAttribute("activeMenu", "trendingPairs");
+		Trendingall.addData(model);
 		return "dexscan/trending-pairs";
 	}
 	@RequestMapping("/dexscan/top-gainers.do") 
 	public String topgainers(HttpServletRequest request , Model model){
 		request.setAttribute("activeMenu", "topGainers");
+		Topgainers.addData(model);
 		return "dexscan/top-gainers";
 	}
 	@RequestMapping("/dexscan/top-losers.do") 
 	public String toplosers(HttpServletRequest request , Model model){
 		request.setAttribute("activeMenu", "topLosers");
+		Toploser.addData(model);
 		return "dexscan/top-losers";
 	}
 	@RequestMapping("/dexscan/ranking.do") 
@@ -322,26 +350,31 @@ public class MainController {
 	@RequestMapping("/exchange/spot.do") 
 	public String spot(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "spot");
+		Spot.addData(model);
 		return "exchange/spot";
 	}
 	@RequestMapping("/exchange/derivatives.do") 
 	public String derivatives(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "derivatives");
+		Derivatives.addData(model);
 		return "exchange/derivatives";
 	}
 	@RequestMapping("/exchange/dex-spot.do") 
 	public String dexspot(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "dexSpot");
+		Dexspot.addData(model);
 		return "exchange/dex-spot";
 	}
 	@RequestMapping("/exchange/dex-derivatives.do") 
 	public String dexderivatives(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "dexDerivatives");
+		Dexderivatives.addData(model);
 		return "exchange/dex-derivatives";
 	}
 	@RequestMapping("/exchange/lending.do") 
 	public String lending(HttpServletRequest request , Model model){
 		request.setAttribute("activeIndicator", "lending");
+		Lending.addData(model);
 		return "exchange/lending";
 	}
 	

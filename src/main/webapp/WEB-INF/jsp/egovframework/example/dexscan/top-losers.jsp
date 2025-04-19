@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%
+	pageContext.setAttribute("newLineChar", "\n\n");
+%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Thu Mar 13 2025 05:17:25 GMT+0000 (Coordinated Universal Time)  -->
@@ -31,7 +37,7 @@
 						</a>
 					</div>
 					<div class="dx-table-wrap">
-						<div class="new-pairs-filter">
+						<div class="new-pairs-filter" style="display:none;">
 							<div class="w-layout-vflex netwraok-wrap-box">
 								<div class="network-btn-box scroll-container">
 									<a href="#" class="dx-filter-btn on w-inline-block"><img src="/cmc/webflow/images/allnetwork.svg" loading="lazy" alt="" class="dx-filter-img all">
@@ -137,471 +143,53 @@
 									<img src="/cmc/webflow/images/info.svg" loading="lazy" alt="">
 								</div>
 							</div>
-							<div class="dx-table-list-box none">
-								<div class="dx-list">
-									<div class="dx-icon-wrap">
-										<div class="arrow-rate-block up"></div>
-										<div class="star-block"></div>
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box width-315">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
+							<div class="dx-table-list-box">
+								<c:forEach var="item" items="${list}">
+									<div class="dx-list">
+										<div class="dx-icon-wrap">
+											<!-- <div class="arrow-rate-block up"></div> -->
+											<div class="star-block"></div>
+											<div class="inter _14s">${item.rank}</div>
+										</div>
+										<div class="dx-pair-box width-315">
+											<img src="${item.logoUrl}" loading="lazy" alt="" class="pair-img">
+											<div class="pair-wrap-box flex-left">
+												<div class="inter _14s semibold">
+													${item.baseToken} <span class="txt-user-small">/${item.quoteToken}</span>
+												</div>
+												<div class="inter _12s normal _61co">${item.fullName}</div>
 											</div>
-											<div class="inter _12s normal _61co">InvArch Network</div>
+										</div>
+										<div class="dx-dex-box">
+											<img src="${item.dexLogoUrl}" loading="lazy" alt="" class="dex-img">
+										</div>
+										<div class="dx-price">
+											<div class="inter _14s medium">${item.price}</div>
+										</div>
+										<div class="dx-time">
+											<div class="fluctuation-rate-img ${item.change1hDirection}"></div>
+											<div class="inter _14s medium ${item.change1hDirection}">${item.change1h}</div>
+										</div>
+										<div class="dx-time">
+											<div class="fluctuation-rate-img ${item.change24hDirection}"></div>
+											<div class="inter _14s medium ${item.change24hDirection}">${item.change24h}</div>
+										</div>
+										<div class="dx-txn">
+											<div class="inter _14s">${item.txnCount24h}</div>
+										</div>
+										<div class="dx-volume">
+											<div class="inter _14s">${item.volume24h}</div>
+										</div>
+										<div class="dx-capitalization">
+											<div class="inter _14s">${item.liquidity}</div>
+										</div>
+										<div class="dx-fdv">
+											<div class="inter _14s">${item.fdv}</div>
 										</div>
 									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-icon-wrap">
-										<div class="arrow-rate-block new"></div>
-										<div class="star-block"></div>
-										<div class="inter _14s">2</div>
-									</div>
-									<div class="dx-pair-box width-315">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-											<div class="inter _12s normal _61co">InvArch Network</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-icon-wrap">
-										<div class="arrow-rate-block down"></div>
-										<div class="star-block"></div>
-										<div class="inter _14s">3</div>
-									</div>
-									<div class="dx-pair-box width-315">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-											<div class="inter _12s normal _61co">InvArch Network</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-icon-wrap">
-										<div class="arrow-rate-block down"></div>
-										<div class="star-block"></div>
-										<div class="inter _14s">4</div>
-									</div>
-									<div class="dx-pair-box width-315">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-											<div class="inter _12s normal _61co">InvArch Network</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-icon-wrap">
-										<div class="arrow-rate-block down"></div>
-										<div class="star-block"></div>
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box width-315">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-											<div class="inter _12s normal _61co">InvArch Network</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-icon-wrap">
-										<div class="arrow-rate-block down"></div>
-										<div class="star-block"></div>
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box width-315">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-											<div class="inter _12s normal _61co">InvArch Network</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-icon-wrap">
-										<div class="arrow-rate-block down"></div>
-										<div class="star-block"></div>
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box width-315">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-											<div class="inter _12s normal _61co">InvArch Network</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-icon-wrap">
-										<div class="arrow-rate-block down"></div>
-										<div class="star-block"></div>
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box width-315">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-											<div class="inter _12s normal _61co">InvArch Network</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-icon-wrap">
-										<div class="arrow-rate-block down"></div>
-										<div class="star-block"></div>
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box width-315">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-											<div class="inter _12s normal _61co">InvArch Network</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-icon-wrap">
-										<div class="arrow-rate-block down"></div>
-										<div class="star-block"></div>
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box width-315">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-											<div class="inter _12s normal _61co">InvArch Network</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-icon-wrap">
-										<div class="arrow-rate-block down"></div>
-										<div class="star-block"></div>
-										<div class="inter _14s">1</div>
-									</div>
-									<div class="dx-pair-box width-315">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box flex-left">
-											<div class="inter _14s semibold">
-												VARCH <span class="txt-user-small">/USDT</span>
-											</div>
-											<div class="inter _12s normal _61co">InvArch Network</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-txn">
-										<div class="inter _14s">935</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s">$ 1.69M</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-									<div class="dx-fdv">
-										<div class="inter _14s">$298.13K</div>
-									</div>
-								</div>
+								</c:forEach>
 							</div>
-							<div class="no-data-table">
+							<div class="no-data-table none">
 								<img src="/cmc/webflow/images/eye_off.svg" loading="lazy" alt="">
 								<div>No Data</div>
 							</div>

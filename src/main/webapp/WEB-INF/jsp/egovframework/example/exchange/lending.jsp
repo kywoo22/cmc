@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%
+	pageContext.setAttribute("newLineChar", "\n\n");
+%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Wed Mar 19 2025 07:02:30 GMT+0000 (Coordinated Universal Time)  -->
@@ -32,17 +38,6 @@
 						</div>
 					</div>
 					<jsp:include page="../frame/exchange-tap.jsp"></jsp:include>
-					<div class="exchange-tap-box">
-						<a href="#" class="dx-filter-btn on w-inline-block"><img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
-							<div class="inter _14s medium">Ethereum</div> </a> <a href="#" class="dx-filter-btn on w-inline-block"><img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
-							<div class="inter _14s medium">Ethereum</div> </a> <a href="#" class="dx-filter-btn on w-inline-block"><img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
-							<div class="inter _14s medium">Ethereum</div> </a> <a href="#" class="dx-filter-btn on w-inline-block"><img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
-							<div class="inter _14s medium">Ethereum</div> </a> <a href="#" class="dx-filter-btn on w-inline-block"><img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
-							<div class="inter _14s medium">Ethereum</div> </a> <a href="#" class="dx-filter-btn on w-inline-block"><img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
-							<div class="inter _14s medium">Ethereum</div> </a> <a href="#" class="dx-btn w-button"> <spring:message code="lending.viewAllPairs" />
-						</a>
-
-					</div>
 					<div class="coin-table">
 						<div class="coin-table-top sticky">
 							<div class="w-layout-vflex coin-table-top-wrap num">
@@ -80,34 +75,37 @@
 							</div>
 						</div>
 						<div class="coin-list">
-							<div class="list">
-								<div class="w-layout-vflex coin-table-top-wrap num">
-									<div class="coin-txt-table">1</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width320">
-									<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
-									<div class="coin-txt-table name">
-										비트코인 <span class="text-span-2">BTC</span>
+							<c:forEach var="item" items="${list}">
+								<div class="list">
+									<div class="w-layout-vflex coin-table-top-wrap num">
+										<div class="coin-txt-table">${item.rank}</div>
+									</div>
+									<div class="w-layout-vflex coin-table-top-wrap width320">
+										<img src="${item.logoUrl}" loading="lazy" alt="" class="coin-img">
+										<div class="coin-txt-table name">
+											${item.name}
+										</div>
+									</div>
+									<div class="w-layout-vflex coin-table-top-wrap width250">
+										<div class="coin-txt-table">
+											<strong>${item.tradingVolume24h}</strong>
+										</div>
+									</div>
+									<div class="w-layout-vflex coin-table-top-wrap width180">
+										<div class="coin-txt-table">${item.avgLiquidity}</div>
+									</div>
+									<div class="w-layout-vflex coin-table-top-wrap width125">
+										<div class="coin-txt-table">${item.marketStatus}</div>
+									</div>
+									<div class="w-layout-vflex coin-table-top-wrap width200">
+										<div class="coin-txt-table">${item.marketStatus}</div>
+									</div>
+									<div class="w-layout-vflex coin-table-top-wrap width250">
+										<div class="w-layout-vflex coin-table-top-wrap width180 graph" style="background-image:url('${item.volumeGraphUrl}')"></div>
 									</div>
 								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width250">
-									<div class="coin-txt-table">
-										<strong>₩</strong> 766,353
-									</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width180">
-									<div class="coin-txt-table">5555%</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width125">
-									<div class="coin-txt-table">43</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width200">
-									<div class="coin-txt-table">Feb 2021</div>
-								</div>
-								<div class="w-layout-vflex coin-table-top-wrap width250">
-									<div class="w-layout-vflex coin-table-top-wrap width180 graph"></div>
-								</div>
-							</div>
+							</c:forEach>
+							
 						</div>
 					</div>
 					<div class="table-bottom">

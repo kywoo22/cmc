@@ -26,19 +26,32 @@ import egovframework.example.sample.model.Coming;
 import egovframework.example.sample.model.Community;
 import egovframework.example.sample.model.Defai;
 import egovframework.example.sample.model.Depin;
+import egovframework.example.sample.model.Derivatives;
+import egovframework.example.sample.model.Dexderivatives;
+import egovframework.example.sample.model.Dexspot;
 import egovframework.example.sample.model.Dot;
 import egovframework.example.sample.model.Gaming;
 import egovframework.example.sample.model.Gl;
 import egovframework.example.sample.model.Global;
 import egovframework.example.sample.model.Hotdex;
+import egovframework.example.sample.model.Lending;
 import egovframework.example.sample.model.Main;
 import egovframework.example.sample.model.Memes;
+import egovframework.example.sample.model.Nbase;
+import egovframework.example.sample.model.Nblast;
+import egovframework.example.sample.model.Nbsc;
+import egovframework.example.sample.model.Nethereum;
 import egovframework.example.sample.model.New;
 import egovframework.example.sample.model.Nft;
+import egovframework.example.sample.model.Nsolana;
 import egovframework.example.sample.model.Rehypo;
 import egovframework.example.sample.model.Sol;
+import egovframework.example.sample.model.Spot;
 import egovframework.example.sample.model.Token;
+import egovframework.example.sample.model.Topgainers;
+import egovframework.example.sample.model.Toploser;
 import egovframework.example.sample.model.Trending;
+import egovframework.example.sample.model.Trendingall;
 import egovframework.example.sample.model.Usa;
 import egovframework.example.sample.model.Visit;
 import egovframework.example.sample.model.Yield;
@@ -76,6 +89,23 @@ public class Scheduler {
     		,"http://localhost:3000/community"
     		,"http://localhost:3000/hotdex"
     		,"http://localhost:3000/chain"
+    		
+    		// 거래소
+    		,"http://localhost:3000/spot"
+    		,"http://localhost:3000/derivatives"
+    		,"http://localhost:3000/dexspot"
+    		,"http://localhost:3000/dexderivatives"
+    		,"http://localhost:3000/lending"
+    		
+    		// DexScan
+    		,"http://localhost:3000/nethereum"
+    		,"http://localhost:3000/nsolana"
+    		,"http://localhost:3000/nbase"
+    		,"http://localhost:3000/nbsc"
+    		,"http://localhost:3000/nblast"
+    		,"http://localhost:3000/trendingall"
+    		,"http://localhost:3000/topgainers"
+    		,"http://localhost:3000/toploser"
     );
     
     // API 처리 함수 맵
@@ -1182,6 +1212,384 @@ public class Scheduler {
         		Chain.setList(list);
         	} catch (Exception e) {
         		Log.print("chain API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/spot", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("spot API 데이터 처리 완료" + data, "call");
+        		JsonNode exchanges = data.path("exchanges");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : exchanges){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("tradingVolume24h" , c.path("tradingVolume24h").asText());
+        			in.put("avgLiquidity" , c.path("avgLiquidity").asText());
+        			in.put("weeklyVisits" , c.path("weeklyVisits").asText());
+        			in.put("markets" , c.path("markets").asText());
+        			in.put("coins" , c.path("coins").asText());
+        			in.put("fiatSupported" , c.path("fiatSupported").asText());
+        			in.put("additionalFiatInfo" , c.path("additionalFiatInfo").asText());
+        			in.put("volumeGraphUrl" , c.path("volumeGraphUrl").asText());
+        			in.put("volumeTrend" , c.path("volumeTrend").asText());
+        			list.add(in);
+        		}
+        		Spot.setList(list);
+        	} catch (Exception e) {
+        		Log.print("spot API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/derivatives", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("derivatives API 데이터 처리 완료" + data, "call");
+        		JsonNode exchanges = data.path("exchanges");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : exchanges){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("tradingVolume24h" , c.path("tradingVolume24h").asText());
+        			in.put("makerFee" , c.path("makerFee").asText());
+        			in.put("takerFee" , c.path("takerFee").asText());
+        			in.put("openInterest" , c.path("openInterest").asText());
+        			in.put("markets" , c.path("markets").asText());
+        			in.put("launchDate" , c.path("launchDate").asText());
+        			list.add(in);
+        		}
+        		Derivatives.setList(list);
+        	} catch (Exception e) {
+        		Log.print("derivatives API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/dexspot", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("dexspot API 데이터 처리 완료" + data, "call");
+        		JsonNode exchanges = data.path("exchanges");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : exchanges){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("tradingVolume24h" , c.path("tradingVolume24h").asText());
+        			in.put("avgLiquidity" , c.path("avgLiquidity").asText());
+        			in.put("marketStatus" , c.path("marketStatus").asText());
+        			in.put("exchangeType" , c.path("exchangeType").asText());
+        			in.put("launchDate" , c.path("launchDate").asText());
+        			in.put("volumeGraphUrl" , c.path("volumeGraphUrl").asText());
+        			in.put("volumeTrend" , c.path("volumeTrend").asText());
+        			list.add(in);
+        		}
+        		Dexspot.setList(list);
+        	} catch (Exception e) {
+        		Log.print("dexspot API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/dexderivatives", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("dexderivatives API 데이터 처리 완료" + data, "call");
+        		JsonNode exchanges = data.path("exchanges");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : exchanges){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("tradingVolume24h" , c.path("tradingVolume24h").asText());
+        			in.put("avgLiquidity" , c.path("avgLiquidity").asText());
+        			in.put("marketStatus" , c.path("marketStatus").asText());
+        			in.put("exchangeType" , c.path("exchangeType").asText());
+        			in.put("launchDate" , c.path("launchDate").asText());
+        			in.put("volumeGraphUrl" , c.path("volumeGraphUrl").asText());
+        			in.put("volumeTrend" , c.path("volumeTrend").asText());
+        			list.add(in);
+        		}
+        		Dexderivatives.setList(list);
+        	} catch (Exception e) {
+        		Log.print("dexderivatives API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/lending", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("lending API 데이터 처리 완료" + data, "call");
+        		JsonNode exchanges = data.path("exchanges");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : exchanges){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("name" , c.path("name").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("tradingVolume24h" , c.path("tradingVolume24h").asText());
+        			in.put("avgLiquidity" , c.path("avgLiquidity").asText());
+        			in.put("marketStatus" , c.path("marketStatus").asText());
+        			in.put("exchangeType" , c.path("exchangeType").asText());
+        			in.put("volumeGraphUrl" , c.path("volumeGraphUrl").asText());
+        			in.put("volumeTrend" , c.path("volumeTrend").asText());
+        			list.add(in);
+        		}
+        		Lending.setList(list);
+        	} catch (Exception e) {
+        		Log.print("lending API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/nethereum", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("nethereum API 데이터 처리 완료" + data, "call");
+        		JsonNode ethereumPairs = data.path("ethereumPairs");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : ethereumPairs){
+        			EgovMap in = new EgovMap();
+        			in.put("baseToken" , c.path("baseToken").asText());
+        			in.put("quoteToken" , c.path("quoteToken").asText());
+        			in.put("fullName" , c.path("fullName").asText());
+        			in.put("dexLogoUrl" , c.path("dexLogoUrl").asText());
+        			in.put("age" , c.path("age").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change5mDirection" , c.path("change5mDirection").asText());
+        			in.put("change5m" , c.path("change5m").asText());
+        			in.put("change1hDirection" , c.path("change1hDirection").asText());
+        			in.put("change1h" , c.path("change1h").asText());
+        			in.put("volume1h" , c.path("volume1h").asText());
+        			in.put("liquidity" , c.path("liquidity").asText());
+        			in.put("marketCap" , c.path("marketCap").asText());
+        			JsonNode securityScan = c.path("securityScan");
+        			in.put("hpc", securityScan.path("HPC").asText().equals("pass") ? "green":(securityScan.path("HPC").asText().equals("fail") ? "red" : "off"));
+        			in.put("cv", securityScan.path("CV").asText().equals("pass") ? "green":(securityScan.path("CV").asText().equals("fail") ? "red" : "off"));
+        			in.put("cr", securityScan.path("CR").asText().equals("pass") ? "green":(securityScan.path("CR").asText().equals("fail") ? "red" : "off"));
+        			in.put("ll", securityScan.path("LL").asText().equals("pass") ? "green":(securityScan.path("LL").asText().equals("fail") ? "red" : "off"));
+        			list.add(in);
+        		}
+        		Nethereum.setList(list);
+        	} catch (Exception e) {
+        		Log.print("nethereum API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/nsolana", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("nsolana API 데이터 처리 완료" + data, "call");
+        		JsonNode ethereumPairs = data.path("ethereumPairs");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : ethereumPairs){
+        			EgovMap in = new EgovMap();
+        			in.put("baseToken" , c.path("baseToken").asText());
+        			in.put("quoteToken" , c.path("quoteToken").asText());
+        			in.put("fullName" , c.path("fullName").asText());
+        			in.put("dexLogoUrl" , c.path("dexLogoUrl").asText());
+        			in.put("age" , c.path("age").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change5mDirection" , c.path("change5mDirection").asText());
+        			in.put("change5m" , c.path("change5m").asText());
+        			in.put("change1hDirection" , c.path("change1hDirection").asText());
+        			in.put("change1h" , c.path("change1h").asText());
+        			in.put("volume1h" , c.path("volume1h").asText());
+        			in.put("liquidity" , c.path("liquidity").asText());
+        			in.put("marketCap" , c.path("marketCap").asText());
+        			JsonNode securityScan = c.path("securityScan");
+        			in.put("mad", securityScan.path("MAD").asText().equals("pass") ? "green":(securityScan.path("MAD").asText().equals("fail") ? "red" : "off"));
+        			in.put("fb", securityScan.path("FB").asText().equals("pass") ? "green":(securityScan.path("FB").asText().equals("fail") ? "red" : "off"));
+        			list.add(in);
+        		}
+        		Nsolana.setList(list);
+        	} catch (Exception e) {
+        		Log.print("nsolana API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/nbase", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("nbase API 데이터 처리 완료" + data, "call");
+        		JsonNode ethereumPairs = data.path("ethereumPairs");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : ethereumPairs){
+        			EgovMap in = new EgovMap();
+        			in.put("baseToken" , c.path("baseToken").asText());
+        			in.put("quoteToken" , c.path("quoteToken").asText());
+        			in.put("fullName" , c.path("fullName").asText());
+        			in.put("dexLogoUrl" , c.path("dexLogoUrl").asText());
+        			in.put("age" , c.path("age").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change5mDirection" , c.path("change5mDirection").asText());
+        			in.put("change5m" , c.path("change5m").asText());
+        			in.put("change1hDirection" , c.path("change1hDirection").asText());
+        			in.put("change1h" , c.path("change1h").asText());
+        			in.put("volume1h" , c.path("volume1h").asText());
+        			in.put("liquidity" , c.path("liquidity").asText());
+        			in.put("marketCap" , c.path("marketCap").asText());
+        			JsonNode securityScan = c.path("securityScan");
+        			in.put("hpc", securityScan.path("HPC").asText().equals("pass") ? "green":(securityScan.path("HPC").asText().equals("fail") ? "red" : "off"));
+        			in.put("cv", securityScan.path("CV").asText().equals("pass") ? "green":(securityScan.path("CV").asText().equals("fail") ? "red" : "off"));
+        			in.put("cr", securityScan.path("CR").asText().equals("pass") ? "green":(securityScan.path("CR").asText().equals("fail") ? "red" : "off"));
+        			in.put("ll", securityScan.path("LL").asText().equals("pass") ? "green":(securityScan.path("LL").asText().equals("fail") ? "red" : "off"));
+        			list.add(in);
+        		}
+        		Nbase.setList(list);
+        	} catch (Exception e) {
+        		Log.print("nbase API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/nbsc", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("nbsc API 데이터 처리 완료" + data, "call");
+        		JsonNode ethereumPairs = data.path("ethereumPairs");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : ethereumPairs){
+        			EgovMap in = new EgovMap();
+        			in.put("baseToken" , c.path("baseToken").asText());
+        			in.put("quoteToken" , c.path("quoteToken").asText());
+        			in.put("fullName" , c.path("fullName").asText());
+        			in.put("dexLogoUrl" , c.path("dexLogoUrl").asText());
+        			in.put("age" , c.path("age").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change5mDirection" , c.path("change5mDirection").asText());
+        			in.put("change5m" , c.path("change5m").asText());
+        			in.put("change1hDirection" , c.path("change1hDirection").asText());
+        			in.put("change1h" , c.path("change1h").asText());
+        			in.put("volume1h" , c.path("volume1h").asText());
+        			in.put("liquidity" , c.path("liquidity").asText());
+        			in.put("marketCap" , c.path("marketCap").asText());
+        			JsonNode securityScan = c.path("securityScan");
+        			in.put("hpc", securityScan.path("HPC").asText().equals("pass") ? "green":(securityScan.path("HPC").asText().equals("fail") ? "red" : "off"));
+        			in.put("cv", securityScan.path("CV").asText().equals("pass") ? "green":(securityScan.path("CV").asText().equals("fail") ? "red" : "off"));
+        			in.put("cr", securityScan.path("CR").asText().equals("pass") ? "green":(securityScan.path("CR").asText().equals("fail") ? "red" : "off"));
+        			in.put("ll", securityScan.path("LL").asText().equals("pass") ? "green":(securityScan.path("LL").asText().equals("fail") ? "red" : "off"));
+        			list.add(in);
+        		}
+        		Nbsc.setList(list);
+        	} catch (Exception e) {
+        		Log.print("nbsc API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/nblast", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("nblast API 데이터 처리 완료" + data, "call");
+        		JsonNode ethereumPairs = data.path("ethereumPairs");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : ethereumPairs){
+        			EgovMap in = new EgovMap();
+        			in.put("baseToken" , c.path("baseToken").asText());
+        			in.put("quoteToken" , c.path("quoteToken").asText());
+        			in.put("fullName" , c.path("fullName").asText());
+        			in.put("dexLogoUrl" , c.path("dexLogoUrl").asText());
+        			in.put("age" , c.path("age").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change5mDirection" , c.path("change5mDirection").asText());
+        			in.put("change5m" , c.path("change5m").asText());
+        			in.put("change1hDirection" , c.path("change1hDirection").asText());
+        			in.put("change1h" , c.path("change1h").asText());
+        			in.put("volume1h" , c.path("volume1h").asText());
+        			in.put("liquidity" , c.path("liquidity").asText());
+        			in.put("marketCap" , c.path("marketCap").asText());
+        			JsonNode securityScan = c.path("securityScan");
+        			in.put("hpc", securityScan.path("HPC").asText().equals("pass") ? "green":(securityScan.path("HPC").asText().equals("fail") ? "red" : "off"));
+        			in.put("cv", securityScan.path("CV").asText().equals("pass") ? "green":(securityScan.path("CV").asText().equals("fail") ? "red" : "off"));
+        			in.put("cr", securityScan.path("CR").asText().equals("pass") ? "green":(securityScan.path("CR").asText().equals("fail") ? "red" : "off"));
+        			in.put("ll", securityScan.path("LL").asText().equals("pass") ? "green":(securityScan.path("LL").asText().equals("fail") ? "red" : "off"));
+        			list.add(in);
+        		}
+        		Nblast.setList(list);
+        	} catch (Exception e) {
+        		Log.print("nblast API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/trendingall", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("trendingall API 데이터 처리 완료" + data, "call");
+        		JsonNode allPairs = data.path("allPairs");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : allPairs){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("baseToken" , c.path("baseToken").asText());
+        			in.put("quoteToken" , c.path("quoteToken").asText());
+        			in.put("fullName" , c.path("fullName").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("dexLogoUrl" , c.path("dexLogoUrl").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change1hDirection" , c.path("change1hDirection").asText());
+        			in.put("change1h" , c.path("change1h").asText());
+        			in.put("change24hDirection" , c.path("change24hDirection").asText());
+        			in.put("change24h" , c.path("change24h").asText());
+        			in.put("txnCount24h" , c.path("txnCount24h").asText());
+        			in.put("volume24h" , c.path("volume24h").asText());
+        			in.put("liquidity" , c.path("liquidity").asText());
+        			in.put("fdv" , c.path("fdv").asText());
+        			list.add(in);
+        		}
+        		Trendingall.setList(list);
+        	} catch (Exception e) {
+        		Log.print("trendingall API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/topgainers", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("topgainers API 데이터 처리 완료" + data, "call");
+        		JsonNode allPairs = data.path("allPairs");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : allPairs){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("baseToken" , c.path("baseToken").asText());
+        			in.put("quoteToken" , c.path("quoteToken").asText());
+        			in.put("fullName" , c.path("fullName").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("dexLogoUrl" , c.path("dexLogoUrl").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change1hDirection" , c.path("change1hDirection").asText());
+        			in.put("change1h" , c.path("change1h").asText());
+        			in.put("change24hDirection" , c.path("change24hDirection").asText());
+        			in.put("change24h" , c.path("change24h").asText());
+        			in.put("txnCount24h" , c.path("txnCount24h").asText());
+        			in.put("volume24h" , c.path("volume24h").asText());
+        			in.put("liquidity" , c.path("liquidity").asText());
+        			in.put("fdv" , c.path("fdv").asText());
+        			list.add(in);
+        		}
+        		Topgainers.setList(list);
+        	} catch (Exception e) {
+        		Log.print("topgainers API 데이터 처리 중 오류: " + e.getMessage(), "err");
+        	}
+        });
+        apiProcessors.put("http://localhost:3000/toploser", data -> {
+        	try {
+        		// 다른 API에서 받은 데이터 처리 로직
+        		Log.print("toploser API 데이터 처리 완료" + data, "call");
+        		JsonNode allPairs = data.path("allPairs");
+        		List<EgovMap> list = new ArrayList<>();
+        		for(JsonNode c : allPairs){
+        			EgovMap in = new EgovMap();
+        			in.put("rank" , c.path("rank").asText());
+        			in.put("baseToken" , c.path("baseToken").asText());
+        			in.put("quoteToken" , c.path("quoteToken").asText());
+        			in.put("fullName" , c.path("fullName").asText());
+        			in.put("logoUrl" , c.path("logoUrl").asText());
+        			in.put("dexLogoUrl" , c.path("dexLogoUrl").asText());
+        			in.put("price" , c.path("price").asText());
+        			in.put("change1hDirection" , c.path("change1hDirection").asText());
+        			in.put("change1h" , c.path("change1h").asText());
+        			in.put("change24hDirection" , c.path("change24hDirection").asText());
+        			in.put("change24h" , c.path("change24h").asText());
+        			in.put("txnCount24h" , c.path("txnCount24h").asText());
+        			in.put("volume24h" , c.path("volume24h").asText());
+        			in.put("liquidity" , c.path("liquidity").asText());
+        			in.put("fdv" , c.path("fdv").asText());
+        			list.add(in);
+        		}
+        		Toploser.setList(list);
+        	} catch (Exception e) {
+        		Log.print("toploser API 데이터 처리 중 오류: " + e.getMessage(), "err");
         	}
         });
         apiProcessors.put("http://localhost:3000/sample", data -> {

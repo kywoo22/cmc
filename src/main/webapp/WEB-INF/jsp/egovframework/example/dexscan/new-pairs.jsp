@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%
+	pageContext.setAttribute("newLineChar", "\n\n");
+%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://webflow.com  -->
 <!--  Last Published: Thu Mar 13 2025 05:17:25 GMT+0000 (Coordinated Universal Time)  -->
@@ -29,12 +34,27 @@
 					<div class="dx-table-wrap">
 						<div class="new-pairs-filter">
 							<div class="dx-filter-btn-box">
-								<a href="#" class="dx-filter-btn on w-inline-block"><img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
-									<div class="inter _14s medium">Ethereum</div> </a> <a href="#" class="dx-filter-btn w-inline-block"><img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
-									<div class="inter _14s medium">Solana</div> </a> <a href="#" class="dx-filter-btn w-inline-block"><img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
-									<div class="inter _14s medium">Base</div> </a> <a href="#" class="dx-filter-btn w-inline-block"><img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
-									<div class="inter _14s medium">BSC</div> </a> <a href="#" class="dx-filter-btn w-inline-block"><img src="/cmc/webflow/images/20947.png" loading="lazy" alt="" class="dx-filter-img">
-									<div class="inter _14s medium">Blast</div> </a>
+								
+								<a href="/cmc/dexscan/new-pairs.do" class="dx-filter-btn ${t == null || t == '' ? 'on' : '' } w-inline-block">
+									<img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
+									<div class="inter _14s medium">Ethereum</div> 
+								</a> 
+								<a href="/cmc/dexscan/new-pairs.do?t=s" class="dx-filter-btn ${t ==  's' ? 'on' : '' } w-inline-block">
+									<img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
+									<div class="inter _14s medium">Solana</div>
+								</a> 
+								<a href="/cmc/dexscan/new-pairs.do?t=ba" class="dx-filter-btn ${t ==  'ba' ? 'on' : '' } w-inline-block">
+									<img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
+									<div class="inter _14s medium">Base</div> 
+								</a> 
+								<a href="/cmc/dexscan/new-pairs.do?t=bs" class="dx-filter-btn ${t ==  'bs' ? 'on' : '' } w-inline-block">
+									<img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
+									<div class="inter _14s medium">BSC</div> 
+								</a> 
+								<a href="/cmc/dexscan/new-pairs.do?t=bl" class="dx-filter-btn ${t ==  'bl' ? 'on' : '' } w-inline-block">
+									<img src="/cmc/webflow/images/20947.png" loading="lazy" alt="" class="dx-filter-img">
+									<div class="inter _14s medium">Blast</div> 
+								</a>
 							</div>
 							<div class="dx-filter-dropdown-box">
 								<div data-hover="false" data-delay="0" class="dx-filter-dropdown w-dropdown">
@@ -182,876 +202,78 @@
 								</div>
 							</div>
 							<div class="dx-table-list-box">
-								<div class="dx-list">
-									<div class="dx-star">
-										<div class="star-block"></div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box">
-											<div class="inter _14s semibold">
-												Pogai <span class="pair-small">/WETH</span>
+								<c:forEach var="item" items="${list}">
+									<div class="dx-list">
+										<div class="dx-star">
+											<div class="star-block"></div>
+										</div>
+										<div class="dx-pair-box">
+											<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
+											<div class="pair-wrap-box">
+												<div class="inter _14s semibold">
+													${item.baseToken } <span class="pair-small">/${item.quoteToken }</span>
+												</div>
+												<div class="inter _12s medium _61co">${item.fullName }</div>
 											</div>
-											<div class="inter _12s medium _61co">Pogai</div>
 										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-age-box">
-										<div class="inter _12s semibold">1h</div>
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-percent">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-liquidity">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-security">
-										<div class="scan-block off">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">HPC</div>
-										</div>
-										<div class="scan-block red">
-											<img src="/cmc/webflow/images/close.svg" loading="lazy" alt="" class="dx-check-img small">
-											<div class="inter _12s medium">CV</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">CR</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">LL</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-star">
-										<div class="star-block"></div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box">
-											<div class="inter _14s semibold">
-												Pogai <span class="pair-small">/WETH</span>
-											</div>
-											<div class="inter _12s medium _61co">Pogai</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-age-box">
-										<div class="inter _12s semibold">1j</div>
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-percent">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-liquidity">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-security">
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">HPC</div>
-										</div>
-										<div class="scan-block red">
-											<img src="/cmc/webflow/images/close.svg" loading="lazy" alt="" class="dx-check-img small">
-											<div class="inter _12s medium">CV</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">CR</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">LL</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-star">
-										<div class="star-block"></div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box">
-											<div class="inter _14s semibold">
-												Pogai <span class="pair-small">/WETH</span>
-											</div>
-											<div class="inter _12s medium _61co">Pogai</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-age-box">
-										<div class="inter _12s semibold">1j</div>
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-percent">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-liquidity">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-security">
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">HPC</div>
-										</div>
-										<div class="scan-block red">
-											<img src="/cmc/webflow/images/close.svg" loading="lazy" alt="" class="dx-check-img small">
-											<div class="inter _12s medium">CV</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">CR</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">LL</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-star">
-										<div class="star-block"></div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box">
-											<div class="inter _14s semibold">
-												Pogai <span class="pair-small">/WETH</span>
-											</div>
-											<div class="inter _12s medium _61co">Pogai</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-age-box">
-										<div class="inter _12s semibold">1j</div>
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-percent">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-liquidity">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-security">
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">HPC</div>
-										</div>
-										<div class="scan-block red">
-											<img src="/cmc/webflow/images/close.svg" loading="lazy" alt="" class="dx-check-img small">
-											<div class="inter _12s medium">CV</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">CR</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">LL</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-star">
-										<div class="star-block"></div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box">
-											<div class="inter _14s semibold">
-												Pogai <span class="pair-small">/WETH</span>
-											</div>
-											<div class="inter _12s medium _61co">Pogai</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-age-box">
-										<div class="inter _12s semibold">1j</div>
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-percent">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-liquidity">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-security">
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">HPC</div>
-										</div>
-										<div class="scan-block red">
-											<img src="/cmc/webflow/images/close.svg" loading="lazy" alt="" class="dx-check-img small">
-											<div class="inter _12s medium">CV</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">CR</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">LL</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-star">
-										<div class="star-block"></div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box">
-											<div class="inter _14s semibold">
-												Pogai <span class="pair-small">/WETH</span>
-											</div>
-											<div class="inter _12s medium _61co">Pogai</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-age-box">
-										<div class="inter _12s semibold">1j</div>
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-percent">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-liquidity">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-security">
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">HPC</div>
-										</div>
-										<div class="scan-block red">
-											<img src="/cmc/webflow/images/close.svg" loading="lazy" alt="" class="dx-check-img small">
-											<div class="inter _12s medium">CV</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">CR</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">LL</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-star">
-										<div class="star-block"></div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box">
-											<div class="inter _14s semibold">
-												Pogai <span class="pair-small">/WETH</span>
-											</div>
-											<div class="inter _12s medium _61co">Pogai</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-age-box">
-										<div class="inter _12s semibold">1j</div>
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-percent">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-liquidity">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-security">
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">HPC</div>
-										</div>
-										<div class="scan-block red">
-											<img src="/cmc/webflow/images/close.svg" loading="lazy" alt="" class="dx-check-img small">
-											<div class="inter _12s medium">CV</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">CR</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">LL</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-star">
-										<div class="star-block"></div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box">
-											<div class="inter _14s semibold">
-												Pogai <span class="pair-small">/WETH</span>
-											</div>
-											<div class="inter _12s medium _61co">Pogai</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-age-box">
-										<div class="inter _12s semibold">1j</div>
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-percent">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-liquidity">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-security">
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">HPC</div>
-										</div>
-										<div class="scan-block red">
-											<img src="/cmc/webflow/images/close.svg" loading="lazy" alt="" class="dx-check-img small">
-											<div class="inter _12s medium">CV</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">CR</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">LL</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-star">
-										<div class="star-block"></div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box">
-											<div class="inter _14s semibold">
-												Pogai <span class="pair-small">/WETH</span>
-											</div>
-											<div class="inter _12s medium _61co">Pogai</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-age-box">
-										<div class="inter _12s semibold">1j</div>
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-percent">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-liquidity">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-security">
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">HPC</div>
-										</div>
-										<div class="scan-block red">
-											<img src="/cmc/webflow/images/close.svg" loading="lazy" alt="" class="dx-check-img small">
-											<div class="inter _12s medium">CV</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">CR</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">LL</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-star">
-										<div class="star-block"></div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box">
-											<div class="inter _14s semibold">
-												Pogai <span class="pair-small">/WETH</span>
-											</div>
-											<div class="inter _12s medium _61co">Pogai</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-age-box">
-										<div class="inter _12s semibold">1j</div>
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-percent">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-liquidity">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-security">
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">HPC</div>
-										</div>
-										<div class="scan-block red">
-											<img src="/cmc/webflow/images/close.svg" loading="lazy" alt="" class="dx-check-img small">
-											<div class="inter _12s medium">CV</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">CR</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">LL</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-star">
-										<div class="star-block"></div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box">
-											<div class="inter _14s semibold">
-												Pogai <span class="pair-small">/WETH</span>
-											</div>
-											<div class="inter _12s medium _61co">Pogai</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-age-box">
-										<div class="inter _12s semibold">1j</div>
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-percent">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-liquidity">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-security">
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">HPC</div>
-										</div>
-										<div class="scan-block red">
-											<img src="/cmc/webflow/images/close.svg" loading="lazy" alt="" class="dx-check-img small">
-											<div class="inter _12s medium">CV</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">CR</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">LL</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-star">
-										<div class="star-block"></div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box">
-											<div class="inter _14s semibold">
-												Pogai <span class="pair-small">/WETH</span>
-											</div>
-											<div class="inter _12s medium _61co">Pogai</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-age-box">
-										<div class="inter _12s semibold">1j</div>
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-percent">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-liquidity">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-security">
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">HPC</div>
-										</div>
-										<div class="scan-block red">
-											<img src="/cmc/webflow/images/close.svg" loading="lazy" alt="" class="dx-check-img small">
-											<div class="inter _12s medium">CV</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">CR</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">LL</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-star">
-										<div class="star-block"></div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box">
-											<div class="inter _14s semibold">
-												Pogai <span class="pair-small">/WETH</span>
-											</div>
-											<div class="inter _12s medium _61co">Pogai</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-age-box">
-										<div class="inter _12s semibold">1j</div>
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-percent">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-liquidity">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-security">
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">HPC</div>
-										</div>
-										<div class="scan-block red">
-											<img src="/cmc/webflow/images/close.svg" loading="lazy" alt="" class="dx-check-img small">
-											<div class="inter _12s medium">CV</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">CR</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">LL</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-star">
-										<div class="star-block"></div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box">
-											<div class="inter _14s semibold">
-												Pogai <span class="pair-small">/WETH</span>
-											</div>
-											<div class="inter _12s medium _61co">Pogai</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-age-box">
-										<div class="inter _12s semibold">1j</div>
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-percent">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-liquidity">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-security">
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">HPC</div>
-										</div>
-										<div class="scan-block red">
-											<img src="/cmc/webflow/images/close.svg" loading="lazy" alt="" class="dx-check-img small">
-											<div class="inter _12s medium">CV</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">CR</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">LL</div>
-										</div>
-									</div>
-								</div>
-								<div class="dx-list">
-									<div class="dx-star">
-										<div class="star-block"></div>
-									</div>
-									<div class="dx-pair-box">
-										<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
-										<div class="pair-wrap-box">
-											<div class="inter _14s semibold">
-												Pogai <span class="pair-small">/WETH</span>
-											</div>
-											<div class="inter _12s medium _61co">Pogai</div>
-										</div>
-									</div>
-									<div class="dx-dex-box">
-										<img src="/cmc/webflow/images/3640.png" loading="lazy" alt="" class="dex-img">
-									</div>
-									<div class="dx-age-box">
-										<div class="inter _12s semibold">1j</div>
-									</div>
-									<div class="dx-price">
-										<div class="inter _14s medium">$0.00007493</div>
-									</div>
-									<div class="dx-percent">
-										<div class="fluctuation-rate-img down"></div>
-										<div class="inter _14s medium down">2.05%</div>
-									</div>
-									<div class="dx-time">
-										<div class="fluctuation-rate-img up"></div>
-										<div class="inter _14s medium up">2.05%</div>
-									</div>
-									<div class="dx-volume">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-liquidity">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-capitalization">
-										<div class="inter _14s medium">$10.07K</div>
-									</div>
-									<div class="dx-security">
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">HPC</div>
-										</div>
-										<div class="scan-block red">
-											<img src="/cmc/webflow/images/close.svg" loading="lazy" alt="" class="dx-check-img small">
-											<div class="inter _12s medium">CV</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">CR</div>
-										</div>
-										<div class="scan-block green">
-											<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
-											<div class="inter _12s medium">LL</div>
-										</div>
-									</div>
-								</div>
+										<div class="dx-dex-box">
+											<img src="${item.dexLogoUrl }" loading="lazy" alt="" class="dex-img">
+										</div>
+										<div class="dx-age-box">
+											<div class="inter _12s semibold">${item.age }</div>
+										</div>
+										<div class="dx-price">
+											<div class="inter _14s medium">${item.price }</div>
+										</div>
+										<div class="dx-percent">
+											<div class="fluctuation-rate-img ${item.change5mDirection }"></div>
+											<div class="inter _14s medium ${item.change5mDirection }">${item.change5m }</div>
+										</div>
+										<div class="dx-time">
+											<div class="fluctuation-rate-img ${item.change1hDirection }"></div>
+											<div class="inter _14s medium ${item.change1hDirection }">${item.change1h }</div>
+										</div>
+										<div class="dx-volume">
+											<div class="inter _14s medium">${item.volume1h }</div>
+										</div>
+										<div class="dx-liquidity">
+											<div class="inter _14s medium">${item.liquidity }</div>
+										</div>
+										<div class="dx-capitalization">
+											<div class="inter _14s medium">${item.marketCap }</div>
+										</div>
+										<div class="dx-security">
+											<c:if test="${t == 's'}">
+												<div class="scan-block ${item.mad }">
+													<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
+													<div class="inter _12s medium">MAD</div>
+												</div>
+												<div class="scan-block ${item.fb}">
+													<img src="/cmc/webflow/images/close.svg" loading="lazy" alt="" class="dx-check-img small">
+													<div class="inter _12s medium">FB</div>
+												</div>
+											</c:if>
+											<c:if test="${t != 's'}">
+												<div class="scan-block ${item.hpc }">
+													<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
+													<div class="inter _12s medium">HPC</div>
+												</div>
+												<div class="scan-block ${item.cv }">
+													<img src="/cmc/webflow/images/close.svg" loading="lazy" alt="" class="dx-check-img small">
+													<div class="inter _12s medium">CV</div>
+												</div>
+												<div class="scan-block ${item.cr }">
+													<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
+													<div class="inter _12s medium">CR</div>
+												</div>
+												<div class="scan-block ${item.ll }">
+													<img src="/cmc/webflow/images/check.svg" loading="lazy" alt="" class="dx-check-img">
+													<div class="inter _12s medium">LL</div>
+												</div>
+											</c:if>
+										</div>
+									</div>
+								</c:forEach>
 							</div>
 						</div>
 						<div class="table-bottom">
