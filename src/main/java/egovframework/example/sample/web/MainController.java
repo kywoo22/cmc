@@ -78,7 +78,6 @@ public class MainController {
 			session.setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, locales);
 			session.setAttribute("lang", lang.toLowerCase());
 		}
-		Scheduler.executeDataFetchJob();
 		request.setAttribute("activeIndicator", "main");
 		Main.addData(model);
 		return "main";

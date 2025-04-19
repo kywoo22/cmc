@@ -1784,9 +1784,8 @@ public class Scheduler {
     private static final RestTemplate restTemplate = new RestTemplate();
     private static final ObjectMapper objectMapper = new ObjectMapper();
     
-    // 1시간마다 실행 (cron = "0 0 */1 * * *")
-    @Scheduled(cron = "0 0 */1 * * *") 
-    public static void executeDataFetchJob() {
+    @Scheduled(fixedRate = 60 * 60 * 1000)
+    public void executeDataFetchJob() {
         Log.print("Scheduler executeDataFetchJob ... 병렬로 API 데이터 가져오기 시작", "call");
 
         ExecutorService executor = Executors.newFixedThreadPool(10); // 최대 동시 실행 10개
