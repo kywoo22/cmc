@@ -131,20 +131,6 @@
 							</c:forEach>
 						</div>
 					</div>
-					<div class="table-bottom">
-						<div class="coin-table-bottom-txt">
-							<spring:message code="table.showtxt" />
-							- 10868
-							<spring:message code="table.showtxt2" />
-							100
-						</div>
-						<div class="pagin-box">
-							<a href="#" class="paging-btn left w-button"></a> <a href="#" class="paging-btn on w-button">1</a> <a href="#" class="paging-btn w-button">2</a> <a href="#" class="paging-btn w-button">3</a> <a href="#" class="paging-btn w-button">4</a> <a href="#" class="paging-btn w-button">5</a> <a href="#" class="paging-btn right w-button"></a>
-						</div>
-						<div class="row-box">
-							<spring:message code="table.rowShow" />
-						</div>
-					</div>
 				</div>
 			</div>
 			<section class="section3 right">

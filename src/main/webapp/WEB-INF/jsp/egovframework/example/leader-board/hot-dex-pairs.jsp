@@ -95,7 +95,7 @@
 										<div class="coin-txt-table">${item.rank}</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap name">
-										<img src="/cmc/webflow/images/bitcoin_icon.svg" loading="lazy" alt="" class="coin-img">
+										<img src="/cmc/webflow/images/coin_express_logoS.svg" loading="lazy" alt="" class="coin-img logo-g">
 										<div class="coin-txt-table name">
 											${item.baseSymbol} <span class="text-span-2">/ ${item.quoteSymbol}</span>
 										</div>

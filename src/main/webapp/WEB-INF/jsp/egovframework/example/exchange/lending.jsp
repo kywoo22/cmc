@@ -116,8 +116,6 @@
 							<spring:message code="lending.of" />
 							100
 						</div>
-						<a href="#" class="more-btn position w-button"> <spring:message code="lending.viewMore" />
-						</a>
 					</div>
 				</div>
 			</div>

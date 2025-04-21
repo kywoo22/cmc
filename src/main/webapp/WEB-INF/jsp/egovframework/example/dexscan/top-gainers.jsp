@@ -195,29 +195,6 @@
 								<div>No Data</div>
 							</div>
 						</div>
-						<div class="table-bottom mg-auto">
-							<div class="coin-table-bottom-txt">
-								1
-								<spring:message code="table.showtxt" />
-								- 33
-								<spring:message code="table.showtxt2" />
-								33
-							</div>
-							<div class="row-box">
-								<div>
-									<spring:message code="table.rowShow" />
-								</div>
-								<div data-hover="false" data-delay="0" class="dropdown w-dropdown">
-									<div class="dropdown-toggle w-dropdown-toggle">
-										<div>50</div>
-										<div class="icon w-icon-dropdown-toggle"></div>
-									</div>
-									<nav class="drop-down bottom w-dropdown-list">
-										<a href="#" class="drop-list-link w-dropdown-link">100</a> <a href="#" class="drop-list-link w-dropdown-link">50</a> <a href="#" class="drop-list-link w-dropdown-link">20</a>
-									</nav>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>

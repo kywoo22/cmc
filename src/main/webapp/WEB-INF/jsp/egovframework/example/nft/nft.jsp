@@ -166,7 +166,7 @@
 									<strong><spring:message code="table.owner" /></strong>
 								</div>
 							</div>
-							<div class="w-layout-vflex coin-table-top-wrap width85">
+							<div class="w-layout-vflex coin-table-top-wrap width20per">
 								<div class="coin-txt-table">
 									<strong><spring:message code="table.ownerPercent" /></strong>
 								</div>
@@ -213,7 +213,7 @@
 									<div class="w-layout-vflex coin-table-top-wrap width125">
 										<div class="coin-txt-table">${item.owners}</div>
 									</div>
-									<div class="w-layout-vflex coin-table-top-wrap width85">
+									<div class="w-layout-vflex coin-table-top-wrap width20per">
 										<div class="coin-txt-table">${item.ownerPercentage}</div>
 									</div>
 								</div>

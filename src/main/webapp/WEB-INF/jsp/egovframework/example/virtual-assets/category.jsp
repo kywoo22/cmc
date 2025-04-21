@@ -89,7 +89,7 @@
 									<spring:message code="table.avgPriceChange" />
 								</div>
 							</div>
-							<div class="w-layout-vflex coin-table-top-wrap left-w200">
+							<div class="w-layout-vflex coin-table-top-wrap name">
 								<div class="coin-txt-table">
 									<strong><spring:message code="table.topGainers" /></strong>
 								</div>
@@ -199,9 +199,7 @@
 							<spring:message code="table.showtxt2" />
 							100
 						</div>
-						<div class="pagin-box">
-							<a href="#" class="paging-btn left w-button"></a> <a href="#" class="paging-btn on w-button">1</a> <a href="#" class="paging-btn w-button">2</a> <a href="#" class="paging-btn w-button">3</a> <a href="#" class="paging-btn w-button">4</a> <a href="#" class="paging-btn w-button">5</a> <a href="#" class="paging-btn right w-button"></a>
-						</div>
+						
 						<div class="row-box">
 							<div>
 								<spring:message code="table.rowShow" />

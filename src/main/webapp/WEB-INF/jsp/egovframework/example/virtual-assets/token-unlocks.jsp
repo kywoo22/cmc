@@ -97,7 +97,7 @@
 									<strong><spring:message code="tokenUnlocks.nextUnlock" /></strong>
 								</div>
 							</div>
-							<div class="w-layout-vflex coin-table-top-wrap width200">
+							<div class="w-layout-vflex coin-table-top-wrap width20per">
 								<div class="coin-txt-table">
 									<strong><spring:message code="tokenUnlocks.nextUnlockDate" /></strong>
 								</div>
@@ -144,7 +144,7 @@
 										<div class="coin-txt-table semibold">${item.nextUnlockAmount}</div>
 										<div class="inter _12s normal _61co">${item.nextUnlockValue} (<spring:message code="tokenUnlocks.totalLockedOf" /> ${item.nextUnlockPercentage}%)</div>
 									</div>
-									<div class="w-layout-vflex coin-table-top-wrap width200">
+									<div class="w-layout-vflex coin-table-top-wrap width20per">
 										<div class="w-layout-vflex coin-unlocks-box">
 											<div class="token-unlock-date">
 												<div class="coin-txt-table semibold">${item.days}</div>

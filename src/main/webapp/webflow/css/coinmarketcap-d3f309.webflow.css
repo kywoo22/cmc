@@ -634,7 +634,16 @@ a {
 }
 
 .highlights-coin-card.cardlist {
+  flex-flow: column;
   width: 33%;
+  display: flex;
+}
+
+.highlights-coin-card.width-100 {
+  flex-flow: column;
+  width: 100%;
+  height: 50%;
+  display: flex;
 }
 
 .highlight-top {
@@ -773,6 +782,11 @@ a {
   flex-flow: column;
   margin-top: 12px;
   display: flex;
+}
+
+.card-content.mg-auto {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .card-coin-item {
@@ -1624,6 +1638,7 @@ a {
 
 .coin-table {
   flex-flow: column;
+  min-height: 250px;
   display: flex;
   overflow: auto;
 }
@@ -1863,6 +1878,7 @@ a {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: auto;
+  border-bottom-style: none;
   min-height: 80px;
 }
 
@@ -2097,6 +2113,10 @@ a {
 .coin-img {
   width: 24px;
   height: 24px;
+}
+
+.coin-img.logo-g {
+  filter: invert(40%);
 }
 
 .text-span-2 {
@@ -3844,10 +3864,15 @@ a {
 }
 
 .dx-menu-icon {
+  border-radius: 100%;
   width: 20px;
   min-width: 20px;
   height: 20px;
   min-height: 20px;
+}
+
+.dx-menu-icon.no-round {
+  border-radius: 0%;
 }
 
 .dx-search {
@@ -3855,7 +3880,7 @@ a {
   cursor: pointer;
   justify-content: flex-start;
   align-items: center;
-  min-height: 40px;
+  min-height: 45px;
   margin-bottom: 0;
   margin-left: 0;
   margin-right: 0;
@@ -4029,6 +4054,7 @@ a {
 }
 
 .dx-filter-img {
+  border-radius: 100%;
   width: 16px;
   height: 16px;
 }
@@ -4437,7 +4463,16 @@ a {
   font-weight: 500;
 }
 
-.pair-img, .dex-img {
+.pair-img {
+  width: 24px;
+  height: 24px;
+}
+
+.pair-img.logo-g {
+  filter: invert(40%);
+}
+
+.dex-img {
   width: 24px;
   height: 24px;
 }
@@ -4818,8 +4853,8 @@ a {
   border-bottom: 1px solid var(--ef-color);
   justify-content: flex-start;
   align-items: center;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   display: flex;
 }
 
@@ -8472,7 +8507,6 @@ a {
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
-  height: 288px;
   display: flex;
 }
 
@@ -10513,6 +10547,8 @@ a {
 }
 
 .card-info {
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
   box-shadow: 0 0 5px 0 var(--shadow);
   border-radius: 6px;
   padding: 12px 16px;
@@ -10551,6 +10587,8 @@ a {
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
+  justify-content: flex-start;
+  align-items: stretch;
   height: 288px;
   display: flex;
 }
@@ -11295,11 +11333,11 @@ a {
 }
 
 .currency-img.ada {
-  background-image: url('../images/2010.png');
+  background-image: url('../images/token_29.png');
 }
 
 .currency-img.bnb {
-  background-image: url('../images/1839.png');
+  background-image: url('../images/token_4.png');
 }
 
 .currency-img.dot {
@@ -11323,15 +11361,15 @@ a {
 }
 
 .currency-img.bch {
-  background-image: url('../images/1831.png');
+  background-image: url('../images/token_86.png');
 }
 
 .currency-img.uni {
-  background-image: url('../images/7083.png');
+  background-image: url('../images/token_23.png');
 }
 
 .currency-img.doge {
-  background-image: url('../images/74.png');
+  background-image: url('../images/token_72.png');
 }
 
 .currency-img.slp {
@@ -11628,6 +11666,51 @@ a {
   max-width: 24px;
   height: 24px;
   max-height: 24px;
+}
+
+.exchange-filter {
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  border-radius: 4px;
+  flex: none;
+  justify-content: flex-start;
+  align-items: center;
+  height: 40px;
+  padding: 4px 16px;
+  transition: all .25s;
+  display: flex;
+}
+
+.exchange-filter:hover {
+  background-color: var(--eff-color);
+}
+
+.exchange-filter.on {
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  background-color: var(--eff-color);
+}
+
+.rate-up-box {
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
+  align-items: stretch;
+}
+
+.up-rate-txt {
+  color: var(--16co);
+  font-family: Inter Variablefont Opsz Wght, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 125%;
+}
+
+.f-card-box {
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  flex-flow: column;
+  align-items: stretch;
+  height: 100%;
+  display: flex;
 }
 
 @media screen and (max-width: 991px) {
@@ -13777,7 +13860,7 @@ a {
 }
 @font-face {
   font-family: 'Inter Variablefont Opsz Wght';
-  src: url('../images/') format('truetype');
+  src: url('../fonts/Inter-VariableFont_opszwght.ttf') format('ttf');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;

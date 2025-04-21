@@ -38,13 +38,13 @@
 					</div>
 					<jsp:include page="../frame/exchange-tap.jsp"></jsp:include>
 					<div class="exchange-tap-box">
-						<a href="#" class="dx-filter-btn on w-inline-block"><img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
-							<div class="inter _14s medium">Ethereum</div> </a> <a href="#" class="dx-filter-btn on w-inline-block"><img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
-							<div class="inter _14s medium">Ethereum</div> </a> <a href="#" class="dx-filter-btn on w-inline-block"><img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
-							<div class="inter _14s medium">Ethereum</div> </a> <a href="#" class="dx-filter-btn on w-inline-block"><img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
-							<div class="inter _14s medium">Ethereum</div> </a> <a href="#" class="dx-filter-btn on w-inline-block"><img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
-							<div class="inter _14s medium">Ethereum</div> </a> <a href="#" class="dx-filter-btn on w-inline-block"><img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
-							<div class="inter _14s medium">Ethereum</div> </a> <a href="#" class="dx-btn w-button"> <spring:message code="dex-spot.viewAllPairs" />
+						<a href="#" class="exchange-filter w-inline-block"><img src="/cmc/webflow/images/solana.svg" loading="lazy" alt="" class="dx-filter-img">
+							<div class="inter _14s medium">Solana</div> </a> <a href="#" class="exchange-filter w-inline-block"><img src="/cmc/webflow/images/token_3.png" loading="lazy" alt="" class="dx-filter-img">
+							<div class="inter _14s medium">Ethereum</div> </a> <a href="#" class="exchange-filter w-inline-block"><img src="/cmc/webflow/images/token_4.png" loading="lazy" alt="" class="dx-filter-img">
+							<div class="inter _14s medium">BSC</div> </a> <a href="#" class="exchange-filter w-inline-block"><img src="/cmc/webflow/images/token_5.png" loading="lazy" alt="" class="dx-filter-img">
+							<div class="inter _14s medium">Base</div> </a> <a href="#" class="exchange-filter w-inline-block"><img src="/cmc/webflow/images/token_6.png" loading="lazy" alt="" class="dx-filter-img">
+							<div class="inter _14s medium">Arbitrum</div> </a> <a href="#" class="exchange-filter w-inline-block"><img src="/cmc/webflow/images/token_9.png" loading="lazy" alt="" class="dx-filter-img">
+							<div class="inter _14s medium">Sui Network</div> </a> <a href="#" class="dx-btn w-button"> <spring:message code="dex-spot.viewAllPairs" />
 						</a>
 					</div>
 					<div class="coin-table">
@@ -132,8 +132,6 @@
 							<spring:message code="dex-spot.of" />
 							100
 						</div>
-						<a href="#" class="more-btn position w-button"> <spring:message code="dex-spot.viewMore" />
-						</a>
 					</div>
 					<div class="table-bottom">
 						<div class="coin-table-bottom-txt">

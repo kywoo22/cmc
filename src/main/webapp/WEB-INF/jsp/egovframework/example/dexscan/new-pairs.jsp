@@ -36,23 +36,23 @@
 							<div class="dx-filter-btn-box">
 								
 								<a href="/cmc/dexscan/new-pairs.do" class="dx-filter-btn ${t == null || t == '' ? 'on' : '' } w-inline-block">
-									<img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
+									<img src="/cmc/webflow/images/token_3.png" loading="lazy" alt="" class="dx-filter-img">
 									<div class="inter _14s medium">Ethereum</div> 
 								</a> 
 								<a href="/cmc/dexscan/new-pairs.do?t=s" class="dx-filter-btn ${t ==  's' ? 'on' : '' } w-inline-block">
-									<img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
+									<img src="/cmc/webflow/images/solana.svg" loading="lazy" alt="" class="dx-filter-img">
 									<div class="inter _14s medium">Solana</div>
 								</a> 
 								<a href="/cmc/dexscan/new-pairs.do?t=ba" class="dx-filter-btn ${t ==  'ba' ? 'on' : '' } w-inline-block">
-									<img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
+									<img src="/cmc/webflow/images/token_5.png" loading="lazy" alt="" class="dx-filter-img">
 									<div class="inter _14s medium">Base</div> 
 								</a> 
 								<a href="/cmc/dexscan/new-pairs.do?t=bs" class="dx-filter-btn ${t ==  'bs' ? 'on' : '' } w-inline-block">
-									<img src="/cmc/webflow/images/12885.png" loading="lazy" alt="" class="dx-filter-img">
+									<img src="/cmc/webflow/images/token_4.png" loading="lazy" alt="" class="dx-filter-img">
 									<div class="inter _14s medium">BSC</div> 
 								</a> 
 								<a href="/cmc/dexscan/new-pairs.do?t=bl" class="dx-filter-btn ${t ==  'bl' ? 'on' : '' } w-inline-block">
-									<img src="/cmc/webflow/images/20947.png" loading="lazy" alt="" class="dx-filter-img">
+									<img src="/cmc/webflow/images/token_28.png" loading="lazy" alt="" class="dx-filter-img">
 									<div class="inter _14s medium">Blast</div> 
 								</a>
 							</div>
@@ -208,7 +208,7 @@
 											<div class="star-block"></div>
 										</div>
 										<div class="dx-pair-box">
-											<img src="/cmc/webflow/images/52.png" loading="lazy" alt="" class="pair-img">
+											<img src="/cmc/webflow/images/coin_express_logoS.svg" loading="lazy" alt="" class="pair-img logo-g">
 											<div class="pair-wrap-box">
 												<div class="inter _14s semibold">
 													${item.baseToken } <span class="pair-small">/${item.quoteToken }</span>

@@ -68,41 +68,18 @@
 												<div class="fluctuation-rate-txt ${item.direction}">${item.change}</div>
 											</div>
 										</div>
-									</a> 
+									</a>
 								</c:forEach>
 							</div>
 						</div>
-						<div class="highlights-coin-card cardlist">
-							<div class="highlight-top">
-								<a href="#" class="highlight-left w-inline-block">
-									<div class="card-header-info-title">
-										<spring:message code="memes.topGainers" />
-										<br>
-									</div>
-								</a>
-								<div class="h-tap">
-									<a href="#" class="tabselect-h empty on w-button"> <spring:message code="memes.time24h" />
-									</a> 
-									<a href="#" class="tabselect-h empty w-button"> <spring:message code="memes.time30d" />
-									</a> 
-									<a href="#" class="tabselect-h empty w-button"> <spring:message code="memes.allTime" />
+						<div class="w-layout-vflex f-card-box">
+							<div class="highlights-coin-card width-100">
+								<div class="highlight-top">
+									<a href="#" class="highlight-left w-inline-block">
+										<div class="card-header-info-title">
+											<spring:message code="table.topGainers" />
+										</div>
 									</a>
-								</div>
-							</div>
-							<div class="card-content"></div>
-						</div>
-						<div class="highlights-coin-card cardlist">
-							<div class="highlight-top">
-								<a href="#" class="highlight-left w-inline-block">
-									<div class="card-header-info-title">
-										<spring:message code="memes.marketCap" />
-										<br>
-									</div>
-								</a>
-								<div class="w-layout-vflex h-tap-flex-box">
-									<div class="h-tap">
-										<a href="#" class="tabselect-h graph on w-button"></a> <a href="#" class="tabselect-h graph-circle w-button"></a>
-									</div>
 									<div class="h-tap">
 										<a href="#" class="tabselect-h empty on w-button"> <spring:message code="memes.time24h" />
 										</a> <a href="#" class="tabselect-h empty w-button"> <spring:message code="memes.time30d" />
@@ -110,8 +87,95 @@
 										</a>
 									</div>
 								</div>
+								<div class="card-content mg-auto">
+									<div class="coin-txt-box">
+										<div class="w-layout-vflex rate-up-box">
+											<div class="dominance-txt-wrap">
+												<div class="circle-color alt"></div>
+												<div class="inter _12s medium _61co">AXOL</div>
+											</div>
+											<div class="w-layout-vflex flex-box-l">
+												<div class="fluctuation-rate-img up"></div>
+												<div class="up-rate-txt">2.53K%</div>
+											</div>
+										</div>
+										<div class="w-layout-vflex rate-up-box">
+											<div class="dominance-txt-wrap">
+												<div class="circle-color green"></div>
+												<div class="inter _12s medium _61co">MUSKIT</div>
+											</div>
+											<div class="w-layout-vflex flex-box-l">
+												<div class="fluctuation-rate-img up"></div>
+												<div class="up-rate-txt">2.53K%</div>
+											</div>
+										</div>
+										<div class="w-layout-vflex rate-up-box">
+											<div class="dominance-txt-wrap">
+												<div class="circle-color yellow"></div>
+												<div class="inter _12s medium _61co">SAITAMA</div>
+											</div>
+											<div class="w-layout-vflex flex-box-l">
+												<div class="fluctuation-rate-img up"></div>
+												<div class="up-rate-txt">2.53K%</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="card-content"></div>
+							<div class="highlights-coin-card width-100">
+								<div class="highlight-top">
+									<a href="#" class="highlight-left w-inline-block">
+										<div class="card-header-info-title">
+											<spring:message code="table.marketCap" /><br>
+										</div>
+									</a>
+									<div class="w-layout-vflex h-tap-flex-box">
+										<div class="h-tap">
+											<a href="#" class="tabselect-h graph on w-button"></a> <a href="#" class="tabselect-h graph-circle w-button"></a>
+										</div>
+										<div class="h-tap">
+											<a href="#" class="tabselect-h empty on w-button"> <spring:message code="memes.time24h" />
+											</a> <a href="#" class="tabselect-h empty w-button"> <spring:message code="memes.time30d" />
+											</a> <a href="#" class="tabselect-h empty w-button"> <spring:message code="memes.allTime" />
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="card-content mg-auto">
+									<div class="coin-txt-box">
+										<div class="w-layout-vflex rate-up-box">
+											<div class="dominance-txt-wrap">
+												<div class="circle-color green"></div>
+												<div class="inter _12s medium _61co">
+													<spring:message code="table.marketCap" />
+												</div>
+											</div>
+											<div class="w-layout-vflex flex-box-l">
+												<div class="inter _16s bold">543.45B BITS</div>
+												<div class="w-layout-vflex flex-box-l">
+													<div class="fluctuation-rate-img up"></div>
+													<div class="up-rate-txt">2.53%</div>
+												</div>
+											</div>
+										</div>
+										<div class="w-layout-vflex rate-up-box">
+											<div class="dominance-txt-wrap">
+												<div class="circle-color etc"></div>
+												<div class="inter _12s medium _61co"><spring:message code="table.trading.volumeN" /></div> 
+											</div>
+											<div class="w-layout-vflex flex-box-l">
+												<div class="w-layout-vflex flex-box-l">
+													<div class="inter _16s bold">543.45B BITS</div>
+													<div class="w-layout-vflex flex-box-l">
+														<div class="fluctuation-rate-img up"></div>
+														<div class="up-rate-txt">2.53%</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 					<jsp:include page="../frame/indicator-tap.jsp"></jsp:include>

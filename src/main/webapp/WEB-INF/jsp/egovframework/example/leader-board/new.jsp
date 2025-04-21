@@ -98,7 +98,7 @@
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width180">
 								<div class="coin-txt-table">
-									<spring:message code="table.Last7days" />
+									<spring:message code="new.blockchain" />
 								</div>
 							</div>
 							<div class="w-layout-vflex coin-table-top-wrap width180">
