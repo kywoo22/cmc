@@ -132,7 +132,7 @@
 							</c:forEach>
 						</div>
 					</div>
-					<div class="table-bottom">
+					<div class="tavle-bottom" style="display:none";>
 						<div class="coin-table-bottom-txt">1 보이기 - 10868 의 100</div>
 						<div class="pagin-box">
 							<a href="#" class="paging-btn left w-button"></a> <a href="#" class="paging-btn on w-button">1</a> <a href="#" class="paging-btn w-button">2</a> <a href="#" class="paging-btn w-button">3</a> <a href="#" class="paging-btn w-button">4</a> <a href="#" class="paging-btn w-button">5</a> <a href="#" class="paging-btn right w-button"></a>

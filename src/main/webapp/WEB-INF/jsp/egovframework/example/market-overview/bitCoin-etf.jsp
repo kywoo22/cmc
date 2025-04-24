@@ -1799,7 +1799,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="table-bottom">
+										<div class="tavle-bottom" style="display:none";>
 											<div class="coin-table-bottom-txt">
 												<spring:message code="table.showtxt" />
 												- 33
@@ -2830,7 +2830,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="table-bottom">
+										<div class="tavle-bottom" style="display:none";>
 											<div class="coin-table-bottom-txt">
 												<spring:message code="table.showtxt" />
 												- 292

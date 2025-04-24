@@ -108,7 +108,7 @@
 							
 						</div>
 					</div>
-					<div class="table-bottom">
+					<div class="tavle-bottom" style="display:none";>
 						<div class="coin-table-bottom-txt">
 							1
 							<spring:message code="lending.rowShow" />

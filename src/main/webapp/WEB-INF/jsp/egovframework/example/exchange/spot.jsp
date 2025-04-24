@@ -140,7 +140,7 @@
 							</c:forEach>
 						</div>
 					</div>
-					<div class="table-bottom">
+					<div class="tavle-bottom" style="display:none";>
 						<div class="coin-table-bottom-txt">
 							1
 							<spring:message code="table.showtxt" />
@@ -150,7 +150,7 @@
 						</div>
 						<a href="#" class="more-btn position w-button"><spring:message code="spot.loadMore" /></a>
 					</div>
-					<div class="table-bottom">
+					<div class="tavle-bottom" style="display:none";>
 						<div class="coin-table-bottom-txt">
 							<spring:message code="spot.howItWorks" />
 							<a href="#" class="link61co"><spring:message code="spot.readMore" /></a>

@@ -113,7 +113,7 @@
 							</c:forEach>
 						</div>
 					</div>
-					<div class="table-bottom">
+					<div class="tavle-bottom" style="display:none";>
 						<div class="coin-table-bottom-txt">
 							1
 							<spring:message code="derivatives.rowShow" />
@@ -122,7 +122,7 @@
 							100
 						</div>
 					</div>
-					<div class="table-bottom">
+					<div class="tavle-bottom" style="display:none";>
 						<div class="coin-table-bottom-txt">
 							<spring:message code="derivatives.howToUse" />
 							<a href="#" class="link61co"><spring:message code="derivatives.readMore" /></a>

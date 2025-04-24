@@ -132,7 +132,7 @@
 							</c:forEach>
 						</div>
 					</div>
-					<div class="table-bottom">
+					<div class="tavle-bottom" style="display:none";>
 						<div class="coin-table-bottom-txt">
 							<spring:message code="table.showtxt" />
 							1 – 10868

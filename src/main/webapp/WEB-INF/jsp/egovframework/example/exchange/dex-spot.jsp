@@ -124,7 +124,7 @@
 							</c:forEach>
 						</div>
 					</div>
-					<div class="table-bottom">
+					<div class="tavle-bottom" style="display:none";>
 						<div class="coin-table-bottom-txt">
 							1
 							<spring:message code="dex-spot.rowShow" />
@@ -133,7 +133,7 @@
 							100
 						</div>
 					</div>
-					<div class="table-bottom">
+					<div class="tavle-bottom" style="display:none";>
 						<div class="coin-table-bottom-txt">
 							<spring:message code="dex-spot.howToUse" />
 							<a href="#" class="link61co"><spring:message code="dex-spot.readMore" /></a>

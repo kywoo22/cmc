@@ -168,7 +168,7 @@
 							</c:forEach>
 						</div>
 					</div>
-					<div class="table-bottom">
+					<div class="tavle-bottom" style="display:none";>
 						<div class="coin-table-bottom-txt">
 					     	0 <spring:message code="table.showtxt" /> - 1 <spring:message code="table.showtxt2" /> 2
 						</div>
