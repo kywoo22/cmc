@@ -252,7 +252,7 @@
 						</div>
 					</div>
 					<jsp:include page="frame/indicator-tap.jsp"></jsp:include>
-					<div class="table-control">
+					<div class="table-control" style="display:none;">
 						<div class="table-btn-box">
 							<a href="#" class="table-btn on w-inline-block">
 								<div class="btn-wrap">

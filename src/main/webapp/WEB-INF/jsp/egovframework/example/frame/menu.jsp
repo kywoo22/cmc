@@ -24,7 +24,9 @@
 									<img src="/cmc/webflow/images/2.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle2"/></div>
-							</a> <a href="/cmc/virtual-assets/historical.do" class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/virtual-assets/historical.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready();" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-y">
 									<img src="/cmc/webflow/images/1.svg" loading="lazy" alt="">
 								</div>
@@ -50,7 +52,9 @@
 									<img src="/cmc/webflow/images/6.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle6"/></div>
-							</a> <a href="/cmc/leader-board/upComing.do" class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/leader-board/upComing.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/7.svg" loading="lazy" alt="">
 								</div>
@@ -86,32 +90,43 @@
 					<div class="menu-sub-wrap">
 						<div class="inter _14s semibold a6co"><spring:message code="menu.subHeadtitle3"/></div>
 						<div class="menu-link-box">
-							<a href="/cmc/market-overview/market-overview.do" class="menu-sub-link w-inline-block">
+							<!-- <a href="/cmc/market-overview/market-overview.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/13.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle13"/></div>
-							</a> <a href="/cmc/market-overview/100index.do" class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/market-overview/100index.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/14.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle14"/></div>
-							</a> <a href="/cmc/market-overview/fear&greed.do" class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/market-overview/fear&greed.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-o">
 									<img src="/cmc/webflow/images/15.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle15"/></div>
-							</a> <a href="/cmc/market-overview/altCoin-season-index.do" class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/market-overview/altCoin-season-index.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-sky">
 									<img src="/cmc/webflow/images/16.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle16"/></div>
-							</a> <a href="/cmc/market-overview/coin-dominance.do" class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/market-overview/coin-dominance.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-y">
 									<img src="/cmc/webflow/images/17.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle17"/></div>
-							</a> <a href="/cmc/market-overview/all-etf.do" class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/market-overview/all-etf.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/18.svg" loading="lazy" alt="">
 								</div>
@@ -127,7 +142,9 @@
 									<img src="/cmc/webflow/images/19.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle19"/></div>
-							</a> <a href="/cmc/nft/upComing.do" class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/nft/upComing.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-g">
 									<img src="/cmc/webflow/images/20.svg" loading="lazy" alt="">
 								</div>
@@ -214,28 +231,36 @@
 				</div>
 			</div>
 			<div class="w-layout-vflex menu-box">
-				<a href="/cmc/community/feed.do" class="menu-link w-inline-block">
+				<!-- <a href="/cmc/community/feed.do" class="menu-link w-inline-block"> -->
+				<a href="javascript:ready()" class="menu-link w-inline-block">
 					<div><spring:message code="menu.headTitle4"/></div>
 				</a>
 				<div class="menu-wrap-box">
 					<div class="menu-sub-wrap">
 						<div class="menu-link-box">
-							<a href="/cmc/community/feed.do" class="menu-sub-link _w-auto w-inline-block">
+							<!-- <a href="/cmc/community/feed.do" class="menu-sub-link _w-auto w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-b">
 									<img src="/cmc/webflow/images/30.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle30"/></div>
-							</a> <a href="/cmc/community/topic.do" class="menu-sub-link _w-auto w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/community/topic.do" class="menu-sub-link _w-auto w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-g">
 									<img src="/cmc/webflow/images/31.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle31"/></div>
-							</a> <a href="/cmc/community/lives.do" class="menu-sub-link _w-auto w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/community/lives.do" class="menu-sub-link _w-auto w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-o">
 									<img src="/cmc/webflow/images/32.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle32"/></div>
-							</a> <a href="/cmc/community/articles.do" class="menu-sub-link _w-auto w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/community/articles.do" class="menu-sub-link _w-auto w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/33.svg" loading="lazy" alt="">
 								</div>
@@ -246,34 +271,43 @@
 				</div>
 			</div>
 			<div class="w-layout-vflex menu-box">
-				<a href="#" class="menu-link w-inline-block">
+				<a href="javascript:ready()" class="menu-link w-inline-block">
 					<div><spring:message code="menu.headTitle5"/></div>
 				</a>
 				<div class="menu-wrap-box service">
 					<div class="menu-sub-wrap">
 						<div class="inter _14s semibold a6co"><spring:message code="menu.subHeadtitle7"/></div>
 						<div class="menu-link-box line">
-							<a href="/cmc/service/converter.do" aria-current="page" class="menu-sub-link w-inline-block w--current">
+							<!-- <a href="/cmc/service/converter.do" aria-current="page" class="menu-sub-link w-inline-block w--current"> -->
+							<a href="javascript:ready()" aria-current="page" class="menu-sub-link w-inline-block w--current">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/34.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle34"/></div>
-							</a> <a href="/cmc/service/news-letter.do" class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/service/news-letter.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/35.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle35"/></div>
-							</a> <a href="/cmc/service/cmc-labs.do" class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/service/cmc-labs.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-g">
 									<img src="/cmc/webflow/images/36.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle36"/></div>
-							</a> <a href="/cmc/service/telegram-bot.do" class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/service/telegram-bot.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-tele">
 									<img src="/cmc/webflow/images/37.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle37"/></div>
-							</a> <a href="/cmc/service/advertise.do" class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/service/advertise.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b">
 									<img src="/cmc/webflow/images/38.svg" loading="lazy" alt="">
 								</div>
@@ -281,12 +315,15 @@
 							</a>
 						</div>
 						<div class="menu-link-box">
-							<a href="/cmc/service/api.do" aria-current="page" class="menu-sub-link w-inline-block w--current">
+							<!-- <a href="/cmc/service/api.do" aria-current="page" class="menu-sub-link w-inline-block w--current"> -->
+							<a href="javascript:ready()" aria-current="page" class="menu-sub-link w-inline-block w--current">
 								<div class="menu-circle color-gray">
 									<img src="/cmc/webflow/images/39.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle39"/></div>
-							</a> <a href="/cmc/service/ticker.do" class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/service/ticker.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-gray">
 									<img src="/cmc/webflow/images/40.svg" loading="lazy" alt="">
 								</div>
@@ -297,17 +334,22 @@
 					<div class="menu-sub-wrap">
 						<div class="inter _14s semibold a6co"><spring:message code="menu.subHeadtitle8"/></div>
 						<div class="menu-link-box">
-							<a href="/cmc/service/air-drop.do" class="menu-sub-link w-inline-block">
+							<!-- <a href="/cmc/service/air-drop.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-g">
 									<img src="/cmc/webflow/images/41.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle41"/></div>
-							</a> <a href="/cmc/service/rewards.do" class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/service/rewards.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-o">
 									<img src="/cmc/webflow/images/42.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle42"/></div>
-							</a> <a href="/cmc/service/learn-and-earn.do" class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/service/learn-and-earn.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-bsky">
 									<img src="/cmc/webflow/images/43.svg" loading="lazy" alt="">
 								</div>
@@ -316,12 +358,15 @@
 						</div>
 						<div class="inter _14s semibold a6co"><spring:message code="menu.subHeadtitle9"/></div>
 						<div class="menu-link-box">
-							<a href="/cmc/service/calendar.do" class="menu-sub-link w-inline-block">
+							<!-- <a href="/cmc/service/calendar.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-bsky">
 									<img src="/cmc/webflow/images/44.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle44"/></div>
-							</a> <a href="/cmc/service/event-calendar.do" class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/service/event-calendar.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/45.svg" loading="lazy" alt="">
 								</div>
@@ -332,27 +377,36 @@
 					<div class="menu-sub-wrap">
 						<div class="inter _14s semibold a6co"><spring:message code="menu.subHeadtitle10"/></div>
 						<div class="menu-link-box">
-							<a href="/cmc/service/service-news.do" class="menu-sub-link w-inline-block">
+							<!-- <a href="/cmc/service/service-news.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/46.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle46"/></div>
-							</a> <a href="/cmc/service/academy.do" class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/service/academy.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b">
 									<img src="/cmc/webflow/images/47.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle47"/></div> <img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
-							</a> <a href="/cmc/service/cmc-research.do" class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href="/cmc/service/cmc-research.do" class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-p">
 									<img src="/cmc/webflow/images/48.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle48"/></div> <img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
-							</a> <a href=" " class="menu-sub-link _w-auto w-inline-block">
+							</a> 
+							<!-- <a href=" " class="menu-sub-link _w-auto w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link _w-auto w-inline-block">
 								<div class="menu-circle color-r">
 									<img src="/cmc/webflow/images/49.svg" loading="lazy" alt="">
 								</div>
 								<div class="inter _14s semibold"><spring:message code="menu.subtitle49"/></div> <img src="/cmc/webflow/images/external_link.svg" loading="lazy" alt="">
-							</a> <a href=" " class="menu-sub-link w-inline-block">
+							</a> 
+							<!-- <a href=" " class="menu-sub-link w-inline-block"> -->
+							<a href="javascript:ready()" class="menu-sub-link w-inline-block">
 								<div class="menu-circle color-b-dark">
 									<img src="/cmc/webflow/images/50.svg" loading="lazy" alt="">
 								</div>
@@ -362,11 +416,19 @@
 					</div>
 				</div>
 			</div>
-			<a href="/cmc/portfolio-tracker.do" class="menu-right-btn mobile w-inline-block"><img src="/cmc/webflow/images/chart.svg" loading="lazy" alt="">
-				<div><spring:message code="menu.portfolio"/></div> </a> <a href="/cmc/watchlist.do" class="menu-right-btn mobile w-inline-block"><img src="/cmc/webflow/images/star.svg" loading="lazy" alt="">
-				<div><spring:message code="menu.watchlist"/></div> </a>
+			<!-- <a href="/cmc/portfolio-tracker.do" class="menu-right-btn mobile w-inline-block"> -->
+			<a href="javascript:ready()" class="menu-right-btn mobile w-inline-block">
+				<img src="/cmc/webflow/images/chart.svg" loading="lazy" alt="">
+				<div><spring:message code="menu.portfolio"/></div> 
+			</a> 
+			<!-- <a href="/cmc/watchlist.do" class="menu-right-btn mobile w-inline-block"> -->
+			<a href="javascript:ready()" class="menu-right-btn mobile w-inline-block">
+				<img src="/cmc/webflow/images/star.svg" loading="lazy" alt="">
+				<div><spring:message code="menu.watchlist"/></div> 
+			</a>
 			<div class="w-layout-vflex mo-menu-wrap">
-				<a href="#" class="login-btn mobile w-button"><spring:message code="menu.newAccount"/></a> <a href="#" onclick="openLogin()" class="login-btn mobile w-button"><spring:message code="menu.Login"/></a>
+				<a href="#" style="display:none;" class="login-btn mobile w-button"><spring:message code="menu.newAccount"/></a>
+				<a href="#" style="display:none;" onclick="openLogin()" class="login-btn mobile w-button"><spring:message code="menu.Login"/></a>
 			</div>
 			<div class="menu-wrap-boxmo">
 				<div class="mo-gray-bg" onclick="triggerFooterBtnClick()">
@@ -386,16 +448,24 @@
 	</div>
 	<div class="header-right">
 		<div class="btn-box">
-			<a href="/cmc/portfolio-tracker.do" class="menu-right-btn w-inline-block"><img src="/cmc/webflow/images/chart.svg" loading="lazy" alt="">
-				<div><spring:message code="menu.portfolio"/></div> </a> <a href="/cmc/watchlist.do" class="menu-right-btn w-inline-block"><img src="/cmc/webflow/images/star.svg" loading="lazy" alt="">
-				<div><spring:message code="menu.watchlist"/></div> </a>
+			<!-- <a href="/cmc/portfolio-tracker.do" class="menu-right-btn w-inline-block"> -->
+			<a href="javascript:ready()" class="menu-right-btn w-inline-block">
+				<img src="/cmc/webflow/images/chart.svg" loading="lazy" alt="">
+				<div><spring:message code="menu.portfolio"/></div> 
+			</a> 
+			<!-- <a href="/cmc/watchlist.do" class="menu-right-btn w-inline-block"> -->
+			<a href="javascript:ready()" class="menu-right-btn w-inline-block">
+				<img src="/cmc/webflow/images/star.svg" loading="lazy" alt="">
+				<div><spring:message code="menu.watchlist"/></div> 
+			</a>
 		</div>
 		<form action="/search" class="search w-form">
 			<label for="search-2" class="search-icon"></label>
 			<input class="search-input w-input" maxlength="256" name="query" placeholder="검색" type="search" id="search" required="">
 			<input type="submit" class="slash-btn w-button" value="">
 		</form>
-		<a href="#" class="scan-btn w-button"></a> <a href="#" onclick="openLogin()" class="login-btn w-button"><spring:message code="menu.Login"/></a>
+		<a href="#" class="scan-btn w-button"></a> 
+		<a href="#" style="display:none;" onclick="openLogin()" class="login-btn w-button"><spring:message code="menu.Login"/></a>
 		<div class="popover-base">
 			<img src="/cmc/webflow/images/menu.svg" loading="lazy" alt="" class="menu-img"><img src="/cmc/webflow/images/close_1.svg" loading="lazy" alt="" class="menu-img close">
 			<div class="avatar"></div>

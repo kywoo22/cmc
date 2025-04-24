@@ -18,51 +18,70 @@
 					<strong><spring:message code="footer.service" /></strong>
 				</div>
 				<div class="w-layout-vflex footer-menu-list">
-					<a href="/cmc/service/academy.do" class="w-inline-block">
+					<!-- <a href="/cmc/service/academy.do" class="w-inline-block"> -->
+					<a href="javascript:ready()" class="w-inline-block">
 						<div class="inter _14s medium _61co">
 							<spring:message code="footer.academy" />
 						</div>
-					</a> <a href="/cmc/service/advertise.do" class="w-inline-block">
+					</a> 
+					<!-- <a href="/cmc/service/advertise.do" class="w-inline-block"> -->
+					<a href="javascript:ready()" class="w-inline-block">
 						<div class="inter _14s medium _61co">
 							<spring:message code="footer.advertise" />
 						</div>
-					</a> <a href="/cmc/service/cmc-labs.do" class="w-inline-block">
+					</a> 
+					<!-- <a href="/cmc/service/cmc-labs.do" class="w-inline-block"> -->
+					<a href="javascript:ready()" class="w-inline-block">
 						<div class="inter _14s medium _61co">
 							<spring:message code="footer.cmcLabs" />
 						</div>
-					</a> <a href="/cmc/market-overview/coin-dominance.do" class="w-inline-block">
+					</a> 
+					<!-- <a href="/cmc/market-overview/coin-dominance.do" class="w-inline-block"> -->
+					<a href="javascript:ready()" class="w-inline-block">
 						<div class="inter _14s medium _61co">
 							<spring:message code="footer.bitcoinEtf" />
 						</div>
-					</a> <a href="/cmc/service/api.do" class="w-inline-block">
+					</a> 
+					<!-- <a href="/cmc/service/api.do" class="w-inline-block"> -->
+					<a href="javascript:ready()" class="w-inline-block">
 						<div class="inter _14s medium _61co">
 							<spring:message code="footer.api" />
 						</div>
-					</a> <a href="/cmc/dexscan/new-pairs.do" class="w-inline-block">
+					</a> 
+					<a href="/cmc/dexscan/new-pairs.do" class="w-inline-block">
 						<div class="inter _14s medium _61co">
 							<spring:message code="footer.dexScan" />
 						</div>
-					</a> <a href="/cmc/market-overview/market-overview.do" class="w-inline-block">
+					</a> 
+					<!-- <a href="/cmc/market-overview/market-overview.do" class="w-inline-block"> -->
+					<a href="javascript:ready()" class="w-inline-block">
 						<div class="inter _14s medium _61co">
 							<spring:message code="footer.globalChart" />
 						</div>
-					</a> <a href="/cmc/nft/nft.do" class="w-inline-block">
+					</a> 
+					<a href="/cmc/nft/nft.do" class="w-inline-block">
 						<div class="inter _14s medium _61co">
 							<spring:message code="footer.nft" />
 						</div>
-					</a> <a href="/cmc/portfolio-tracker.do" class="w-inline-block">
+					</a> 
+					<!-- <a href="/cmc/portfolio-tracker.do" class="w-inline-block"> -->
+					<a href="javascript:ready()" class="w-inline-block">
 						<div class="inter _14s medium _61co">
 							<spring:message code="footer.portfolio" />
 						</div>
-					</a> <a href="/cmc/watchlist.do" class="w-inline-block">
+					</a> 
+					<!-- <a href="/cmc/watchlist.do" class="w-inline-block"> -->
+					<a href="javascript:ready()" class="w-inline-block">
 						<div class="inter _14s medium _61co">
 							<spring:message code="footer.watchlist" />
 						</div>
-					</a> <a href="#" class="w-inline-block">
+					</a> 
+					<a href="javascript:ready()" class="w-inline-block">
 						<div class="inter _14s medium _61co">
 							<spring:message code="footer.doodles" />
 						</div>
-					</a> <a href="#" class="w-inline-block">
+					</a> 
+					<a href="javascript:ready()" class="w-inline-block">
 						<div class="inter _14s medium _61co">
 							<spring:message code="footer.sitemap" />
 						</div>
@@ -180,7 +199,7 @@
 		</div>
 	</div>
 	<div class="footer-bottom">
-		<a href="#" class="app-btn w-button"></a> <a href="#" class="app-btn google w-button"></a>
+		<a href="javascript:ready()" class="app-btn w-button"></a> <a href="javascript:ready()" class="app-btn google w-button"></a>
 	</div>
 	<jsp:include page="../frame/popupLangCurrency.jsp"></jsp:include>
 </div>

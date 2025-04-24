@@ -52,7 +52,7 @@
 									<div class="inter _14s medium">BSC</div> 
 								</a>
 							</div>
-							<div class="dx-filter-dropdown-box">
+							<div class="dx-filter-dropdown-box" style="display:none;">
 								<div data-hover="false" data-delay="0" class="dx-filter-dropdown w-dropdown">
 									<div class="dx-toggle check w-dropdown-toggle">
 										<div class="inter _12s bold">

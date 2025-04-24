@@ -70,7 +70,7 @@
 									<img src="/cmc/webflow/images/arrow_right.svg" loading="lazy" alt="">
 								</div>
 							</div>
-							<div class="dx-filter-dropdown-box drop-search">
+							<div class="dx-filter-dropdown-box drop-search" style="display:none;">
 								<div class="dx-filter-dropdown drop-search">
 									<div class="dx-toggle check">
 										<div class="inter _12s medium _61co">Search network</div>

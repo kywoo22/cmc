@@ -10,3 +10,9 @@
 <link href="/cmc/webflow/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link href="/cmc/webflow/images/webclip.png" rel="apple-touch-icon">
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+function ready(){
+	alert('준비중입니다');
+}
+</script>

@@ -99,7 +99,7 @@
 						</div>
 					</div>
 					<jsp:include page="../frame/indicator-tap.jsp"></jsp:include>
-					<div class="table-control">
+					<div class="table-control" style="display:none;">
 						<div class="nft-btn-wrap">
 							<a href="#" class="tabselect-h empty on w-button"><spring:message code="nft.time.24h" /></a> <a href="#" class="tabselect-h empty w-button"><spring:message code="nft.time.7d" /></a> <a href="#" class="tabselect-h empty w-button"><spring:message code="nft.time.30d" /></a> <a href="#" class="tabselect-h empty w-button"><spring:message code="nft.time.all" /></a>
 						</div>

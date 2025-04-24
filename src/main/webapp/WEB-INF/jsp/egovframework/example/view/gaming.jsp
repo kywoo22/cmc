@@ -182,7 +182,7 @@
 						</div>
 					</div>
 					<jsp:include page="../frame/indicator-tap.jsp"></jsp:include>
-					<div class="table-control">
+					<div class="table-control" style="display:none;">
 						<div class="table-btn-filter">
 							<a href="#" class="table-btn empty on w-inline-block">
 								<div>All</div>

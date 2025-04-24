@@ -15,7 +15,7 @@
 
 <div class="table-control${(activeIndicator eq 'bestCrypto' || activeIndicator eq 'gainerLosers' || activeIndicator eq 'sentiment') ? ' custom-mg' : ''}">
   <div class="table-btn-box">
-    <a href="${bestCryptoUrl}" 
+    <a href="javascript:ready();" 
        class="table-btn ${activeIndicator eq 'bestCrypto' ? 'on' : ''} empty w-inline-block"><div><spring:message code="leaderboardTap.title"/></div></a>
     <a href="${gainerLosersUrl}" 
        class="table-btn ${activeIndicator eq 'gainerLosers' ? 'on' : ''} empty w-inline-block"><div><spring:message code="leaderboardTap.title2"/></div></a>
