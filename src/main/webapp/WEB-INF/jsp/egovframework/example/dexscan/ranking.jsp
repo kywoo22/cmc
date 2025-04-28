@@ -115,7 +115,8 @@
 											<div class="inter _14s">${item.rank }</div>
 										</div>
 										<div class="dx-pair-box">
-											<img src="${item.logoUrl }" loading="lazy" alt="" class="pair-img">
+											<c:set var="rimg" value="${item.logoUrl}"/>
+											<img src="${fn:contains(item.logoUrl , 'default-icon') ? '/cmc/webflow/images/coin_express_logoS.svg' : rimg }" loading="lazy" alt="" class="pair-img ${fn:contains(item.logoUrl , 'default-icon') ? 'logo-g' : ''}">
 											<div class="pair-wrap-box flex-left">
 												<div class="inter _14s semibold">
 													${item.baseToken } <span class="txt-user-small">${item.fullName }</span>

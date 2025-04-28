@@ -86,10 +86,18 @@
 										<div class="coin-txt-table">${item.rank }</div>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width320">
-										<img src="${item.logoUrl }" loading="lazy" alt="" class="coin-img">
-										<div class="coin-txt-table name">
-											${item.name } 
-										</div>
+										<c:if test="${item.rank == 37 }">
+											<img src="/cmc/webflow/images/BTC_logo.svg" loading="lazy" alt="" class="coin-img">
+											<div class="coin-txt-table name">
+												BTC
+											</div>
+										</c:if>
+										<c:if test="${item.rank != 37 }">
+											<img src="${item.logoUrl }" loading="lazy" alt="" class="coin-img"> 
+											<div class="coin-txt-table name">
+												${item.name } 
+											</div>
+										</c:if>
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width250">
 										<div class="coin-txt-table">${item.tradingVolume24h }</div>
