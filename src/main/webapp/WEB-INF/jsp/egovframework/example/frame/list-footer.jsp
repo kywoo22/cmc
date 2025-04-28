@@ -9,7 +9,8 @@
 				</div>
 			</a>
 			<div class="footer-btn-box">
-				<a href="#" class="footer-btn w-button" onclick="triggerFooterBtnClick()">${lang == 'en' ? 'English' : '한국어' }</a> <a href="#" class="footer-btn money w-button" onclick="triggerFooterMoneyClick(); event.stopPropagation();">KRW</a>
+				<a href="#" class="footer-btn w-button" onclick="triggerFooterBtnClick()">${lang == 'en' ? 'English' : (lang == 'ko' ? '한국어' : 'ภาษาไทย')}</a>
+				<a href="#" class="footer-btn money w-button" onclick="triggerFooterMoneyClick(); event.stopPropagation();">KRW</a>
 			</div>
 		</div>
 		<div class="footer-area-flex">

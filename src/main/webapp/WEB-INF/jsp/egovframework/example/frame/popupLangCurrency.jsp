@@ -205,11 +205,12 @@
 						<div class="inter _14s medium _61co">SV</div>
 					</div>
 				</div>
-				<div class="f-grid-wrap">
+				<div class="f-grid-wrap ${lang == 'th' ? 'on' : ''}" onclick="javascript:changeLang('th')">
 					<div class="f-grid-txt-box">
 						<div class="inter _14s bold">ไทย</div>
 						<div class="inter _14s medium _61co">TH</div>
 					</div>
+					${lang == 'th' ? '<div class="checking"></div>' : '' }
 				</div>
 				<div class="f-grid-wrap">
 					<div class="f-grid-txt-box">
