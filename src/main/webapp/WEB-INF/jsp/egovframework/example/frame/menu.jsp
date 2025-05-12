@@ -230,7 +230,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="w-layout-vflex menu-box">
+			<%-- <div class="w-layout-vflex menu-box">
 				<!-- <a href="/cmc/community/feed.do" class="menu-link w-inline-block"> -->
 				<a href="javascript:ready()" class="menu-link w-inline-block">
 					<div><spring:message code="menu.headTitle4"/></div>
@@ -269,8 +269,8 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="w-layout-vflex menu-box">
+			</div> --%>
+			<%-- <div class="w-layout-vflex menu-box">
 				<a href="javascript:ready()" class="menu-link w-inline-block">
 					<div><spring:message code="menu.headTitle5"/></div>
 				</a>
@@ -415,7 +415,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> --%>
 			<!-- <a href="/cmc/portfolio-tracker.do" class="menu-right-btn mobile w-inline-block"> -->
 			<a href="javascript:ready()" class="menu-right-btn mobile w-inline-block">
 				<img src="/cmc/webflow/images/chart.svg" loading="lazy" alt="">
