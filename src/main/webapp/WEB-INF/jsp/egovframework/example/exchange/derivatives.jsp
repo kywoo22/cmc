@@ -87,7 +87,7 @@
 									</div>
 									<div class="w-layout-vflex coin-table-top-wrap width320">
 										<c:if test="${item.rank == 37 }">
-											<img src="/cmc/webflow/images/BTC_logo.svg" loading="lazy" alt="" class="coin-img">
+											<img src="/cmc/webflow/images/btc_logo_pre.svg" loading="lazy" alt="" class="coin-img">
 											<div class="coin-txt-table name">
 												BTC
 											</div>
