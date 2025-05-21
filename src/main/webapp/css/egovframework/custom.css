@@ -2,6 +2,14 @@
 	scrollbar-width: none;
 }
 
+.txt-line {
+      width:100px;
+      padding:0 5px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+  }
+
 .nowrap {
 	overflow: hidden;
 	text-overflow: ellipsis;

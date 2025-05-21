@@ -391,6 +391,11 @@ public class MainController {
 		Lending.addData(model);
 		return "exchange/lending";
 	}
+	@RequestMapping("/exchange/exchange-detail.do") 
+	public String exDetail(HttpServletRequest request , Model model){
+		Lending.addData(model);
+		return "exchange/exchange-detail";
+	}
 	
 	//community
 	@RequestMapping("/community/feed.do")
@@ -480,6 +485,10 @@ public class MainController {
 	public String servicenews(HttpServletRequest request , Model model){
 		return "service/service-news";
 	}
+	@RequestMapping("/service/service-news-detail.do") 
+	public String serviceNewsDetail(HttpServletRequest request , Model model){
+		return "service/service-news-detail";
+	}
 	@RequestMapping("/service/academy.do") 
 	public String academy(HttpServletRequest request , Model model){
 		return "service/academy";
@@ -508,4 +517,5 @@ public class MainController {
 	public String priceblocks(HttpServletRequest request , Model model){
 		return "service/price-blocks";
 	}
+	
 }
